@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Ground
+  - Platform
+  - Wall
+  - MainCanvas
+  - Vehicle
+  - Platform1
+  - Platform2
+  - Boss
+  - Platform3
+  - Bullet
+  - Item
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Platform
+  - Projectile
+  - Enemy
+  - Trigger
+  - Wall
+  - GameObject
+  - ParticlePlatform
+  - Ground
+  - BossProjectile
+  - Collectable
+  - Collector
+  - HitBox
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 486887437
+    locked: 0
+  - name: Front
+    uniqueID: 3180794941
+    locked: 0

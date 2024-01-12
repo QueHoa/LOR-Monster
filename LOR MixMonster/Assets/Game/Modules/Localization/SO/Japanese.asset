@@ -1,0 +1,586 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5352c14bac92dcc46986c3b382518adf, type: 3}
+  m_Name: Japanese
+  m_EditorClassIdentifier: 
+  dataTextPackage:
+  - id:
+      title: Common/Play
+    text: "\u30BF\u30C3\u30C1\u3057\u3066\u30D7\u30EC\u30A4"
+    fontId: 0
+  - id:
+      title: Common/Level
+    text: "\u30EC\u30D9\u30EB"
+    fontId: 0
+  - id:
+      title: Upgrade/Attack
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/Health
+    text: 
+    fontId: 0
+  - id:
+      title: Setting/ChangeLanguage
+    text: "\u8A00\u8A9E\u3092\u5909\u66F4\u3059\u308B"
+    fontId: 0
+  - id:
+      title: Setting/RestorePurchase
+    text: "\u8CFC\u5165\u306E\u5FA9\u5143"
+    fontId: 0
+  - id:
+      title: Setting/RemoveAds
+    text: "\u5E83\u544A\u3092\u524A\u9664\u3059\u308B"
+    fontId: 0
+  - id:
+      title: Setting/SettingTitle
+    text: "\u8A2D\u5B9A"
+    fontId: 0
+  - id:
+      title: Setting/Version
+    text: "\u30D0\u30FC\u30B8\u30E7\u30F3{0}"
+    fontId: 0
+  - id:
+      title: Shop/ShopTitle
+    text: 
+    fontId: 0
+  - id:
+      title: Common/EarnCoinNotice
+    text: "\u30B2\u30FC\u30E0\u3092\u7D9A\u3051\u3066\u3088\u308A\u591A\u304F\u306E\u30B3\u30A4\u30F3\u3092\u7372\u5F97\u3057\u307E\u3057\u3087\u3046"
+    fontId: 0
+  - id:
+      title: Common/Continue
+    text: "\u7D9A\u3051\u308B"
+    fontId: 0
+  - id:
+      title: Lose/Revive
+    text: "\u4ECA\u3059\u3050\u5FA9\u6D3B\u3059\u308B"
+    fontId: 0
+  - id:
+      title: Common/WatchAnAd
+    text: "\u5E83\u544A\u3092\u898B\u308B"
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/DontGiveUp
+    text: "\u8AE6\u3081\u306A\u3044\u3067\u304F\u3060\u3055\u3044"
+    fontId: 0
+  - id:
+      title: Common/Replay
+    text: "\u3084\u308A\u76F4\u3059"
+    fontId: 0
+  - id:
+      title: Lose/UpgradeTut
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/TouchSkip
+    text: "\u30B9\u30AD\u30C3\u30D7\u3059\u308B\u306B\u306F\u30BF\u30C3\u30C1\u3057\u3066\u304F\u3060\u3055\u3044"
+    fontId: 0
+  - id:
+      title: Loadout/LoadoutLoaded
+    text: 
+    fontId: 0
+  - id:
+      title: Loadout/Description
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/UnlockTitle
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/TouchToClose
+    text: "\u9589\u3058\u308B\u306B\u306F\u30BF\u30C3\u30C1\u3057\u3066\u304F\u3060\u3055\u3044"
+    fontId: 0
+  - id:
+      title: Quit/Warning
+    text: "\u30B2\u30FC\u30E0\u3092\u7D42\u4E86\u3057\u3066\u3082\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F"
+    fontId: 0
+  - id:
+      title: Quit/QuitBtn
+    text: "\u7D42\u4E86\u3059\u308B"
+    fontId: 0
+  - id:
+      title: Quit/CancelBtn
+    text: "\u30AD\u30E3\u30F3\u30BB\u30EB"
+    fontId: 0
+  - id:
+      title: CombatTut/TutText
+    text: 
+    fontId: 0
+  - id:
+      title: CombatTut/TouchToClose
+    text: "\u30BF\u30C3\u30C1\u3057\u3066\u7D9A\u3051\u308B"
+    fontId: 0
+  - id:
+      title: BoosterSelect/Title
+    text: 
+    fontId: 0
+  - id:
+      title: BoosterSelect/Description
+    text: 
+    fontId: 0
+  - id:
+      title: Pause/Title
+    text: "\u4E00\u6642\u505C\u6B62"
+    fontId: 0
+  - id:
+      title: Pause/ControlType
+    text: "\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB\u30BF\u30A4\u30D7\uFF1A"
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeGesture
+    text: "\u30B8\u30A7\u30B9\u30C1\u30E3\u30FC"
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeButton
+    text: "\u30DC\u30BF\u30F3"
+    fontId: 0
+  - id:
+      title: Pause/Home
+    text: "\u30DB\u30FC\u30E0"
+    fontId: 0
+  - id:
+      title: Game/TouchToJump
+    text: 
+    fontId: 0
+  - id:
+      title: Game/SwipeDown
+    text: 
+    fontId: 0
+  - id:
+      title: Game/Victory
+    text: "\u52DD\u5229\uFF01"
+    fontId: 0
+  - id:
+      title: Game/DEFEAT
+    text: "\u6557\u5317"
+    fontId: 0
+  - id:
+      title: Game/Stage
+    text: "\u30B9\u30C6\u30FC\u30B8 {0}"
+    fontId: 0
+  - id:
+      title: WinPanel/Stage
+    text: "\u30B9\u30C6\u30FC\u30B8 {0}"
+    fontId: 0
+  - id:
+      title: Shop/AsscessaryTitle
+    text: "\u30B7\u30E7\u30C3\u30D7"
+    fontId: 0
+  - id:
+      title: EndReward/EarnText
+    text: "\u3042\u306A\u305F\u306F\u7A3C\u304E\u307E\u3057\u305F"
+    fontId: 0
+  - id:
+      title: Common/NoThank
+    text: "\u3044\u3044\u3048\u3001\u7D50\u69CB\u3067\u3059"
+    fontId: 0
+  - id:
+      title: Common/Loading
+    text: "\u8AAD\u307F\u8FBC\u307F\u4E2D"
+    fontId: 0
+  - id:
+      title: Common/Free
+    text: "\u7121\u6599"
+    fontId: 0
+  - id:
+      title: Shop/Equip
+    text: "\u88C5\u5099\u3059\u308B"
+    fontId: 0
+  - id:
+      title: Shop/Equiped
+    text: "\u4F7F\u7528\u4E2D"
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewSkinUnlock
+    text: "\u65B0\u3057\u3044\u30B9\u30AD\u30F3\u304C\u89E3\u9664\u3055\u308C\u307E\u3057\u305F\u3002"
+    fontId: 0
+  - id:
+      title: ChestReward/CollectYourReward
+    text: "\u4ECA\u3059\u3050\u5831\u916C\u3092\u53D7\u3051\u53D6\u308B"
+    fontId: 0
+  - id:
+      title: ChestReward/Congrat
+    text: "<size=60><color=#FFD53E>\u304A\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307E\u3059</color></size>\n\u3042\u306A\u305F\u306F\u3053\u306E\u30A2\u30A4\u30C6\u30E0\u3092\u7372\u5F97\u3057\u307E\u3057\u305F\u3002\u4ECA\u3059\u3050\u96C6\u3081\u307E\u3057\u3087\u3046\uFF01"
+    fontId: 0
+  - id:
+      title: Home/ArenaBtn
+    text: "\u30A2\u30EA\u30FC\u30CA"
+    fontId: 0
+  - id:
+      title: Home/HomeBtn
+    text: "\u30DB\u30FC\u30E0"
+    fontId: 0
+  - id:
+      title: Home/ShopBtn
+    text: 
+    fontId: 0
+  - id:
+      title: Common/ComingSoon
+    text: "\u8FD1\u65E5\u516C\u958B\u4E88\u5B9A"
+    fontId: 0
+  - id:
+      title: Shop/LockText
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/OutfitChestExclusive
+    text: "\u3053\u306E\u8863\u88C5\u306F\u30B5\u30D7\u30E9\u30A4\u30C1\u30A7\u30B9\u30C8\u3067\u3057\u304B\u624B\u306B\u5165\u308A\u307E\u305B\u3093"
+    fontId: 0
+  - id:
+      title: Game/HoldToFly
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/UpgradeLevel
+    text: "\u30EC\u30D9\u30EB{0}"
+    fontId: 0
+  - id:
+      title: WarGame/StartNormalStage
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/StickWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TankWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TapToPlay
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/GameStart
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/Title
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireFree
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireAd
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/ThreeAlly
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/Outfit
+    text: "\u8863\u88C5"
+    fontId: 0
+  - id:
+      title: Shop/Hat
+    text: "\u5E3D\u5B50"
+    fontId: 0
+  - id:
+      title: Shop/Clothes
+    text: "\u670D"
+    fontId: 0
+  - id:
+      title: Upgrade/LockText
+    text: "\u30B9\u30C6\u30FC\u30B83\u3067\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3059\u308B\u3002"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity0
+    text: "\u30EC\u30A2"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity1
+    text: "\u30A8\u30D4\u30C3\u30AF"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity2
+    text: "\u4F1D\u8AAC\u306E"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity3
+    text: "\u30A2\u30EB\u30C6\u30A3\u30E1\u30C3\u30C8"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle0
+    text: "\u30C0\u30D6\u30EB\u30B7\u30E5\u30FC\u30C8"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle1
+    text: "ATK\u309210%\u5897\u52A0\u3055\u305B\u308B"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle2
+    text: "ATK\u309215%\u5897\u52A0\u3055\u305B\u308B"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle3
+    text: "ATK\u309220%\u5897\u52A0\u3055\u305B\u308B"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle4
+    text: "\u30B9\u30D7\u30EA\u30C3\u30C8\u30B7\u30E5\u30FC\u30C8"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle5
+    text: "\u30D0\u30A6\u30F3\u30B7\u30F3\u30B0\u30A2\u30E2"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle6
+    text: "\u5C04\u6483\u901F\u5EA6\u309210%\u4E0A\u3052\u308B"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle7
+    text: "\u5C04\u6483\u901F\u5EA6\u309215%\u4E0A\u3052\u308B"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle8
+    text: "\u5C04\u6483\u901F\u5EA6\u309220%\u4E0A\u3052\u308B"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle9
+    text: "\u30B9\u30D7\u30EC\u30C3\u30C9\u5F3E"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle10
+    text: "\u56DE\u5FA9 20%"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle11
+    text: "\u56DE\u5FA9 30%"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle12
+    text: "\u56DE\u5FA9 50%"
+    fontId: 0
+  - id:
+      title: Common/LockText
+    text: "\u30ED\u30C3\u30AF"
+    fontId: 0
+  - id:
+      title: WorkShop/Title
+    text: "\u30EF\u30FC\u30AF\u30B7\u30E7\u30C3\u30D7"
+    fontId: 0
+  - id:
+      title: WorkShop/Upgrade
+    text: "\u5217\u8ECA\u3092\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9\u3059\u308B"
+    fontId: 0
+  - id:
+      title: WorkShop/BuyGun
+    text: "\u9283\u3092\u8CFC\u5165\u3059\u308B"
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockWithTrain
+    text: "\u5217\u8ECA {0} \u3067\u30A2\u30F3\u30ED\u30C3\u30AF\u3059\u308B"
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockNow
+    text: "\u4ECA\u3059\u3050\u30A2\u30F3\u30ED\u30C3\u30AF"
+    fontId: 0
+  - id:
+      title: BuffCard/Reset
+    text: "\u30EA\u30BB\u30C3\u30C8"
+    fontId: 0
+  - id:
+      title: BuffCard/CollectAll
+    text: "\u3059\u3079\u3066\u53CE\u96C6\u3059\u308B"
+    fontId: 0
+  - id:
+      title: BuffCard/Description
+    text: "\u597D\u304D\u306A\u30AB\u30FC\u30C9\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044"
+    fontId: 0
+  - id:
+      title: BuffCard/Title
+    text: "\u30D1\u30EF\u30FC\u30AB\u30FC\u30C9"
+    fontId: 0
+  - id:
+      title: EndReward/RewardText
+    text: "\u5831\u916C:"
+    fontId: 0
+  - id:
+      title: EndReward/CollectBonus
+    text: "\u30DC\u30FC\u30CA\u30B9\u3092\u96C6\u3081\u308B"
+    fontId: 0
+  - id:
+      title: WorkShop/NoSlot
+    text: "\u5229\u7528\u53EF\u80FD\u306A\u30B9\u30ED\u30C3\u30C8\u306F\u3042\u308A\u307E\u305B\u3093"
+    fontId: 0
+  - id:
+      title: Common/NotEnoughCoin
+    text: "\u30B3\u30A4\u30F3\u304C\u8DB3\u308A\u307E\u305B\u3093"
+    fontId: 0
+  - id:
+      title: EndReward/BonusReward
+    text: "\u30DC\u30FC\u30CA\u30B9\u5831\u916C"
+    fontId: 0
+  - id:
+      title: Game/ShootTut
+    text: Hold to <color=#FFB734>AIM & SHOOT</color>
+    fontId: 0
+  - id:
+      title: FirstPurchase/Title
+    text: STARTER PACK
+    fontId: 0
+  - id:
+      title: FirstPurchase/Description
+    text: 'One-time purchase, enjoy <size=40>No-Interuption-Ads</size>!
+
+      <size=25>(Purchase
+      of No-Ads does not include Optional ads)</size>'
+    fontId: 0
+  - id:
+      title: FirstPurchase/BuyNow
+    text: Buy now
+    fontId: 0
+  - id:
+      title: ItemReward/Congratulation
+    text: CONGRATULATION
+    fontId: 0
+  - id:
+      title: WorkShop/FreeGun
+    text: Free Gun
+    fontId: 0
+  - id:
+      title: WorkShop/PlayNow
+    text: Play Now
+    fontId: 0
+  - id:
+      title: Home/CollectionBtn
+    text: Collection
+    fontId: 0
+  - id:
+      title: Home/FreeReward
+    text: Free Reward
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeNow
+    text: Upgrade Now
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeText
+    text: Upgrade your train and weapons
+    fontId: 0
+  - id:
+      title: Collection/ResetText
+    text: Your free rewards will be renewed in {0}:{1}:{2}
+    fontId: 0
+  - id:
+      title: Collection/MainGun
+    text: Main Gun
+    fontId: 0
+  - id:
+      title: Collection/SupportGun
+    text: Support Gun
+    fontId: 0
+  - id:
+      title: Collection/CollectX2
+    text: COLLECT x2
+    fontId: 0
+  - id:
+      title: Collection/Collect
+    text: Collect x1
+    fontId: 0
+  - id:
+      title: Game/CongratText0
+    text: WELL DONE
+    fontId: 0
+  - id:
+      title: Game/CongratText1
+    text: PERFECT
+    fontId: 0
+  - id:
+      title: Game/CongratText2
+    text: GREAT
+    fontId: 0
+  - id:
+      title: Game/CongratText3
+    text: AWESOME
+    fontId: 0
+  - id:
+      title: WorkShop/AlreadyEquiped
+    text: Error. Already equiped
+    fontId: 0
+  - id:
+      title: FreeReward/Collect
+    text: Collect
+    fontId: 0
+  fontDatas:
+  - fontRef:
+      m_AssetGUID: 02a2a3608d952b54b82fdb13c21139ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    fontMaterialRefs:
+    - m_AssetGUID: 02a2a3608d952b54b82fdb13c21139ce
+      m_SubObjectName: NotoSansJP-Regular Atlas Material
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: e233875a785b916468e318c7a39f689c
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: b81f514f9daf1774384335f10a322ee7
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    fontKeys:
+    - 
+    - 
+    - 
+  tempFontDatas:
+  - font: {fileID: 0}

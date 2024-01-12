@@ -1,0 +1,17 @@
+cameraman.png
+size:1760,1506
+filter:Linear,Linear
+pma:true
+1/Layer 1940 copy
+bounds:1241,760,744,517
+rotate:90
+1/Layer 2
+bounds:1241,14,744,517
+rotate:90
+1/Layer 3
+bounds:2,744,760,1237
+offsets:7,0,767,1237
+rotate:90
+1/Layer 4
+bounds:2,2,1017,740
+offsets:1,1,1019,742

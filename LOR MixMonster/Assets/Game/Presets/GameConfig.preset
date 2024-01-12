@@ -1,0 +1,1439 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GameConfig
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 83bbb4a84fe9f8a4e997eae84b9e729c, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: editMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackUpgradeBase
+    value: 500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackSpeedUpgradeBase
+    value: 500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthUpgradeBase
+    value: 500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackUpgradeIncresement
+    value: 500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackSpeedUpgradeIncreasement
+    value: 500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthUpgradeIncreasement
+    value: 500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackPointPerUpgrade
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthPointPerUpgrade
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: playerSpeed
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: playerJumpForce
+    value: 8000
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: playerJumpTime
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: playerGetHitPower
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: airplaneAscendForce
+    value: 65
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: airplaneDescendForce
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: airplaneSpeed
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[0]
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[1]
+    value: 55
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[2]
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[3]
+    value: 65
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[4]
+    value: 70
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[5]
+    value: 75
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[6]
+    value: 80
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: weaponBasePoints.Array.data[7]
+    value: 85
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.size
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[0].id
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[0].adRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[0].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[1].id
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[1].adRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[1].coinRequire
+    value: 100000
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[2].id
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[2].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[2].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[3].id
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[3].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[3].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[4].id
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[4].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[4].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[5].id
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[5].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[5].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[6].id
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[6].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[6].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[7].id
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[7].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[7].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[8].id
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[8].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[8].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[9].id
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[9].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[9].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[10].id
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[10].adRequire
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopItemData.Array.data[10].coinRequire
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemySpawnConfig.enemyPointMuliply
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemySpawnConfig.enemyDamageMultiply
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemySpawnConfig.enemyCoinMultiply
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: totalChapterBackGround
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: chapterInterval
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inGameMiniShopStartStage
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inGameMiniShopDropEveryXLevel
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inGameChestStartStage
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inGameChestDropEveryXLevel
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inGameChestCoinMultiplier
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inGameChestDropRate
+    value: 0.4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: keyStartStage
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: keyDropEveryXLevel
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adLevel
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: interAdCoolDown
+    value: 45
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adLevelWinFrom
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adLevelWinTo
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adLevelWinLoseFrom
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adLevelWinLoseTo
+    value: 99999
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shopTutLevel
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.size
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[0].r
+    value: 0.3176471
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[0].g
+    value: 0.6635664
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[0].b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[0].a
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[1].r
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[1].g
+    value: 0.92059517
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[1].b
+    value: 0.3443396
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[1].a
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[2].r
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[2].g
+    value: 0.57338953
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[2].b
+    value: 0.3066038
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[2].a
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[3].r
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[3].g
+    value: 0.28773582
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[3].b
+    value: 0.28773582
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[3].a
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[4].r
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[4].g
+    value: 0.3160377
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[4].b
+    value: 0.6695939
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[4].a
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[5].r
+    value: 0.3254717
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[5].g
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[5].b
+    value: 0.42228055
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: filters2.Array.data[5].a
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: debugMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: skipAd
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bossIntroAlwayShow
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: backGroundEnable
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: allyDamage
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].id
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].point
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].coin
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].damage
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[0].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].id
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].point
+    value: 300
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].coin
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].damage
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[1].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].id
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].point
+    value: 80
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].coin
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].damage
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[2].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].id
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].point
+    value: 200
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].coin
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].damage
+    value: 35
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[3].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].id
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].point
+    value: 80
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].coin
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].damage
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[4].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].id
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].point
+    value: 240
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].coin
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].damage
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[5].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].id
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].point
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].coin
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].damage
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[6].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].id
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].point
+    value: 300
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].coin
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].damage
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.enemies.Array.data[7].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].id
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].point
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].coin
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].damage
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[0].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].id
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].point
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].coin
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].damage
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[1].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].id
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].point
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].coin
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].damage
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[2].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].id
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].point
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].coin
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].damage
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.traps.Array.data[3].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].id
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].point
+    value: 1000
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].coin
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].damage
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].speed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].totalSpawn.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.bosses.Array.data[0].totalSpawn.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: enemyConfig.delayShowDamage
+    value: 0.11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthPointConfig.shakeTime
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthPointConfig.shakePower
+    value: 1.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthPointConfig.shakeScale
+    value: 0.6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mergeConfig.buyPrice
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mergeConfig.unlockSlotPrice
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.size
+    value: 26
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[0].id
+    value: GunBuffPoint
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[0].iconId
+    value: icon_gun3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[0].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[0].type
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[1].id
+    value: Gun1_Glock
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[1].iconId
+    value: Icon1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[1].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[1].type
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[2].id
+    value: Gun2_Ak
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[2].iconId
+    value: Icon2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[2].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[2].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[3].id
+    value: Boss1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[3].iconId
+    value: Boss1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[3].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[3].type
+    value: Boss
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[4].id
+    value: Gun5_MiniGun
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[4].iconId
+    value: Icon5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[4].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[4].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[5].id
+    value: Bomb
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[5].iconId
+    value: IconBomb
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[5].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[5].type
+    value: Enemy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[6].id
+    value: IconBooster
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[6].iconId
+    value: IconBooster
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[6].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[6].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[7].id
+    value: Mine
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[7].iconId
+    value: IconMine
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[7].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[7].type
+    value: Enemy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[8].id
+    value: Grenade
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[8].iconId
+    value: IconNade
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[8].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[8].type
+    value: Enemy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[9].id
+    value: TrapSaw
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[9].iconId
+    value: IconSaw
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[9].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[9].type
+    value: Enemy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[10].id
+    value: TNT
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[10].iconId
+    value: IconTNT
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[10].level
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[10].type
+    value: Enemy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[11].id
+    value: AllyBuffPoint
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[11].iconId
+    value: IconAlly
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[11].level
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[11].type
+    value: Ally
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[12].id
+    value: VehicleBuffPoint
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[12].iconId
+    value: IconVehicle0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[12].level
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[12].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[13].id
+    value: Vehicle1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[13].iconId
+    value: IconVehicle0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[13].level
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[13].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[14].id
+    value: Gun3_RPG
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[14].iconId
+    value: Icon3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[14].level
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[14].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[15].id
+    value: Boss2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[15].iconId
+    value: Boss2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[15].level
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[15].type
+    value: Boss
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[16].id
+    value: Gun7_Shotgun
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[16].iconId
+    value: Icon7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[16].level
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[16].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[17].id
+    value: Gun4_Laser
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[17].iconId
+    value: Icon4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[17].level
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[17].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[18].id
+    value: Gun6_GrenadeLauncher
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[18].iconId
+    value: Icon6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[18].level
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[18].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[19].id
+    value: BoosterBuffPoint
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[19].iconId
+    value: IconBooster
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[19].level
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[19].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[20].id
+    value: Boss3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[20].iconId
+    value: Boss3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[20].level
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[20].type
+    value: Boss
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[21].id
+    value: Gun8_FlameThrower
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[21].iconId
+    value: Icon8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[21].level
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[21].type
+    value: Item
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[22].id
+    value: PowerBuffPoint
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[22].iconId
+    value: IconPower100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[22].level
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[22].type
+    value: Power
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[23].id
+    value: PowerBuffPoint_100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[23].iconId
+    value: IconPower100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[23].level
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[23].type
+    value: Power
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[24].id
+    value: PowerBuffPoint_101
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[24].iconId
+    value: IconPower101
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[24].level
+    value: 70
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[24].type
+    value: Power
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[25].id
+    value: PowerBuffPoint_102
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[25].iconId
+    value: IconPower102
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[25].level
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lockStates.Array.data[25].type
+    value: Power
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: reviveCountDown
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.startStage
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.akPrice
+    value: 1500
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.size
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[0].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[0].id
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[1].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[1].id
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[2].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[2].id
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[3].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[3].id
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[4].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[4].id
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[5].type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[5].id
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[6].type
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[6].id
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[7].type
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[7].id
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[8].type
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[8].id
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[9].type
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[9].id
+    value: 101
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[10].type
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boosterConfig.boosters.Array.data[10].id
+    value: 102
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: chestRewardData.specialRewardDatas.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: chestRewardData.coinRewardRange.min
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: chestRewardData.coinRewardRange.max
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: chestRewardData.firstRewardIsOutfit
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bonusStageConfig.bonusStagePerLevel
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bonusStageConfig.bonusStageLevelStart
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bonusStageConfig.totalCoinPerRow
+    value: 180
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bonusStageConfig.spacing
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bonusStageConfig.totalRow
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bonusStageConfig.valueBase
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: trainUpgradeConfig.upgradeCoinBase
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: trainUpgradeConfig.upgradeCoinIncreasement
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: trainUpgradeConfig.trainUpgradeDatas.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

@@ -1,0 +1,1988 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f193e3c721fe744a0474e6ecf00d0d, type: 3}
+  m_Name: New Item Dictionary SO
+  m_EditorClassIdentifier: 
+  packs:
+  - items:
+    - id: Head_1
+      category: 0
+      icon: itemicon/head_0.png
+      mainTexture: head/head_0.png
+      skin: head/head_0
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_2
+      category: 0
+      icon: itemicon/head_1.png
+      mainTexture: head/head_1.png
+      skin: head/head_1
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Head_3
+      category: 0
+      icon: itemicon/head_2.png
+      mainTexture: head/head_2.png
+      skin: head/head_2
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2500000
+        max: 50000000
+      cost: 2500
+    - id: Head_4
+      category: 0
+      icon: itemicon/head_3.png
+      mainTexture: head/head_3.png
+      skin: head/head_3
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_5
+      category: 0
+      icon: itemicon/head_4.png
+      mainTexture: head/head_4.png
+      skin: head/head_4
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_6
+      category: 0
+      icon: itemicon/head_5.png
+      mainTexture: head/head_5.png
+      skin: head/head_5
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_7
+      category: 0
+      icon: itemicon/head_6.png
+      mainTexture: head/head_6.png
+      skin: head/head_6
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_8
+      category: 0
+      icon: itemicon/head_7.png
+      mainTexture: head/head_7.png
+      skin: head/head_7
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_9
+      category: 0
+      icon: itemicon/head_8.png
+      mainTexture: head/head_8.png
+      skin: head/head_8
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_10
+      category: 0
+      icon: itemicon/head_9.png
+      mainTexture: head/head_9.png
+      skin: head/head_9
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_11
+      category: 0
+      icon: itemicon/head_10.png
+      mainTexture: head/head_10.png
+      skin: head/head_10
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_12
+      category: 0
+      icon: itemicon/head_11.png
+      mainTexture: head/head_11.png
+      skin: head/head_11
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_13
+      category: 0
+      icon: itemicon/head_12.png
+      mainTexture: head/head_12.png
+      skin: head/head_12
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_14
+      category: 0
+      icon: itemicon/head_13.png
+      mainTexture: head/head_13.png
+      skin: head/head_13
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Head_15
+      category: 0
+      icon: itemicon/head_14.png
+      mainTexture: head/head_14.png
+      skin: head/head_14
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 4000000
+      cost: 0
+    - id: Head_16
+      category: 0
+      icon: itemicon/head_15.png
+      mainTexture: head/head_15.png
+      skin: head/head_15
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 200000
+        max: 40000000
+      cost: 1000
+    - id: Head_17
+      category: 0
+      icon: itemicon/head_16.png
+      mainTexture: head/head_16.png
+      skin: head/head_16
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_18
+      category: 0
+      icon: itemicon/head_17.png
+      mainTexture: head/head_17.png
+      skin: head/head_17
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Head_19
+      category: 0
+      icon: itemicon/head_18.png
+      mainTexture: head/head_18.png
+      skin: head/head_18
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_20
+      category: 0
+      icon: itemicon/head_19.png
+      mainTexture: head/head_19.png
+      skin: head/head_19
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Head_21
+      category: 0
+      icon: itemicon/head_20.png
+      mainTexture: head/head_20.png
+      skin: head/head_20
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Head_22
+      category: 0
+      icon: itemicon/head_21.png
+      mainTexture: head/head_21.png
+      skin: head/head_21
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_23
+      category: 0
+      icon: itemicon/head_22.png
+      mainTexture: head/head_22.png
+      skin: head/head_22
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_24
+      category: 0
+      icon: itemicon/head_23.png
+      mainTexture: head/head_23.png
+      skin: head/head_23
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_25
+      category: 0
+      icon: itemicon/head_24.png
+      mainTexture: head/head_24.png
+      skin: head/head_24
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_26
+      category: 0
+      icon: itemicon/head_25.png
+      mainTexture: head/head_25.png
+      skin: head/head_25
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Head_27
+      category: 0
+      icon: itemicon/head_26.png
+      mainTexture: head/head_26.png
+      skin: head/head_26
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Head_28
+      category: 0
+      icon: itemicon/head_27.png
+      mainTexture: head/head_27.png
+      skin: head/head_27
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_29
+      category: 0
+      icon: itemicon/head_28.png
+      mainTexture: head/head_28.png
+      skin: head/head_28
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Head_30
+      category: 0
+      icon: itemicon/head_29.png
+      mainTexture: head/head_29.png
+      skin: head/head_29
+      title: 
+      bundleId: SetBundle_2
+      unlockType: 1
+      viewPoint:
+        min: 2500000
+        max: 50000000
+      cost: 2500
+    - id: Head_31
+      category: 0
+      icon: itemicon/head_30.png
+      mainTexture: head/head_30.png
+      skin: head/head_30
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Head_32
+      category: 0
+      icon: itemicon/head_31.png
+      mainTexture: head/head_31.png
+      skin: head/head_31
+      title: 
+      bundleId: SetBundle_3
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+  - items:
+    - id: Eye_1
+      category: 1
+      icon: itemicon/eye_0.png
+      mainTexture: eye/eye_0.png
+      skin: eye/eye_0
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 0
+    - id: Eye_2
+      category: 1
+      icon: itemicon/eye_1.png
+      mainTexture: eye/eye_1.png
+      skin: eye/eye_1
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_3
+      category: 1
+      icon: itemicon/eye_2.png
+      mainTexture: eye/eye_2.png
+      skin: eye/eye_2
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 150000
+        max: 2500000
+      cost: 0
+    - id: Eye_4
+      category: 1
+      icon: itemicon/eye_3.png
+      mainTexture: eye/eye_3.png
+      skin: eye/eye_3
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2300000
+        max: 40000000
+      cost: 2300
+    - id: Eye_5
+      category: 1
+      icon: itemicon/eye_4.png
+      mainTexture: eye/eye_4.png
+      skin: eye/eye_4
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 3000000
+      cost: 0
+    - id: Eye_6
+      category: 1
+      icon: itemicon/eye_5.png
+      mainTexture: eye/eye_5.png
+      skin: eye/eye_5
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Eye_7
+      category: 1
+      icon: itemicon/eye_6.png
+      mainTexture: eye/eye_6.png
+      skin: eye/eye_6
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 230000
+        max: 2300000
+      cost: 0
+    - id: Eye_8
+      category: 1
+      icon: itemicon/eye_7.png
+      mainTexture: eye/eye_7.png
+      skin: eye/eye_7
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_9
+      category: 1
+      icon: itemicon/eye_8.png
+      mainTexture: eye/eye_8.png
+      skin: eye/eye_8
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2300000
+        max: 41000000
+      cost: 2300
+    - id: Eye_10
+      category: 1
+      icon: itemicon/eye_9.png
+      mainTexture: eye/eye_9.png
+      skin: eye/eye_9
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2200000
+        max: 40000000
+      cost: 2200
+    - id: Eye_11
+      category: 1
+      icon: itemicon/eye_10.png
+      mainTexture: eye/eye_10.png
+      skin: eye/eye_10
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 150000
+        max: 2000000
+      cost: 0
+    - id: Eye_12
+      category: 1
+      icon: itemicon/eye_11.png
+      mainTexture: eye/eye_11.png
+      skin: eye/eye_11
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Eye_13
+      category: 1
+      icon: itemicon/eye_12.png
+      mainTexture: eye/eye_12.png
+      skin: eye/eye_12
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 170000
+        max: 2000000
+      cost: 0
+    - id: Eye_14
+      category: 1
+      icon: itemicon/eye_13.png
+      mainTexture: eye/eye_13.png
+      skin: eye/eye_13
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2100000
+        max: 40000000
+      cost: 2100
+    - id: Eye_15
+      category: 1
+      icon: itemicon/eye_14.png
+      mainTexture: eye/eye_14.png
+      skin: eye/eye_14
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2200000
+        max: 4200000
+      cost: 2200
+    - id: Eye_16
+      category: 1
+      icon: itemicon/eye_15.png
+      mainTexture: eye/eye_15.png
+      skin: eye/eye_15
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Eye_17
+      category: 1
+      icon: itemicon/eye_16.png
+      mainTexture: eye/eye_16.png
+      skin: eye/eye_16
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 180000
+        max: 2000000
+      cost: 0
+    - id: Eye_18
+      category: 1
+      icon: itemicon/eye_17.png
+      mainTexture: eye/eye_17.png
+      skin: eye/eye_17
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2100000
+      cost: 0
+    - id: Eye_19
+      category: 1
+      icon: itemicon/eye_18.png
+      mainTexture: eye/eye_18.png
+      skin: eye/eye_18
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2200000
+      cost: 0
+    - id: Eye_20
+      category: 1
+      icon: itemicon/eye_19.png
+      mainTexture: eye/eye_19.png
+      skin: eye/eye_19
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 100000
+        max: 2000000
+      cost: 500
+    - id: Eye_21
+      category: 1
+      icon: itemicon/eye_20.png
+      mainTexture: eye/eye_20.png
+      skin: eye/eye_20
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_22
+      category: 1
+      icon: itemicon/eye_21.png
+      mainTexture: eye/eye_21.png
+      skin: eye/eye_21
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_23
+      category: 1
+      icon: itemicon/eye_22.png
+      mainTexture: eye/eye_22.png
+      skin: eye/eye_22
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_24
+      category: 1
+      icon: itemicon/eye_23.png
+      mainTexture: eye/eye_23.png
+      skin: eye/eye_23
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_25
+      category: 1
+      icon: itemicon/eye_24.png
+      mainTexture: eye/eye_24.png
+      skin: eye/eye_24
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_26
+      category: 1
+      icon: itemicon/eye_25.png
+      mainTexture: eye/eye_25.png
+      skin: eye/eye_25
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Eye_27
+      category: 1
+      icon: itemicon/eye_26.png
+      mainTexture: eye/eye_26.png
+      skin: eye/eye_26
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Eye_28
+      category: 1
+      icon: itemicon/eye_27.png
+      mainTexture: eye/eye_27.png
+      skin: eye/eye_27
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Eye_29
+      category: 1
+      icon: itemicon/eye_28.png
+      mainTexture: eye/eye_28.png
+      skin: eye/eye_28
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 230000
+        max: 2300000
+      cost: 0
+    - id: Eye_30
+      category: 1
+      icon: itemicon/eye_29.png
+      mainTexture: eye/eye_29.png
+      skin: eye/eye_29
+      title: 
+      bundleId: SetBundle_2
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 3000000
+      cost: 0
+    - id: Eye_31
+      category: 1
+      icon: itemicon/eye_30.png
+      mainTexture: eye/eye_30.png
+      skin: eye/eye_30
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 3000000
+      cost: 0
+    - id: Eye_32
+      category: 1
+      icon: itemicon/eye_31.png
+      mainTexture: eye/eye_31.png
+      skin: eye/eye_31
+      title: 
+      bundleId: SetBundle_3
+      unlockType: 0
+      viewPoint:
+        min: 150000
+        max: 2500000
+      cost: 0
+  - items:
+    - id: Mouth_1
+      category: 2
+      icon: itemicon/mouth_0.png
+      mainTexture: mouth/mouth_0.png
+      skin: mouth/mouth_0
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 220000
+        max: 2200000
+      cost: 0
+    - id: Mouth_2
+      category: 2
+      icon: itemicon/mouth_1.png
+      mainTexture: mouth/mouth_1.png
+      skin: mouth/mouth_1
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2500000
+        max: 40000000
+      cost: 2500
+    - id: Mouth_3
+      category: 2
+      icon: itemicon/mouth_2.png
+      mainTexture: mouth/mouth_2.png
+      skin: mouth/mouth_2
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_4
+      category: 2
+      icon: itemicon/mouth_3.png
+      mainTexture: mouth/mouth_3.png
+      skin: mouth/mouth_3
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2200000
+        max: 40000000
+      cost: 2200
+    - id: Mouth_5
+      category: 2
+      icon: itemicon/mouth_4.png
+      mainTexture: mouth/mouth_4.png
+      skin: mouth/mouth_4
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2300000
+        max: 40000000
+      cost: 2300
+    - id: Mouth_6
+      category: 2
+      icon: itemicon/mouth_5.png
+      mainTexture: mouth/mouth_5.png
+      skin: mouth/mouth_5
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_7
+      category: 2
+      icon: itemicon/mouth_6.png
+      mainTexture: mouth/mouth_6.png
+      skin: mouth/mouth_6
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_8
+      category: 2
+      icon: itemicon/mouth_7.png
+      mainTexture: mouth/mouth_7.png
+      skin: mouth/mouth_7
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2300000
+        max: 40000000
+      cost: 2300
+    - id: Mouth_9
+      category: 2
+      icon: itemicon/mouth_8.png
+      mainTexture: mouth/mouth_8.png
+      skin: mouth/mouth_8
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2300000
+        max: 40000000
+      cost: 2300
+    - id: Mouth_10
+      category: 2
+      icon: itemicon/mouth_9.png
+      mainTexture: mouth/mouth_9.png
+      skin: mouth/mouth_9
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_11
+      category: 2
+      icon: itemicon/mouth_10.png
+      mainTexture: mouth/mouth_10.png
+      skin: mouth/mouth_10
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_12
+      category: 2
+      icon: itemicon/mouth_11.png
+      mainTexture: mouth/mouth_11.png
+      skin: mouth/mouth_11
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_13
+      category: 2
+      icon: itemicon/mouth_12.png
+      mainTexture: mouth/mouth_12.png
+      skin: mouth/mouth_12
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_14
+      category: 2
+      icon: itemicon/mouth_13.png
+      mainTexture: mouth/mouth_13.png
+      skin: mouth/mouth_13
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2200000
+        max: 40000000
+      cost: 2200
+    - id: Mouth_15
+      category: 2
+      icon: itemicon/mouth_14.png
+      mainTexture: mouth/mouth_14.png
+      skin: mouth/mouth_14
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_16
+      category: 2
+      icon: itemicon/mouth_15.png
+      mainTexture: mouth/mouth_15.png
+      skin: mouth/mouth_15
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_17
+      category: 2
+      icon: itemicon/mouth_16.png
+      mainTexture: mouth/mouth_16.png
+      skin: mouth/mouth_16
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_18
+      category: 2
+      icon: itemicon/mouth_17.png
+      mainTexture: mouth/mouth_17.png
+      skin: mouth/mouth_17
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_19
+      category: 2
+      icon: itemicon/mouth_18.png
+      mainTexture: mouth/mouth_18.png
+      skin: mouth/mouth_18
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 20000000
+      cost: 2000
+    - id: Mouth_20
+      category: 2
+      icon: itemicon/mouth_19.png
+      mainTexture: mouth/mouth_19.png
+      skin: mouth/mouth_19
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Mouth_21
+      category: 2
+      icon: itemicon/mouth_20.png
+      mainTexture: mouth/mouth_20.png
+      skin: mouth/mouth_20
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Mouth_22
+      category: 2
+      icon: itemicon/mouth_21.png
+      mainTexture: mouth/mouth_21.png
+      skin: mouth/mouth_21
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Mouth_23
+      category: 2
+      icon: itemicon/mouth_22.png
+      mainTexture: mouth/mouth_22.png
+      skin: mouth/mouth_22
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Mouth_24
+      category: 2
+      icon: itemicon/mouth_23.png
+      mainTexture: mouth/mouth_23.png
+      skin: mouth/mouth_23
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Mouth_25
+      category: 2
+      icon: itemicon/mouth_24.png
+      mainTexture: mouth/mouth_24.png
+      skin: mouth/mouth_24
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Mouth_26
+      category: 2
+      icon: itemicon/mouth_25.png
+      mainTexture: mouth/mouth_25.png
+      skin: mouth/mouth_25
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Mouth_27
+      category: 2
+      icon: itemicon/mouth_26.png
+      mainTexture: mouth/mouth_26.png
+      skin: mouth/mouth_26
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Mouth_28
+      category: 2
+      icon: itemicon/mouth_27.png
+      mainTexture: mouth/mouth_27.png
+      skin: mouth/mouth_27
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Mouth_29
+      category: 2
+      icon: itemicon/mouth_28.png
+      mainTexture: mouth/mouth_28.png
+      skin: mouth/mouth_28
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2500000
+        max: 40000000
+      cost: 2500
+    - id: Mouth_30
+      category: 2
+      icon: itemicon/mouth_29.png
+      mainTexture: mouth/mouth_29.png
+      skin: mouth/mouth_29
+      title: 
+      bundleId: SetBundle_2
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Mouth_31
+      category: 2
+      icon: itemicon/mouth_30.png
+      mainTexture: mouth/mouth_30.png
+      skin: mouth/mouth_30
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Mouth_32
+      category: 2
+      icon: itemicon/mouth_31.png
+      mainTexture: mouth/mouth_31.png
+      skin: mouth/mouth_31
+      title: 
+      bundleId: SetBundle_3
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+  - items:
+    - id: Accessory_1
+      category: 3
+      icon: itemicon/accessory_0.png
+      mainTexture: accessory/accessory_0.png
+      skin: accessory/accessory_0
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_2
+      category: 3
+      icon: itemicon/accessory_1.png
+      mainTexture: accessory/accessory_1.png
+      skin: accessory/accessory_1
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_3
+      category: 3
+      icon: itemicon/accessory_2.png
+      mainTexture: accessory/accessory_2.png
+      skin: accessory/accessory_2
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_4
+      category: 3
+      icon: itemicon/accessory_3.png
+      mainTexture: accessory/accessory_3.png
+      skin: accessory/accessory_3
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_5
+      category: 3
+      icon: itemicon/accessory_4.png
+      mainTexture: accessory/accessory_4.png
+      skin: accessory/accessory_4
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_6
+      category: 3
+      icon: itemicon/accessory_5.png
+      mainTexture: accessory/accessory_5.png
+      skin: accessory/accessory_5
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_7
+      category: 3
+      icon: itemicon/accessory_6.png
+      mainTexture: accessory/accessory_6.png
+      skin: accessory/accessory_6
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_8
+      category: 3
+      icon: itemicon/accessory_7.png
+      mainTexture: accessory/accessory_7.png
+      skin: accessory/accessory_7
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_9
+      category: 3
+      icon: itemicon/accessory_8.png
+      mainTexture: accessory/accessory_8.png
+      skin: accessory/accessory_8
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_10
+      category: 3
+      icon: itemicon/accessory_9.png
+      mainTexture: accessory/accessory_9.png
+      skin: accessory/accessory_9
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_11
+      category: 3
+      icon: itemicon/accessory_10.png
+      mainTexture: accessory/accessory_10.png
+      skin: accessory/accessory_10
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_12
+      category: 3
+      icon: itemicon/accessory_11.png
+      mainTexture: accessory/accessory_11.png
+      skin: accessory/accessory_11
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_13
+      category: 3
+      icon: itemicon/accessory_12.png
+      mainTexture: accessory/accessory_12.png
+      skin: accessory/accessory_12
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_14
+      category: 3
+      icon: itemicon/accessory_13.png
+      mainTexture: accessory/accessory_13.png
+      skin: accessory/accessory_13
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_15
+      category: 3
+      icon: itemicon/accessory_14.png
+      mainTexture: accessory/accessory_14.png
+      skin: accessory/accessory_14
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_16
+      category: 3
+      icon: itemicon/accessory_15.png
+      mainTexture: accessory/accessory_15.png
+      skin: accessory/accessory_15
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_17
+      category: 3
+      icon: itemicon/accessory_16.png
+      mainTexture: accessory/accessory_16.png
+      skin: accessory/accessory_16
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_18
+      category: 3
+      icon: itemicon/accessory_17.png
+      mainTexture: accessory/accessory_17.png
+      skin: accessory/accessory_17
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_19
+      category: 3
+      icon: itemicon/accessory_18.png
+      mainTexture: accessory/accessory_18.png
+      skin: accessory/accessory_18
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_20
+      category: 3
+      icon: itemicon/accessory_19.png
+      mainTexture: accessory/accessory_19.png
+      skin: accessory/accessory_19
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_21
+      category: 3
+      icon: itemicon/accessory_20.png
+      mainTexture: accessory/accessory_20.png
+      skin: accessory/accessory_20
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_22
+      category: 3
+      icon: itemicon/accessory_21.png
+      mainTexture: accessory/accessory_21.png
+      skin: accessory/accessory_21
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Accessory_23
+      category: 3
+      icon: itemicon/accessory_22.png
+      mainTexture: accessory/accessory_22.png
+      skin: accessory/accessory_22
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Accessory_24
+      category: 3
+      icon: itemicon/accessory_23.png
+      mainTexture: accessory/accessory_23.png
+      skin: accessory/accessory_23
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Accessory_25
+      category: 3
+      icon: itemicon/accessory_24.png
+      mainTexture: accessory/accessory_24.png
+      skin: accessory/accessory_24
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Accessory_26
+      category: 3
+      icon: itemicon/accessory_25.png
+      mainTexture: accessory/accessory_25.png
+      skin: accessory/accessory_25
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Accessory_27
+      category: 3
+      icon: itemicon/accessory_26.png
+      mainTexture: accessory/accessory_26.png
+      skin: accessory/accessory_26
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Accessory_28
+      category: 3
+      icon: itemicon/accessory_27.png
+      mainTexture: accessory/accessory_27.png
+      skin: accessory/accessory_27
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Accessory_29
+      category: 3
+      icon: itemicon/accessory_28.png
+      mainTexture: accessory/accessory_28.png
+      skin: accessory/accessory_28
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_30
+      category: 3
+      icon: itemicon/accessory_29.png
+      mainTexture: accessory/accessory_29.png
+      skin: accessory/accessory_29
+      title: 
+      bundleId: SetBundle_2
+      unlockType: 1
+      viewPoint:
+        min: 3000000
+        max: 40000000
+      cost: 2600
+    - id: Accessory_31
+      category: 3
+      icon: itemicon/accessory_30.png
+      mainTexture: accessory/accessory_30.png
+      skin: accessory/accessory_30
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Accessory_32
+      category: 3
+      icon: itemicon/accessory_31.png
+      mainTexture: accessory/accessory_31.png
+      skin: accessory/accessory_31
+      title: 
+      bundleId: SetBundle_3
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+  - items:
+    - id: Body_1
+      category: 4
+      icon: body/body_0.png
+      mainTexture: body/body_0.png
+      skin: 0
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Body_2
+      category: 4
+      icon: body/body_1.png
+      mainTexture: body/body_1.png
+      skin: 1
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_3
+      category: 4
+      icon: body/body_2.png
+      mainTexture: body/body_2.png
+      skin: 2
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Body_4
+      category: 4
+      icon: body/body_3.png
+      mainTexture: body/body_3.png
+      skin: 3
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_5
+      category: 4
+      icon: body/body_4.png
+      mainTexture: body/body_4.png
+      skin: 4
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Body_6
+      category: 4
+      icon: body/body_5.png
+      mainTexture: body/body_5.png
+      skin: 5
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Body_7
+      category: 4
+      icon: body/body_6.png
+      mainTexture: body/body_6.png
+      skin: 6
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Body_8
+      category: 4
+      icon: body/body_7.png
+      mainTexture: body/body_7.png
+      skin: 7
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 2000000
+      cost: 0
+    - id: Body_9
+      category: 4
+      icon: body/body_8.png
+      mainTexture: body/body_8.png
+      skin: 8
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_10
+      category: 4
+      icon: body/body_9.png
+      mainTexture: body/body_9.png
+      skin: 9
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_11
+      category: 4
+      icon: body/body_10.png
+      mainTexture: body/body_10.png
+      skin: 10
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_12
+      category: 4
+      icon: body/body_11.png
+      mainTexture: body/body_11.png
+      skin: 11
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 200000
+        max: 4000000
+      cost: 0
+    - id: Body_13
+      category: 4
+      icon: body/body_12.png
+      mainTexture: body/body_12.png
+      skin: 12
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Body_14
+      category: 4
+      icon: body/body_13.png
+      mainTexture: body/body_13.png
+      skin: 13
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_15
+      category: 4
+      icon: body/body_14.png
+      mainTexture: body/body_14.png
+      skin: 14
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_16
+      category: 4
+      icon: body/body_15.png
+      mainTexture: body/body_15.png
+      skin: 15
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_17
+      category: 4
+      icon: body/body_16.png
+      mainTexture: body/body_16.png
+      skin: 16
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_18
+      category: 4
+      icon: body/body_17.png
+      mainTexture: body/body_17.png
+      skin: 17
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Body_19
+      category: 4
+      icon: body/body_18.png
+      mainTexture: body/body_18.png
+      skin: 18
+      title: 
+      bundleId: SetBundle_1
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Body_20
+      category: 4
+      icon: body/body_19.png
+      mainTexture: body/body_19.png
+      skin: 19
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_21
+      category: 4
+      icon: body/body_20.png
+      mainTexture: body/body_20.png
+      skin: 20
+      title: 
+      bundleId: 
+      unlockType: 0
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 0
+    - id: Body_22
+      category: 4
+      icon: body/body_21.png
+      mainTexture: body/body_21.png
+      skin: 21
+      title: 
+      bundleId: SetBundle_2
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_23
+      category: 4
+      icon: body/body_22.png
+      mainTexture: body/body_22.png
+      skin: 22
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+    - id: Body_24
+      category: 4
+      icon: body/body_23.png
+      mainTexture: body/body_23.png
+      skin: 23
+      title: 
+      bundleId: SetBundle_3
+      unlockType: 1
+      viewPoint:
+        min: 2000000
+        max: 40000000
+      cost: 2000
+  - items:
+    - id: Pet_1
+      category: 5
+      icon: itemicon/pet_0.png
+      mainTexture: pet_0.png
+      skin: pet_0
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_2
+      category: 5
+      icon: itemicon/pet_1.png
+      mainTexture: pet_1.png
+      skin: pet_1
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_3
+      category: 5
+      icon: itemicon/pet_2.png
+      mainTexture: pet_2.png
+      skin: pet_2
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_4
+      category: 5
+      icon: itemicon/pet_3.png
+      mainTexture: pet_3.png
+      skin: pet_3
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_5
+      category: 5
+      icon: itemicon/pet_4.png
+      mainTexture: pet_4.png
+      skin: pet_4
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_6
+      category: 5
+      icon: itemicon/pet_5.png
+      mainTexture: pet_5.png
+      skin: pet_5
+      title: 
+      bundleId: 
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_7
+      category: 5
+      icon: itemicon/pet_6.png
+      mainTexture: pet_6.png
+      skin: pet_6
+      title: 
+      bundleId: SetBundle_4
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+    - id: Pet_8
+      category: 5
+      icon: itemicon/pet_7.png
+      mainTexture: pet_7.png
+      skin: pet_7
+      title: 
+      bundleId: SetBundle_4
+      unlockType: 1
+      viewPoint:
+        min: 5000000
+        max: 10000000
+      cost: 1500
+  bundleSets:
+  - setIcon: SetBundle_1
+    bundleId: SetBundle_1
+    modelSets:
+    - itemIds:
+      - Head_21
+      - Eye_21
+      - Mouth_21
+      - Accessory_24
+      - Body_13
+    - itemIds:
+      - Head_26
+      - Eye_26
+      - Mouth_26
+      - Accessory_26
+      - Body_18
+    - itemIds:
+      - Head_27
+      - Eye_27
+      - Mouth_27
+      - Accessory_27
+      - Body_19
+  - setIcon: SetBundle_2
+    bundleId: SetBundle_2
+    modelSets:
+    - itemIds:
+      - Head_30
+      - Eye_30
+      - Mouth_30
+      - Accessory_30
+      - Body_22
+  - setIcon: SetBundle_3
+    bundleId: SetBundle_3
+    modelSets:
+    - itemIds:
+      - Head_32
+      - Eye_32
+      - Mouth_32
+      - Accessory_32
+      - Body_24
+  - setIcon: SetBundle_4
+    bundleId: SetBundle_4
+    modelSets:
+    - itemIds:
+      - Pet_7
+    - itemIds:
+      - Pet_8

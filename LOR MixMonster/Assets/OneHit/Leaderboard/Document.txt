@@ -1,0 +1,26 @@
+#Introduce
+
+Leaderboard được xây dựng bằng API của Firebase Realtime Database.
+Package có sẵn prefab với cơ chế hiển thị top15.
+Có thể sử dụng code mẫu/API trong class LeaderboardSystem để tự implement các chức năng mong muốn.
+
+#Dependencies:
+
+Odin Inspector: tạo nút test cho tiện :v
+Unitask
+
+#Usage:
+
+Import pkg FirebaseDatabase vào project,tải cả file json về
+Tạo database trên Firebase
+Mở Scene trong OneHit/Leaderboard/Example
+Chạy -> database chưa có gì
+Click vào LeaderboardPanel, lướt xuống chọn GenerateFakeUser
+(Xoá playerpref)
+=> Action như user bình thường
+Có button CheatScore để test các trường hợp theo ý muốn
+
+#Explain
+nameOfLeaderboard: cho trường hợp game có thể có nhiều hơn 1 leaderboard
+maxCompetitor: giới hạn số user trong bảng xếp hạng, hiện tại chưa biết giới hạn là bao nhiêu,đang để là 1000
+Nếu user có rank ngoài khoảng maxcompetitor thì sẽ random rank của user.

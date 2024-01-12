@@ -1,0 +1,104 @@
+pet.png
+size:857,857
+filter:Linear,Linear
+pma:true
+scale:0.5
+BAT/behind wing
+bounds:648,655,202,200
+BAT/body
+bounds:590,201,148,120
+BAT/front wing
+bounds:2,263,251,178
+rotate:90
+BAT/head
+bounds:378,308,137,210
+rotate:90
+pet_0/Layer 11
+bounds:290,79,84,119
+pet_0/Layer 12
+bounds:192,447,150,240
+rotate:90
+pet_0/Layer 13
+bounds:298,34,49,43
+offsets:1,18,51,70
+pet_0/Layer 14
+bounds:349,55,23,22
+offsets:1,0,25,23
+pet_0/Layer 15
+bounds:740,198,51,31
+offsets:0,2,52,34
+pet_0/Layer 16
+bounds:731,83,22,20
+offsets:1,1,24,22
+pet_0/Layer 17
+bounds:776,180,16,14
+offsets:1,1,18,16
+rotate:90
+pet_0/Layer 18
+bounds:731,105,46,34
+offsets:1,1,48,36
+rotate:90
+pet_1/Layer 19
+bounds:313,210,65,53
+offsets:1,1,66,55
+rotate:90
+pet_1/Layer 20
+bounds:731,153,43,43
+offsets:0,1,44,45
+pet_1/Layer 21
+bounds:378,174,132,201
+offsets:0,0,132,203
+rotate:90
+pet_1/Layer 3
+bounds:2,516,188,339
+pet_1/Layer 4
+bounds:434,447,150,199
+pet_2/Layer 1
+bounds:2,8,173,253
+pet_2/Layer 2
+bounds:838,227,59,17
+offsets:0,1,59,19
+rotate:90
+pet_2/Layer 22
+bounds:699,55,65,30
+rotate:90
+pet_3/Layer 8
+bounds:192,599,228,256
+pet_3/Layer 9
+bounds:177,20,119,48
+offsets:1,0,120,48
+pet_4/Layer 5
+bounds:182,200,75,129
+rotate:90
+pet_4/Layer 6
+bounds:723,498,123,155
+pet_4/Layer 7
+bounds:182,277,168,194
+rotate:90
+pet_5/Layer 10
+bounds:422,648,224,207
+spider/b leg 1
+bounds:586,484,162,135
+rotate:90
+spider/b leg 2
+bounds:177,70,111,128
+spider/b leg 3
+bounds:747,365,95,131
+spider/b leg 4
+bounds:579,46,74,118
+rotate:90
+spider/body
+bounds:590,323,159,155
+rotate:90
+spider/f leg 1
+bounds:581,122,77,148
+rotate:90
+spider/f leg 2
+bounds:489,63,88,109
+spider/f leg 3
+bounds:747,288,75,108
+rotate:90
+spider/f leg 4
+bounds:740,231,96,55
+spider/head
+bounds:376,64,111,108

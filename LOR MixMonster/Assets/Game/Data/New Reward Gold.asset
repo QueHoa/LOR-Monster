@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330d11c44e2848544b2e600876db5595, type: 3}
+  m_Name: New Reward Gold
+  m_EditorClassIdentifier: 
+  item:
+  - like: 500000
+    gold:
+      min: 10
+      max: 49
+  - like: 1000000
+    gold:
+      min: 50
+      max: 99
+  - like: 5000000
+    gold:
+      min: 100
+      max: 149
+  - like: 10000000
+    gold:
+      min: 150
+      max: 199
+  - like: 20000000
+    gold:
+      min: 200
+      max: 299
+  - like: 30000000
+    gold:
+      min: 300
+      max: 399
+  - like: 40000000
+    gold:
+      min: 400
+      max: 499
+  - like: 50000000
+    gold:
+      min: 500
+      max: 599
+  - like: 60000000
+    gold:
+      min: 600
+      max: 699
+  - like: 70000000
+    gold:
+      min: 700
+      max: 799
+  - like: 80000000
+    gold:
+      min: 800
+      max: 899
+  - like: 90000000
+    gold:
+      min: 900
+      max: 1000

@@ -1,0 +1,589 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5352c14bac92dcc46986c3b382518adf, type: 3}
+  m_Name: Vietnamese Dictionary
+  m_EditorClassIdentifier: 
+  dataTextPackage:
+  - id:
+      title: Common/Play
+    text: "Ch\u1EA1m \u0111\u1EC3 ch\u01A1i"
+    fontId: 0
+  - id:
+      title: Common/Level
+    text: "M\xE0n"
+    fontId: 0
+  - id:
+      title: Upgrade/Attack
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/Health
+    text: 
+    fontId: 0
+  - id:
+      title: Setting/ChangeLanguage
+    text: "\u0110\u1ED5i Ng\xF4n Ng\u1EEF"
+    fontId: 0
+  - id:
+      title: Setting/RestorePurchase
+    text: "Ph\u1EE5c H\u1ED3i G\xF3i Mua"
+    fontId: 0
+  - id:
+      title: Setting/RemoveAds
+    text: "Lo\u1EA1i B\u1ECF Qu\u1EA3ng C\xE1o"
+    fontId: 0
+  - id:
+      title: Setting/SettingTitle
+    text: "C\xE0i \u0110\u1EB7t"
+    fontId: 0
+  - id:
+      title: Setting/Version
+    text: "Phi\xEAn b\u1EA3n {0}"
+    fontId: 0
+  - id:
+      title: Shop/ShopTitle
+    text: 
+    fontId: 0
+  - id:
+      title: Common/EarnCoinNotice
+    text: "Ch\u01A1i ti\u1EBFp \u0111\u1EC3 ki\u1EBFm th\xEAm ti\u1EC1n"
+    fontId: 0
+  - id:
+      title: Common/Continue
+    text: "Ti\u1EBFp t\u1EE5c"
+    fontId: 0
+  - id:
+      title: Lose/Revive
+    text: "H\u1ED3i sinh ngay"
+    fontId: 0
+  - id:
+      title: Common/WatchAnAd
+    text: Xem 1 QC
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/DontGiveUp
+    text: "\u0110\u1EEBng b\u1ECF cu\u1ED9c!"
+    fontId: 0
+  - id:
+      title: Common/Replay
+    text: "Ch\u01A1i l\u1EA1i"
+    fontId: 0
+  - id:
+      title: Lose/UpgradeTut
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/TouchSkip
+    text: "Ch\u1EA1m \u0111\u1EC3 b\u1ECF qua"
+    fontId: 0
+  - id:
+      title: Loadout/LoadoutLoaded
+    text: 
+    fontId: 0
+  - id:
+      title: Loadout/Description
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/UnlockTitle
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/TouchToClose
+    text: "Ch\u1EA1m \u0111\u1EC3 \u0111\xF3ng"
+    fontId: 0
+  - id:
+      title: Quit/Warning
+    text: "B\u1EA1n c\xF3 ch\u1EAFc mu\u1ED1n tho\xE1t kh\xF4ng?"
+    fontId: 0
+  - id:
+      title: Quit/QuitBtn
+    text: "Tho\xE1t"
+    fontId: 0
+  - id:
+      title: Quit/CancelBtn
+    text: "Hu\u1EF7"
+    fontId: 0
+  - id:
+      title: CombatTut/TutText
+    text: 
+    fontId: 0
+  - id:
+      title: CombatTut/TouchToClose
+    text: "Ch\u1EA1m \u0111\u1EC3 ti\u1EBFp t\u1EE5c"
+    fontId: 0
+  - id:
+      title: BoosterSelect/Title
+    text: 
+    fontId: 0
+  - id:
+      title: BoosterSelect/Description
+    text: 
+    fontId: 0
+  - id:
+      title: Pause/Title
+    text: "T\u1EA0M D\u1EEANG"
+    fontId: 0
+  - id:
+      title: Pause/ControlType
+    text: "\u0110i\u1EC1u khi\u1EC3n:"
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeGesture
+    text: "Vu\u1ED1t"
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeButton
+    text: "N\xFAt"
+    fontId: 0
+  - id:
+      title: Pause/Home
+    text: "V\u1EC1 trang ch\u1EE7"
+    fontId: 0
+  - id:
+      title: Game/TouchToJump
+    text: 
+    fontId: 0
+  - id:
+      title: Game/SwipeDown
+    text: 
+    fontId: 0
+  - id:
+      title: Game/Victory
+    text: "TH\u1EAENG!"
+    fontId: 0
+  - id:
+      title: Game/DEFEAT
+    text: THUA
+    fontId: 0
+  - id:
+      title: Game/Stage
+    text: "B\xC0I {0}"
+    fontId: 0
+  - id:
+      title: WinPanel/Stage
+    text: "B\xE0i {0}"
+    fontId: 0
+  - id:
+      title: Shop/AsscessaryTitle
+    text: "C\u1EECA H\xC0NG"
+    fontId: 0
+  - id:
+      title: EndReward/EarnText
+    text: "B\u1EA1n \u0111\xE3 ki\u1EBFm \u0111\u01B0\u1EE3c"
+    fontId: 0
+  - id:
+      title: Common/NoThank
+    text: "Kh\xF4ng, c\u1EA3m \u01A1n"
+    fontId: 0
+  - id:
+      title: Common/Loading
+    text: "\u0110ang t\u1EA3i"
+    fontId: 0
+  - id:
+      title: Common/Free
+    text: "Mi\u1EC5n ph\xED"
+    fontId: 0
+  - id:
+      title: Shop/Equip
+    text: "Trang b\u1ECB"
+    fontId: 0
+  - id:
+      title: Shop/Equiped
+    text: "\u0110ang d\xF9ng"
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewSkinUnlock
+    text: "SKIN M\u1EDAI \u0110\u01AF\u1EE2C M\u1EDE"
+    fontId: 0
+  - id:
+      title: ChestReward/CollectYourReward
+    text: "Nh\u1EADn th\u01B0\u1EDFng ngay"
+    fontId: 0
+  - id:
+      title: ChestReward/Congrat
+    text: "<size=60><color=#FFD53E>CH\xDAC M\u1EEANG</color></size>\nB\u1EA1n v\u1EEBa
+      nh\u1EADn \u0111\u01B0\u1EE3c v\u1EADt ph\u1EA9m m\u1EDBi. H\xE3y nh\u1EADn
+      n\xF3 ngay!"
+    fontId: 0
+  - id:
+      title: Home/ArenaBtn
+    text: "\u0110\u1EA5u tr\u01B0\u1EDDng"
+    fontId: 0
+  - id:
+      title: Home/HomeBtn
+    text: "Trang ch\u1EE7"
+    fontId: 0
+  - id:
+      title: Home/ShopBtn
+    text: "N\xE2ng c\u1EA5p"
+    fontId: 0
+  - id:
+      title: Common/ComingSoon
+    text: "S\u1EAFp xu\u1EA5t hi\u1EC7n"
+    fontId: 0
+  - id:
+      title: Shop/LockText
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/OutfitChestExclusive
+    text: "Trang b\u1ECB n\xE0y ch\u1EC9 nh\u1EADn \u0111\u01B0\u1EE3c trong h\xF2m
+      ti\u1EBFp t\u1EBF"
+    fontId: 0
+  - id:
+      title: Game/HoldToFly
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/UpgradeLevel
+    text: "M\xE0n {0}"
+    fontId: 0
+  - id:
+      title: WarGame/StartNormalStage
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/StickWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TankWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TapToPlay
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/GameStart
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/Title
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireFree
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireAd
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/ThreeAlly
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/Outfit
+    text: "Trang ph\u1EE5c"
+    fontId: 0
+  - id:
+      title: Shop/Hat
+    text: "M\u0169"
+    fontId: 0
+  - id:
+      title: Shop/Clothes
+    text: "Qu\u1EA7n \xE1o"
+    fontId: 0
+  - id:
+      title: Upgrade/LockText
+    text: "M\u1EDF kh\xF3a \u1EDF b\xE0i 3"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity0
+    text: "Hi\u1EBFm"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity1
+    text: "S\u1EED Thi"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity2
+    text: "Truy\u1EC1n Thuy\u1EBFt"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity3
+    text: "T\u1ED1i Th\u01B0\u1EE3ng"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle0
+    text: "B\u1EAFn \u0110\xF4i"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle1
+    text: "T\u0103ng 10% ATK"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle2
+    text: "T\u0103ng 15% ATK"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle3
+    text: "T\u0103ng 20% ATK"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle4
+    text: "B\u1EAFn T\u1EBD"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle5
+    text: "\u0110\u1EA1n N\u1EA3y"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle6
+    text: "T\u0103ng 10% T\u1ED1c \u0110\u1ED9 B\u1EAFn"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle7
+    text: "T\u0103ng 15% T\u1ED1c \u0110\u1ED9 B\u1EAFn"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle8
+    text: "T\u0103ng 20% T\u1ED1c \u0110\u1ED9 B\u1EAFn"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle9
+    text: "\u0110\u1EA1n To\u1EA3"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle10
+    text: "H\u1ED3i 20% M\xE1u"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle11
+    text: "H\u1ED3i 30% M\xE1u"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle12
+    text: "H\u1ED3i 50% M\xE1u"
+    fontId: 0
+  - id:
+      title: Common/LockText
+    text: "KHO\xC1"
+    fontId: 0
+  - id:
+      title: WorkShop/Title
+    text: "Tr\u1EA1m S\u1EEDa Ch\u1EEFa"
+    fontId: 0
+  - id:
+      title: WorkShop/Upgrade
+    text: "N\xE2ng C\u1EA5p T\xE0u"
+    fontId: 0
+  - id:
+      title: WorkShop/BuyGun
+    text: "Mua S\xFAng"
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockWithTrain
+    text: "M\u1EDF kho\xE1 v\u1EDBi T\xE0u (0)"
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockNow
+    text: "M\u1EDF kho\xE1 ngay"
+    fontId: 0
+  - id:
+      title: BuffCard/Reset
+    text: "L\xE0m M\u1EDBi"
+    fontId: 0
+  - id:
+      title: BuffCard/CollectAll
+    text: "L\u1EA5y T\u1EA5t"
+    fontId: 0
+  - id:
+      title: BuffCard/Description
+    text: "Ch\u1ECDn m\u1ED9t th\u1EBB b\xE0i"
+    fontId: 0
+  - id:
+      title: BuffCard/Title
+    text: "Th\u1EBB S\u1EE9c M\u1EA1nh"
+    fontId: 0
+  - id:
+      title: EndReward/RewardText
+    text: "Ph\u1EA7n Th\u01B0\u1EDFng:"
+    fontId: 0
+  - id:
+      title: EndReward/CollectBonus
+    text: "Nh\u1EADn Th\xEAm"
+    fontId: 0
+  - id:
+      title: WorkShop/NoSlot
+    text: "H\u1EBFt ch\u1ED7 tr\u1ED1ng"
+    fontId: 0
+  - id:
+      title: Common/NotEnoughCoin
+    text: "Kh\xF4ng \u0111\u1EE7 ti\u1EC1n"
+    fontId: 0
+  - id:
+      title: EndReward/BonusReward
+    text: "Ph\u1EA7n th\u01B0\u1EDFng th\xEAm"
+    fontId: 0
+  - id:
+      title: Game/ShootTut
+    text: "Gi\u1EEF \u0111\u1EC3 <color=#FFB734>NG\u1EAEM & B\u1EAEN</color>"
+    fontId: 0
+  - id:
+      title: FirstPurchase/Title
+    text: "G\xD3I B\u1EAET \u0110\u1EA6U"
+    fontId: 0
+  - id:
+      title: FirstPurchase/Description
+    text: "Ch\u1EC9 c\u1EA7n mua 1 l\u1EA7n, b\u1ECF qua t\u1EA5t c\u1EA3 <size=40>Qu\u1EA3ng
+      C\xE1o</size>!\n<size=25>(Kh\xF4ng bao g\u1ED3m Qu\u1EA3ng c\xE1o nh\u1EADn
+      th\u01B0\u1EDFng)</size>"
+    fontId: 0
+  - id:
+      title: FirstPurchase/BuyNow
+    text: Mua ngay
+    fontId: 0
+  - id:
+      title: ItemReward/Congratulation
+    text: "CH\xDAC M\u1EEANG"
+    fontId: 0
+  - id:
+      title: WorkShop/FreeGun
+    text: "S\xFAng mi\u1EC5n ph\xED"
+    fontId: 0
+  - id:
+      title: WorkShop/PlayNow
+    text: "Ch\u01A1i ngay"
+    fontId: 0
+  - id:
+      title: Home/CollectionBtn
+    text: "B\u1ED9 s\u01B0u t\u1EADp"
+    fontId: 0
+  - id:
+      title: Home/FreeReward
+    text: "Qu\xE0 mi\u1EC5n ph\xED"
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeNow
+    text: "N\xE2ng c\u1EA5p ngay"
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeText
+    text: "H\xE3y n\xE2ng c\u1EA5p t\xE0u v\xE0 v\u0169 kh\xED"
+    fontId: 0
+  - id:
+      title: Collection/ResetText
+    text: "Qu\xE0 mi\u1EC5n ph\xED s\u1EBD \u0111\u01B0\u1EE3c l\xE0m m\u1EDBi trong
+      {0}:{1}:{2}"
+    fontId: 0
+  - id:
+      title: Collection/MainGun
+    text: "S\xFAng ch\xEDnh"
+    fontId: 0
+  - id:
+      title: Collection/SupportGun
+    text: "S\xFAng ph\u1EE5"
+    fontId: 0
+  - id:
+      title: Collection/CollectX2
+    text: "NH\u1EACN x2"
+    fontId: 0
+  - id:
+      title: Collection/Collect
+    text: "Nh\u1EADn x1"
+    fontId: 0
+  - id:
+      title: Game/CongratText0
+    text: WELL DONE
+    fontId: 0
+  - id:
+      title: Game/CongratText1
+    text: PERFECT
+    fontId: 0
+  - id:
+      title: Game/CongratText2
+    text: GREAT
+    fontId: 0
+  - id:
+      title: Game/CongratText3
+    text: AWESOME
+    fontId: 0
+  - id:
+      title: WorkShop/AlreadyEquiped
+    text: "L\u1ED7i. \u0110ang \u0111\u01B0\u1EE3c trang b\u1ECB"
+    fontId: 0
+  - id:
+      title: FreeReward/Collect
+    text: "Nh\u1EADn"
+    fontId: 0
+  fontDatas:
+  - fontRef:
+      m_AssetGUID: ad1309e48cdebea44a0fa2eb640110dd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    fontMaterialRefs:
+    - m_AssetGUID: ad1309e48cdebea44a0fa2eb640110dd
+      m_SubObjectName: Russian Atlas Material
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 30023041d43de5d4d9fbdd6052f33fc7
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 9a02a82ecf7d1304e9c5851062ae96ca
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    fontKeys:
+    - 
+    - 
+    - 
+  tempFontDatas:
+  - font: {fileID: 0}

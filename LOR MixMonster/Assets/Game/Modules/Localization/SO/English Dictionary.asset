@@ -1,0 +1,589 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5352c14bac92dcc46986c3b382518adf, type: 3}
+  m_Name: English Dictionary
+  m_EditorClassIdentifier: 
+  dataTextPackage:
+  - id:
+      title: Common/Play
+    text: Touch to play
+    fontId: 0
+  - id:
+      title: Common/Level
+    text: Level
+    fontId: 0
+  - id:
+      title: Upgrade/Attack
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/Health
+    text: 
+    fontId: 0
+  - id:
+      title: Setting/ChangeLanguage
+    text: Change Language
+    fontId: 0
+  - id:
+      title: Setting/RestorePurchase
+    text: Restore Purchase
+    fontId: 0
+  - id:
+      title: Setting/RemoveAds
+    text: Remove Ads
+    fontId: 0
+  - id:
+      title: Setting/SettingTitle
+    text: Settings
+    fontId: 0
+  - id:
+      title: Setting/Version
+    text: Version {0}
+    fontId: 0
+  - id:
+      title: Shop/ShopTitle
+    text: 
+    fontId: 0
+  - id:
+      title: Common/EarnCoinNotice
+    text: Keep playing to earn more coin
+    fontId: 0
+  - id:
+      title: Common/Continue
+    text: Continue
+    fontId: 0
+  - id:
+      title: Lose/Revive
+    text: Revive Now
+    fontId: 0
+  - id:
+      title: Common/WatchAnAd
+    text: Watch an Ad
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/DontGiveUp
+    text: Don't give up
+    fontId: 0
+  - id:
+      title: Common/Replay
+    text: Replay
+    fontId: 0
+  - id:
+      title: Lose/UpgradeTut
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/TouchSkip
+    text: Touch to skip
+    fontId: 0
+  - id:
+      title: Loadout/LoadoutLoaded
+    text: 
+    fontId: 0
+  - id:
+      title: Loadout/Description
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/UnlockTitle
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/TouchToClose
+    text: Touch to close
+    fontId: 0
+  - id:
+      title: Quit/Warning
+    text: Are you sure you want to quit?
+    fontId: 0
+  - id:
+      title: Quit/QuitBtn
+    text: Quit
+    fontId: 0
+  - id:
+      title: Quit/CancelBtn
+    text: Cancel
+    fontId: 0
+  - id:
+      title: CombatTut/TutText
+    text: 
+    fontId: 0
+  - id:
+      title: CombatTut/TouchToClose
+    text: Touch to continue
+    fontId: 0
+  - id:
+      title: BoosterSelect/Title
+    text: 
+    fontId: 0
+  - id:
+      title: BoosterSelect/Description
+    text: 
+    fontId: 0
+  - id:
+      title: Pause/Title
+    text: PAUSE
+    fontId: 0
+  - id:
+      title: Pause/ControlType
+    text: 'Control Type:'
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeGesture
+    text: Gesture
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeButton
+    text: Button
+    fontId: 0
+  - id:
+      title: Pause/Home
+    text: Home
+    fontId: 0
+  - id:
+      title: Game/TouchToJump
+    text: 
+    fontId: 0
+  - id:
+      title: Game/SwipeDown
+    text: 
+    fontId: 0
+  - id:
+      title: Game/Victory
+    text: VICTORY!
+    fontId: 0
+  - id:
+      title: Game/DEFEAT
+    text: DEFEAT
+    fontId: 0
+  - id:
+      title: Game/Stage
+    text: STAGE {0}
+    fontId: 0
+  - id:
+      title: WinPanel/Stage
+    text: Stage {0}
+    fontId: 0
+  - id:
+      title: Shop/AsscessaryTitle
+    text: SHOP
+    fontId: 0
+  - id:
+      title: EndReward/EarnText
+    text: You've earned
+    fontId: 0
+  - id:
+      title: Common/NoThank
+    text: No, thanks
+    fontId: 0
+  - id:
+      title: Common/Loading
+    text: Loading
+    fontId: 0
+  - id:
+      title: Common/Free
+    text: Free
+    fontId: 0
+  - id:
+      title: Shop/Equip
+    text: Equip
+    fontId: 0
+  - id:
+      title: Shop/Equiped
+    text: In use
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewSkinUnlock
+    text: NEW SKIN IS UNLOCKED
+    fontId: 0
+  - id:
+      title: ChestReward/CollectYourReward
+    text: Collect reward now
+    fontId: 0
+  - id:
+      title: ChestReward/Congrat
+    text: '<size=60><color=#FFD53E>CONGRATULATION</color></size>
+
+      You just
+      earn this item. Collect it now!'
+    fontId: 0
+  - id:
+      title: Home/ArenaBtn
+    text: Arena
+    fontId: 0
+  - id:
+      title: Home/HomeBtn
+    text: Home
+    fontId: 0
+  - id:
+      title: Home/ShopBtn
+    text: Upgrade
+    fontId: 0
+  - id:
+      title: Common/ComingSoon
+    text: Coming Soon
+    fontId: 0
+  - id:
+      title: Shop/LockText
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/OutfitChestExclusive
+    text: This outfit can be found in Supply Chest only
+    fontId: 0
+  - id:
+      title: Game/HoldToFly
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/UpgradeLevel
+    text: Level {0}
+    fontId: 0
+  - id:
+      title: WarGame/StartNormalStage
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/StickWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TankWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TapToPlay
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/GameStart
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/Title
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireFree
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireAd
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/ThreeAlly
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/Outfit
+    text: Outfit
+    fontId: 0
+  - id:
+      title: Shop/Hat
+    text: Hat
+    fontId: 0
+  - id:
+      title: Shop/Clothes
+    text: Clothes
+    fontId: 0
+  - id:
+      title: Upgrade/LockText
+    text: Unlock at Stage 3
+    fontId: 0
+  - id:
+      title: Buff/Rarelity0
+    text: RARE
+    fontId: 0
+  - id:
+      title: Buff/Rarelity1
+    text: EPIC
+    fontId: 0
+  - id:
+      title: Buff/Rarelity2
+    text: LEGENDARY
+    fontId: 0
+  - id:
+      title: Buff/Rarelity3
+    text: ULTIMATE
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle0
+    text: Double Shoot
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle1
+    text: Increase 10% ATK
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle2
+    text: Increase 15% ATK
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle3
+    text: Increase 20% ATK
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle4
+    text: Split Shoot
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle5
+    text: Bouncing Ammo
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle6
+    text: Increase 10% Fire Rate
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle7
+    text: Increase 15% Fire Rate
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle8
+    text: Increase 20% Fire Rate
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle9
+    text: Spread Ammo
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle10
+    text: Heal 20%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle11
+    text: Heal 30%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle12
+    text: Heal 50%
+    fontId: 0
+  - id:
+      title: Common/LockText
+    text: LOCK
+    fontId: 0
+  - id:
+      title: WorkShop/Title
+    text: WorkShop
+    fontId: 0
+  - id:
+      title: WorkShop/Upgrade
+    text: Upgrade Train
+    fontId: 0
+  - id:
+      title: WorkShop/BuyGun
+    text: Buy Gun
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockWithTrain
+    text: Unlock with Train {0}
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockNow
+    text: Unlock Now
+    fontId: 0
+  - id:
+      title: BuffCard/Reset
+    text: Reset
+    fontId: 0
+  - id:
+      title: BuffCard/CollectAll
+    text: Collect All
+    fontId: 0
+  - id:
+      title: BuffCard/Description
+    text: Take a card of your choice
+    fontId: 0
+  - id:
+      title: BuffCard/Title
+    text: Power Card
+    fontId: 0
+  - id:
+      title: EndReward/RewardText
+    text: 'Reward:'
+    fontId: 0
+  - id:
+      title: EndReward/CollectBonus
+    text: Collect Bonus
+    fontId: 0
+  - id:
+      title: WorkShop/NoSlot
+    text: No available slot
+    fontId: 0
+  - id:
+      title: Common/NotEnoughCoin
+    text: Not enough coin
+    fontId: 0
+  - id:
+      title: EndReward/BonusReward
+    text: Bonus Reward
+    fontId: 0
+  - id:
+      title: Game/ShootTut
+    text: Hold to <color=#FFB734>AIM & SHOOT</color>
+    fontId: 0
+  - id:
+      title: FirstPurchase/Title
+    text: STARTER PACK
+    fontId: 0
+  - id:
+      title: FirstPurchase/Description
+    text: 'One-time purchase, enjoy <size=40>No-Interuption-Ads</size>!
+
+      <size=25>(Purchase
+      of No-Ads does not include Optional ads)</size>'
+    fontId: 0
+  - id:
+      title: FirstPurchase/BuyNow
+    text: Buy now
+    fontId: 0
+  - id:
+      title: ItemReward/Congratulation
+    text: CONGRATULATION
+    fontId: 0
+  - id:
+      title: WorkShop/FreeGun
+    text: Free Gun
+    fontId: 0
+  - id:
+      title: WorkShop/PlayNow
+    text: Play Now
+    fontId: 0
+  - id:
+      title: Home/CollectionBtn
+    text: Collection
+    fontId: 0
+  - id:
+      title: Home/FreeReward
+    text: Free Reward
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeNow
+    text: Upgrade Now
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeText
+    text: Upgrade your train and weapons
+    fontId: 0
+  - id:
+      title: Collection/ResetText
+    text: Your free rewards will be renewed in {0}:{1}:{2}
+    fontId: 0
+  - id:
+      title: Collection/MainGun
+    text: Main Gun
+    fontId: 0
+  - id:
+      title: Collection/SupportGun
+    text: Support Gun
+    fontId: 0
+  - id:
+      title: Collection/CollectX2
+    text: COLLECT x2
+    fontId: 0
+  - id:
+      title: Collection/Collect
+    text: Collect x1
+    fontId: 0
+  - id:
+      title: Game/CongratText0
+    text: WELL DONE
+    fontId: 0
+  - id:
+      title: Game/CongratText1
+    text: PERFECT
+    fontId: 0
+  - id:
+      title: Game/CongratText2
+    text: GREAT
+    fontId: 0
+  - id:
+      title: Game/CongratText3
+    text: AWESOME
+    fontId: 0
+  - id:
+      title: WorkShop/AlreadyEquiped
+    text: Error. Already equiped
+    fontId: 0
+  - id:
+      title: FreeReward/Collect
+    text: Collect
+    fontId: 0
+  fontDatas:
+  - fontRef:
+      m_AssetGUID: d61a462691b466e4c94b27e2b424b87b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    fontMaterialRefs:
+    - m_AssetGUID: d61a462691b466e4c94b27e2b424b87b
+      m_SubObjectName: DelaGothicOne-Regular Atlas Material
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 4c615cb54ae8df2488375288b6d9b071
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 0a74460b86021f74faab5a1d499220a4
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    fontKeys:
+    - 
+    - 
+    - 
+  tempFontDatas:
+  - font: {fileID: 0}

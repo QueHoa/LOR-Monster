@@ -1,0 +1,588 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5352c14bac92dcc46986c3b382518adf, type: 3}
+  m_Name: Indo
+  m_EditorClassIdentifier: 
+  dataTextPackage:
+  - id:
+      title: Common/Play
+    text: Sentuh untuk bermain
+    fontId: 0
+  - id:
+      title: Common/Level
+    text: Tingkat
+    fontId: 0
+  - id:
+      title: Upgrade/Attack
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/Health
+    text: 
+    fontId: 0
+  - id:
+      title: Setting/ChangeLanguage
+    text: Ubah Bahasa
+    fontId: 0
+  - id:
+      title: Setting/RestorePurchase
+    text: Pulihkan Pembelian
+    fontId: 0
+  - id:
+      title: Setting/RemoveAds
+    text: Hapus Iklan
+    fontId: 0
+  - id:
+      title: Setting/SettingTitle
+    text: Pengaturan
+    fontId: 0
+  - id:
+      title: Setting/Version
+    text: Versi {0}
+    fontId: 0
+  - id:
+      title: Shop/ShopTitle
+    text: 
+    fontId: 0
+  - id:
+      title: Common/EarnCoinNotice
+    text: Terus bermain untuk mendapatkan lebih banyak koin
+    fontId: 0
+  - id:
+      title: Common/Continue
+    text: Lanjutkan
+    fontId: 0
+  - id:
+      title: Lose/Revive
+    text: Bangkit Sekarang
+    fontId: 0
+  - id:
+      title: Common/WatchAnAd
+    text: Tonton Iklan
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/DontGiveUp
+    text: Jangan menyerah
+    fontId: 0
+  - id:
+      title: Common/Replay
+    text: Putar ulang
+    fontId: 0
+  - id:
+      title: Lose/UpgradeTut
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/TouchSkip
+    text: Sentuh untuk melewati
+    fontId: 0
+  - id:
+      title: Loadout/LoadoutLoaded
+    text: 
+    fontId: 0
+  - id:
+      title: Loadout/Description
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/UnlockTitle
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/TouchToClose
+    text: Sentuh untuk menutup
+    fontId: 0
+  - id:
+      title: Quit/Warning
+    text: Apakah Anda yakin ingin keluar?
+    fontId: 0
+  - id:
+      title: Quit/QuitBtn
+    text: Keluar
+    fontId: 0
+  - id:
+      title: Quit/CancelBtn
+    text: Batal
+    fontId: 0
+  - id:
+      title: CombatTut/TutText
+    text: 
+    fontId: 0
+  - id:
+      title: CombatTut/TouchToClose
+    text: Sentuh untuk lanjutkan
+    fontId: 0
+  - id:
+      title: BoosterSelect/Title
+    text: 
+    fontId: 0
+  - id:
+      title: BoosterSelect/Description
+    text: 
+    fontId: 0
+  - id:
+      title: Pause/Title
+    text: Jeda
+    fontId: 0
+  - id:
+      title: Pause/ControlType
+    text: 'Tipe Kontrol:'
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeGesture
+    text: Gerakan
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeButton
+    text: Tombol
+    fontId: 0
+  - id:
+      title: Pause/Home
+    text: Beranda
+    fontId: 0
+  - id:
+      title: Game/TouchToJump
+    text: 
+    fontId: 0
+  - id:
+      title: Game/SwipeDown
+    text: 
+    fontId: 0
+  - id:
+      title: Game/Victory
+    text: KEMENANGAN!
+    fontId: 0
+  - id:
+      title: Game/DEFEAT
+    text: KEKALAHAN
+    fontId: 0
+  - id:
+      title: Game/Stage
+    text: TAHAP {0}
+    fontId: 0
+  - id:
+      title: WinPanel/Stage
+    text: Tahap {0}
+    fontId: 0
+  - id:
+      title: Shop/AsscessaryTitle
+    text: TOKO
+    fontId: 0
+  - id:
+      title: EndReward/EarnText
+    text: Anda telah memperoleh
+    fontId: 0
+  - id:
+      title: Common/NoThank
+    text: Tidak, terima kasih
+    fontId: 0
+  - id:
+      title: Common/Loading
+    text: Memuat
+    fontId: 0
+  - id:
+      title: Common/Free
+    text: Gratis
+    fontId: 0
+  - id:
+      title: Shop/Equip
+    text: Perlengkapan
+    fontId: 0
+  - id:
+      title: Shop/Equiped
+    text: Sedang digunakan
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewSkinUnlock
+    text: KULIT BARU TERBUKA
+    fontId: 0
+  - id:
+      title: ChestReward/CollectYourReward
+    text: Kumpulkan hadiah sekarang
+    fontId: 0
+  - id:
+      title: ChestReward/Congrat
+    text: '<size=60><color=#FFD53E>SELAMAT</color></size>
+
+      Anda baru saja mendapatkan
+      item ini. Kumpulkan sekarang!'
+    fontId: 0
+  - id:
+      title: Home/ArenaBtn
+    text: Arena (no change in Indonesian)
+    fontId: 0
+  - id:
+      title: Home/HomeBtn
+    text: Rumah
+    fontId: 0
+  - id:
+      title: Home/ShopBtn
+    text: 
+    fontId: 0
+  - id:
+      title: Common/ComingSoon
+    text: Akan Datang
+    fontId: 0
+  - id:
+      title: Shop/LockText
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/OutfitChestExclusive
+    text: Pakaian ini hanya dapat ditemukan di Supply Chest
+    fontId: 0
+  - id:
+      title: Game/HoldToFly
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/UpgradeLevel
+    text: Tingkat {0}
+    fontId: 0
+  - id:
+      title: WarGame/StartNormalStage
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/StickWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TankWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TapToPlay
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/GameStart
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/Title
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireFree
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireAd
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/ThreeAlly
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/Outfit
+    text: Pakaian
+    fontId: 0
+  - id:
+      title: Shop/Hat
+    text: Topi
+    fontId: 0
+  - id:
+      title: Shop/Clothes
+    text: Pakaian
+    fontId: 0
+  - id:
+      title: Upgrade/LockText
+    text: Buka pada Tahap 3
+    fontId: 0
+  - id:
+      title: Buff/Rarelity0
+    text: LANGKA
+    fontId: 0
+  - id:
+      title: Buff/Rarelity1
+    text: EPIC
+    fontId: 0
+  - id:
+      title: Buff/Rarelity2
+    text: LEGENDA
+    fontId: 0
+  - id:
+      title: Buff/Rarelity3
+    text: ULTIMATE
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle0
+    text: Tembakan Ganda
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle1
+    text: Tingkatkan ATK 10%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle2
+    text: Tingkatkan ATK 15%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle3
+    text: Tingkatkan ATK 20%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle4
+    text: Tembakan Terbagi
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle5
+    text: Peluru Memantul
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle6
+    text: Tingkatkan Kecepatan Tembak 10%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle7
+    text: Tingkatkan Kecepatan Tembak 15%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle8
+    text: Tingkatkan Kecepatan Tembak 20%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle9
+    text: Peluru Menyebar
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle10
+    text: Menyembuhkan 20%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle11
+    text: Menyembuhkan 30%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle12
+    text: Menyembuhkan 50%
+    fontId: 0
+  - id:
+      title: Common/LockText
+    text: KUNCI
+    fontId: 0
+  - id:
+      title: WorkShop/Title
+    text: Bengkel
+    fontId: 0
+  - id:
+      title: WorkShop/Upgrade
+    text: Tingkatkan Kereta
+    fontId: 0
+  - id:
+      title: WorkShop/BuyGun
+    text: Beli Senjata
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockWithTrain
+    text: Buka Kunci dengan Kereta {0}
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockNow
+    text: Buka Sekarang
+    fontId: 0
+  - id:
+      title: BuffCard/Reset
+    text: Reset
+    fontId: 0
+  - id:
+      title: BuffCard/CollectAll
+    text: Kumpulkan Semua
+    fontId: 0
+  - id:
+      title: BuffCard/Description
+    text: Ambil kartu pilihanmu
+    fontId: 0
+  - id:
+      title: BuffCard/Title
+    text: Kartu Power
+    fontId: 0
+  - id:
+      title: EndReward/RewardText
+    text: 'Hadiah:'
+    fontId: 0
+  - id:
+      title: EndReward/CollectBonus
+    text: "Kumpulkan Bonus\r"
+    fontId: 0
+  - id:
+      title: WorkShop/NoSlot
+    text: Tidak ada slot yang tersedia
+    fontId: 0
+  - id:
+      title: Common/NotEnoughCoin
+    text: Koin tidak cukup
+    fontId: 0
+  - id:
+      title: EndReward/BonusReward
+    text: Hadiah Bonus
+    fontId: 0
+  - id:
+      title: Game/ShootTut
+    text: Hold to <color=#FFB734>AIM & SHOOT</color>
+    fontId: 0
+  - id:
+      title: FirstPurchase/Title
+    text: STARTER PACK
+    fontId: 0
+  - id:
+      title: FirstPurchase/Description
+    text: 'One-time purchase, enjoy <size=40>No-Interuption-Ads</size>!
+
+      <size=25>(Purchase
+      of No-Ads does not include Optional ads)</size>'
+    fontId: 0
+  - id:
+      title: FirstPurchase/BuyNow
+    text: Buy now
+    fontId: 0
+  - id:
+      title: ItemReward/Congratulation
+    text: CONGRATULATION
+    fontId: 0
+  - id:
+      title: WorkShop/FreeGun
+    text: Free Gun
+    fontId: 0
+  - id:
+      title: WorkShop/PlayNow
+    text: Play Now
+    fontId: 0
+  - id:
+      title: Home/CollectionBtn
+    text: Collection
+    fontId: 0
+  - id:
+      title: Home/FreeReward
+    text: Free Reward
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeNow
+    text: Upgrade Now
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeText
+    text: Upgrade your train and weapons
+    fontId: 0
+  - id:
+      title: Collection/ResetText
+    text: Your free rewards will be renewed in {0}:{1}:{2}
+    fontId: 0
+  - id:
+      title: Collection/MainGun
+    text: Main Gun
+    fontId: 0
+  - id:
+      title: Collection/SupportGun
+    text: Support Gun
+    fontId: 0
+  - id:
+      title: Collection/CollectX2
+    text: COLLECT x8
+    fontId: 0
+  - id:
+      title: Collection/Collect
+    text: Collect x7
+    fontId: 0
+  - id:
+      title: Game/CongratText0
+    text: WELL DONE
+    fontId: 0
+  - id:
+      title: Game/CongratText1
+    text: PERFECT
+    fontId: 0
+  - id:
+      title: Game/CongratText2
+    text: GREAT
+    fontId: 0
+  - id:
+      title: Game/CongratText3
+    text: AWESOME
+    fontId: 0
+  - id:
+      title: WorkShop/AlreadyEquiped
+    text: Error. Already equiped
+    fontId: 0
+  - id:
+      title: FreeReward/Collect
+    text: Collect
+    fontId: 0
+  fontDatas:
+  - fontRef:
+      m_AssetGUID: ad1309e48cdebea44a0fa2eb640110dd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    fontMaterialRefs:
+    - m_AssetGUID: ad1309e48cdebea44a0fa2eb640110dd
+      m_SubObjectName: Russian Atlas Material
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 30023041d43de5d4d9fbdd6052f33fc7
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 9a02a82ecf7d1304e9c5851062ae96ca
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    fontKeys:
+    - 
+    - 
+    - 
+  tempFontDatas: []

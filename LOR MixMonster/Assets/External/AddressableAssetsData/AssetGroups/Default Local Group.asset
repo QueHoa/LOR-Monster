@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d93c683205b43d446a3a615b962b1dcd
+  m_SerializeEntries:
+  - m_GUID: f724523ddb31d5a4d9d28aa2c58c9b59
+    m_Address: Monster
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc531d3ac9c1b9b4d828ba20b439725d
+    m_Address: Sound Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8752dcfd2c6658b469001d3fc03085c9
+    m_Address: HomePanelStage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8a6318f12bdf5742b994bcabaa57d60
+    m_Address: MakeOverPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a205c508a3cd3e84e8846ec7450c92f8
+    m_Address: LiveStreamPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ef734b05907f6d45a954e3a038adf0d
+    m_Address: ResultPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9088cc87a30f4ae469ba96f75b53b462
+    m_Address: Assets/Game/Prefabs/GameObjects/ItemOrb.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed7b0a51cbc0f3a4d881bd78b8fcd755
+    m_Address: Assets/Game/Prefabs/Effects/Flash.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88f2a918c12608845837fb23504a211d
+    m_Address: Assets/Game/Prefabs/Effects/SelectSpark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 428010238d8efa04eaf5819f7d11f512
+    m_Address: Assets/Game/Prefabs/Effects/EquipSpark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a6bfe2fd0476304aabfdd512dfa6295
+    m_Address: Assets/Game/VFX/Prefabs/VFX_LightDisco.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee42a717a19347347bec4890036eb07e
+    m_Address: Assets/Game/Prefabs/Effects/FinishMakeOverEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f93e9471fdf2c564b9efdf88d648d2bc
+    m_Address: WaitingPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6339d9f0b554a84ea38d552663ea4e7
+    m_Address: SetBundlePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf5ba699890b9d1469818df6d85c6055
+    m_Address: RewardPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34c5eea91fb26da4bb04413a4fc17045
+    m_Address: Assets/Game/Prefabs/GameObjects/Pet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3ecd274113c062408edc0eb964b5247
+    m_Address: NewMakeOverPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0ccd488be8e457468ff4f96ad0c5ca2
+    m_Address: IntroducMonsterPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f18d231661805ac42a72513d2f653ca8
+    m_Address: CollectionPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20b9f139624cc2f4d98ee96f20dc247d
+    m_Address: DailyRewards
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b267564e11b0e54ca2787233919f192
+    m_Address: MessagePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5d2f456110db81478c99b79fc838cd6
+    m_Address: SettingPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6b0cfe3c915edf458553ce2eaec8561
+    m_Address: HomePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47893311d17418345b12880b215e27f3
+    m_Address: LeaderBoardPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 841cf6df6e84bae43934ac51dfd54521, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ae2649b96ccfea642adda70c3bb6959f, type: 2}
+    - {fileID: 11400000, guid: d8553a0a0f36f4846b18131847222e46, type: 2}

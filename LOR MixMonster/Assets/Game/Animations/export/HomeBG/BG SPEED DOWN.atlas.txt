@@ -1,0 +1,35 @@
+BG SPEED DOWN.png
+size:4096,4096
+filter:Linear,Linear
+pma:true
+1
+bounds:1813,1433,471,185
+rotate:90
+1 1
+bounds:2021,2493,525,244
+offsets:1,1,527,246
+1 2
+bounds:2,484,527,243
+offsets:1,1,529,245
+2
+bounds:2648,3309,517,1178
+offsets:0,0,517,1182
+rotate:90
+2 1
+bounds:2021,2739,625,1087
+offsets:0,88,625,1179
+2 2
+bounds:629,1387,517,1182
+rotate:90
+2 3
+bounds:2,729,625,1175
+offsets:0,0,625,1179
+down
+bounds:2,1906,2017,1920
+offsets:1,1,2019,1922
+mid
+bounds:629,889,1082,496
+offsets:0,1,1082,497
+up
+bounds:2648,2973,1136,334
+offsets:1,1,1138,336

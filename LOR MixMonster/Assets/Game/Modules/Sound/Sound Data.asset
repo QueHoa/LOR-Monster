@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ca137f75db883469b6712f3e35b66b, type: 3}
+  m_Name: Sound Data
+  m_EditorClassIdentifier: 
+  menuTheme:
+  - {fileID: 8300000, guid: 53d4283e9e54fb84a81fdd8101e99580, type: 3}
+  finalThemes:
+  - {fileID: 8300000, guid: 2474c3fd8a079304496db504c5da1cc1, type: 3}
+  - {fileID: 8300000, guid: 268631d0360fee842bc7f97a432fba27, type: 3}
+  - {fileID: 8300000, guid: 268631d0360fee842bc7f97a432fba27, type: 3}
+  - {fileID: 8300000, guid: 825913ae40b3f124aa76190d63ce6a29, type: 3}
+  - {fileID: 8300000, guid: 020a4fb73a7416a439d37a5d543617e9, type: 3}
+  purchaseSFX: {fileID: 0}
+  coinSfxs: []
+  clickSFXs:
+  - {fileID: 8300000, guid: 3b0808d23da192b4aad6efc78a258ee4, type: 3}
+  playerWinSFX: []
+  playerLoseSFX: []
+  collectSFXs: []

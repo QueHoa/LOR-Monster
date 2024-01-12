@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d311cd8971f3d24784a325a63fe2e09, type: 3}
+  m_Name: GameDataConfig
+  m_EditorClassIdentifier: 
+  localizationSheetUrl: https://script.google.com/macros/s/AKfycbyqcLlDKdPP3iRSfwfwVxS0eCpBH84qO_XWSt-CVrqIikSlKoV_8vpTcAOggjFiNOdE/exec
+  itemSheetUrl: https://script.google.com/macros/s/AKfycbzdWPdsIf5QhAUkKf_75_2x1eyyBxivO3D_9P59QDGqnltnrmhN0TZGQXC93tW2PSQhCg/exec
+  localizationData: {fileID: 11400000, guid: 82a176ed909ea1845b2e467ea11b9d3c, type: 2}
+  itemData: {fileID: 11400000, guid: 302c71aade896f64eada4dad4a11a481, type: 2}
+  rewardBarConfig: {fileID: 11400000, guid: 7dfa7c61ed00558469a3dae9f7300ff1, type: 2}
+  monsterCountConfig: {fileID: 11400000, guid: 69f731ce4ebbb534aae75dc38a085026, type: 2}
+  rewardGold: {fileID: 11400000, guid: 5ef701a76f860e34980c0b13514ff651, type: 2}

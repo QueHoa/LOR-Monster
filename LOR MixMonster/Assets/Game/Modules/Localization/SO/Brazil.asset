@@ -1,0 +1,586 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5352c14bac92dcc46986c3b382518adf, type: 3}
+  m_Name: Brazil
+  m_EditorClassIdentifier: 
+  dataTextPackage:
+  - id:
+      title: Common/Play
+    text: Toque para jogar
+    fontId: 0
+  - id:
+      title: Common/Level
+    text: "N\xEDvel"
+    fontId: 0
+  - id:
+      title: Upgrade/Attack
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/Health
+    text: 
+    fontId: 0
+  - id:
+      title: Setting/ChangeLanguage
+    text: Mudar idioma
+    fontId: 0
+  - id:
+      title: Setting/RestorePurchase
+    text: Restaurar Compra
+    fontId: 0
+  - id:
+      title: Setting/RemoveAds
+    text: "Remover An\xFAncios"
+    fontId: 0
+  - id:
+      title: Setting/SettingTitle
+    text: "Configura\xE7\xF5es"
+    fontId: 0
+  - id:
+      title: Setting/Version
+    text: "Vers\xE3o {0}"
+    fontId: 0
+  - id:
+      title: Shop/ShopTitle
+    text: 
+    fontId: 0
+  - id:
+      title: Common/EarnCoinNotice
+    text: ontinue jogando para ganhar mais moedas
+    fontId: 0
+  - id:
+      title: Common/Continue
+    text: Continuar
+    fontId: 0
+  - id:
+      title: Lose/Revive
+    text: Reviver Agora
+    fontId: 0
+  - id:
+      title: Common/WatchAnAd
+    text: "Assistir um An\xFAncio"
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewBossUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewItemUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewEnemyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewAllyUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerArrive
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewPowerUnlock
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/DontGiveUp
+    text: "N\xE3o desista"
+    fontId: 0
+  - id:
+      title: Common/Replay
+    text: Jogar novamente
+    fontId: 0
+  - id:
+      title: Lose/UpgradeTut
+    text: 
+    fontId: 0
+  - id:
+      title: Lose/TouchSkip
+    text: Toque para pular
+    fontId: 0
+  - id:
+      title: Loadout/LoadoutLoaded
+    text: 
+    fontId: 0
+  - id:
+      title: Loadout/Description
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/UnlockTitle
+    text: 
+    fontId: 0
+  - id:
+      title: UnlockPanel/TouchToClose
+    text: Toque para fechar
+    fontId: 0
+  - id:
+      title: Quit/Warning
+    text: Tem certeza de que deseja sair?
+    fontId: 0
+  - id:
+      title: Quit/QuitBtn
+    text: Sair
+    fontId: 0
+  - id:
+      title: Quit/CancelBtn
+    text: Cancelar
+    fontId: 0
+  - id:
+      title: CombatTut/TutText
+    text: 
+    fontId: 0
+  - id:
+      title: CombatTut/TouchToClose
+    text: Toque para continuar
+    fontId: 0
+  - id:
+      title: BoosterSelect/Title
+    text: 
+    fontId: 0
+  - id:
+      title: BoosterSelect/Description
+    text: 
+    fontId: 0
+  - id:
+      title: Pause/Title
+    text: Pausa
+    fontId: 0
+  - id:
+      title: Pause/ControlType
+    text: 'Tipo de controle:'
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeGesture
+    text: Gesto
+    fontId: 0
+  - id:
+      title: Pause/ControlTypeButton
+    text: "Bot\xE3o"
+    fontId: 0
+  - id:
+      title: Pause/Home
+    text: "In\xEDcio"
+    fontId: 0
+  - id:
+      title: Game/TouchToJump
+    text: 
+    fontId: 0
+  - id:
+      title: Game/SwipeDown
+    text: 
+    fontId: 0
+  - id:
+      title: Game/Victory
+    text: "VIT\xD3RIA!"
+    fontId: 0
+  - id:
+      title: Game/DEFEAT
+    text: DERROTA
+    fontId: 0
+  - id:
+      title: Game/Stage
+    text: ETAPA {0}
+    fontId: 0
+  - id:
+      title: WinPanel/Stage
+    text: Etapa {0}
+    fontId: 0
+  - id:
+      title: Shop/AsscessaryTitle
+    text: LOJA
+    fontId: 0
+  - id:
+      title: EndReward/EarnText
+    text: "Voc\xEA ganhou"
+    fontId: 0
+  - id:
+      title: Common/NoThank
+    text: "N\xE3o, obrigado"
+    fontId: 0
+  - id:
+      title: Common/Loading
+    text: Carregando
+    fontId: 0
+  - id:
+      title: Common/Free
+    text: "Gr\xE1tis"
+    fontId: 0
+  - id:
+      title: Shop/Equip
+    text: Equipamento
+    fontId: 0
+  - id:
+      title: Shop/Equiped
+    text: Em uso
+    fontId: 0
+  - id:
+      title: UnlockPanel/NewSkinUnlock
+    text: NOVA PELE DESBLOQUEADA
+    fontId: 0
+  - id:
+      title: ChestReward/CollectYourReward
+    text: Coletar recompensa agora
+    fontId: 0
+  - id:
+      title: ChestReward/Congrat
+    text: "<size=60><color=#FFD53E>PARAB\xC9NS</color></size>\nVoc\xEA acabou de
+      ganhar este item. Colete-o agora!"
+    fontId: 0
+  - id:
+      title: Home/ArenaBtn
+    text: Arena
+    fontId: 0
+  - id:
+      title: Home/HomeBtn
+    text: Casa
+    fontId: 0
+  - id:
+      title: Home/ShopBtn
+    text: 
+    fontId: 0
+  - id:
+      title: Common/ComingSoon
+    text: Em breve
+    fontId: 0
+  - id:
+      title: Shop/LockText
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/OutfitChestExclusive
+    text: "Este traje s\xF3 pode ser encontrado na Caixa de Suprimentos"
+    fontId: 0
+  - id:
+      title: Game/HoldToFly
+    text: 
+    fontId: 0
+  - id:
+      title: Upgrade/UpgradeLevel
+    text: "N\xEDvel {0}"
+    fontId: 0
+  - id:
+      title: WarGame/StartNormalStage
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/StickWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TankWar
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/TapToPlay
+    text: 
+    fontId: 0
+  - id:
+      title: WarGame/GameStart
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/Title
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireFree
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/HireAd
+    text: 
+    fontId: 0
+  - id:
+      title: MiniShop/ThreeAlly
+    text: 
+    fontId: 0
+  - id:
+      title: Shop/Outfit
+    text: Roupa
+    fontId: 0
+  - id:
+      title: Shop/Hat
+    text: "Chap\xE9u"
+    fontId: 0
+  - id:
+      title: Shop/Clothes
+    text: Roupas
+    fontId: 0
+  - id:
+      title: Upgrade/LockText
+    text: "Desbloquear no Est\xE1gio 3"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity0
+    text: RARO
+    fontId: 0
+  - id:
+      title: Buff/Rarelity1
+    text: "\xC9PICO"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity2
+    text: "LEGEND\xC1RIO"
+    fontId: 0
+  - id:
+      title: Buff/Rarelity3
+    text: "\xDALTIMO"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle0
+    text: Tiro duplo
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle1
+    text: Aumenta o ATK em 10%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle2
+    text: Aumenta o ATK em 15%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle3
+    text: Aumenta o ATK em 20%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle4
+    text: Tiro Dividido
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle5
+    text: "Muni\xE7\xE3o quicante"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle6
+    text: "Tiro R\xE1pido +10%"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle7
+    text: "Tiro R\xE1pido +15%"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle8
+    text: "Tiro R\xE1pido +20%"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle9
+    text: "Muni\xE7\xE3o dispersa"
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle10
+    text: Cura 20%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle11
+    text: Cura 30%
+    fontId: 0
+  - id:
+      title: Buff/BuffTitle12
+    text: Cura 50%
+    fontId: 0
+  - id:
+      title: Common/LockText
+    text: TRAVAR
+    fontId: 0
+  - id:
+      title: WorkShop/Title
+    text: Oficina
+    fontId: 0
+  - id:
+      title: WorkShop/Upgrade
+    text: Melhorar Trem
+    fontId: 0
+  - id:
+      title: WorkShop/BuyGun
+    text: Comprar Arma
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockWithTrain
+    text: Desbloquear com Trem {0}
+    fontId: 0
+  - id:
+      title: WorkShop/UnlockNow
+    text: Desbloquear Agora
+    fontId: 0
+  - id:
+      title: BuffCard/Reset
+    text: Reiniciar
+    fontId: 0
+  - id:
+      title: BuffCard/CollectAll
+    text: Coletar Tudo
+    fontId: 0
+  - id:
+      title: BuffCard/Description
+    text: Pegue uma carta de sua escolha
+    fontId: 0
+  - id:
+      title: BuffCard/Title
+    text: Carta de Poder
+    fontId: 0
+  - id:
+      title: EndReward/RewardText
+    text: 'Recompensa:'
+    fontId: 0
+  - id:
+      title: EndReward/CollectBonus
+    text: "Coletar b\xF4nus"
+    fontId: 0
+  - id:
+      title: WorkShop/NoSlot
+    text: "Nenhum espa\xE7o dispon\xEDvel"
+    fontId: 0
+  - id:
+      title: Common/NotEnoughCoin
+    text: Moedas insuficientes
+    fontId: 0
+  - id:
+      title: EndReward/BonusReward
+    text: "Recompensa b\xF4nus"
+    fontId: 0
+  - id:
+      title: Game/ShootTut
+    text: Hold to <color=#FFB734>AIM & SHOOT</color>
+    fontId: 0
+  - id:
+      title: FirstPurchase/Title
+    text: STARTER PACK
+    fontId: 0
+  - id:
+      title: FirstPurchase/Description
+    text: 'One-time purchase, enjoy <size=40>No-Interuption-Ads</size>!
+
+      <size=25>(Purchase
+      of No-Ads does not include Optional ads)</size>'
+    fontId: 0
+  - id:
+      title: FirstPurchase/BuyNow
+    text: Buy now
+    fontId: 0
+  - id:
+      title: ItemReward/Congratulation
+    text: CONGRATULATION
+    fontId: 0
+  - id:
+      title: WorkShop/FreeGun
+    text: Free Gun
+    fontId: 0
+  - id:
+      title: WorkShop/PlayNow
+    text: Play Now
+    fontId: 0
+  - id:
+      title: Home/CollectionBtn
+    text: Collection
+    fontId: 0
+  - id:
+      title: Home/FreeReward
+    text: Free Reward
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeNow
+    text: Upgrade Now
+    fontId: 0
+  - id:
+      title: LosePanel/UpgradeText
+    text: Upgrade your train and weapons
+    fontId: 0
+  - id:
+      title: Collection/ResetText
+    text: Your free rewards will be renewed in {0}:{1}:{2}
+    fontId: 0
+  - id:
+      title: Collection/MainGun
+    text: Main Gun
+    fontId: 0
+  - id:
+      title: Collection/SupportGun
+    text: Support Gun
+    fontId: 0
+  - id:
+      title: Collection/CollectX2
+    text: COLLECT x7
+    fontId: 0
+  - id:
+      title: Collection/Collect
+    text: Collect x6
+    fontId: 0
+  - id:
+      title: Game/CongratText0
+    text: WELL DONE
+    fontId: 0
+  - id:
+      title: Game/CongratText1
+    text: PERFECT
+    fontId: 0
+  - id:
+      title: Game/CongratText2
+    text: GREAT
+    fontId: 0
+  - id:
+      title: Game/CongratText3
+    text: AWESOME
+    fontId: 0
+  - id:
+      title: WorkShop/AlreadyEquiped
+    text: Error. Already equiped
+    fontId: 0
+  - id:
+      title: FreeReward/Collect
+    text: Collect
+    fontId: 0
+  fontDatas:
+  - fontRef:
+      m_AssetGUID: ad1309e48cdebea44a0fa2eb640110dd
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    fontMaterialRefs:
+    - m_AssetGUID: ad1309e48cdebea44a0fa2eb640110dd
+      m_SubObjectName: Russian Atlas Material
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 30023041d43de5d4d9fbdd6052f33fc7
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 9a02a82ecf7d1304e9c5851062ae96ca
+      m_SubObjectName: 
+      m_SubObjectType: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_EditorAssetChanged: 0
+    fontKeys:
+    - 
+    - 
+    - 
+  tempFontDatas: []
