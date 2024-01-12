@@ -46943,7 +46943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
-  speed: 7
+  speed: 9
   screenShotImg: {fileID: 169382422862358781}
   cardImg: {fileID: 3903657683657075618}
   iconGold: {fileID: 7528230371450719055}

@@ -20,5 +20,6 @@ MonoBehaviour:
     interAdCoolDown: 2
     openAd: 1
     adBetweenMakeOver: -1
-  bundleAdRequire: 10
+  bundleAdRequire: 2
   gameType: 1
+  newItemMax: 1
