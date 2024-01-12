@@ -7,23 +7,68 @@ using TMPro;
 
 public class ModelCard : MonoBehaviour, ISelectableButton
 {
+    public delegate void OnModelSelected(CollectionData collectionData);
+    public static OnModelSelected onModelSelected;
+
+    public delegate void OnModelCleared(CollectionData collectionData);
+    public static OnModelCleared onModelCleared;
 
     [SerializeField] private SkeletonGraphic anim, eventAnim;
     [SerializeField] private AudioClip selectSFX, removeSFX;
     [SerializeField] private TextMeshProUGUI collectionTotalText;
 
     private Skin _mixAndMatchSkin;
-    //private CollectionData _collectionData;
+    private CollectionData _collectionData;
 
 
     private void OnEnable()
     {
-        //var collectionData = DataManager.Instance.userData.inventory.GetFirstCollection();
+        /*var collectionData = DataManager.Instance.userData.inventory.GetFirstCollection();
 
-        /*if (collectionData != null)
+        if (collectionData != null)
             SetUp(collectionData);
         else
             gameObject.SetActive(false);*/
+    }
+
+    public void SetUp(CollectionData collectionData)
+    {
+        _collectionData = collectionData;
+
+       /* if (string.IsNullOrEmpty(collectionData.eventId))
+        {
+            anim.gameObject.SetActive(true);
+
+            if (eventAnim != null)
+                eventAnim.gameObject.SetActive(false);
+
+            _mixAndMatchSkin = new Skin($"");
+
+            AddPart($"base/{collectionData.model}");
+
+            foreach (var itemId in collectionData.items)
+            {
+                var item = (ItemData.ModelItem)Sheet.SheetDataManager.Instance.gameData.itemData.GetItem(itemId);
+
+                if (item.category == ItemData.EModelItemCategory.Pet || item.category == ItemData.EModelItemCategory.Accessory)
+                    continue;
+
+                AddPart(item.skin);
+            }
+
+            UpdateSkin();
+        }
+        else
+        {
+            anim.gameObject.SetActive(false);
+            eventAnim.gameObject.SetActive(true);
+
+            eventAnim.Skeleton.SetSkin(collectionData.eventId);
+        }*/
+
+        gameObject.SetActive(true);
+        DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
+        OnCollectionUpdated(DataManager.Instance.userData.inventory);
     }
 
     private void OnDisable()
@@ -59,8 +104,8 @@ public class ModelCard : MonoBehaviour, ISelectableButton
     public void OnSelect()
     {
         /*Debug.Log("ON SELECT: " + _collectionData.id);
-        onModelSelected?.Invoke(_collectionData);*/
-        Sound.Controller.Instance.PlayOneShot(selectSFX);
+        onModelSelected?.Invoke(_collectionData);
+        Sound.Controller.Instance.PlayOneShot(selectSFX);*/
     }
 
     private float touchTime;
@@ -118,8 +163,8 @@ public class ModelCard : MonoBehaviour, ISelectableButton
     private void OnCollectionUpdated(Inventory inventory)
     {
         Debug.Log("SET COLLECTION");
-        //var collectionData = DataManager.Instance.userData.inventory.GetFirstCollection();
-        /*if (collectionData != null)
+        /*var collectionData = DataManager.Instance.userData.inventory.GetFirstCollection();
+        if (collectionData != null)
         {
             Debug.Log("SET COLLECTION " + collectionData.id);
             collectionTotalText.text = DataManager.Instance.userData.inventory.GetTotalCollection().ToString();
