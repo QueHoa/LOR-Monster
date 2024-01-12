@@ -1,85 +1,102 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using GoogleMobileAds.Ump;
 using GoogleMobileAds.Ump.Api;
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 
+// #if UNITY_IOS
 public class GDPRHandler : MonoBehaviour
 {
-    [SerializeField]
-    private List<string> testDevices = new List<string>();
-    [SerializeField]
-    private bool testMode = true;
-    ConsentForm _consentForm;
-    // Start is called before the first frame update
-    void Start()
+    public int delayMilliseconds = 500;
+    public bool testMode;
+
+    [ShowIf("@testMode")]
+    public List<string> testDevices = new List<string> { "TEST-DEVICE-HASHED-ID" };
+
+    private ConsentForm _consentForm;
+
+    private async void Start()
     {
-        var debugSettings = new ConsentDebugSettings
-        {
-            // Geography appears as in EEA for debug devices.
-            DebugGeography = DebugGeography.EEA,
-            TestDeviceHashedIds = testDevices
-        };
+        await UniTask.Delay(delayMilliseconds);
+        StarRequestCMP();
+    }
+
+    public void StarRequestCMP()
+    {
+        Debug.Log("CMP Start");
         ConsentRequestParameters request;
-        // Here false means users are not under age.
+
         if (testMode)
         {
-            Debug.Log("INIT1 " + testMode);
+            Debug.Log("CMP Test mode");
+            ConsentInformation.Reset();
+
+            var debugSettings = new ConsentDebugSettings
+            {
+                // Geography appears as in EEA for debug devices.
+                DebugGeography = DebugGeography.EEA,
+                TestDeviceHashedIds = testDevices
+            };
+
+            // Here false means users are not under age.
             request = new ConsentRequestParameters
             {
                 TagForUnderAgeOfConsent = false,
-                ConsentDebugSettings =  debugSettings ,
+                ConsentDebugSettings = debugSettings
             };
         }
         else
         {
-            Debug.Log("INIT2 " + testMode);
             request = new ConsentRequestParameters
             {
-                TagForUnderAgeOfConsent = false
+                TagForUnderAgeOfConsent = false,
             };
         }
-      
 
-        // Check the current consent information status.
+        Debug.Log("CMP ConsentInformation.Update...");
         ConsentInformation.Update(request, OnConsentInfoUpdated);
     }
 
-    void OnConsentInfoUpdated(FormError error)
+    private void OnConsentInfoUpdated(FormError consentError)
     {
-        if (error != null)
+        Debug.Log("CMP OnConsentInfoUpdated");
+        if (consentError != null)
         {
             // Handle the error.
-            UnityEngine.Debug.LogError(error);
+            Debug.LogError("CMP UpdateError: " + consentError);
+            InitLoadAds(isConsent: true);
             return;
         }
 
+        // If the error is null, the consent information state was updated.
+        // You are now ready to check if a form is available.
         if (ConsentInformation.IsConsentFormAvailable())
         {
+            Debug.Log("CMP IsConsentFormAvailable = true, LoadConsentForm...");
             LoadConsentForm();
         }
         else
         {
-
+            Debug.Log("CMP IsConsentFormAvailable = false, init ads...");
+            InitLoadAds(true);
         }
-        // If the error is null, the consent information state was updated.
-        // You are now ready to check if a form is available.
     }
 
-    void LoadConsentForm()
+    private void LoadConsentForm()
     {
-        Time.timeScale = 0;
-        // Loads a consent form.
+        Debug.Log("CMP LoadConsentForm...");
+        Time.timeScale = 0; // pause to load form
         ConsentForm.Load(OnLoadConsentForm);
     }
 
-    void OnLoadConsentForm(ConsentForm consentForm, FormError error)
+    private void OnLoadConsentForm(ConsentForm consentForm, FormError error)
     {
+        Debug.Log("CMP OnLoadConsentForm");
+
         if (error != null)
         {
-            // Handle the error.
-            UnityEngine.Debug.LogError(error);
-            Time.timeScale = 1;
+            Debug.LogError("CMP LoadFormError" + error);
+            InitLoadAds(true);
             return;
         }
 
@@ -90,22 +107,25 @@ public class GDPRHandler : MonoBehaviour
         // You are now ready to show the form.
         if (ConsentInformation.ConsentStatus == ConsentStatus.Required)
         {
+            Debug.Log("CMP Show Form Required...");
             _consentForm.Show(OnShowForm);
         }
         else
         {
-            Time.timeScale = 1;
+            Debug.Log($"CMP ConsentStatus = {ConsentInformation.ConsentStatus}, InitLoadAds...");
+            InitLoadAds(true);
         }
     }
 
-
-    void OnShowForm(FormError error)
+    private void OnShowForm(FormError error)
     {
+        Debug.Log("CMP OnShowForm");
+
         if (error != null)
         {
             // Handle the error.
-            UnityEngine.Debug.LogError(error);
-            Time.timeScale = 1;
+            Debug.LogError("CMP ShowFormError " + error);
+            InitLoadAds(true);
             return;
         }
 
@@ -113,5 +133,15 @@ public class GDPRHandler : MonoBehaviour
         LoadConsentForm();
     }
 
-}
+    private void InitLoadAds(bool isConsent)
+    {
+        Time.timeScale = 1f;
 
+        AD.Controller.Instance.Init(DataManagement.DataManager.Instance.userData.IsAd);
+        AD.Controller.Instance.LoadOpenAd();
+        AD.Controller.Instance.LoadBanner();
+        AD.Controller.Instance.LoadInterstitial();
+        AD.Controller.Instance.LoadNativeAd();
+    }
+}
+// #endif

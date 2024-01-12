@@ -20,10 +20,10 @@ public class InitLoader : UnityEngine.MonoBehaviour
         PlayerPrefs.SetInt("LoginCount", PlayerPrefs.GetInt("LoginCount", 0) + 1);
 
         DataManagement.DataManager.Instance.IsReady();
-        AD.Controller.Instance.Init(DataManagement.DataManager.Instance.userData.IsAd);
-        AD.Controller.Instance.LoadOpenAd();
-        AD.Controller.Instance.LoadBanner();
-        AD.Controller.Instance.LoadInterstitial();
+        //AD.Controller.Instance.Init(DataManagement.DataManager.Instance.userData.IsAd);
+        //AD.Controller.Instance.LoadOpenAd();
+        //AD.Controller.Instance.LoadBanner();
+        //AD.Controller.Instance.LoadInterstitial();
 
         IAP.Controller.Instance.InitProduct();
         Localization.LocalizationHandler.Init();
