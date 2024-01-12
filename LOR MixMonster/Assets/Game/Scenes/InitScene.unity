@@ -512,7 +512,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 917232699}
-  - component: {fileID: 917232698}
+  - component: {fileID: 917232701}
+  - component: {fileID: 917232700}
   m_Layer: 0
   m_Name: GDPR
   m_TagString: Untagged
@@ -520,20 +521,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &917232698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917232697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1da8d08c054d04ead373b376d990a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testDevices: []
-  testMode: 0
 --- !u!4 &917232699
 Transform:
   m_ObjectHideFlags: 0
@@ -549,6 +536,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917232700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917232697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cab737aabc174440a769a57f9425e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &917232701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917232697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c21480853f01e04f9ac89a359ecb039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019076890
 GameObject:
   m_ObjectHideFlags: 0
