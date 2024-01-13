@@ -154,6 +154,8 @@ public class LiveStreamPanel : Panel
     {
         handTut.SetActive(false);
         rewardBar.gameObject.SetActive(false);
+        viewPointRect.anchoredPosition = new Vector2(viewPointRect.anchoredPosition.x, viewPointRect.anchoredPosition.y - 30);
+        likePointRect.anchoredPosition = new Vector2(likePointRect.anchoredPosition.x, likePointRect.anchoredPosition.y - 30);
     }
     void DeactiveBonusIcon()
     {
