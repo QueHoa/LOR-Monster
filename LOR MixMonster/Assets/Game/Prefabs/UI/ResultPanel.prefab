@@ -96,7 +96,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.823}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 373}
+  m_AnchoredPosition: {x: -30, y: 373}
   m_SizeDelta: {x: 517.92, y: 846.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &169382422862358722
@@ -41314,7 +41314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9087093868612883260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46943,7 +46943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
-  speed: 10
+  speed: 9
   screenShotImg: {fileID: 169382422862358781}
   cardImg: {fileID: 3903657683657075618}
   iconGold: {fileID: 7528230371450719055}
