@@ -87,7 +87,7 @@ public class MakeOverGameController : GameController
         //
 
         monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
-        await ZoomMonsterCollection(cancellation.Token);
+        await ZoomMonsterCollection(cancellation.Token, CollectionPanel.MonsterPos);
 
         FirebaseAnalysticController.Instance.LogEvent("CollectionStart");
         DataManagement.DataManager.Instance.userData.progressData.playCount++;
@@ -223,13 +223,13 @@ public class MakeOverGameController : GameController
             await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: cancellationToken);
         }
     }
-    public async UniTask ZoomMonsterCollection(CancellationToken cancellationToken)
+    public async UniTask ZoomMonsterCollection(CancellationToken cancellationToken, Transform monsterPos)
     {
         Transform _transform = monster.transform;
         Vector3 scale = Vector3.one * 0.5f;
 
         _transform.localScale = scale;
-        _transform.position = new Vector3(-5, 4.7f, 0);
+        _transform.position = monsterPos.position;
         await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken: cancellationToken);
     }
     IEnumerator DoCapture(System.Action<Texture2D> result)

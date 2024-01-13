@@ -22,6 +22,7 @@ public class CollectionPanel : UI.Panel
     public CanvasGroup boxView, boxLike;
     public CanvasGroup[] boxItem;
     public GameObject[] star;
+    public Transform MonsterPos;
 
     private bool isProcessing;
     private int numberStar;
@@ -54,7 +55,7 @@ public class CollectionPanel : UI.Panel
             }
             ChangeCollect(1);
         }
-        
+        Debug.Log(MonsterPos.position);
         Show();
     }
     public async UniTask<GameObject> SetItem(ItemData.Item item)
