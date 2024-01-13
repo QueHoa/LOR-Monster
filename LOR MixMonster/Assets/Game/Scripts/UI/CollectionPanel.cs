@@ -7,7 +7,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using CodeStage.AntiCheat.Genuine.CodeHash;
-using static UnityEngine.Rendering.DebugUI;
+//using static UnityEngine.Rendering.DebugUI;
 using System.IO;
 using System.Collections;
 using Sirenix.OdinInspector;

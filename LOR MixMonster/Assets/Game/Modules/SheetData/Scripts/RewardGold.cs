@@ -1,7 +1,7 @@
 using Sheet;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI.Table;
+//using static UnityEngine.Rendering.DebugUI.Table;
 
 [CreateAssetMenu(menuName = "SO/RewardGoldConfig")]
 public class RewardGold : ScriptableObject
