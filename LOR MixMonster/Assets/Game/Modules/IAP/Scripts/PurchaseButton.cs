@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Purchasing;
@@ -265,6 +266,7 @@ namespace IAP
                 {
                     priceText.text = product.metadata.localizedPriceString;
                     priceText.text += product.metadata.isoCurrencyCode;
+                    priceText.text = Regex.Replace(priceText.text, @"\s+", " ");
                 }
             }
         }
