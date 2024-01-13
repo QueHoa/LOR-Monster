@@ -14,7 +14,7 @@ public partial class GameConfig:ScriptableObject
     public bool skipAd=false;
   
     public AdConfig adConfig;
-    public int bundleAdRequire=10;
+    public int bundleAdRequire=2;
 
     //
     public int gameType = 0;
