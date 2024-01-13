@@ -22,6 +22,7 @@ public class CollectionPanel : UI.Panel
     public CanvasGroup boxView, boxLike;
     public CanvasGroup[] boxItem;
     public GameObject[] star;
+    public Transform monsterPos;
 
     private bool isProcessing;
     private int numberStar;
