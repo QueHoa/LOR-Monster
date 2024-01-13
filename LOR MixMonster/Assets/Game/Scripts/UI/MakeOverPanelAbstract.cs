@@ -137,17 +137,26 @@ public abstract class MakeOverPanelAbstract : UI.Panel
 #endif
 
         //
-        int adCount = 2;
-        ads.Clear();
-        while (adCount > 0)
+        if (DataManagement.DataManager.Instance.userData.progressData.firstSelect)
         {
-            int rd = 0;
-            do
+            ads.Clear();
+            ads.Add(3);
+            ads.Add(4);
+        }
+        else
+        {
+            int adCount = 3;
+            ads.Clear();
+            while (adCount > 0)
             {
-                rd = UnityEngine.Random.Range(0, 5);
-            } while (ads.Contains(rd));
-            ads.Add(rd);
-            adCount--;
+                int rd = 0;
+                do
+                {
+                    rd = UnityEngine.Random.Range(0, 5);
+                } while (ads.Contains(rd));
+                ads.Add(rd);
+                adCount--;
+            }
         }
 
         isProcessing = true;

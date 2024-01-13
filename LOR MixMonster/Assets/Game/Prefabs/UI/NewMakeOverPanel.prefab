@@ -6936,7 +6936,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 3405774847
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -8465,7 +8465,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 3405774847
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -22642,7 +22642,6 @@ MonoBehaviour:
   - {fileID: 250743244957796446}
   categoryOrder: 0000000001000000020000000300000004000000
   petSlotPools: {fileID: 942436845583322009}
-  defaultItems: []
   leftRightClips:
   - {fileID: 8300000, guid: 99f6bd37889967149825b8215de24234, type: 3}
   - {fileID: 8300000, guid: 8842b1e6bc9c23f49b391e19b859a6b7, type: 3}
