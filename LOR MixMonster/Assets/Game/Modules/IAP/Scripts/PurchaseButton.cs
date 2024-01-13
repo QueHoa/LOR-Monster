@@ -266,6 +266,7 @@ namespace IAP
                 {
                     priceText.text = product.metadata.localizedPriceString;
                     priceText.text +=  product.metadata.isoCurrencyCode;
+                    priceText.text = Regex.Replace(priceText.text, @"\s+", " ");
                 }
             }
         }
