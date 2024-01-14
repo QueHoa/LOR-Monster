@@ -3146,8 +3146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
-  playSFX: {fileID: 0}
-  nativeAdBanner: {fileID: 0}
+  playSFX: {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
+  nativeAdBanner: {fileID: 6069938042777784796}
   goldText: {fileID: 0}
 --- !u!1001 &8301597412260809594
 PrefabInstance:
@@ -3262,6 +3262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
+--- !u!1 &6069938042777784796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2813046218433616550, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
+  m_PrefabInstance: {fileID: 8301597412260809594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6069938042777784799 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2813046218433616549, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
