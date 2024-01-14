@@ -23,7 +23,7 @@ public class GameLoader : MonoBehaviour
     void LoadMainScene()
     {
         LevelLoading.Instance.Active("MainScene", null,
-            () =>
+            async () =>
             {
 
                 /*UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
@@ -38,7 +38,7 @@ public class GameLoader : MonoBehaviour
                 }
 
                 ShowOpenAd();
-
+                await UniTask.Delay(300);
                 LevelLoading.Instance.Close();
             }
         , closeOverride: true);
