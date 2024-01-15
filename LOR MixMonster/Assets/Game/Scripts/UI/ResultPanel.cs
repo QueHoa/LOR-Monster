@@ -235,8 +235,7 @@ public class ResultPanel : UI.Panel
         if (isProcessing) return;
         isProcessing = true;
         isDone = true;
-        ClaimGold();
-        /*AD.Controller.Instance.ShowRewardedAd("ClaimGold", res =>
+        AD.Controller.Instance.ShowRewardedAd("ClaimGold", res =>
         {
             if (res)
             {
@@ -247,7 +246,7 @@ public class ResultPanel : UI.Panel
             {
                 isProcessing = false;
             }
-        });*/
+        });
 
         async void ClaimGold()
         {
