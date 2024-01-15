@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad59833633fa2904db3f217697bd7edd, type: 3}
+  m_Name: NotificationConfig
+  m_EditorClassIdentifier: 
+  notifications:
+  - title: Light up your day with favourite dress
+    message: Time to choose and enjoy all the fashion!
+    type: 0
+    time:
+      day: 0
+      hour: 0
+      minute: 1
+      second: 0
+  - title: Left Or Right Dress Up
+    message: Let's create truly special outfits
+    type: 0
+    time:
+      day: 0
+      hour: 2
+      minute: 0
+      second: 0
+  - title: Daily Dress Up Challenge!
+    message: Your fashion creativity can compete!
+    type: 0
+    time:
+      day: 0
+      hour: 6
+      minute: 0
+      second: 0
+  - title: Left Or Right Dress Up
+    message: Discover and enjoy with clothings.
+    type: 1
+    time:
+      day: 0
+      hour: 11
+      minute: 30
+      second: 0
+  - title: Left Or Right Dress Up
+    message: Relax time is coming!
+    type: 1
+    time:
+      day: 0
+      hour: 20
+      minute: 0
+      second: 0
