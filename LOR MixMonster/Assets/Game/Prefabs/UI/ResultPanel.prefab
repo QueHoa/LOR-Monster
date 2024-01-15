@@ -39,7 +39,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8585482529216557511
@@ -46943,13 +46943,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
-  speed: 9
+  speed: 12
   screenShotImg: {fileID: 169382422862358781}
   cardImg: {fileID: 3903657683657075618}
   iconGold: {fileID: 7528230371450719055}
   boxGold: {fileID: 5125846328069701560}
   cusorGameObject: {fileID: 186936202863294784}
-  boxCoin: {fileID: 6703757366341909308}
   _listTransform:
   - {fileID: 6777117176295642855}
   - {fileID: 3728870059195205437}
