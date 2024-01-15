@@ -198,7 +198,7 @@ public class MakeOverGameController : GameController
         DataManagement.DataManager.Instance.userData.BestView = totalViewPoint + bonusView;
         DataManagement.DataManager.Instance.Save();
 
-        await UniTask.Delay(6300, cancellationToken: cancellation.Token);
+        await UniTask.Delay(2800, cancellationToken: cancellation.Token);
         CheckReward(totalViewPoint + bonusView);
         FirebaseAnalysticController.Instance.LogEvent("MakeOverEnd");
 

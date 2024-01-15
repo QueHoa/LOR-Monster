@@ -17,7 +17,7 @@ public class ResultPanel : UI.Panel
     [SerializeField]
     private Image screenShotImg, cardImg;
     [SerializeField]
-    private RectTransform iconGold, boxGold, cusorGameObject, boxCoin;
+    private RectTransform iconGold, boxGold, cusorGameObject;
     [SerializeField]
     private List<Transform> _listTransform;
     bool isProcessing = false;
@@ -127,12 +127,10 @@ public class ResultPanel : UI.Panel
             .OnUpdate(() =>
             {
                 goldReceivedText.text = a.ToString();
-
             });
         await UniTask.Delay(2000, cancellationToken: cancellation.Token);
         coin = CoinPooler.instance.GetPoolCoin();
-        boxCoin.position = boxGold.position;
-        for (int i = 0; i < 5; i++)
+        /*for (int i = 0; i < 5; i++)
         {
             if (coin[i] != null)
             {
@@ -173,7 +171,8 @@ public class ResultPanel : UI.Panel
             DataManagement.DataManager.Instance.userData.YourGold = gold;
             Sound.Controller.Instance.PlayOneShot(finishSFX);
         });
-        await UniTask.Delay(2000, cancellationToken: cancellation.Token);
+        await UniTask.Delay(2000, cancellationToken: cancellation.Token);*/
+        isDone = false;
         claim.interactable = true;
         thanks.interactable = true;
     }
@@ -236,7 +235,8 @@ public class ResultPanel : UI.Panel
         if (isProcessing) return;
         isProcessing = true;
         isDone = true;
-        AD.Controller.Instance.ShowRewardedAd("ClaimGold", res =>
+        ClaimGold();
+        /*AD.Controller.Instance.ShowRewardedAd("ClaimGold", res =>
         {
             if (res)
             {
@@ -247,19 +247,18 @@ public class ResultPanel : UI.Panel
             {
                 isProcessing = false;
             }
-        });
+        });*/
 
         async void ClaimGold()
         {
-            boxCoin.position = cusorGameObject.position;
             for (int i = 0; i < 5; i++)
             {
                 if (coin[i] != null)
                 {
                     coin[i].localScale = Vector3.zero;
-                    coin[i].position = cusorGameObject.position;
+                    coin[i].position = boxGold.position;
                     coin[i].gameObject.SetActive(true);
-                    coin[i].DOAnchorPos(new Vector3(cusorGameObject.position.x + UnityEngine.Random.Range(-80f, 80f), cusorGameObject.position.y + UnityEngine.Random.Range(-100f, 60f), 1), 0.3f).SetEase(Ease.InOutQuad);
+                    coin[i].DOAnchorPos(new Vector3(boxGold.position.x + UnityEngine.Random.Range(-80f, 80f), boxGold.position.y + UnityEngine.Random.Range(-100f, 60f), 1), 0.3f).SetEase(Ease.InOutQuad);
                     Sound.Controller.Instance.PlayOneShot(coinSFX1);
                     coin[i].transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InOutQuad);
                 }
@@ -306,12 +305,58 @@ public class ResultPanel : UI.Panel
         {
             AD.Controller.Instance.ShowInterstitial(() =>
             {
-                LoadLevel();
+                ReceiveGold();
 
             });
         }
         else
         {
+            ReceiveGold();
+        }
+        async void ReceiveGold()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (coin[i] != null)
+                {
+                    coin[i].localScale = Vector3.zero;
+                    coin[i].position = boxGold.position;
+                    coin[i].gameObject.SetActive(true);
+                    coin[i].DOAnchorPos(new Vector3(boxGold.position.x + UnityEngine.Random.Range(-80f, 80f), boxGold.position.y + UnityEngine.Random.Range(-100f, 60f), 1), 0.3f).SetEase(Ease.InOutQuad);
+                    Sound.Controller.Instance.PlayOneShot(coinSFX1);
+                    coin[i].transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InOutQuad);
+                }
+            }
+            await UniTask.Delay(600, cancellationToken: cancellation.Token);
+            for (int i = 0; i < 5; i++)
+            {
+                if (coin[i] != null)
+                {
+                    coin[i].transform.DOMove(iconGold.position, 0.8f).SetEase(Ease.OutSine).OnComplete(() =>
+                    {
+                        Sound.Controller.Instance.PlayOneShot(coinSFX2);
+                    });
+                }
+            }
+            await UniTask.Delay(800, cancellationToken: cancellation.Token);
+            for (int i = 0; i < 5; i++)
+            {
+                if (coin[i] != null)
+                {
+                    coin[i].gameObject.SetActive(false);
+                }
+            }
+            goldText.transform.DOScale(Vector3.one * 1.3f, 0.5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
+            DOTween.To(() => gold, x => gold = x, DataManagement.DataManager.Instance.userData.YourGold + changeGold, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
+            {
+                goldText.text = gold.ToString();
+            }).OnComplete(() =>
+            {
+                DataManagement.DataManager.Instance.userData.YourGold = gold;
+                DataManagement.DataManager.Instance.Save();
+                Sound.Controller.Instance.PlayOneShot(finishSFX);
+            });
+            await UniTask.Delay(2000, cancellationToken: cancellation.Token);
             LoadLevel();
         }
     }

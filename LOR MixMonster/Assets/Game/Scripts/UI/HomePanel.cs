@@ -29,7 +29,7 @@ public class HomePanel : UI.Panel
              this.effect = effect;
              this.effect.Active();
          });
-        nativeAdBanner.gameObject.SetActive(DataManagement.DataManager.Instance.userData.progressData.playCount > 0);
+        nativeAdBanner.SetActive(DataManagement.DataManager.Instance.userData.progressData.playCount > 0);
         //goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         Show();
     }
@@ -78,6 +78,7 @@ public class HomePanel : UI.Panel
         isProcessing = true;
         UI.PanelManager.Create(typeof(SettingPopup), (panel, op) =>
         {
+            nativeAdBanner.SetActive(false);
             ((SettingPopup)panel).SetUp();
 
             isProcessing = false;
