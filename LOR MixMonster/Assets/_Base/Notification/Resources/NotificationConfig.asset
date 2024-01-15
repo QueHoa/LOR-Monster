@@ -21,7 +21,7 @@ MonoBehaviour:
       hour: 0
       minute: 1
       second: 0
-  - title: Left Or Right Dress Up
+  - title: Left Or Right Mix Monster
     message: Let's create truly special outfits
     type: 0
     time:
@@ -29,7 +29,7 @@ MonoBehaviour:
       hour: 2
       minute: 0
       second: 0
-  - title: Daily Dress Up Challenge!
+  - title: Daily Mix Monster Challenge!
     message: Your fashion creativity can compete!
     type: 0
     time:
@@ -37,7 +37,7 @@ MonoBehaviour:
       hour: 6
       minute: 0
       second: 0
-  - title: Left Or Right Dress Up
+  - title: Left Or Right Mix Monster
     message: Discover and enjoy with clothings.
     type: 1
     time:
@@ -45,7 +45,7 @@ MonoBehaviour:
       hour: 11
       minute: 30
       second: 0
-  - title: Left Or Right Dress Up
+  - title: Left Or Right Mix Monster
     message: Relax time is coming!
     type: 1
     time:
