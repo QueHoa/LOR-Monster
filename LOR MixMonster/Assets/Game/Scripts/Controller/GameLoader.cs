@@ -23,7 +23,7 @@ public class GameLoader : MonoBehaviour
     void LoadMainScene()
     {
         LevelLoading.Instance.Active("MainScene", null,
-            () =>
+            async () =>
             {
 
                 /*UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
@@ -36,7 +36,7 @@ public class GameLoader : MonoBehaviour
                 {
                     AD.Controller.Instance.HideBanner();
                 }
-
+                await UniTask.Delay(300);
                 ShowOpenAd();
                 LevelLoading.Instance.Close();
             }
