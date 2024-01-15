@@ -36,8 +36,8 @@ public class GameLoader : MonoBehaviour
                 {
                     AD.Controller.Instance.HideBanner();
                 }
-                await UniTask.Delay(300);
                 ShowOpenAd();
+                await UniTask.Delay(200);
                 LevelLoading.Instance.Close();
             }
         , closeOverride: true);

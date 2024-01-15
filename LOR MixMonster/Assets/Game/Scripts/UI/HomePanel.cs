@@ -67,6 +67,7 @@ public class HomePanel : UI.Panel
         isProcessing = true;
         UI.PanelManager.Create(typeof(DailyRewards), (panel, op) =>
         {
+            nativeAdBanner.SetActive(false);
             ((DailyRewards)panel).SetUp();
             
             isProcessing = false;
@@ -78,7 +79,6 @@ public class HomePanel : UI.Panel
         isProcessing = true;
         UI.PanelManager.Create(typeof(SettingPopup), (panel, op) =>
         {
-            nativeAdBanner.SetActive(false);
             ((SettingPopup)panel).SetUp();
 
             isProcessing = false;
