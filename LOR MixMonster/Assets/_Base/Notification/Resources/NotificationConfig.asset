@@ -13,43 +13,75 @@ MonoBehaviour:
   m_Name: NotificationConfig
   m_EditorClassIdentifier: 
   notifications:
-  - title: Light up your day with favourite dress
-    message: Time to choose and enjoy all the fashion!
-    type: 0
-    time:
-      day: 0
-      hour: 0
-      minute: 1
-      second: 0
-  - title: Left Or Right Mix Monster
-    message: Let's create truly special outfits
+  - title: We've missed you!
+    message: "Time to choose and create new monsters \U0001F381"
     type: 0
     time:
       day: 0
       hour: 2
       minute: 0
       second: 0
-  - title: Daily Mix Monster Challenge!
-    message: Your fashion creativity can compete!
+  - title: 'Time to Left or Right: Mix Monster'
+    message: "\U0001F929 Discover and enjoy with Monsters"
     type: 0
     time:
       day: 0
-      hour: 6
+      hour: 24
       minute: 0
       second: 0
-  - title: Left Or Right Mix Monster
-    message: Discover and enjoy with clothings.
-    type: 1
+  - title: Want to play?
+    message: "\U0001F381 It's time to Mix Monsters\U0001F60D"
+    type: 0
     time:
-      day: 0
-      hour: 11
-      minute: 30
+      day: 3
+      hour: 0
+      minute: 0
       second: 0
-  - title: Left Or Right Mix Monster
-    message: Relax time is coming!
+  - title: We've missed you!
+    message: "Time to choose and create new monsters \U0001F381"
+    type: 0
+    time:
+      day: 5
+      hour: 0
+      minute: 0
+      second: 0
+  - title: 'Time to Left or Right: Mix Monster'
+    message: "\U0001F929 Discover and enjoy with Monsters"
+    type: 0
+    time:
+      day: 7
+      hour: 0
+      minute: 0
+      second: 0
+  - title: Want to play?
+    message: "\U0001F381 It's time to Mix Monsters\U0001F60D"
+    type: 0
+    time:
+      day: 21
+      hour: 0
+      minute: 0
+      second: 0
+  - title: We've missed you!
+    message: "Time to choose and create new monsters \U0001F381"
+    type: 0
+    time:
+      day: 28
+      hour: 0
+      minute: 0
+      second: 0
+  - title: Let's Go!!!
+    message: "\U0001F381 You have rewards to reveal! "
     type: 1
     time:
       day: 0
       hour: 20
       minute: 0
+      second: 0
+  - title: Too much stress?
+    message: "\u2764\uFE0F Relax with creating Monsters!"
+    type: 1
+    time:
+      day: 0
+      hour: 11
+      minute: 30
       second: 0
