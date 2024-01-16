@@ -16,21 +16,25 @@
     <package>com.facebook.android:facebook-login:[14.1, 15)</package>
     <package>com.facebook.android:facebook-share:[14.1, 15)</package>
     <package>com.fyber:marketplace-sdk:8.2.4</package>
-    <package>com.google.android.gms:play-services-ads:22.1.0</package>
+    <package>com.google.android.gms:play-services-ads:[22.3.0]</package>
     <package>com.google.android.gms:play-services-ads:22.2.0</package>
     <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
     <package>com.google.android.gms:play-services-base:18.2.0</package>
     <package>com.google.android.gms:play-services-basement:18.1.0</package>
-    <package>com.google.android.ump:user-messaging-platform:2.0.0</package>
+    <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
     <package>com.google.code.gson:gson:2.8.5</package>
     <package>com.google.firebase:firebase-analytics:21.3.0</package>
     <package>com.google.firebase:firebase-analytics-unity:11.2.0</package>
     <package>com.google.firebase:firebase-app-unity:11.2.0</package>
+    <package>com.google.firebase:firebase-auth:22.0.0</package>
+    <package>com.google.firebase:firebase-auth-unity:11.2.0</package>
     <package>com.google.firebase:firebase-common:20.3.3</package>
     <package>com.google.firebase:firebase-config:21.4.0</package>
     <package>com.google.firebase:firebase-config-unity:11.2.0</package>
     <package>com.google.firebase:firebase-crashlytics-ndk:18.3.7</package>
     <package>com.google.firebase:firebase-crashlytics-unity:11.2.0</package>
+    <package>com.google.firebase:firebase-database:20.2.2</package>
+    <package>com.google.firebase:firebase-database-unity:11.2.0</package>
     <package>com.inmobi.monetization:inmobi-ads-kotlin:10.5.9</package>
     <package>com.ironsource.adapters:adcolonyadapter:4.3.15</package>
     <package>com.ironsource.adapters:admobadapter:4.3.39</package>
@@ -44,7 +48,7 @@
     <package>com.ironsource.adapters:tapjoyadapter:4.1.25</package>
     <package>com.ironsource.adapters:unityadsadapter:4.3.33</package>
     <package>com.ironsource.adapters:vungleadapter:4.3.22</package>
-    <package>com.ironsource.sdk:mediationsdk:7.5.2</package>
+    <package>com.ironsource.sdk:mediationsdk:7.6.1</package>
     <package>com.ironsource.unity:adqualitysdk:7.14.2</package>
     <package>com.ironsource:adqualitysdk:7.14.2</package>
     <package>com.mbridge.msdk.oversea:mbbanner:16.5.21</package>
@@ -62,13 +66,17 @@
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.2.0/firebase-analytics-unity-11.2.0.pom</file>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.2.0/firebase-app-unity-11.2.0.aar</file>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.2.0/firebase-app-unity-11.2.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-auth-unity/11.2.0/firebase-auth-unity-11.2.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-auth-unity/11.2.0/firebase-auth-unity-11.2.0.pom</file>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-config-unity/11.2.0/firebase-config-unity-11.2.0.aar</file>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-config-unity/11.2.0/firebase-config-unity-11.2.0.pom</file>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-crashlytics-unity/11.2.0/firebase-crashlytics-unity-11.2.0.aar</file>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-crashlytics-unity/11.2.0/firebase-crashlytics-unity-11.2.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-database-unity/11.2.0/firebase-database-unity-11.2.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-database-unity/11.2.0/firebase-database-unity-11.2.0.pom</file>
   </files>
   <settings>
-    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
+    <setting name="androidAbis" value="armeabi-v7a" />
     <setting name="bundleId" value="com.left.right.mixmonster" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />

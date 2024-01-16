@@ -108,10 +108,12 @@ namespace OneHit.Leaderboard
         [Button]
         private async void CheatScore(int score)
         {
-          await  _system.UpdateThisPlayer(score);
-          RefreshLeaderboard();
+            await _system.UpdateThisPlayer(score);
+            RefreshLeaderboard();
         }
-#if UNITY_EDITOR
+    }
+}
+/*#if UNITY_EDITOR
         public static readonly string[] Names =
         {
             "Michael", "James", "John", "Robert", "William",
@@ -147,4 +149,4 @@ namespace OneHit.Leaderboard
         }
     }
 #endif
-}
+}*/
