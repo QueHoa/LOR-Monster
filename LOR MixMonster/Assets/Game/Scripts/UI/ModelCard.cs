@@ -20,15 +20,14 @@ public class ModelCard : MonoBehaviour, ISelectableButton
     private Skin _mixAndMatchSkin;
     private CollectionData _collectionData;
 
-
     private void OnEnable()
     {
-        /*var collectionData = DataManager.Instance.userData.inventory.GetFirstCollection();
+        var collectionData = DataManager.Instance.userData.inventory.GetFirstCollection();
 
         if (collectionData != null)
             SetUp(collectionData);
         else
-            gameObject.SetActive(false);*/
+            gameObject.SetActive(false);
     }
 
     public void SetUp(CollectionData collectionData)

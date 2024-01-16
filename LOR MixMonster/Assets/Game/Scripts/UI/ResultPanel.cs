@@ -30,7 +30,7 @@ public class ResultPanel : UI.Panel
     [SerializeField]
     private AudioClip finishSFX, barMove, coinSFX1, coinSFX2, selectCard, removeCard;
     [SerializeField]
-    private TMPro.TextMeshProUGUI likeText, goldText, goldReceivedText, claimWithAdsText, numberCardText;
+    private TMPro.TextMeshProUGUI likeText, goldText, goldReceivedText, claimWithAdsText;
 
     private int gold, changeGold, max, xLucky;
     bool isDone;
@@ -68,7 +68,6 @@ public class ResultPanel : UI.Panel
         xLucky = 5;
         screenShotImg.sprite = screenShot;
         cardImg.sprite = screenShot;
-        DataManagement.DataManager.Instance.userData.progressData.numberCard++;
         Texture2D rawImageTexture = screenShot.texture;
         byte[] bytes = rawImageTexture.EncodeToJPG(50); // Chuyển texture thành dãy byte JPG
         string filePath = Application.persistentDataPath + "/" + (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1).ToString() + ".jpg";
@@ -104,7 +103,6 @@ public class ResultPanel : UI.Panel
         gold = DataManagement.DataManager.Instance.userData.YourGold;
         max = Sheet.SheetDataManager.Instance.gameData.rewardBarConfig.views[Sheet.SheetDataManager.Instance.gameData.rewardBarConfig.views.Length - 1];
         likeText.text = "0m";
-        numberCardText.text = DataManagement.DataManager.Instance.userData.progressData.numberCard.ToString();
         Effect(totalLikePoint);
         goldText.text = gold.ToString();
         likeText.text = GameUtility.GameUtility.ShortenNumber(totalLikePoint);
@@ -375,54 +373,39 @@ public class ResultPanel : UI.Panel
     }
     public void Home()
     {
-        if (isProcessing) return;
-        isProcessing = true;
+        bool isTut = hand.activeSelf;
 
-        if (DataManagement.DataManager.Instance.userData.progressData.playCount >= Game.Controller.Instance.gameConfig.adConfig.adStart)
+        if (Game.Controller.Instance.gameConfig.gameType == 1)
         {
-            AD.Controller.Instance.ShowInterstitial(() =>
+            if (!isTut)
             {
-                GoHome();
-
-            });
-        }
-        else
-        {
-            GoHome();
-        }
-
-
-        void GoHome()
-        {
-            DataManagement.DataManager.Instance.userData.progressData.hideCard = true;
-            Sound.Controller.Instance.PlayOneShot(selectCard);
-            LevelLoading.Instance.Active(() =>
-            {
-                Close();
-                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
+                AD.Controller.Instance.ShowInterstitial(() =>
                 {
-                    ((HomePanel)panel).SetUp();
+                    LoadScene();
                 });
-                Game.Controller.Instance.gameController.Destroy();
-                LevelLoading.Instance.Close();
-            });
-        }
-    }
-    public void CloseCard()
-    {
-        DataManagement.DataManager.Instance.userData.progressData.hideCard = true;
-        DataManagement.DataManager.Instance.userData.progressData.numberCard--;
-        hand.SetActive(false);
-        numberCardText.text = DataManagement.DataManager.Instance.userData.progressData.numberCard.ToString();
-        Sound.Controller.Instance.PlayOneShot(removeCard);
-        if (DataManagement.DataManager.Instance.userData.progressData.numberCard > 0)
-        {
-            panelCard.transform.Shake(0.15f, 1, 0.15f);
-        }
-        else
-        {
-            DOTween.To(() => panelCard.alpha, x => panelCard.alpha = x, 0, 0.3f);
-            panelCard.interactable = false;
+            }
+            else
+            {
+                LoadScene();
+            }
+
+
+            void LoadScene()
+            {
+                LevelLoading.Instance.Active("MainScene",
+                 UniTask.Action(async () =>
+                 {
+                     await Game.Controller.Instance.gameController.SetUp();
+                     LevelLoading.Instance.Close();
+
+                 }),
+                 () =>
+                 {
+
+                     Game.Controller.Instance.gameController.Destroy();
+                 }
+             , closeOverride: true);
+            }
         }
     }
 }

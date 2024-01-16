@@ -41547,9 +41547,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8637266027046173098}
-        m_TargetAssemblyTypeName: ResultPanel, Assembly-CSharp
-        m_MethodName: CloseCard
+      - m_Target: {fileID: 6686133621067362145}
+        m_TargetAssemblyTypeName: ModelCard, Assembly-CSharp
+        m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46973,7 +46973,6 @@ MonoBehaviour:
   goldText: {fileID: 2577659200653115526}
   goldReceivedText: {fileID: 27291998550637729}
   claimWithAdsText: {fileID: 6219189647190337763}
-  numberCardText: {fileID: 3169603842617223130}
 --- !u!95 &555316685646384293
 Animator:
   serializedVersion: 4

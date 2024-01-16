@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad59833633fa2904db3f217697bd7edd, type: 3}
+  m_Name: NotificationConfig
+  m_EditorClassIdentifier: 
+  notifications:
+  - title: We've missed you!
+    message: "Time to choose and create new monsters \U0001F381"
+    type: 0
+    time:
+      day: 0
+      hour: 2
+      minute: 0
+      second: 0
+  - title: 'Time to Left or Right: Mix Monster'
+    message: "\U0001F929 Discover and enjoy with Monsters"
+    type: 0
+    time:
+      day: 0
+      hour: 24
+      minute: 0
+      second: 0
+  - title: Want to play?
+    message: "\U0001F381 It's time to Mix Monsters\U0001F60D"
+    type: 0
+    time:
+      day: 3
+      hour: 0
+      minute: 0
+      second: 0
+  - title: We've missed you!
+    message: "Time to choose and create new monsters \U0001F381"
+    type: 0
+    time:
+      day: 5
+      hour: 0
+      minute: 0
+      second: 0
+  - title: 'Time to Left or Right: Mix Monster'
+    message: "\U0001F929 Discover and enjoy with Monsters"
+    type: 0
+    time:
+      day: 7
+      hour: 0
+      minute: 0
+      second: 0
+  - title: Want to play?
+    message: "\U0001F381 It's time to Mix Monsters\U0001F60D"
+    type: 0
+    time:
+      day: 14
+      hour: 0
+      minute: 0
+      second: 0
+  - title: We've missed you!
+    message: "Time to choose and create new monsters \U0001F381"
+    type: 0
+    time:
+      day: 21
+      hour: 0
+      minute: 0
+      second: 0
+  - title: 'Time to Left or Right: Mix Monster'
+    message: "\U0001F929 Discover and enjoy with Monsters"
+    type: 0
+    time:
+      day: 28
+      hour: 0
+      minute: 0
+      second: 0
+  - title: Too much stress?
+    message: "\u2764\uFE0F Relax with creating Monsters!"
+    type: 1
+    time:
+      day: 0
+      hour: 11
+      minute: 30
+      second: 0
+  - title: Let's Go!!!
+    message: "\U0001F381 You have rewards to reveal! "
+    type: 1
+    time:
+      day: 0
+      hour: 20
+      minute: 0
+      second: 0

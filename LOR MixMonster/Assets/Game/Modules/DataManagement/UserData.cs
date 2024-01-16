@@ -218,7 +218,6 @@ namespace DataManagement
         public bool firstPet = true, hideCard = false;
         public bool music = true, sound = true, vibration = true;
         public int firstDaily = 0;
-        public int numberCard=0, numberMonster=0;
         public List<CollectionData> collectionDatas = new List<CollectionData>();
 
         public int GetAdProgress(string id)
@@ -261,6 +260,35 @@ namespace DataManagement
         }
     }
     [System.Serializable]
+    public class CardData
+    {
+        public ECollectionState state;
+        public string id;
+        public int model;
+        public string eventId;
+        public string[] items;
+
+        public CardData()
+        {
+        }
+
+        /*public CardData(int modelId, List<ItemData.ModelItem> currentItems)
+        {
+            this.id = Guid.NewGuid().ToString();
+            this.model = modelId;
+            items = new string[currentItems.Count];
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = currentItems[i].id;
+            }
+        }*/
+    }
+    public enum ECollectionState
+    {
+        Available,
+        InUse
+    }
+    [System.Serializable]
     public class CollectionData
     {
         public delegate void OnUpdate(CollectionData collectionData);
@@ -289,15 +317,41 @@ namespace DataManagement
         [System.NonSerialized]
         public OnUpdate onUpdate;
 
+        public delegate void OnCashUpdated(Inventory inventory, ObscuredInt cash);
+        [System.NonSerialized]
+        public OnCashUpdated onCashUpdated;
+
+        public ObscuredInt cash;
+        public ObscuredInt Cash
+        {
+            get => cash;
+            set
+            {
+                cash = value;
+                onCashUpdated?.Invoke(this, cash);
+            }
+        }
+
+        public ObscuredInt cake;
+        public ObscuredInt Cake
+        {
+            get => cake;
+            set { cake = value; }
+        }
+
         [JsonProperty("iprog")]
         public Dictionary<string, int> itemStates = new Dictionary<string, int>();
+        [JsonProperty("collection")]
+        public Dictionary<string, CollectionData> collections = new Dictionary<string, CollectionData>();
+
+
         public int GetItemState(string id)
         {
             int result = 0;
             itemStates.TryGetValue(id, out result);
             return result;
-
         }
+
         public void SetItemState(string id, int value)
         {
             if (itemStates.ContainsKey(id))
@@ -310,9 +364,59 @@ namespace DataManagement
             }
         }
 
+        public void AddCollection(CollectionData modelData)
+        {
+            //collections.Add(modelData.id, modelData);
+            Update();
+        }
+
+        public void RemoveCollection(string id)
+        {
+            collections.Remove(id);
+            Update();
+        }
+
+        public CollectionData GetCollection(string id)
+        {
+            if (collections.Count == 0 || !collections.ContainsKey(id)) return null;
+            return collections[id];
+        }
+
+        public CollectionData GetFirstCollection()
+        {
+            CollectionData[] temp = new CollectionData[collections.Values.Count];
+            collections.Values.CopyTo(temp, 0);
+            for (int i = temp.Length - 1; i >= 0; i--)
+            {
+                CollectionData collection = temp[i];
+                //if (collection.state == ECollectionState.Available)
+                    return collection;
+            }
+
+            return null;
+        }
+
+        public int GetTotalCollection()
+        {
+            int total = 0;
+            foreach (var collection in collections.Values)
+            {
+                /*if (collection.state == ECollectionState.Available)
+                {
+                    total++;
+                }*/
+            }
+
+            return total;
+        }
+
+        public void Update()
+        {
+            onUpdate?.Invoke(this);
+        }
+
         public Inventory()
         {
-
         }
     }
 
