@@ -41,7 +41,7 @@ public class RemoveAdPurchaseListenner : MonoBehaviour,IOnPurchased
         {
             UI.PanelManager.Create(typeof(MessagePanel), (panel, op) =>
             {
-                ((MessagePanel)panel).SetUp("Purchas failed\nReason: "+reason);
+                ((MessagePanel)panel).SetUp("Purchase failed\nReason: "+reason);
             });
         }
     }
