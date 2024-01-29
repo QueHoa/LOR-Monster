@@ -16,7 +16,7 @@ namespace OneHit.Leaderboard
         public void SetProperties(int rank, string name, int score, Sprite sprite)
         {
             if (this.rank != null)
-                this.rank.text = "/" + rank.ToString() + "/";
+                this.rank.text = "#" + rank.ToString();
             this.username.text = name;
             this.score.text = GameUtility.GameUtility.ShortenNumber(score);
             if (this.holder != null)

@@ -11,7 +11,7 @@ using MoreMountains.NiceVibrations;
 public class LiveStreamPanel : Panel
 {
     [SerializeField]
-    protected HapticTypes hapticTypes = HapticTypes.Warning;
+    private HapticTypes hapticTypes = HapticTypes.Warning;
     [SerializeField]
     private TMPro.TextMeshProUGUI viewPointText, likePointText;
     [SerializeField]
