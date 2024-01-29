@@ -210,7 +210,7 @@ public class MakeOverGameController : GameController
     {
         float t = 0;
         Transform _transform = monster.transform;
-        Vector3 scale = Vector3.one;
+        Vector3 scale = Vector3.one *1.3f;
         Vector3 pos = Vector3.zero;
 
         while (t < monsterZoomCurve.keys[monsterZoomCurve.length - 1].time)

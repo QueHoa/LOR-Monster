@@ -174,7 +174,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1450, y: 0}
+  m_SizeDelta: {x: 2400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8920004071527456655
 CanvasRenderer:
@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 4b63f1108e819a14a8c5725f1ffad3c9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -374,11 +374,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a608420a404c443909ecf71a47ce0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  eventAnim: {fileID: 0}
+  monsterShot: {fileID: 0}
   selectSFX: {fileID: 0}
   removeSFX: {fileID: 0}
   collectionTotalText: {fileID: 0}
+  _cardData:
+    state: 0
+    id: 
+    eventId: 
+    items: []
+    numberCard: 
   holdCurve:
     serializedVersion: 2
     m_Curve: []

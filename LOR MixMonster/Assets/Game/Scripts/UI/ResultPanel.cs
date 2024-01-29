@@ -10,6 +10,7 @@ using System.IO;
 using Spine.Unity.Examples;
 using GameUtility;
 using DataManagement;
+using System.Threading.Tasks;
 
 public class ResultPanel : UI.Panel
 {
@@ -23,7 +24,7 @@ public class ResultPanel : UI.Panel
     private List<Transform> _listTransform;
     bool isProcessing = false;
     [SerializeField]
-    private GameObject hand,bestObj;
+    private GameObject hand, bestObj;
     [SerializeField]
     private MonsterCard monsterCard;
     [SerializeField]
@@ -62,6 +63,7 @@ public class ResultPanel : UI.Panel
     public void SetUp(int totalViewPoint, int totalLikePoint,Sprite screenShot, List<ItemData.Item> mySets)
     {
         isDone = true;
+        Debug.Log(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1);
         xLucky = 5;
         screenShotImg.sprite = screenShot;
         Texture2D rawImageTexture = screenShot.texture;
@@ -133,6 +135,7 @@ public class ResultPanel : UI.Panel
         }
         else
         {
+            hand.SetActive(false);
             monsterCard.gameObject.SetActive(false);
         }
     }
@@ -341,17 +344,59 @@ public class ResultPanel : UI.Panel
         {
             AD.Controller.Instance.ShowInterstitial(() =>
             {
-                LoadScene();
+                LoadSceneAsync();
             });
         }
         else
         {
-            LoadScene();
+            LoadSceneAsync();
         }
 
 
-        void LoadScene()
+        async Task LoadSceneAsync()
         {
+            for (int i = 0; i < 5; i++)
+            {
+                if (coin[i] != null)
+                {
+                    coin[i].localScale = Vector3.zero;
+                    coin[i].position = boxGold.position;
+                    coin[i].gameObject.SetActive(true);
+                    coin[i].DOAnchorPos(new Vector3(boxGold.position.x + UnityEngine.Random.Range(-80f, 80f), boxGold.position.y + UnityEngine.Random.Range(-100f, 60f), 1), 0.3f).SetEase(Ease.InOutQuad);
+                    Sound.Controller.Instance.PlayOneShot(coinSFX1);
+                    coin[i].transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InOutQuad);
+                }
+            }
+            await UniTask.Delay(600, cancellationToken: cancellation.Token);
+            for (int i = 0; i < 5; i++)
+            {
+                if (coin[i] != null)
+                {
+                    coin[i].transform.DOMove(iconGold.position, 0.8f).SetEase(Ease.OutSine).OnComplete(() =>
+                    {
+                        Sound.Controller.Instance.PlayOneShot(coinSFX2);
+                    });
+                }
+            }
+            await UniTask.Delay(800, cancellationToken: cancellation.Token);
+            for (int i = 0; i < 5; i++)
+            {
+                if (coin[i] != null)
+                {
+                    coin[i].gameObject.SetActive(false);
+                }
+            }
+            goldText.transform.DOScale(Vector3.one * 1.3f, 0.5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
+            DOTween.To(() => gold, x => gold = x, DataManagement.DataManager.Instance.userData.YourGold + changeGold, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
+            {
+                goldText.text = gold.ToString();
+            }).OnComplete(() =>
+            {
+                DataManagement.DataManager.Instance.userData.YourGold = gold;
+                DataManagement.DataManager.Instance.Save();
+                Sound.Controller.Instance.PlayOneShot(finishSFX);
+            });
+            await UniTask.Delay(1800, cancellationToken: cancellation.Token);
             LevelLoading.Instance.Active("HomeScene",
              async () =>
              {
@@ -359,48 +404,6 @@ public class ResultPanel : UI.Panel
              },
              async () =>
              {
-                 for (int i = 0; i < 5; i++)
-                 {
-                     if (coin[i] != null)
-                     {
-                         coin[i].localScale = Vector3.zero;
-                         coin[i].position = boxGold.position;
-                         coin[i].gameObject.SetActive(true);
-                         coin[i].DOAnchorPos(new Vector3(boxGold.position.x + UnityEngine.Random.Range(-80f, 80f), boxGold.position.y + UnityEngine.Random.Range(-100f, 60f), 1), 0.3f).SetEase(Ease.InOutQuad);
-                         Sound.Controller.Instance.PlayOneShot(coinSFX1);
-                         coin[i].transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InOutQuad);
-                     }
-                 }
-                 await UniTask.Delay(600, cancellationToken: cancellation.Token);
-                 for (int i = 0; i < 5; i++)
-                 {
-                     if (coin[i] != null)
-                     {
-                         coin[i].transform.DOMove(iconGold.position, 0.8f).SetEase(Ease.OutSine).OnComplete(() =>
-                         {
-                             Sound.Controller.Instance.PlayOneShot(coinSFX2);
-                         });
-                     }
-                 }
-                 await UniTask.Delay(800, cancellationToken: cancellation.Token);
-                 for (int i = 0; i < 5; i++)
-                 {
-                     if (coin[i] != null)
-                     {
-                         coin[i].gameObject.SetActive(false);
-                     }
-                 }
-                 goldText.transform.DOScale(Vector3.one * 1.3f, 0.5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
-                 DOTween.To(() => gold, x => gold = x, DataManagement.DataManager.Instance.userData.YourGold + changeGold, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
-                 {
-                     goldText.text = gold.ToString();
-                 }).OnComplete(() =>
-                 {
-                     DataManagement.DataManager.Instance.userData.YourGold = gold;
-                     DataManagement.DataManager.Instance.Save();
-                     Sound.Controller.Instance.PlayOneShot(finishSFX);
-                 });
-                 await UniTask.Delay(1800, cancellationToken: cancellation.Token);
                  await Game.Controller.Instance.gameController.SetUp();
 
              }

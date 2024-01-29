@@ -133,7 +133,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     {
         backGroundImg.sprite = backGroundSprites[DataManagement.DataManager.Instance.userData.progressData.playCount % backGroundSprites.Length];
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
-        //homeBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.cards.Count != 0);
+        homeBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.cards.Count != 0);
         excludeItems.Clear();
         excludeItems.AddRange(previousFirstSpawnItems);
         previousFirstSpawnItems.Clear();
@@ -517,10 +517,6 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         selectedItems.Add(itemSelectButton.item);
         mySet.Add(itemSelectButton.item);
 
-        if (Sound.Controller.VibrationEnable)
-        {
-            MMVibrationManager.Haptic(hapticTypes, true, true, this);
-        }
         foreach (ItemSelectButton button in itemSelectButtons)
         {
             previousFirstSpawnItems.Add(button.item);

@@ -59,7 +59,7 @@ public class ObjectTouchHandler : MonoBehaviour
             transform.Shake(0.15f, 1, 0.2f, defaultScale: transform.localScale.x);
         }
         onMonsterReleased?.Invoke(monster);
-        //monster.stageCollectionData.position.Set(transform.position);
+        monster.stageCollectionData.position.Set(transform.position);
         DataManagement.DataManager.Instance.Save();
 
         Sound.Controller.Instance.PlayOneShot(releaseSFX);
