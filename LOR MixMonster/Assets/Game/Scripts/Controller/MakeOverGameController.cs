@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using GameUtility;
 using System;
 using System.Collections;
@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class MakeOverGameController : GameController
 {
     public Monster monster;
+    public int monsterId;
     CancellationTokenSource cancellation;
     [SerializeField]
     private Transform[] petSpawnPlaces;
@@ -47,7 +48,6 @@ public class MakeOverGameController : GameController
     {
         cancellation = new CancellationTokenSource();
 
-
         Sound.Controller.Instance.PlayMusic(Sound.Controller.Instance.soundData.menuTheme[UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.menuTheme.Length)]);
 
 
@@ -69,7 +69,6 @@ public class MakeOverGameController : GameController
     public override async UniTask SetUpCollection()
     {
         cancellation = new CancellationTokenSource();
-
 
         Sound.Controller.Instance.PlayMusic(Sound.Controller.Instance.soundData.menuTheme[UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.menuTheme.Length)]);
 
@@ -191,6 +190,9 @@ public class MakeOverGameController : GameController
         await UniTask.Delay(1000, cancellationToken: cancellation.Token);
         await UniTask.WaitUntil(() => capturedScreenShot != null, cancellationToken: cancellation.Token);
 
+        //lưu dữ liệu con mới mix lại ở cardData
+        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, selectedItems);
+        DataManagement.DataManager.Instance.userData.inventory.AddCollection(cardData);
         ResultPanel resultPanel = (ResultPanel)await UI.PanelManager.CreateAsync(typeof(ResultPanel));
         resultPanel.SetUp(totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
 

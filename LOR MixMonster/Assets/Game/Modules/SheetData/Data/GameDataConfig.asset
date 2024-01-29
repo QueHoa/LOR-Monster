@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localizationSheetUrl: https://script.google.com/macros/s/AKfycbyqcLlDKdPP3iRSfwfwVxS0eCpBH84qO_XWSt-CVrqIikSlKoV_8vpTcAOggjFiNOdE/exec
   itemSheetUrl: https://script.google.com/macros/s/AKfycbzdWPdsIf5QhAUkKf_75_2x1eyyBxivO3D_9P59QDGqnltnrmhN0TZGQXC93tW2PSQhCg/exec
+  stageSheetUrl: https://script.google.com/macros/s/AKfycbxVsudisodCidq3hBPWXW6KxyCd65swCwrq6MSNylKiGoNuizem1LbjTdYMM9GW9O7p/exec
   localizationData: {fileID: 11400000, guid: 82a176ed909ea1845b2e467ea11b9d3c, type: 2}
   itemData: {fileID: 11400000, guid: 302c71aade896f64eada4dad4a11a481, type: 2}
   rewardBarConfig: {fileID: 11400000, guid: 7dfa7c61ed00558469a3dae9f7300ff1, type: 2}
-  monsterCountConfig: {fileID: 11400000, guid: 69f731ce4ebbb534aae75dc38a085026, type: 2}
+  stageConfig: {fileID: 11400000, guid: 81dd697e4208f3642a0ee80dd2afbb26, type: 2}
   rewardGold: {fileID: 11400000, guid: 5ef701a76f860e34980c0b13514ff651, type: 2}

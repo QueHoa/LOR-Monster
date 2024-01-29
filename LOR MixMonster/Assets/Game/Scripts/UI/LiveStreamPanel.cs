@@ -6,9 +6,12 @@ using System.Collections.Generic;
 using System.Threading;
 using UI;
 using UnityEngine;
+using MoreMountains.NiceVibrations;
 
 public class LiveStreamPanel : Panel
 {
+    [SerializeField]
+    protected HapticTypes hapticTypes = HapticTypes.Warning;
     [SerializeField]
     private TMPro.TextMeshProUGUI viewPointText, likePointText;
     [SerializeField]
@@ -20,9 +23,10 @@ public class LiveStreamPanel : Panel
     [SerializeField]
     private ParticleSystem reactionPS;
     [SerializeField]
-    private GameObject handTut, nativeAdBanner;
+    private GameObject handTut;
     [SerializeField]
     private RewardBar rewardBar;
+    private bool hapticsAllowed = true;
     CancellationTokenSource cancellation;
     private void OnEnable()
     {
@@ -52,6 +56,7 @@ public class LiveStreamPanel : Panel
     int totalViewPoint, totalLikePoint;
     public async UniTask SetUp(int totalViewPoint,int totalLikePoint)
     {
+        MMVibrationManager.SetHapticsActive(hapticsAllowed);
         Effect.EffectSpawner.Instance.Get(4, effect =>
         {
             this.effect = effect;
@@ -128,6 +133,10 @@ public class LiveStreamPanel : Panel
         if (Input.GetMouseButtonDown(0))
         {
             Sound.Controller.Instance.PlayOneShot(clickSFX,0.4f);
+            if (Sound.Controller.VibrationEnable)
+            {
+                MMVibrationManager.Haptic(hapticTypes, true, true, this);
+            }
             reactionPS.Play();
             ((MakeOverGameController)Game.Controller.Instance.gameController).monster.transform.GetChild(0).Shake(0.15f, 0.8f, 0.1f,cancellationToken:cancellation.Token);
             bonusView += UnityEngine.Random.Range(10000, 30000);

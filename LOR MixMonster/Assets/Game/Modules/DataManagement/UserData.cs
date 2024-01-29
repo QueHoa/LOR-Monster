@@ -143,7 +143,6 @@ namespace DataManagement
     {
         public int index = 0;
         public List<StageCollectionData> stageCollections;
-        public string[] stageItems;
 
         public int totalModelSlot = 5;
         public bool isLocked = true;
@@ -151,7 +150,6 @@ namespace DataManagement
         public StageData()
         {
             stageCollections = new List<StageCollectionData>();
-            stageItems = new string[System.Enum.GetNames(typeof(ItemData.EStageItemCategory)).Length];
         }
 
         public void RemoveCollection(StageCollectionData stageCollectionData)
@@ -165,18 +163,12 @@ namespace DataManagement
         public string collectionId;
         public long createDate;
         public Vector position;
-        public List<Vector> petPositions = new List<Vector>();
-        private static Vector2[] defaultPositions = new Vector2[3] { new Vector2(-10, -5), new Vector2(0, -13), new Vector2(10, -5) };
 
         public StageCollectionData(string collectionId, Vector2 position)
         {
             this.collectionId = collectionId;
             createDate = System.DateTime.Now.Ticks;
             this.position = new Vector(position);
-            for (int i = 0; i < defaultPositions.Length; i++)
-            {
-                petPositions.Add(new Vector(position + defaultPositions[i]));
-            }
         }
 
         public StageCollectionData()
@@ -215,8 +207,8 @@ namespace DataManagement
         public System.DateTime lastLoggedIn;
         public int bestViewPoint,playCount;
         public bool firstSelect = true;
-        public bool firstPet = true, hideCard = false;
-        public bool music = true, sound = true, vibration = true;
+        public bool firstPet = true;
+        public bool uiHome = true;
         public int firstDaily = 0;
         public List<CollectionData> collectionDatas = new List<CollectionData>();
 
@@ -264,24 +256,25 @@ namespace DataManagement
     {
         public ECollectionState state;
         public string id;
-        public int model;
         public string eventId;
         public string[] items;
+        public List<int> numberCard = new List<int>();
+        //public CollectionData collectionDatas;
 
         public CardData()
         {
         }
 
-        /*public CardData(int modelId, List<ItemData.ModelItem> currentItems)
+        public CardData(int numberCard, List<ItemData.Item> currentItems)
         {
             this.id = Guid.NewGuid().ToString();
-            this.model = modelId;
+            this.numberCard.Add(numberCard);
             items = new string[currentItems.Count];
             for (int i = 0; i < items.Length; i++)
             {
                 items[i] = currentItems[i].id;
             }
-        }*/
+        }
     }
     public enum ECollectionState
     {
@@ -291,7 +284,7 @@ namespace DataManagement
     [System.Serializable]
     public class CollectionData
     {
-        public delegate void OnUpdate(CollectionData collectionData);
+        public delegate void OnUpdate(CardData collectionData);
         [System.NonSerialized]
         public OnUpdate onUpdate;
 
@@ -342,7 +335,7 @@ namespace DataManagement
         [JsonProperty("iprog")]
         public Dictionary<string, int> itemStates = new Dictionary<string, int>();
         [JsonProperty("collection")]
-        public Dictionary<string, CollectionData> collections = new Dictionary<string, CollectionData>();
+        public Dictionary<string, CardData> cards = new Dictionary<string, CardData>();
 
 
         public int GetItemState(string id)
@@ -364,33 +357,33 @@ namespace DataManagement
             }
         }
 
-        public void AddCollection(CollectionData modelData)
+        public void AddCollection(CardData monsterData)
         {
-            //collections.Add(modelData.id, modelData);
+            cards.Add(monsterData.id, monsterData);
             Update();
         }
 
         public void RemoveCollection(string id)
         {
-            collections.Remove(id);
+            cards.Remove(id);
             Update();
         }
 
-        public CollectionData GetCollection(string id)
+        public CardData GetCollection(string id)
         {
-            if (collections.Count == 0 || !collections.ContainsKey(id)) return null;
-            return collections[id];
+            if (cards.Count == 0 || !cards.ContainsKey(id)) return null;
+            return cards[id];
         }
 
-        public CollectionData GetFirstCollection()
+        public CardData GetFirstCollection()
         {
-            CollectionData[] temp = new CollectionData[collections.Values.Count];
-            collections.Values.CopyTo(temp, 0);
+            CardData[] temp = new CardData[cards.Values.Count];
+            cards.Values.CopyTo(temp, 0);
             for (int i = temp.Length - 1; i >= 0; i--)
             {
-                CollectionData collection = temp[i];
-                //if (collection.state == ECollectionState.Available)
-                    return collection;
+                CardData card = temp[i];
+                if (card.state == ECollectionState.Available)
+                    return card;
             }
 
             return null;
@@ -399,12 +392,12 @@ namespace DataManagement
         public int GetTotalCollection()
         {
             int total = 0;
-            foreach (var collection in collections.Values)
+            foreach (var card in cards.Values)
             {
-                /*if (collection.state == ECollectionState.Available)
+                if (card.state == ECollectionState.Available)
                 {
                     total++;
-                }*/
+                }
             }
 
             return total;

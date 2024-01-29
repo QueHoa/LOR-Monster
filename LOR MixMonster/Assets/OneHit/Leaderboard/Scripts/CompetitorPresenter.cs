@@ -35,7 +35,7 @@ namespace OneHit.Leaderboard
         public void SetAsThisPlayer(int rank, Sprite sprite)
         {
             if (this.rank != null)
-                this.rank.text = "/" + rank + "/";
+                this.rank.text = "#" + rank;
             this.username.text = UserProfile.GetUsername();
 
             if (rank > 15)

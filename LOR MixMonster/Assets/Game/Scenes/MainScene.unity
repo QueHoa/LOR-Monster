@@ -1489,6 +1489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReady: 0
   monster: {fileID: 0}
+  monsterId: 0
   petSpawnPlaces:
   - {fileID: 497718091}
   - {fileID: 2040567358}
@@ -1670,6 +1671,14 @@ PrefabInstance:
     - target: {fileID: 2935370678972006692, guid: e9c9d1d27e880f3458f7ef2f4c6cc19f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619561678016018792, guid: e9c9d1d27e880f3458f7ef2f4c6cc19f, type: 3}
+      propertyPath: prefabRefs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619561678016018792, guid: e9c9d1d27e880f3458f7ef2f4c6cc19f, type: 3}
+      propertyPath: prefabRefs.Array.data[2].m_AssetGUID
+      value: f724523ddb31d5a4d9d28aa2c58c9b59
       objectReference: {fileID: 0}
     - target: {fileID: 8839762009870071175, guid: e9c9d1d27e880f3458f7ef2f4c6cc19f, type: 3}
       propertyPath: m_RootOrder

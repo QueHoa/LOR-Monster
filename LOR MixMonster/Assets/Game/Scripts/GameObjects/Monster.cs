@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DataManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,11 @@ public class Monster : MonoBehaviour
     private GameObject middle;
     [SerializeField]
     private Transform[] heads;
+    public Transform cashEffectPlace, bottom;
+
+    public StageCollectionData stageCollectionData;
     Vector3 defaultMonsterHeadScale;
+
     public async UniTask SetUp(List<ItemData.Item> selectedItems)
     {
         foreach(ItemData.Item item in selectedItems)
@@ -101,6 +106,7 @@ public class Monster : MonoBehaviour
         }
         
     }
+    public int modelId;
     public void SetUp()
     {
         defaultMonsterHeadScale = monsterHead.transform.localScale;

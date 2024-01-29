@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopupTry : MonoBehaviour
 {
-
+    public MakeOverPanelAbstract main;
     private Animator anim;
     void OnEnable()
     {
@@ -12,6 +12,7 @@ public class PopupTry : MonoBehaviour
     }
     public void Close()
     {
+        main.isProcessing = false;
         anim.SetTrigger("close");
     }
     public void Off()

@@ -22,14 +22,13 @@ public class GameLoader : MonoBehaviour
 
     void LoadMainScene()
     {
-        LevelLoading.Instance.Active("MainScene", null,
+        var sceneKey = (DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() == null
+                            && DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0)
+                ? "MainScene"
+                : "HomeScene";
+        LevelLoading.Instance.Active(sceneKey, null,
             async () =>
             {
-
-                /*UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
-                {
-                    ((HomePanel)panel).SetUp();
-                });*/
                 Game.Controller.Instance.gameController.SetUp();
                 AD.Controller.Instance.ShowBanner();
                 if(Game.Controller.Instance.gameConfig.skipAd)

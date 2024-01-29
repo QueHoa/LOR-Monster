@@ -24,7 +24,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - Platform
+  - RemoveZone
   - Projectile
   - Enemy
   - Trigger
@@ -36,7 +36,7 @@ TagManager:
   - Collectable
   - Collector
   - HitBox
-  - 
+  - Re
   - 
   - 
   - 

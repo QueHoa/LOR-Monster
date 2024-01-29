@@ -4,6 +4,7 @@ public class GameDataConfigSO : ScriptableObject
 {
     public string localizationSheetUrl;
     public string itemSheetUrl;
+    public string stageSheetUrl;
     public LocalizationCollectionSO localizationData;
     public ItemData.ItemDictionarySO itemData;
     public RewardBarConfigSO rewardBarConfig;

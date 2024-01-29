@@ -19,7 +19,7 @@ public class PhotoButton : GameUtility.Pooling.PoolComponent
     {
         this.collectionPanel = collectionPanel;
         value = int.Parse(gameObject.name);
-        filePath = Application.persistentDataPath + "/" + (value + 1).ToString() + ".jpg"; ;
+        filePath = Application.persistentDataPath + "/" + (value + 1).ToString() + ".jpg";
         if (File.Exists(filePath))
         {
             byte[] bytes = File.ReadAllBytes(filePath);
@@ -61,10 +61,10 @@ public class PhotoButton : GameUtility.Pooling.PoolComponent
         foreach (ItemData.Item item in DataManagement.DataManager.Instance.userData.progressData.collectionDatas[value].collectionItem)
         {
             await SetItem(item, collectionPanel);
-            ((MakeOverGameController)Game.Controller.Instance.gameController).monster.SetItem(item);
+            ((StageGameController)Game.Controller.Instance.gameController).monster.SetItem(item);
         }
         musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
-        ((MakeOverGameController)Game.Controller.Instance.gameController).monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
+        ((StageGameController)Game.Controller.Instance.gameController).monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
         collectionPanel.ChangeCollect(value + 1);
     }
 }

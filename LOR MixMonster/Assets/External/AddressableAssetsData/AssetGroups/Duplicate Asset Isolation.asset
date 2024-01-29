@@ -57,11 +57,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4b63f1108e819a14a8c5725f1ffad3c9
-    m_Address: Assets/Game/Textures/Export/bg_disco.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 99f6bd37889967149825b8215de24234
     m_Address: Assets/Game/Sound/Theme/Left.mp3
     m_ReadOnly: 0

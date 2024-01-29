@@ -39,7 +39,18 @@ namespace DataManagement
                 userData = new UserData();
                 userData.Init();
             }
+            if (userData.stageListData == null)
+            {
+                userData.stageListData = new UserStageData();
+            }
 
+            if (userData.stageListData.boosters == null || userData.stageListData.boosters.Count == 0)
+            {
+                userData.stageListData.boosters = new List<BoosterData>();
+                userData.stageListData.boosters.Add(new BoosterData(EBooster.InstantMoney, 1));
+                userData.stageListData.boosters.Add(new BoosterData(EBooster.SpeedBoost, 1));
+                userData.stageListData.boosters.Add(new BoosterData(EBooster.AutoClick, 1));
+            }
             if (userData.progressData.IsNewDay())
             {
                 userData.progressData.CheckTotalSessionOfDay();

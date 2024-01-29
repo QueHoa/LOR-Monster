@@ -28,7 +28,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8752dcfd2c6658b469001d3fc03085c9
-    m_Address: HomePanelStage
+    m_Address: OldHomePanel
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -127,13 +127,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f6b0cfe3c915edf458553ce2eaec8561
+  - m_GUID: 47893311d17418345b12880b215e27f3
+    m_Address: LeaderBoardPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3b784364d44e0946b0f60706898c001
     m_Address: HomePanel
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 47893311d17418345b12880b215e27f3
-    m_Address: LeaderBoardPanel
+  - m_GUID: 862795b74c97e3b4dbc90ad32e120c9b
+    m_Address: SlotExpandPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8416d900a39bd5344b92d178bc41242b
+    m_Address: OfflineEarnPanel
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

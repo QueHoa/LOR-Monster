@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 namespace Sound { 
     public class Controller : MonoBehaviour
     {
-        private static bool sfxEnable, musicEnable;
+        private static bool sfxEnable, musicEnable, vibrationEnable;
         public static bool SfxEnable
         {
             get { return sfxEnable; }
@@ -37,6 +37,15 @@ namespace Sound {
                 PlayerPrefs.SetInt("Music", value ? 1 : 0);
             }
         }
+        public static bool VibrationEnable
+        {
+            get => vibrationEnable;
+            set
+            {
+                vibrationEnable = value;
+                PlayerPrefs.SetInt("Vibration", value ? 1 : 0);
+            }
+        }
         public delegate void OnSoundChange(bool state);
         public static OnSoundChange onSoundChange;
         public static Controller Instance;
@@ -50,6 +59,7 @@ namespace Sound {
             {
                 sfxEnable = PlayerPrefs.GetInt("Sound", 1) == 1;
                 musicEnable = PlayerPrefs.GetInt("Music", 1) == 1;
+                vibrationEnable = PlayerPrefs.GetInt("Vibration", 1) == 1;
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 Addressables.LoadAssetAsync<SoundData>("Sound Data").Completed += op =>
@@ -69,7 +79,7 @@ namespace Sound {
         }
         public void PlayOneShot(AudioClip clip, float vol = 1)
         {
-            if (SfxEnable && clip!=null)
+            if (SfxEnable && clip != null)
             {
                 sfxPlayer.PlayOneShot(clip, vol);
             }
@@ -101,11 +111,27 @@ namespace Sound {
         }
         public void ContinueMusic()
         {
-            musicPlayer.UnPause();
+            if (musicPlayer.clip == null)
+            {
+                PlayMusic(soundData.menuTheme[Random.Range(0, soundData.menuTheme.Length)]);
+            }
+            else
+            {
+                musicPlayer.UnPause();
+            }
         }
         public void PlayClickSFX()
         {
             PlayOneShot(soundData.clickSFXs[Random.Range(0,soundData.clickSFXs.Length)],0.1f);
+        }
+        public void PlaySettingsSfx(bool turnOn, float vol = 1)
+        {
+            PlayOneShot(soundData.settingSfxs[turnOn ? 1 : 0], vol);
+        }
+
+        public void PlayPopupSfx(bool open, float vol = 1)
+        {
+            PlayOneShot(soundData.popupSfxs[open ? 1 : 0], vol);
         }
 
     }

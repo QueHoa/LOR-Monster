@@ -17,31 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 1e5dec737dcdbe74b820c8fc1edc917c
   m_SerializeEntries:
-  - m_GUID: 53bc88dc3c61f4f44988d8e9e64c0c35
-    m_Address: Assets/Game/Animations/export/body_SkeletonData.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 051edc51c63b3c64dabc372d95d56702
-    m_Address: Assets/Game/Animations/export/body_Atlas.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3b3dff6f44ff1b247bc44941ec7456d5
-    m_Address: Assets/Game/Animations/export/body.atlas.txt
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 888b41575e34ae74e903b8dd6b443e96
-    m_Address: Assets/Game/Animations/export/body_Material.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c7b7a9dee50ddcd49aed14c3c7add34e
-    m_Address: Assets/Game/Animations/export/body.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e8a610c9e01c3648bac42585e5fc676
     m_Address: Assets/External/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton.shader
     m_ReadOnly: 0

@@ -61,7 +61,7 @@ namespace Effect
         public virtual EffectAbstract Active(Vector3 pos, Vector2 size) { return this; }
         public virtual EffectAbstract Active(Vector3 pos) { return this; }
         public virtual EffectAbstract Active(Vector3 pos, Vector3 direction) { return this; }
-        public virtual void Active(Vector3 pos, int amount) { }
+        public virtual EffectAbstract Active(Vector3 pos, int amount) { return this; }
         public virtual EffectAbstract Active(Vector3 pos, int amount, bool isCritical) { return this; }
         public virtual EffectAbstract SetColor(Color color) { return this; }
         public virtual EffectAbstract Active(Vector3 pos, string text) { return this; }

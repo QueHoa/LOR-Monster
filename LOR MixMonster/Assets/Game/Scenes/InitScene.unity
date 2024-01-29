@@ -533,10 +533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1da8d08c054d04ead373b376d990a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayMilliseconds: 500
-  testMode: 0
   testDevices:
   - TEST-DEVICE-HASHED-ID
+  testMode: 0
 --- !u!4 &917232699
 Transform:
   m_ObjectHideFlags: 0
@@ -668,7 +667,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2740.71, y: 0}
+  m_SizeDelta: {x: 2400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091253743
 MonoBehaviour:

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: body_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 051edc51c63b3c64dabc372d95d56702, type: 2}
-  scale: 0.013
+  - {fileID: 11400000, guid: 1555ded5086262a4d8fbcdc973ad089f, type: 2}
+  scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: dbbf46fff9cf39049a4281e087f818aa, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
-    applyAdditiveMaterial: 0
+    applyAdditiveMaterial: 1
     additiveMaterials: []
     multiplyMaterials: []
     screenMaterials: []
