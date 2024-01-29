@@ -10,7 +10,6 @@ public class StageConfigSO : ScriptableObject
     public int cashEarningForAdItem = 30;
     public int expandPrice = 300;
     public List<SlotConfig> slotConfigs = new List<SlotConfig>();
-    public List<StageConfig> stageConfigs = new List<StageConfig>();
     public int boosterRecoverTime;
 
     public List<BoosterConfig> boosterConfigs = new List<BoosterConfig>();
@@ -76,9 +75,8 @@ public class StageConfigSO : ScriptableObject
         cashEarningForAdItem = int.Parse(rowDatas[2].list[1]);
         cashEarningForNormalItem = int.Parse(rowDatas[1].list[1]);
 
-        ApplySlotConfig(sheets[2].GoogleSheetData);
-        ApplyStageConfig(sheets[3].GoogleSheetData);
-        ApplyBoosterConfig(sheets[4].GoogleSheetData);
+        ApplySlotConfig(sheets[1].GoogleSheetData);
+        ApplyBoosterConfig(sheets[2].GoogleSheetData);
 
     }
     void ApplySlotConfig(object[,] googleSheetData)
@@ -93,22 +91,6 @@ public class StageConfigSO : ScriptableObject
                 maxSlot = int.Parse(rowDatas[row].list[0]),
                 cashRequire = int.Parse(rowDatas[row].list[1]),
                 adRequire = int.Parse(rowDatas[row].list[2]),
-            });
-            row++;
-        }
-    }
-    void ApplyStageConfig(object[,] googleSheetData)
-    {
-        List<RowData> rowDatas = GameUtility.GameUtility.ConvertSheetToList(googleSheetData);
-        int row = 1;
-        stageConfigs.Clear();
-        while (row < rowDatas.Count)
-        {
-            stageConfigs.Add(new StageConfig()
-            {
-                id = int.Parse(rowDatas[row].list[0]),
-                cashRequire = int.Parse(rowDatas[row].list[1]),
-                maxExpandSlot = int.Parse(rowDatas[row].list[2]),
             });
             row++;
         }

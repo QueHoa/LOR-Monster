@@ -27,3 +27,9 @@ MonoBehaviour:
   playerWinSFX: []
   playerLoseSFX: []
   collectSFXs: []
+  settingSfxs:
+  - {fileID: 8300000, guid: 4b700a66ca74ec247913a20feb3752b2, type: 3}
+  - {fileID: 8300000, guid: 5aa26fc004470f44084d33e9f5732538, type: 3}
+  popupSfxs:
+  - {fileID: 8300000, guid: 8276b00fec6c94647a3df52103ee9fb8, type: 3}
+  - {fileID: 8300000, guid: 3b664b8687a37b4419297c317a6ca477, type: 3}

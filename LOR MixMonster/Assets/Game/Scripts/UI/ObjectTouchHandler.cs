@@ -5,13 +5,20 @@ using UnityEngine;
 
 public class ObjectTouchHandler : MonoBehaviour
 {
-    //[SerializeField]
-    //private AudioClip pickSFX, releaseSFX;
+    public delegate void OnMonsterSelected(Monster monster);
+    public static OnMonsterSelected onMonsterSelected;
+    public delegate void OnMonsterReleased(Monster monster);
+    public static OnMonsterReleased onMonsterReleased;
+
+    Monster monster;
+    [SerializeField]
+    private AudioClip pickSFX, releaseSFX;
     private void OnEnable()
     {
+        monster = GetComponent<Monster>();
         var bc = gameObject.AddComponent<BoxCollider2D>();
-        bc.offset = new Vector2(0, 6.2f);
-        bc.size = new Vector2(12, 33);
+        bc.offset = new Vector2(0, 4.3f);
+        bc.size = new Vector2(6, 17.8f);
     }
     private void OnDisable()
     {
@@ -37,7 +44,7 @@ public class ObjectTouchHandler : MonoBehaviour
             isSelected = true;
             currentPosition = transform.position;
             offset = CameraController.Instance.GetTouchPosition() - transform.position;
-            //Sound.Controller.Instance.PlayOneShot(pickSFX);
+            Sound.Controller.Instance.PlayOneShot(pickSFX);
             transform.Shake(0.15f, 1, 0.1f, defaultScale: transform.localScale.x);
         }
     }
@@ -51,13 +58,19 @@ public class ObjectTouchHandler : MonoBehaviour
             transform.position = currentPosition;
             transform.Shake(0.15f, 1, 0.2f, defaultScale: transform.localScale.x);
         }
+        onMonsterReleased?.Invoke(monster);
+        //monster.stageCollectionData.position.Set(transform.position);
         DataManagement.DataManager.Instance.Save();
 
-        //Sound.Controller.Instance.PlayOneShot(releaseSFX);
+        Sound.Controller.Instance.PlayOneShot(releaseSFX);
 
     }
     private bool IsModelOnStage()
     {
+        if (Physics.Raycast(monster.bottom.position, Vector3.forward, int.MaxValue, layerMask: LayerMask.GetMask("Ground")))
+        {
+            return true;
+        }
         return false;
     }
     private void OnMouseDrag()
@@ -65,6 +78,7 @@ public class ObjectTouchHandler : MonoBehaviour
         if (isSelected && isDown)
         {
             transform.position = CameraController.Instance.GetTouchPosition() - offset;
+            onMonsterSelected?.Invoke(monster);
         }
     }
 }

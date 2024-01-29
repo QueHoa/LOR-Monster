@@ -1,7 +1,7 @@
 ﻿using CodeStage.AntiCheat.ObscuredTypes;
 using Cysharp.Threading.Tasks;
 using DataManagement;
-//using Game.Pool;
+using Game.Pool;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,86 +10,52 @@ public partial class StageGameController
     [System.Serializable]
     public class StageEarningHandler
     {
-        /*public StageViewHandler stageView;
         public StageData stageData;
         public ObscuredInt totalEarning;
         public ObscuredFloat totalEarningBonus;
-        public Dictionary<Model, (ItemData.ModelItemPack, int)> modelItemDict = new Dictionary<Model, (ItemData.ModelItemPack, int)>();
-        public Dictionary<Model, List<Pet>> modelPetDict = new Dictionary<Model, List<Pet>>();
-        public List<ItemData.StageItem> stageItems = new List<ItemData.StageItem>();
+        public Dictionary<Monster, (ItemData.ItemPack, int)> monsterItemDict = new Dictionary<Monster, (ItemData.ItemPack, int)>();
+        int musicThemeIndex = 0;
 
         public StageEarningHandler(StageData stageData)
         {
             this.stageData = stageData;
         }
 
-        public async UniTask PrepareStageView()
+        public async UniTask<Monster> PrepareMonster(CardData cardData, StageCollectionData stageCollection, Vector2 position)
         {
-            stageView = (await GameObjectSpawner.Instance.GetAsync("StagePlatform")).GetComponent<StageViewHandler>();
-            stageItems.Clear();
-            for (int i = 0; i < stageData.stageItems.Length; i++)
-            {
-                string itemId = stageData.stageItems[i];
-                if (string.IsNullOrEmpty(itemId))
-                {
-                    stageItems.Add(new ItemData.StageItem() { category = (ItemData.EStageItemCategory)i });
-                    continue;
-                }
-
-                ItemData.StageItem item = (ItemData.StageItem)Sheet.SheetDataManager.Instance.gameData.itemData.GetItem(itemId);
-                stageItems.Add(item);
-            }
-
-            stageView.SetUp(stageData, stageItems);
-        }
-
-        public async UniTask<Model> PrepareModel(CollectionData collectionData, StageCollectionData stageCollection, Vector2 position)
-        {
-            ItemData.ModelItemPack itemPack = new ItemData.ModelItemPack();
-            List<Pet> pets = new List<Pet>();
+            ItemData.ItemPack itemPack = new ItemData.ItemPack();
+            List<ItemData.Item> items = new List<ItemData.Item>();
             ObscuredInt totalEarning = 0;
-            foreach (string itemId in collectionData.items)
+            foreach (string itemId in cardData.items)
             {
-                ItemData.ModelItem item = (ItemData.ModelItem)Sheet.SheetDataManager.Instance.gameData.itemData.GetItem(itemId);
+                ItemData.Item item = Sheet.SheetDataManager.Instance.gameData.itemData.GetItem(itemId);
                 itemPack.items.Add(item);
 
-                totalEarning += (item.unlockType == ItemData.UnlockType.None && item.category != ItemData.EModelItemCategory.Pet) ? Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForNormalItem : Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForAdItem;
+                totalEarning += (item.unlockType == ItemData.UnlockType.None) ? Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForNormalItem : Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForAdItem;
 
-                if (item.category == ItemData.EModelItemCategory.Pet && stageCollection.petPositions.Count != 0)
+            }
+
+            Monster monster = (await ObjectSpawner.Instance.GetAsync(2)).GetComponent<Monster>();
+            foreach (string id in cardData.items)
+            {
+                if(Game.Controller.Instance.itemData.GetItem(id).category != ItemData.Category.Pet)
                 {
-                    Pet pet = (await ObjectSpawner.Instance.GetAsync(1)).GetComponent<Pet>();
-                    //Debug.Log("pet:" + stageCollection.petPositions.Count+ " "+pets.Count+" "+item.category+" "+item.id);
-                    Vector3 petPos = stageCollection.petPositions[pets.Count].Vector3();
-                    pet.SetUp(item.skin, petPos);
-                    pet.index = pets.Count;
-                    pet.stageCollectionData = stageCollection;
-                    pet.transform.localScale = Vector3.one * 1.2f;
-                    pet.GetComponent<PetTouchHandler>().enabled = true;
-
-                    pets.Add(pet);
+                    items.Add(Game.Controller.Instance.itemData.GetItem(id));
                 }
             }
-
-            Model model = (await ObjectSpawner.Instance.GetAsync(string.IsNullOrEmpty(collectionData.eventId) ? 2 : 4)).GetComponent<Model>();
-            if (string.IsNullOrEmpty(collectionData.eventId))
+            monster.SetUp(items);
+            foreach (ItemData.Item item in items)
             {
-                model.SetUp(collectionData.model);
-                model.SetItem(itemPack.items);
+                monster.SetItem(item);
             }
-            else
-            {
-                model.SetSkin(collectionData.eventId);
-            }
-
-            model.Pose();
-            model.transform.position = position;
-            model.stageCollectionData = stageCollection;
-            model.transform.localScale = Vector3.one * 1.2f;
-            model.GetComponent<ObjectTouchHandler>().enabled = true;
-            modelItemDict.Add(model, (itemPack, totalEarning));
-            modelPetDict.Add(model, pets);
-            return model;
-            //stageView.AddModel(model,models.Count-1);
+            musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
+            monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
+            monster.transform.position = position;
+            monster.stageCollectionData = stageCollection;
+            monster.transform.localScale = Vector3.one * 0.35f;
+            monster.GetComponent<ObjectTouchHandler>().enabled = true;
+            monsterItemDict.Add(monster, (itemPack, totalEarning));
+            return monster;
         }
 
         public async UniTask PrepareCollection()
@@ -97,11 +63,11 @@ public partial class StageGameController
             Debug.Log("PREPARE COLLECTION: " + stageData.index);
             foreach (var stageCollection in stageData.stageCollections)
             {
-                CollectionData collectionData = DataManager.Instance.userData.inventory.GetCollection(stageCollection.collectionId);
-                if (collectionData != null)
+                CardData cardData = DataManager.Instance.userData.inventory.GetCollection(stageCollection.collectionId);
+                if (cardData != null)
                 {
                     //Debug.Log("= >>>>>>>  COLLECTION: " + collectionData.id);
-                    await PrepareModel(collectionData, stageCollection, stageCollection.position.Vector3());
+                    await PrepareMonster(cardData, stageCollection, stageCollection.position.Vector3());
                 }
             }
         }
@@ -116,7 +82,7 @@ public partial class StageGameController
         private ObscuredInt CaculateEarning()
         {
             ObscuredInt totalEarning = 0;
-            foreach ((ItemData.ModelItemPack, int) pack in modelItemDict.Values)
+            foreach ((ItemData.ItemPack, int) pack in monsterItemDict.Values)
             {
                 totalEarning += pack.Item2;
             }
@@ -127,11 +93,6 @@ public partial class StageGameController
         private ObscuredFloat CaculateEarningBonus()
         {
             ObscuredFloat totalBonus = 0;
-            foreach (ItemData.StageItem item in stageItems)
-            {
-                if (item != null)
-                    totalBonus += item.bonusEarning;
-            }
 
             return totalBonus;
         }
@@ -159,7 +120,7 @@ public partial class StageGameController
         //    return totalOfflineEarning;
         //}
 
-        public async UniTask<bool> OnModelSelected(CollectionData collectionData, Vector2 position)
+        public async UniTask<bool> OnModelSelected(CardData cardData, Vector2 position)
         {
             if (stageData.isLocked)
             {
@@ -175,112 +136,52 @@ public partial class StageGameController
             }
 
             // * cập nhật lại vị trí hiện tại của model, lưu lại vào trong stateData
-            StageCollectionData stageCollection = new StageCollectionData(collectionData.id, position);
+            StageCollectionData stageCollection = new StageCollectionData(cardData.id, position);
             stageData.stageCollections.Add(stageCollection);
 
-            collectionData.state = ECollectionState.InUse;
+            cardData.state = ECollectionState.InUse;
 
             DataManagement.DataManager.Instance.Save();
             DataManagement.DataManager.Instance.userData.inventory.Update();
-            await PrepareModel(collectionData, stageCollection, position);
+            await PrepareMonster(cardData, stageCollection, position);
             return true;
         }
 
-        public void OnStageItemSelected(ItemData.StageItem stageItem)
+        public void RemoveMonster(Monster monster)
         {
-            string currentEquipedItem = stageData.stageItems[(int)stageItem.category];
-            if (!string.IsNullOrEmpty(currentEquipedItem))
-            {
-                DataManagement.DataManager.Instance.userData.inventory.SetItemState($"{stageData.index}_{currentEquipedItem}", 1);
-            }
-
-            stageData.stageItems[(int)stageItem.category] = stageItem.id;
-            stageItems[(int)stageItem.category] = stageItem;
-
-            DataManagement.DataManager.Instance.userData.inventory.SetItemState($"{stageData.index}_{stageItem.id}", 2);
-            DataManagement.DataManager.Instance.Save();
-            if (lastEquipedItems.ContainsKey(stageItem.category))
-            {
-                lastEquipedItems[stageItem.category] = stageItem;
-            }
-
-            stageView.SetItem(stageItem, stageData.index);
-        }
-
-        Dictionary<ItemData.EStageItemCategory, ItemData.StageItem> lastEquipedItems = new Dictionary<ItemData.EStageItemCategory, ItemData.StageItem>();
-
-        public void OnStageItemPreview(ItemData.StageItem stageItem)
-        {
-            if (!lastEquipedItems.ContainsKey(stageItem.category))
-            {
-                Debug.Log("SET EQUIP " + stageItem.category + " " + (stageItems[(int)stageItem.category] == null));
-
-                lastEquipedItems.Add(stageItem.category, stageItems[(int)stageItem.category]);
-            }
-
-            stageView.SetItem(stageItem, stageData.index);
-        }
-
-        public void RestorePreview()
-        {
-            if (lastEquipedItems.Count == 0) return;
-            foreach (var item in lastEquipedItems)
-            {
-                Debug.Log("REMOVE" + item.Key + " " + (item.Value == null));
-                stageView.SetItem(item.Value, stageIndex: stageData.index);
-            }
-
-            lastEquipedItems.Clear();
-        }
-
-        public void RemoveModel(Model model)
-        {
-            stageData.RemoveCollection(model.stageCollectionData);
-            modelItemDict.Remove(model);
-
-            foreach (var pet in modelPetDict[model])
-            {
-                pet.gameObject.SetActive(false);
-            }
+            stageData.RemoveCollection(monster.stageCollectionData);
+            monsterItemDict.Remove(monster);
 
             DataManagement.DataManager.Instance.Save();
         }
 
-        bool isModelHidden = false;
+        bool isMonsterHidden = false;
 
-        public void HideModel()
+        public void HideMonster()
         {
-            isModelHidden = true;
-            foreach (Model model in modelItemDict.Keys)
+            isMonsterHidden = true;
+            foreach (Monster monster in monsterItemDict.Keys)
             {
-                model.gameObject.SetActive(false);
-                foreach (Pet pet in modelPetDict[model])
-                {
-                    pet.gameObject.SetActive(false);
-                }
+                monster.gameObject.SetActive(false);
             }
         }
 
-        public void ShowModel()
+        public void ShowMonster()
         {
-            isModelHidden = false;
-            foreach (Model model in modelItemDict.Keys)
+            isMonsterHidden = false;
+            foreach (Monster monster in monsterItemDict.Keys)
             {
-                model.gameObject.SetActive(true);
-                foreach (Pet pet in modelPetDict[model])
-                {
-                    pet.gameObject.SetActive(true);
-                }
+                monster.gameObject.SetActive(true);
             }
         }
 
         public void ShowEarnEffect(bool manual)
         {
-            if (isModelHidden) return;
-            foreach (var model in modelItemDict.Keys)
+            if (isMonsterHidden) return;
+            foreach (var monster in monsterItemDict.Keys)
             {
-                Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(model.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 3f, modelItemDict[model].Item2).SetColor(manual ? Color.yellow : Color.white).SetParent(model.cashEffectPlace); }).Forget();
+                Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(monster.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 3f, monsterItemDict[monster].Item2).SetColor(manual ? Color.yellow : Color.white).SetParent(monster.cashEffectPlace); }).Forget();
             }
-        }*/
+        }
     }
 }

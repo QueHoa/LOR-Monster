@@ -12,7 +12,7 @@ public class BoosterButton : MonoBehaviour
     [SerializeField]
     private Image coolDownImg;
     [SerializeField]
-    private GameObject adIcon;
+    private GameObject adIcon, iconFree;
 
     [SerializeField]
     private AudioClip readySFX;

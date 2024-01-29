@@ -32,6 +32,7 @@ namespace Sheet
           
             tasks.Add(GetData(sheetDataManager.gameData.localizationSheetUrl));
             tasks.Add(GetData(sheetDataManager.gameData.itemSheetUrl));
+            tasks.Add(GetData(sheetDataManager.gameData.stageSheetUrl));
            
             //đợi tất cả data load về
             loadedData = await UniTask.WhenAll(tasks);
@@ -57,6 +58,7 @@ namespace Sheet
             gameData.itemData.ApplyData(sheetData[1]);
             gameData.rewardBarConfig.ApplyData(ConvertSheetToList(sheetData[1][7].GoogleSheetData));
             gameData.rewardGold.ApplyData(ConvertSheetToList(sheetData[1][9].GoogleSheetData));
+            gameData.stageConfig.ApplyData(sheetData[2]);
 
         }
 #endif

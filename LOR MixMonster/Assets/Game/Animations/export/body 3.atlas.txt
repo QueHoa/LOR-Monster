@@ -1,0 +1,480 @@
+body 3.png
+size:3062,3062
+filter:Linear,Linear
+pma:true
+scale:0.5
+0/body
+bounds:286,481,356,473
+0/body_pri
+bounds:2787,674,143,234
+rotate:90
+0/neck
+bounds:1120,2551,102,322
+rotate:90
+1/body
+bounds:587,6,356,473
+1/body_pri
+bounds:2787,529,143,234
+rotate:90
+10/body
+bounds:278,2544,266,516
+offsets:0,2,266,518
+10/dress
+bounds:2203,1688,282,320
+10/l_hand
+bounds:888,2151,146,398
+10/l_hand_pri
+bounds:644,482,110,95
+10/r_hand
+bounds:1036,2151,146,398
+10/r_hand_pri
+bounds:756,482,110,95
+11/body
+bounds:2067,2718,253,342
+11/l_hand
+bounds:1097,2655,159,405
+11/l_leg
+bounds:1444,2552,108,249
+rotate:90
+11/r_hand
+bounds:1189,1448,153,369
+rotate:90
+11/r_leg
+bounds:2677,568,108,249
+12/body
+bounds:2,407,282,515
+12/dress
+bounds:305,87,280,318
+12/l_hand
+bounds:1184,2154,160,395
+12/l_hand_pri
+bounds:2670,23,122,100
+offsets:0,0,122,101
+12/r_hand
+bounds:926,1603,160,395
+12/r_hand_pri
+bounds:2794,23,122,100
+offsets:0,0,122,101
+13/body
+bounds:644,579,352,425
+13/body_pri
+bounds:2143,1450,222,296
+rotate:90
+14/body
+bounds:1855,2006,199,261
+rotate:90
+14/l_hand
+bounds:998,660,136,391
+offsets:0,0,137,391
+14/l_leg
+bounds:1299,145,160,340
+14/r_hand
+bounds:996,1053,137,391
+14/r_leg
+bounds:1461,146,160,340
+15/body
+bounds:1406,1068,303,378
+15/dress
+bounds:228,1547,305,451
+15/l_hand
+bounds:2,2,154,403
+15/l_hand_pri
+bounds:1804,489,90,107
+offsets:1,1,91,108
+rotate:90
+15/r_hand
+bounds:158,2,145,403
+15/r_hand_pri
+bounds:1913,489,90,107
+offsets:0,1,91,108
+rotate:90
+16/body
+bounds:2188,592,199,259
+rotate:90
+16/l_hand
+bounds:869,2649,112,411
+16/l_leg
+bounds:841,2000,133,344
+rotate:90
+16/r_hand
+bounds:983,2649,112,411
+16/r_leg
+bounds:1972,2208,133,344
+17/body
+bounds:2,2519,274,541
+17/dress
+bounds:2322,2732,328,319
+offsets:0,0,328,332
+rotate:90
+17/l_hand
+bounds:1258,2662,140,398
+17/l_hand_pri
+bounds:451,2000,120,112
+offsets:1,0,122,112
+rotate:90
+17/r_hand
+bounds:1400,2662,140,398
+17/r_hand_pri
+bounds:2449,693,120,112
+offsets:1,0,122,112
+rotate:90
+18/body
+bounds:2592,2081,171,250
+18/l_hand
+bounds:451,2122,109,420
+18/l_leg
+bounds:1623,146,126,340
+18/r_hand
+bounds:535,1578,109,420
+18/r_leg
+bounds:1494,726,126,340
+19/body
+bounds:2,1979,221,538
+19/l_hand
+bounds:1088,1603,104,395
+19/r_hand
+bounds:1346,2154,104,395
+2/body
+bounds:1841,1450,194,300
+rotate:90
+2/l_hand
+bounds:1695,2554,112,295
+rotate:90
+2/l_leg
+bounds:2101,174,133,316
+2/r_hand
+bounds:2765,2161,112,295
+rotate:90
+2/r_leg
+bounds:2236,179,133,316
+3/body
+bounds:959,1446,155,228
+rotate:90
+3/dress
+bounds:2643,2932,128,117
+offsets:0,0,128,118
+rotate:90
+3/l_hand
+bounds:2786,2861,67,271
+rotate:90
+3/l_leg
+bounds:1240,1065,81,381
+3/r_hand
+bounds:2786,2663,67,271
+rotate:90
+3/r_leg
+bounds:1323,1065,81,381
+4/belt
+bounds:445,956,150,47
+4/body
+bounds:2,924,223,516
+4/l_hand
+bounds:646,1593,138,405
+4/r_hand
+bounds:786,1593,138,405
+5/body
+bounds:225,2000,224,517
+5/dress
+bounds:2643,2735,193,124
+rotate:90
+5/l_hand
+bounds:945,57,119,425
+5/r_hand
+bounds:1066,57,119,425
+6/body
+bounds:2,1442,224,535
+6/l_hand
+bounds:546,2644,160,416
+6/r_hand
+bounds:708,2644,159,416
+7/body
+bounds:1887,581,203,299
+rotate:90
+7/l_hand
+bounds:228,1442,103,389
+rotate:90
+7/l_leg
+bounds:1958,796,134,324
+7/r_hand
+bounds:1135,1055,103,389
+7/r_leg
+bounds:2037,1124,134,324
+8/body
+bounds:2783,2275,213,265
+rotate:90
+8/l_foot
+bounds:305,3,143,82
+8/l_hand
+bounds:2565,549,110,264
+8/l_hand_2
+bounds:1672,489,90,130
+rotate:90
+8/l_leg
+bounds:837,2551,91,281
+rotate:90
+8/r_foot
+bounds:2154,497,143,82
+8/r_hand
+bounds:2653,825,110,264
+8/r_hand_2
+bounds:2022,492,87,130
+rotate:90
+8/r_leg
+bounds:1159,487,91,281
+rotate:90
+9/body
+bounds:2592,2333,189,252
+9/l_hand
+bounds:668,2135,108,412
+9/l_leg
+bounds:619,1442,134,338
+rotate:90
+9/r_hand
+bounds:778,2135,108,412
+9/r_leg
+bounds:1622,728,134,338
+EMPTY
+bounds:227,929,25,25
+S20/body
+bounds:1442,488,91,228
+offsets:0,112,92,340
+rotate:90
+S20/l hand
+bounds:2530,2587,143,254
+rotate:90
+S20/l leg
+bounds:886,1022,108,418
+offsets:25,0,146,418
+S20/r hand
+bounds:1631,581,145,254
+rotate:90
+S20/r leg
+bounds:562,2132,104,415
+offsets:25,0,258,415
+S21/body
+bounds:1435,1639,231,360
+offsets:0,132,231,492
+S21/l hand
+bounds:1187,2001,151,332
+rotate:90
+S21/l leg
+bounds:2094,793,108,221
+S21/r hand
+bounds:1521,2004,151,332
+rotate:90
+S21/r leg
+bounds:2204,793,108,221
+S22/bogy
+bounds:1136,671,382,356
+offsets:0,0,398,356
+rotate:90
+S22/l hand
+bounds:2119,2570,146,125
+rotate:90
+S22/l leg
+bounds:2769,2732,104,127
+S22/r hand
+bounds:1992,2562,147,125
+rotate:90
+S22/r leg
+bounds:2875,2732,104,127
+S23/body
+bounds:2394,815,199,257
+rotate:90
+S23/l hand
+bounds:445,1005,145,435
+S23/l leg
+bounds:815,1020,69,420
+S23/r hand
+bounds:592,1006,145,434
+S23/r leg
+bounds:739,1020,74,420
+S24/body
+bounds:2786,2490,171,266
+rotate:90
+S24/l hand
+bounds:2765,2048,111,292
+rotate:90
+S24/l leg
+bounds:2440,1226,133,279
+rotate:90
+S24/r hand
+bounds:2441,1361,111,292
+rotate:90
+S24/r leg
+bounds:2440,1091,133,279
+rotate:90
+S25/body
+bounds:1847,1122,188,326
+S25/l hand
+bounds:2107,2218,122,342
+S25/l leg
+bounds:2261,2010,72,226
+S25/r hand
+bounds:1187,144,110,341
+S25/r leg
+bounds:2335,2010,72,226
+S26/body
+bounds:2752,1735,306,311
+S26/l hand
+bounds:2344,2250,122,320
+S26/l leg
+bounds:2765,819,104,258
+rotate:90
+S26/r hand
+bounds:2468,2250,122,320
+S26/r leg
+bounds:2581,289,104,258
+S27/body
+bounds:1649,2668,235,392
+S27/l hand
+bounds:2371,193,103,315
+S27/l leg
+bounds:2487,1797,78,213
+S27/r hand
+bounds:2476,193,103,315
+S27/r leg
+bounds:2314,801,78,213
+S28/body
+bounds:1194,1630,239,369
+offsets:0,0,239,370
+S28/l hand
+bounds:2090,1674,111,330
+S28/l leg
+bounds:868,484,93,289
+rotate:90
+S28/r hand
+bounds:2231,2238,111,330
+S28/r leg
+bounds:546,2549,93,289
+rotate:90
+S29/body
+bounds:2173,1280,168,265
+rotate:90
+S29/l hand
+bounds:1359,2,141,290
+rotate:90
+S29/l leg
+bounds:2786,2930,130,273
+offsets:0,0,130,274
+rotate:90
+S29/r hand
+bounds:1651,3,141,290
+rotate:90
+S29/r leg
+bounds:565,2000,130,274
+rotate:90
+S30/body
+bounds:1740,2207,230,345
+S30/l hand
+bounds:1943,8,144,282
+rotate:90
+S30/l leg
+bounds:2227,3,169,235
+offsets:0,0,169,236
+rotate:90
+S30/r hand
+bounds:2246,2572,144,282
+rotate:90
+S30/r leg
+bounds:2409,2012,169,236
+S31/body
+bounds:1831,154,268,333
+S31/l hand
+bounds:2752,1606,127,300
+rotate:90
+S31/l leg
+bounds:2464,22,101,169
+S31/r hand
+bounds:2752,1477,127,300
+rotate:90
+S31/r leg
+bounds:2567,22,101,169
+S32/body
+bounds:1560,1448,189,279
+rotate:90
+S32/l hand
+bounds:1452,2157,105,393
+S32/l leg
+bounds:1559,2201,179,349
+S32/r hand
+bounds:1542,2667,105,393
+S32/r leg
+bounds:1886,2711,179,349
+S33/body
+bounds:2118,2010,141,206
+S33/l hand
+bounds:1668,1646,141,356
+S33/l leg
+bounds:1711,1115,134,331
+S33/r hand
+bounds:1811,1646,141,356
+S33/r leg
+bounds:1954,1673,134,331
+S34/body
+bounds:2580,1794,170,285
+S34/l hand
+bounds:286,407,72,299
+offsets:37,12,130,350
+rotate:90
+S34/l leg
+bounds:2188,1148,130,250
+rotate:90
+S34/r hand
+bounds:2752,1404,71,300
+offsets:37,11,130,350
+rotate:90
+S34/r leg
+bounds:2188,1016,130,250
+rotate:90
+S35/body
+bounds:1758,786,198,327
+S35/l hand
+bounds:2441,1581,105,309
+rotate:90
+S35/l leg
+bounds:2765,1046,119,260
+rotate:90
+S35/r hand
+bounds:2441,1474,105,309
+rotate:90
+S35/r leg
+bounds:2765,925,119,260
+rotate:90
+S36/body
+bounds:2735,1167,235,316
+rotate:90
+S36/l hand
+bounds:998,580,78,334
+rotate:90
+S36/l leg
+bounds:2487,1712,80,263
+offsets:0,0,80,264
+rotate:90
+S36/r hand
+bounds:1751,153,78,334
+S36/r leg
+bounds:2299,510,80,264
+rotate:90
+S37/body
+bounds:227,956,216,484
+S37/l hand 1
+bounds:1187,2,140,84
+rotate:90
+S37/l hand 2
+bounds:1483,581,146,88
+offsets:0,0,147,88
+S37/l leg
+bounds:2670,125,131,162
+S37/r hand 1
+bounds:1273,2,140,84
+rotate:90
+S37/r hand 3
+bounds:1273,2,140,84
+rotate:90
+S37/r hand 2
+bounds:1334,581,147,88
+S37/r leg
+bounds:2918,365,131,162
+a
+bounds:450,13,108,72

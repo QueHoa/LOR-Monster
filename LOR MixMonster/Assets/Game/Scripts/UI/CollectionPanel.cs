@@ -43,7 +43,7 @@ public class CollectionPanel : UI.Panel
             {
                 
                 await SetItem(item);
-                ((MakeOverGameController)Game.Controller.Instance.gameController).monster.SetItem(item);
+                ((StageGameController)Game.Controller.Instance.gameController).monster.SetItem(item);
             }
 
             poolImage = GetComponentInChildren<GameUtility.Pooling.PoolHandler>();

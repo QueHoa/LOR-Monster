@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e5f050ae6940c4a8aa2a847db645fb, type: 3}
+  m_Name: New Stage Config SO
+  m_EditorClassIdentifier: 
+  cashEarningForNormalItem: 10
+  cashEarningForAdItem: 30
+  expandPrice: 300
+  slotConfigs:
+  - maxSlot: 5
+    cashRequire: 0
+    adRequire: 0
+  - maxSlot: 8
+    cashRequire: 200000
+    adRequire: 1
+  - maxSlot: 11
+    cashRequire: 500000
+    adRequire: 1
+  - maxSlot: 14
+    cashRequire: 1000000
+    adRequire: 1
+  - maxSlot: 17
+    cashRequire: 2000000
+    adRequire: 1
+  - maxSlot: 20
+    cashRequire: 3000000
+    adRequire: 1
+  boosterRecoverTime: 300
+  boosterConfigs:
+  - boosterType: 0
+    stats:
+    - statType: InstantCash
+      value: 50000
+  - boosterType: 1
+    stats:
+    - statType: EarnSpeed
+      value: 0.5
+    - statType: Duration
+      value: 60
+  - boosterType: 2
+    stats:
+    - statType: AutoClickRate
+      value: 0.5
+    - statType: Duration
+      value: 60

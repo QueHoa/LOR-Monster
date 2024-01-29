@@ -1,10 +1,15 @@
-﻿using System;
+﻿using CodeStage.AntiCheat.ObscuredTypes;
+using System;
 
 namespace GameUtility
 {
     public class RewardHandler
     {
-    
+        public static void ApplyCash(ObscuredInt cash)
+        {
+            if (cash == 0) return;
+            DataManagement.DataManager.Instance.userData.inventory.Cash += cash;
+        }
         public static void ApplyReward(RewardPackage rewardPackage)
         {
            

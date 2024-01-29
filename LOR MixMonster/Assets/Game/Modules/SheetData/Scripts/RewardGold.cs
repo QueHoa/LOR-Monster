@@ -13,12 +13,13 @@ public class RewardGold : ScriptableObject
         UnityEditor.EditorUtility.SetDirty(this);
 #endif
         item.Clear();
-        for (int i = 0; i < rowDatas.Count; i++)
+        for (int i = 1; i < rowDatas.Count - 1; i++)
         {
+            Debug.Log(i);
             Point point = new Point()
             {
-                like = int.Parse(rowDatas[i + 1].list[1]),
-                gold = new RangeValue(int.Parse(rowDatas[i + 1].list[2]), int.Parse(rowDatas[i + 1].list[3])),
+                like = int.Parse(rowDatas[i].list[1]),
+                gold = new RangeValue(int.Parse(rowDatas[i].list[2]), int.Parse(rowDatas[i].list[3])),
             };
             item.Add(point);
         }

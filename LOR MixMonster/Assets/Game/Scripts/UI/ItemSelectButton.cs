@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class ItemSelectButton : MonoBehaviour
@@ -38,10 +39,11 @@ public class ItemSelectButton : MonoBehaviour
         this.makeOverPanel = makeOverPanel;
         this.item = item;
         priceGold = item.cost;
-        item.GetIcon(sprite =>
+        /*item.GetIcon(async sprite =>
         {
             itemIconImg.sprite = sprite;
-        });
+        });*/
+        itemIconImg.sprite = await Addressables.LoadAssetAsync<Sprite>(item.icon);
         gold = DataManagement.DataManager.Instance.userData.YourGold;
 
         adIcon.SetActive(item.unlockType ==ItemData.UnlockType.Ad);

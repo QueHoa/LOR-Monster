@@ -5,12 +5,15 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using MoreMountains.NiceVibrations;
+using UnityEngine.Networking.Types;
 using UnityEngine.UI;
 using static DataManagement.MergeSlotData;
 
 public abstract class MakeOverPanelAbstract : UI.Panel
 {
     public bool isProcessing = false;
+    private int _monsterId;
 
     [SerializeField]
     protected ItemSelectButton[] itemSelectButtons;
@@ -32,7 +35,9 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     [SerializeField]
     protected AudioClip dailyShow;
     [SerializeField]
-    protected GameObject handTut, chooseTut, bundleBtn, petOfferBtn, petOfferAdObj,newOptionBtn;
+    protected HapticTypes hapticTypes = HapticTypes.Warning;
+    [SerializeField]
+    protected GameObject handTut, chooseTut, homeBtn, bundleBtn, petOfferBtn, petOfferAdObj,newOptionBtn;
     [SerializeField]
     protected Image tryPetIcon, petIcon, optionIcon;
     [SerializeField]
@@ -46,6 +51,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     protected int gold;
     protected CancellationTokenSource cancellation;
 
+    private bool hapticsAllowed = true;
     private string bundleId;
     System.Action onUnlock;
 
@@ -126,12 +132,13 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     public virtual async UniTask SetUp()
     {
         backGroundImg.sprite = backGroundSprites[DataManagement.DataManager.Instance.userData.progressData.playCount % backGroundSprites.Length];
-        if(bundleBtn!=null)
-            bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
+        bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
+        //homeBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.cards.Count != 0);
         excludeItems.Clear();
         excludeItems.AddRange(previousFirstSpawnItems);
         previousFirstSpawnItems.Clear();
-        
+        MMVibrationManager.SetHapticsActive(hapticsAllowed);
+
 #if UNITY_EDITOR
         excludeItems2 = excludeItems;
 #endif
@@ -166,7 +173,8 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         {
             button.gameObject.SetActive(false);
         }
-       
+
+        
         Show();
         await UniTask.Delay(1000, cancellationToken: cancellation.Token);
         SetCategory(0);
@@ -179,13 +187,6 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             });
         }
 
-        /*int count = DataManagement.DataManager.Instance.userData.progressData.GetAdProgress("SetBundle_3");
-        DataManagement.DataManager.Instance.userData.progressData.SetAdProgress("SetBundle_3", count + 1);
-        DataManagement.DataManager.Instance.Save();
-        if (count > 0 && count < 5)
-        {
-            Introduce(count);
-        }*/
     }
     async UniTaskVoid Introduce(int count)
     {
@@ -285,6 +286,8 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     }
     public void ShowPetOffer()
     {
+        if (isProcessing) return;
+        isProcessing = true;
         if (DataManagement.DataManager.Instance.userData.progressData.firstPet)
         {
             ItemData.Item offererPet = petReadyPool[0];
@@ -329,6 +332,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             }
             animTryPet.gameObject.SetActive(true);
         }
+        isProcessing = false;
     }
     public void AdsPet()
     {
@@ -412,7 +416,9 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     int getNewPairCount = 0;
     public void GetNewPair()
     {
-        if(gold >= 500)
+        if (isProcessing) return;
+        isProcessing = true;
+        if (gold >= 500)
         {
             buyOption.interactable = true;
         }
@@ -422,6 +428,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         }
         optionIcon.sprite = categoryIcon[(int)currentCategory];
         animTryOption.gameObject.SetActive(true);
+        isProcessing = false;
     }
     public void OptionGold()
     {
@@ -510,7 +517,10 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         selectedItems.Add(itemSelectButton.item);
         mySet.Add(itemSelectButton.item);
 
-
+        if (Sound.Controller.VibrationEnable)
+        {
+            MMVibrationManager.Haptic(hapticTypes, true, true, this);
+        }
         foreach (ItemSelectButton button in itemSelectButtons)
         {
             previousFirstSpawnItems.Add(button.item);
@@ -545,17 +555,17 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     {
         AD.Controller.Instance.ShowInterstitial(() =>
         {
-            LevelLoading.Instance.Active(() =>
-            {
-           
-                Close();
-                Game.Controller.Instance.gameController.Destroy();
-                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
-                {
-                    ((HomePanel)panel).SetUp();
-                });
-                LevelLoading.Instance.Close();
-            });
+            LevelLoading.Instance.Active("HomeScene",
+                 () =>
+                 {
+                     Game.Controller.Instance.gameController.Destroy();
+                 },
+                 async () =>
+                 {
+                     await Game.Controller.Instance.gameController.SetUp();
+
+                 }
+             , closeOverride: true);
         });
 
     }

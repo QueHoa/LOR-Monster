@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "EuO2El/RuNg",
+	"hash": "qi8Qn605iFQ",
 	"spine": "4.1.24",
-	"x": -997.44,
-	"y": -1.61,
-	"width": 2019,
-	"height": 1969.93,
+	"x": -1004.71,
+	"y": -2.74,
+	"width": 2259.21,
+	"height": 1980.89,
 	"images": "./images/",
 	"audio": "C:/Users/Administrator/Desktop/ETC/BG/json"
 },
@@ -84,10 +84,28 @@
 	{ "name": "bone11c", "parent": "bone11b", "length": 117.36, "x": 117.36, "color": "0003ffff" },
 	{ "name": "TEMP", "parent": "root", "x": 9.14, "y": 1349.48, "color": "0003ffff" },
 	{ "name": "bone12", "parent": "root", "x": -419.89, "y": 1164.24, "color": "0003ffff" },
-	{ "name": "bone13", "parent": "root", "x": 457.42, "y": 1164.64, "color": "0003ffff" }
+	{ "name": "bone13", "parent": "root", "x": 457.42, "y": 1164.64, "color": "0003ffff" },
+	{
+		"name": "TEMP2",
+		"parent": "TEMP",
+		"length": 1161.94,
+		"rotation": -90.24,
+		"x": -690.07,
+		"y": 545.78,
+		"color": "0003ffff"
+	},
+	{
+		"name": "TEMP3",
+		"parent": "TEMP",
+		"length": 1110.53,
+		"rotation": -90.16,
+		"x": 710.1,
+		"y": 537.55,
+		"color": "0003ffff"
+	}
 ],
 "slots": [
-	{ "name": "down", "bone": "root", "attachment": "down" },
+	{ "name": "down", "bone": "root", "attachment": "home_bg" },
 	{ "name": "mid", "bone": "root", "attachment": "mid" },
 	{ "name": "up", "bone": "root", "attachment": "up" },
 	{ "name": "2 3", "bone": "root", "attachment": "2 3" },
@@ -95,7 +113,9 @@
 	{ "name": "2 1", "bone": "root", "attachment": "2 1" },
 	{ "name": "2", "bone": "root", "attachment": "2" },
 	{ "name": "1", "bone": "root", "attachment": "1" },
-	{ "name": "1 1", "bone": "bone9", "attachment": "1 1", "blend": "screen" }
+	{ "name": "1 1", "bone": "bone9", "attachment": "1 1", "blend": "additive" },
+	{ "name": "4", "bone": "TEMP3", "attachment": "3" },
+	{ "name": "3", "bone": "TEMP2", "attachment": "2" }
 ],
 "skins": [
 	{
@@ -165,8 +185,31 @@
 					"height": 1179
 				}
 			},
+			"3": {
+				"2": {
+					"x": 675.22,
+					"y": 112.67,
+					"scaleX": 1.2093,
+					"scaleY": 1.2093,
+					"rotation": 80.1,
+					"width": 517,
+					"height": 1182
+				}
+			},
+			"4": {
+				"3": {
+					"path": "2",
+					"x": 667.18,
+					"y": 103.48,
+					"scaleX": 1.2093,
+					"scaleY": 1.2093,
+					"rotation": 80.01,
+					"width": 517,
+					"height": 1182
+				}
+			},
 			"down": {
-				"down": { "x": 12.06, "y": 959.39, "width": 2019, "height": 1922 }
+				"home_bg": { "x": 12.06, "y": 959.39, "scaleX": 1.8792, "scaleY": 1.8792, "width": 1024, "height": 1024 }
 			},
 			"mid": {
 				"mid": {
@@ -1004,6 +1047,86 @@
 						"curve": [ 6.889, 0, 7.111, -35.03, 6.889, 0, 7.111, -1.3 ]
 					},
 					{ "time": 7.3333, "x": -35.03, "y": -1.3 },
+					{ "time": 8 }
+				]
+			},
+			"TEMP2": {
+				"rotate": [
+					{
+						"curve": [ 0.333, 0, 0.667, -5.88 ]
+					},
+					{
+						"time": 1,
+						"value": -5.88,
+						"curve": [ 1.333, -5.88, 1.667, 0 ]
+					},
+					{
+						"time": 2,
+						"curve": [ 2.333, 0, 2.667, -5.88 ]
+					},
+					{
+						"time": 3,
+						"value": -5.88,
+						"curve": [ 3.333, -5.88, 3.667, 0 ]
+					},
+					{
+						"time": 4,
+						"curve": [ 4.333, 0, 4.667, -5.88 ]
+					},
+					{
+						"time": 5,
+						"value": -5.88,
+						"curve": [ 5.333, -5.88, 5.667, 0 ]
+					},
+					{
+						"time": 6,
+						"curve": [ 6.333, 0, 6.667, -5.88 ]
+					},
+					{
+						"time": 7,
+						"value": -5.88,
+						"curve": [ 7.333, -5.88, 7.667, -2.94 ]
+					},
+					{ "time": 8 }
+				]
+			},
+			"TEMP3": {
+				"rotate": [
+					{
+						"curve": [ 0.333, 0, 0.667, 4.84 ]
+					},
+					{
+						"time": 1,
+						"value": 4.84,
+						"curve": [ 1.333, 4.84, 1.667, 0 ]
+					},
+					{
+						"time": 2,
+						"curve": [ 2.333, 0, 2.667, 4.84 ]
+					},
+					{
+						"time": 3,
+						"value": 4.84,
+						"curve": [ 3.333, 4.84, 3.667, 0 ]
+					},
+					{
+						"time": 4,
+						"curve": [ 4.333, 0, 4.667, 4.84 ]
+					},
+					{
+						"time": 5,
+						"value": 4.84,
+						"curve": [ 5.333, 4.84, 5.667, 0 ]
+					},
+					{
+						"time": 6,
+						"curve": [ 6.333, 0, 6.667, 4.84 ]
+					},
+					{
+						"time": 7,
+						"value": 4.84,
+						"curve": [ 7.333, 4.84, 7.667, 2.42 ]
+					},
 					{ "time": 8 }
 				]
 			}

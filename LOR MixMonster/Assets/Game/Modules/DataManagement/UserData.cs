@@ -143,7 +143,6 @@ namespace DataManagement
     {
         public int index = 0;
         public List<StageCollectionData> stageCollections;
-        public string[] stageItems;
 
         public int totalModelSlot = 5;
         public bool isLocked = true;
@@ -151,7 +150,6 @@ namespace DataManagement
         public StageData()
         {
             stageCollections = new List<StageCollectionData>();
-            stageItems = new string[System.Enum.GetNames(typeof(ItemData.EStageItemCategory)).Length];
         }
 
         public void RemoveCollection(StageCollectionData stageCollectionData)
@@ -165,18 +163,12 @@ namespace DataManagement
         public string collectionId;
         public long createDate;
         public Vector position;
-        public List<Vector> petPositions = new List<Vector>();
-        private static Vector2[] defaultPositions = new Vector2[3] { new Vector2(-10, -5), new Vector2(0, -13), new Vector2(10, -5) };
 
         public StageCollectionData(string collectionId, Vector2 position)
         {
             this.collectionId = collectionId;
             createDate = System.DateTime.Now.Ticks;
             this.position = new Vector(position);
-            for (int i = 0; i < defaultPositions.Length; i++)
-            {
-                petPositions.Add(new Vector(position + defaultPositions[i]));
-            }
         }
 
         public StageCollectionData()
@@ -215,10 +207,9 @@ namespace DataManagement
         public System.DateTime lastLoggedIn;
         public int bestViewPoint,playCount;
         public bool firstSelect = true;
-        public bool firstPet = true, hideCard = false;
-        public bool music = true, sound = true, vibration = true;
+        public bool firstPet = true;
+        public bool uiHome = true;
         public int firstDaily = 0;
-        public int numberCard=0, numberMonster=0;
         public List<CollectionData> collectionDatas = new List<CollectionData>();
 
         public int GetAdProgress(string id)
@@ -261,9 +252,39 @@ namespace DataManagement
         }
     }
     [System.Serializable]
+    public class CardData
+    {
+        public ECollectionState state;
+        public string id;
+        public string eventId;
+        public string[] items;
+        public List<int> numberCard = new List<int>();
+        //public CollectionData collectionDatas;
+
+        public CardData()
+        {
+        }
+
+        public CardData(int numberCard, List<ItemData.Item> currentItems)
+        {
+            this.id = Guid.NewGuid().ToString();
+            this.numberCard.Add(numberCard);
+            items = new string[currentItems.Count];
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = currentItems[i].id;
+            }
+        }
+    }
+    public enum ECollectionState
+    {
+        Available,
+        InUse
+    }
+    [System.Serializable]
     public class CollectionData
     {
-        public delegate void OnUpdate(CollectionData collectionData);
+        public delegate void OnUpdate(CardData collectionData);
         [System.NonSerialized]
         public OnUpdate onUpdate;
 
@@ -289,15 +310,41 @@ namespace DataManagement
         [System.NonSerialized]
         public OnUpdate onUpdate;
 
+        public delegate void OnCashUpdated(Inventory inventory, ObscuredInt cash);
+        [System.NonSerialized]
+        public OnCashUpdated onCashUpdated;
+
+        public ObscuredInt cash;
+        public ObscuredInt Cash
+        {
+            get => cash;
+            set
+            {
+                cash = value;
+                onCashUpdated?.Invoke(this, cash);
+            }
+        }
+
+        public ObscuredInt cake;
+        public ObscuredInt Cake
+        {
+            get => cake;
+            set { cake = value; }
+        }
+
         [JsonProperty("iprog")]
         public Dictionary<string, int> itemStates = new Dictionary<string, int>();
+        [JsonProperty("collection")]
+        public Dictionary<string, CardData> cards = new Dictionary<string, CardData>();
+
+
         public int GetItemState(string id)
         {
             int result = 0;
             itemStates.TryGetValue(id, out result);
             return result;
-
         }
+
         public void SetItemState(string id, int value)
         {
             if (itemStates.ContainsKey(id))
@@ -310,9 +357,59 @@ namespace DataManagement
             }
         }
 
+        public void AddCollection(CardData monsterData)
+        {
+            cards.Add(monsterData.id, monsterData);
+            Update();
+        }
+
+        public void RemoveCollection(string id)
+        {
+            cards.Remove(id);
+            Update();
+        }
+
+        public CardData GetCollection(string id)
+        {
+            if (cards.Count == 0 || !cards.ContainsKey(id)) return null;
+            return cards[id];
+        }
+
+        public CardData GetFirstCollection()
+        {
+            CardData[] temp = new CardData[cards.Values.Count];
+            cards.Values.CopyTo(temp, 0);
+            for (int i = temp.Length - 1; i >= 0; i--)
+            {
+                CardData card = temp[i];
+                if (card.state == ECollectionState.Available)
+                    return card;
+            }
+
+            return null;
+        }
+
+        public int GetTotalCollection()
+        {
+            int total = 0;
+            foreach (var card in cards.Values)
+            {
+                if (card.state == ECollectionState.Available)
+                {
+                    total++;
+                }
+            }
+
+            return total;
+        }
+
+        public void Update()
+        {
+            onUpdate?.Invoke(this);
+        }
+
         public Inventory()
         {
-
         }
     }
 

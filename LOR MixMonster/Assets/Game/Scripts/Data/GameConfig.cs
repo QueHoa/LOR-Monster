@@ -10,15 +10,27 @@ public partial class GameConfig:ScriptableObject
 {
     public bool editMode = true;
   
-    public bool debugMode=false;
+    public bool debugMode=false, cheatOutfit = false, mktBuild = false;
     public bool skipAd=false;
   
     public AdConfig adConfig;
-    public int bundleAdRequire=10;
+    public int askReviewFreq;
+    public int maxRefreshItem = 1;
+    public int bundleAdRequire=2;
+    public ObscuredInt maxOfflineEarningSeconds = 60;
 
     //
     public int gameType = 0;
+    public ObscuredInt rewardCashAmount = 10000;
     public int newItemMax=1;
+    public bool specialGift = false;
+
+    public int eventId;
+    public long endDate = 638351712000000000;
+    //trung thu
+    public long eventEndDate = 638342208000000000;
+    public int eventSetPrice = 20;
+    public int totalAdCategory = 2;
 
     [Serializable]
     public class Vector
@@ -62,7 +74,10 @@ public partial class GameConfig:ScriptableObject
     {
         public int adStart =2, interAdCoolDown = 45;
         public bool openAd=true;
+        public bool openAdAfterInterAd = false;
+        public bool openAdAfterRewardAd = false;
         public int adBetweenMakeOver=2;
+        public int clickCountShowInter = 30;
     }
 }
 [System.Serializable]

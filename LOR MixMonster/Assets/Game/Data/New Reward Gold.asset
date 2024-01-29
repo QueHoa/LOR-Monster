@@ -57,7 +57,3 @@ MonoBehaviour:
     gold:
       min: 800
       max: 899
-  - like: 90000000
-    gold:
-      min: 900
-      max: 1000
