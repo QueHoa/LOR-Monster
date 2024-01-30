@@ -97,6 +97,7 @@ public class ResultPanel : UI.Panel
         Effect(totalLikePoint);
         goldText.text = gold.ToString();
         likeText.text = GameUtility.GameUtility.ShortenNumber(totalLikePoint);
+        monsterCard.gameObject.SetActive(true);
         DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
         Show();
     }
@@ -119,6 +120,7 @@ public class ResultPanel : UI.Panel
                 goldReceivedText.text = a.ToString();
             });
         await UniTask.Delay(2000, cancellationToken: cancellation.Token);
+        DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
         coin = CoinPooler.instance.GetPoolCoin();
         isDone = false;
         claim.interactable = true;
@@ -339,7 +341,8 @@ public class ResultPanel : UI.Panel
     public void Home()
     {
         bool isTut = hand.activeSelf;
-
+        if (isProcessing) return;
+        isProcessing = true;
         if (!isTut)
         {
             AD.Controller.Instance.ShowInterstitial(() =>

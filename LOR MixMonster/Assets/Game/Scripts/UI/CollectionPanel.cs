@@ -154,6 +154,7 @@ public class CollectionPanel : UI.Panel
                 UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
                 {
                     ((HomePanel)panel).SetUp();
+                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
                 });
                 Close();
                 LevelLoading.Instance.Close();

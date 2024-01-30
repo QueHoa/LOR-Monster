@@ -22,7 +22,7 @@ public class HomePanel : UI.Panel
     [SerializeField]
     private RectTransform slotTotalRect;
     [SerializeField]
-    private GameObject maxSlotNotice, controlPanel, deletePanel, bundleBtn, handTut;
+    private GameObject maxSlotNotice, controlPanel, deletePanel, bundleBtn, handTut, boxBanner;
     [SerializeField]
     private GameObject[] uiHome;
     [SerializeField]
@@ -33,7 +33,7 @@ public class HomePanel : UI.Panel
     [SerializeField]
     private BoosterButton[] boosterButtons;
     [SerializeField]
-    private ParticleSystem unlockPS, newModelPS;
+    private ParticleSystem unlockPS, newMonsterPS, moneyPS;
     StageData stageData;
     public override void PostInit()
     {
@@ -49,7 +49,7 @@ public class HomePanel : UI.Panel
         OnCollectionUpdated(DataManager.Instance.userData.inventory);
         OnEarningUpdated(((StageGameController)Game.Controller.Instance.gameController).GetTotalEarning());
         StageData currentStageData = ((StageGameController)Game.Controller.Instance.gameController).GetStageHandler().stageData;
-        OnModelSlotUpdated(currentStageData.stageCollections.Count, currentStageData.totalModelSlot);
+        OnModelSlotUpdated(currentStageData.stageCollections.Count, currentStageData.totalMonsterSlot);
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
         for (int i = 0; i < boosterButtons.Length; i++)
         {
@@ -61,6 +61,7 @@ public class HomePanel : UI.Panel
             for (int i = 0; i < uiHome.Length; i++)
             {
                 uiHome[i].SetActive(true);
+                boxBanner.SetActive(false);
             }
         }
         else
@@ -69,9 +70,10 @@ public class HomePanel : UI.Panel
             for (int i = 0; i < uiHome.Length; i++)
             {
                 uiHome[i].SetActive(false);
+                boxBanner.SetActive(true);
             }
         }
-
+        
         handTut.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0));
         goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         Show();
@@ -85,7 +87,7 @@ public class HomePanel : UI.Panel
 
     public void OnNewModelAdded()
     {
-        newModelPS.Play();
+        newMonsterPS.Play();
         handTut.SetActive(false);
     }
 
@@ -120,6 +122,11 @@ public class HomePanel : UI.Panel
         {
             handTut.SetActive(false);
             monsterCard.gameObject.SetActive(false);
+        }
+        if (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count > 0)
+        {
+            moneyPS.gameObject.SetActive(true);
+            moneyPS.Play();
         }
     }
 
@@ -159,6 +166,7 @@ public class HomePanel : UI.Panel
         Sound.Controller.Instance.PlayOneShot(playSFX);
         LevelLoading.Instance.Active(() =>
         {
+            ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
             Close();
             Game.Controller.Instance.gameController.SetUpCollection();
         });
@@ -170,6 +178,7 @@ public class HomePanel : UI.Panel
         Sound.Controller.Instance.PlayOneShot(playSFX);
         LevelLoading.Instance.Active(() =>
         {
+            ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
             Close();
             UI.PanelManager.Create(typeof(LeaderBoardPanel), (panel, op) =>
             {
@@ -186,6 +195,7 @@ public class HomePanel : UI.Panel
             for (int i = 0; i < uiHome.Length; i++)
             {
                 uiHome[i].SetActive(false);
+                boxBanner.SetActive(true);
             }
             DataManagement.DataManager.Instance.userData.progressData.uiHome = false;
         }
@@ -195,6 +205,7 @@ public class HomePanel : UI.Panel
             for (int i = 0; i < uiHome.Length; i++)
             {
                 uiHome[i].SetActive(true);
+                boxBanner.SetActive(false);
             }
             DataManagement.DataManager.Instance.userData.progressData.uiHome = true;
         }
@@ -232,6 +243,17 @@ public class HomePanel : UI.Panel
             {
                 bundleBtn.SetActive(false);
             });
+        });
+    }
+    public void ShowStageUpgrade()
+    {
+        OnSlotFull();
+        UI.PanelManager.Create(typeof(SlotExpandPanel), (panel, op) =>
+        {
+            StageGameController ctr = ((StageGameController)Game.Controller.Instance.gameController);
+            ((SlotExpandPanel)panel).SetUp(ctr.GetStageHandler().stageData, isExpanded => { OnModelSlotUpdated(ctr.GetStageHandler().stageData.stageCollections.Count, ctr.GetStageHandler().stageData.totalMonsterSlot); });
+
+            panel.onClose = () => { AD.Controller.Instance.ShowInterstitial(); };
         });
     }
     public void OnMonsterSelected()

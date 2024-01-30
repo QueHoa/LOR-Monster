@@ -23,19 +23,19 @@ public partial class StageGameController : GameController
     public ParticleSystem clickPS, instantCashBoostPS;
 
     int musicThemeIndex = 0;
-    bool isReady = false, isModelSelected = false;
+    bool isReady = false, isMonsterSelected = false;
     public override async UniTask InitializeAsync()
     {
         musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
         if (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0)
         {
             StageData stageData = new StageData();
-            stageData.totalModelSlot = Sheet.SheetDataManager.Instance.gameData.stageConfig.slotConfigs[0].maxSlot;
+            stageData.totalMonsterSlot = Sheet.SheetDataManager.Instance.gameData.stageConfig.slotConfigs[0].maxSlot;
             for (int i = 0; i < System.Enum.GetNames(typeof(ItemData.EStageItemCategory)).Length; i++)
             {
                 var item = Sheet.SheetDataManager.Instance.gameData.itemData.GetItem($"{(ItemData.EStageItemCategory)i}_{i}");
             }
-
+            stageData.isLocked = false;
             DataManagement.DataManager.Instance.userData.stageListData.AddStage(stageData);
 
             DataManagement.DataManager.Instance.Save();
@@ -61,7 +61,7 @@ public partial class StageGameController : GameController
         MonsterCard.onMonsterSelected += OnMonsterSelected;
 
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
-        ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
+        ObjectTouchHandler.onMonsterSelected += OnMonsterReleased;
 
         CaculateOfflineEarning();
 
@@ -134,12 +134,12 @@ public partial class StageGameController : GameController
     private void OnMonsterSelected(Monster monster)
     {
         homePanel.OnMonsterSelected();
-        isModelSelected = true;
+        isMonsterSelected = true;
     }
 
     private void OnMonsterReleased(Monster monster)
     {
-        isModelSelected = false;
+        isMonsterSelected = false;
         if (IsDeleteCheck())
         {
             DeleteMonster(monster);
@@ -159,7 +159,7 @@ public partial class StageGameController : GameController
         stageHandlers.RemoveMonster(monster);
 
         homePanel.OnEarningUpdated(stageHandlers.GetTotalEarning());
-        homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalModelSlot);
+        homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
         currentCardData = null;
     }
 
@@ -234,10 +234,9 @@ public partial class StageGameController : GameController
                     dragMonster.SetItem(item);
                 }
                 
-                dragMonster.transform.localScale = Vector3.one * 0.35f;
+                dragMonster.transform.localScale = Vector3.one * 0.25f;
                 musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
-                monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
-                dragMonster.SetIdle();
+                dragMonster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
 
                 Vector2 worldPosition = CameraController.Instance.GetTouchPosition();
                 dragMonster.transform.position = worldPosition;
@@ -351,7 +350,7 @@ public partial class StageGameController : GameController
         {
             Effect.EffectSpawner.Instance.Get(1, effect => { effect.Active(position); }).Forget();
             Sound.Controller.Instance.PlayOneShot(createModelSFX);
-            homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalModelSlot);
+            homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
             homePanel.OnEarningUpdated(stageHandlers.GetTotalEarning());
             homePanel.OnNewModelAdded();
 
@@ -366,7 +365,7 @@ public partial class StageGameController : GameController
                 {
                     if (isExpanded)
                     {
-                        homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalModelSlot);
+                        homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
                         SetModelToStage(position);
                     }
                     else
@@ -431,12 +430,12 @@ public partial class StageGameController : GameController
         }
     }
 
-    public void HideCurrentStageModel()
+    public void HideCurrentStageMonster()
     {
         stageHandlers.HideMonster();
     }
 
-    public void ShowCurrentStageModel()
+    public void ShowCurrentStageMonster()
     {
         stageHandlers.ShowMonster();
     }

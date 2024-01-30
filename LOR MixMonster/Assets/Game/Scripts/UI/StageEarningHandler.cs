@@ -52,7 +52,7 @@ public partial class StageGameController
             monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.transform.position = position;
             monster.stageCollectionData = stageCollection;
-            monster.transform.localScale = Vector3.one * 0.35f;
+            monster.transform.localScale = Vector3.one * 0.25f;
             monster.GetComponent<ObjectTouchHandler>().enabled = true;
             monsterItemDict.Add(monster, (itemPack, totalEarning));
             return monster;
@@ -127,7 +127,7 @@ public partial class StageGameController
                 UI.PanelManager.Create(typeof(MessagePanel), (panel, op) => { ((MessagePanel)panel).SetUp("This stage is locked"); });
                 return false;
             }
-            else if (stageData.stageCollections.Count >= stageData.totalModelSlot)
+            else if (stageData.stageCollections.Count >= stageData.totalMonsterSlot)
             {
                 Debug.Log("EXCEED MAX SLOT");
 
@@ -180,7 +180,7 @@ public partial class StageGameController
             if (isMonsterHidden) return;
             foreach (var monster in monsterItemDict.Keys)
             {
-                Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(monster.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 3f, monsterItemDict[monster].Item2).SetColor(manual ? Color.yellow : Color.white).SetParent(monster.cashEffectPlace); }).Forget();
+                Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(monster.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 0.3f, monsterItemDict[monster].Item2).SetColor(manual ? Color.yellow : Color.white).SetParent(monster.cashEffectPlace); }).Forget();
             }
         }
     }
