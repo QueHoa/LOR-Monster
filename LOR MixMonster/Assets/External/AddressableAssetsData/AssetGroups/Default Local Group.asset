@@ -147,6 +147,26 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0bd3f9ca48caa8459b3258b1d43c526
+    m_Address: Assets/Game/VFX/Prefabs/VFX_BubbleBreak.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4fe8baa56012484998f1fee73129c94
+    m_Address: Assets/Game/VFX/Prefabs/VFX_MoneyFlip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e6991167377e954980e66e1ce447d44
+    m_Address: Assets/Game/VFX/Prefabs/VFX_InstantCashBonus.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e28a45ab3d5deec43bee04a80ea94323
+    m_Address: Assets/Game/Prefabs/Effects/EquipSpark 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 841cf6df6e84bae43934ac51dfd54521, type: 2}
   m_SchemaSet:

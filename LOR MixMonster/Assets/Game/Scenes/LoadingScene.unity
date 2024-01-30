@@ -152,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056928393125367308, guid: ed50b36d62bbae7498828295699b3b17, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1450
+      value: 2400
       objectReference: {fileID: 0}
     - target: {fileID: 4056928393125367311, guid: ed50b36d62bbae7498828295699b3b17, type: 3}
       propertyPath: m_PreserveAspect
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4056928393643040966, guid: ed50b36d62bbae7498828295699b3b17, type: 3}
       propertyPath: m_Name

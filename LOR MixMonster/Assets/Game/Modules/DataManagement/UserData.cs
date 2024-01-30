@@ -144,7 +144,7 @@ namespace DataManagement
         public int index = 0;
         public List<StageCollectionData> stageCollections;
 
-        public int totalModelSlot = 5;
+        public int totalMonsterSlot = 5;
         public bool isLocked = true;
 
         public StageData()

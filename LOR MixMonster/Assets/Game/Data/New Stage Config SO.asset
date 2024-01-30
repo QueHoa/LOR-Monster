@@ -34,21 +34,21 @@ MonoBehaviour:
   - maxSlot: 20
     cashRequire: 3000000
     adRequire: 1
-  boosterRecoverTime: 300
+  boosterRecoverTime: 600
   boosterConfigs:
   - boosterType: 0
     stats:
     - statType: InstantCash
-      value: 50000
+      value: 70000
   - boosterType: 1
     stats:
     - statType: EarnSpeed
-      value: 0.5
+      value: 0.3
     - statType: Duration
-      value: 60
+      value: 30
   - boosterType: 2
     stats:
     - statType: AutoClickRate
       value: 0.5
     - statType: Duration
-      value: 60
+      value: 30

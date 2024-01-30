@@ -40,6 +40,7 @@ public class LeaderBoardPanel : Panel
                 UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
                 {
                     ((HomePanel)panel).SetUp();
+                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
                 });
                 LevelLoading.Instance.Close();
             });

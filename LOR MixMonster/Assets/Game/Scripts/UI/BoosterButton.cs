@@ -73,6 +73,7 @@ public class BoosterButton : MonoBehaviour
         booster.AddOnBoosterActive(OnBoosterActive);
         booster.AddOnBoosterRefilled(OnBoosterRefilled);
         freeText.text = string.Empty;
+        iconFree.SetActive(true);
         if (booster.IsActive())
         {
             SetCoolDown(booster.GetDuration() - booster.GetCurrentCoolDown(), () => { adIcon.SetActive(true); });
@@ -88,6 +89,7 @@ public class BoosterButton : MonoBehaviour
     {
         freeText.text = string.Empty;
         adIcon.SetActive(false);
+        iconFree.SetActive(true);
     }
 
     void OnBoosterActive()
@@ -105,6 +107,7 @@ public class BoosterButton : MonoBehaviour
         {
             var span = System.DateTime.Now.Subtract(new System.DateTime(DataManagement.DataManager.Instance.userData.stageListData.boosters[(int)boosterType].lastUseFree));
             span = TimeSpan.FromSeconds(Sheet.SheetDataManager.Instance.gameData.stageConfig.boosterRecoverTime).Subtract(span);
+            iconFree.SetActive(false);
             freeText.text = $"Free {span.Minutes}:{span.Seconds}";
             time = Time.time;
         }

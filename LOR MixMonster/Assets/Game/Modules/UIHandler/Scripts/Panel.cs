@@ -12,6 +12,8 @@ namespace UI
         protected Animator ani;
         protected Transform _transform;
         public bool overrideBack = false,isPersistant=false;
+        public delegate void OnClose();
+        public OnClose onClose;
         public virtual void Clear()
         {
             OnDestroy();
