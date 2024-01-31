@@ -213,7 +213,7 @@ public class HomePanel : UI.Panel
         UI.PanelManager.Create(typeof(DailyRewards), (panel, op) =>
         {
             ((DailyRewards)panel).SetUp();
-            
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
             isProcessing = false;
         });
     }
@@ -224,7 +224,7 @@ public class HomePanel : UI.Panel
         UI.PanelManager.Create(typeof(SettingPopup), (panel, op) =>
         {
             ((SettingPopup)panel).SetUp();
-
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
             isProcessing = false;
         });
     }
@@ -239,6 +239,7 @@ public class HomePanel : UI.Panel
             {
                 bundleBtn.SetActive(false);
             });
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
         });
     }
     public void ShowStageUpgrade()
@@ -248,7 +249,7 @@ public class HomePanel : UI.Panel
         {
             StageGameController ctr = ((StageGameController)Game.Controller.Instance.gameController);
             ((SlotExpandPanel)panel).SetUp(ctr.GetStageHandler().stageData, isExpanded => { OnMonsterSlotUpdated(ctr.GetStageHandler().stageData.stageCollections.Count, ctr.GetStageHandler().stageData.totalMonsterSlot); });
-
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
             panel.onClose = () => { AD.Controller.Instance.ShowInterstitial(); };
         });
     }

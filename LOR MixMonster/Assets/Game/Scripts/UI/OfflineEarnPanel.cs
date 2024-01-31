@@ -20,4 +20,9 @@ public class OfflineEarnPanel : UI.Panel
         Show();
         cashPS.Play();
     }
+    public override void Close()
+    {
+        base.Close();
+        ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
+    }
 }

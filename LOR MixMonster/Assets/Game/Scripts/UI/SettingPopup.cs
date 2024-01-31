@@ -36,6 +36,7 @@ public class SettingPopup : UI.Panel
         {
             if (isProcessing) return;
             isProcessing = true;
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
             Close();
         }
 
