@@ -17,6 +17,7 @@ public partial class StageGameController : GameController
     public List<IBooster> boosters = new List<IBooster>();
     public int currentStageId;
     public float earnSpeed = 1;
+    public bool hideMonster;
     int clickCount = 0;
     [SerializeField]
     private AudioClip selectCardSFX, removeModelSFX, createModelSFX, moveStageSFX, clickScreenSFX, stageItemSelectSFX, instantCashBoostSFX;
@@ -53,7 +54,7 @@ public partial class StageGameController : GameController
         cancellation = new CancellationTokenSource();
 
         homePanel = (HomePanel)await UI.PanelManager.CreateAsync(typeof(HomePanel));
-
+        hideMonster = false;
         Clear();
         await PrepareStage();
         await PrepareCollection();
@@ -64,7 +65,6 @@ public partial class StageGameController : GameController
         ObjectTouchHandler.onMonsterReleased += OnMonsterReleased;
 
         CaculateOfflineEarning();
-
         homePanel.SetUp();
         isReady = true;
 
@@ -425,6 +425,7 @@ public partial class StageGameController : GameController
         if (totalOfflineEarning > 0 && !FIRST_SECTION)
         {
             FIRST_SECTION = true;
+            hideMonster = true;
             UI.PanelManager.Create(typeof(OfflineEarnPanel), (panel, op) => { ((OfflineEarnPanel)panel).SetUp(totalOfflineEarning); });
         }
     }

@@ -21865,7 +21865,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3340251042889264968}
-        m_TargetAssemblyTypeName: UI.Panel, Assembly-CSharp
+        m_TargetAssemblyTypeName: SetBundlePanel, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:

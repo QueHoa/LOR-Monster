@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using CodeStage.AntiCheat.Genuine.CodeHash;
 using static UnityEngine.Rendering.DebugUI;
 using System.IO;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using System.Collections.Generic;
 
 public class MonsterCard : MonoBehaviour, ISelectableButton
@@ -125,6 +125,14 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
 
     private void Update()
     {
+        if (((StageGameController)Game.Controller.Instance.gameController).hideMonster)
+        {
+            monster.gameObject.SetActive(false);
+        }
+        else
+        {
+            monster.gameObject.SetActive(true);
+        }
         if (!isDown) return;
 
         if (Time.time - touchTime < holdCurve.keys[holdCurve.length - 1].time)

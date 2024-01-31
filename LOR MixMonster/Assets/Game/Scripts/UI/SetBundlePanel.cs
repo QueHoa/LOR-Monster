@@ -107,4 +107,9 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
         //    ((MessagePanel)panel).SetUp("Thanks for your purchasing");
         //});
     }
+    public override void Close()
+    {
+        base.Close();
+        ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
+    }
 }
