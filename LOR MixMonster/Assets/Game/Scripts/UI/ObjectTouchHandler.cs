@@ -53,7 +53,7 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!isSelected) return;
         isDown = false;
         isSelected = false;
-        if (!IsModelOnStage())
+        if (!IsMonsterOnStage())
         {
             transform.position = currentPosition;
             transform.Shake(0.15f, 1, 0.2f, defaultScale: transform.localScale.x);
@@ -65,7 +65,7 @@ public class ObjectTouchHandler : MonoBehaviour
         Sound.Controller.Instance.PlayOneShot(releaseSFX);
 
     }
-    private bool IsModelOnStage()
+    private bool IsMonsterOnStage()
     {
         if (Physics.Raycast(monster.bottom.position, Vector3.forward, int.MaxValue, layerMask: LayerMask.GetMask("Ground")))
         {
