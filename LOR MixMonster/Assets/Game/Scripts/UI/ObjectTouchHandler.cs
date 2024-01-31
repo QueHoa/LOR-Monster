@@ -1,4 +1,5 @@
 using GameUtility;
+using MoreMountains.NiceVibrations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +14,16 @@ public class ObjectTouchHandler : MonoBehaviour
     Monster monster;
     [SerializeField]
     private AudioClip pickSFX, releaseSFX;
+    [SerializeField]
+    protected HapticTypes hapticTypes = HapticTypes.Warning;
+    private bool hapticsAllowed = true;
     private void OnEnable()
     {
         monster = GetComponent<Monster>();
-        var bc = gameObject.AddComponent<BoxCollider2D>();
-        bc.offset = new Vector2(0, 4.3f);
-        bc.size = new Vector2(6, 17.8f);
+        /*var bc = gameObject.AddComponent<BoxCollider2D>();
+        bc.offset = new Vector2(0, 4.9f);
+        bc.size = new Vector2(10.9f, 21.5f);*/
+        MMVibrationManager.SetHapticsActive(hapticsAllowed);
     }
     private void OnDisable()
     {
@@ -53,6 +58,10 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!isSelected) return;
         isDown = false;
         isSelected = false;
+        if (Sound.Controller.VibrationEnable)
+        {
+            MMVibrationManager.Haptic(hapticTypes, true, true, this);
+        }
         if (!IsMonsterOnStage())
         {
             transform.position = currentPosition;

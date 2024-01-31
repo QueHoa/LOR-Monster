@@ -8,6 +8,8 @@ using UnityEngine.UI;
 using CodeStage.AntiCheat.Genuine.CodeHash;
 using static UnityEngine.Rendering.DebugUI;
 using System.IO;
+using UnityEditorInternal;
+using System.Collections.Generic;
 
 public class MonsterCard : MonoBehaviour, ISelectableButton
 {
@@ -17,12 +19,13 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
     public delegate void OnMonsterCleared(CardData cardData);
     public static OnMonsterCleared onMonsterCleared;
 
-    [SerializeField] private Image monsterShot;
+    public Monster monster;
     [SerializeField] private AudioClip selectSFX, removeSFX;
     [SerializeField] private TextMeshProUGUI collectionTotalText;
+    [SerializeField] private ParticleSystem newMonsterPS;
 
-    string filePath;
-    public CardData _cardData;
+    CardData _cardData;
+    
 
     private void OnEnable()
     {
@@ -48,9 +51,9 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
             AddPart(item.skin);
         }
 
-        UpdateSkin();
-
+        UpdateSkin(cardData);
         gameObject.SetActive(true);
+        newMonsterPS.Play();
         DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
         OnCollectionUpdated(DataManager.Instance.userData.inventory);
     }
@@ -77,17 +80,24 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
         }
     }
 
-    public void UpdateSkin()
+    public void UpdateSkin(CardData cardData)
     {
-        filePath = Application.persistentDataPath + "/" + _cardData.numberCard[_cardData.numberCard.Count - 1].ToString() + ".jpg";
-        if (File.Exists(filePath))
+        List<ItemData.Item> tempMonsterItems = new List<ItemData.Item>();
+        foreach (string id in cardData.items)
         {
-            byte[] bytes = File.ReadAllBytes(filePath);
-            Texture2D loadedTexture = new Texture2D(2, 2);
-            loadedTexture.LoadImage(bytes);
-            Sprite sprite = Sprite.Create(loadedTexture, new Rect(0, 0, loadedTexture.width, loadedTexture.height), new Vector2(0.5f, 0.5f));
-            monsterShot.sprite = sprite;
+            if (Game.Controller.Instance.itemData.GetItem(id).category != ItemData.Category.Pet)
+            {
+                tempMonsterItems.Add(Game.Controller.Instance.itemData.GetItem(id));
+            }
         }
+        monster.layer.sortingOrder = 201;
+        monster.SetUp(tempMonsterItems);
+        foreach (ItemData.Item item in tempMonsterItems)
+        {
+            monster.SetItem(item);
+        }
+
+        monster.SetIdle();
     }
 
     public void OnSelect()

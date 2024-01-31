@@ -61,7 +61,7 @@ public partial class StageGameController : GameController
         MonsterCard.onMonsterSelected += OnMonsterSelected;
 
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
-        ObjectTouchHandler.onMonsterSelected += OnMonsterReleased;
+        ObjectTouchHandler.onMonsterReleased += OnMonsterReleased;
 
         CaculateOfflineEarning();
 
@@ -159,7 +159,7 @@ public partial class StageGameController : GameController
         stageHandlers.RemoveMonster(monster);
 
         homePanel.OnEarningUpdated(stageHandlers.GetTotalEarning());
-        homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
+        homePanel.OnMonsterSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
         currentCardData = null;
     }
 
@@ -220,7 +220,6 @@ public partial class StageGameController : GameController
         ObjectSpawner.Instance.Get(2, obj =>
         {
             // Debug.Break();
-
             Debug.Log("touch count : " + Input.touchCount.ToString().Color("lime"));
 
             if (Input.touchCount > 0)
@@ -233,7 +232,7 @@ public partial class StageGameController : GameController
                 {
                     dragMonster.SetItem(item);
                 }
-                
+
                 dragMonster.transform.localScale = Vector3.one * 0.25f;
                 musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
                 dragMonster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
@@ -345,12 +344,12 @@ public partial class StageGameController : GameController
     {
         isDrag = false;
         Debug.Log(" PrepareModel: " + currentCardData.id);
-        bool result = await stageHandlers.OnModelSelected(currentCardData, position);
+        bool result = await stageHandlers.OnMonsterSelected(currentCardData, position);
         if (result)
         {
             Effect.EffectSpawner.Instance.Get(1, effect => { effect.Active(position); }).Forget();
             Sound.Controller.Instance.PlayOneShot(createModelSFX);
-            homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
+            homePanel.OnMonsterSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
             homePanel.OnEarningUpdated(stageHandlers.GetTotalEarning());
             homePanel.OnNewModelAdded();
 
@@ -365,7 +364,7 @@ public partial class StageGameController : GameController
                 {
                     if (isExpanded)
                     {
-                        homePanel.OnModelSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
+                        homePanel.OnMonsterSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
                         SetModelToStage(position);
                     }
                     else

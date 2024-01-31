@@ -4897,7 +4897,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1114172355
   m_SortingLayer: 2
-  m_SortingOrder: 101
+  m_SortingOrder: 201
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5055,8 +5055,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
