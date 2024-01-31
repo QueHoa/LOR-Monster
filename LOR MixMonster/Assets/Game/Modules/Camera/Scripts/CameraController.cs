@@ -19,7 +19,6 @@ public class CameraController : MonoBehaviour
     float power, duration;
     bool active = false;
     float time = 0;
-
     private void Start()
     {
         camera = Camera.main;
