@@ -34,11 +34,11 @@ public partial class StageGameController
                 totalEarning += (item.unlockType == ItemData.UnlockType.None) ? Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForNormalItem : Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForAdItem;
 
             }
-
+            musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
             Monster monster = (await ObjectSpawner.Instance.GetAsync(2)).GetComponent<Monster>();
             foreach (string id in cardData.items)
             {
-                if(Game.Controller.Instance.itemData.GetItem(id).category != ItemData.Category.Pet)
+                if (Game.Controller.Instance.itemData.GetItem(id).category != ItemData.Category.Pet)
                 {
                     items.Add(Game.Controller.Instance.itemData.GetItem(id));
                 }
@@ -48,7 +48,7 @@ public partial class StageGameController
             {
                 monster.SetItem(item);
             }
-            musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
+            
             monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.transform.position = position;
             monster.stageCollectionData = stageCollection;
@@ -120,7 +120,7 @@ public partial class StageGameController
         //    return totalOfflineEarning;
         //}
 
-        public async UniTask<bool> OnModelSelected(CardData cardData, Vector2 position)
+        public async UniTask<bool> OnMonsterSelected(CardData cardData, Vector2 position)
         {
             if (stageData.isLocked)
             {

@@ -138,6 +138,7 @@ public class ResultPanel : UI.Panel
         else
         {
             hand.SetActive(false);
+            monsterCard.monster.gameObject.SetActive(false);
             monsterCard.gameObject.SetActive(false);
         }
     }
@@ -334,7 +335,7 @@ public class ResultPanel : UI.Panel
                 DataManagement.DataManager.Instance.userData.progressData.firstDaily += 1;
                 DataManagement.DataManager.Instance.Save();
             }
-            Game.Controller.Instance.gameController.Destroy();
+            monsterCard.monster.gameObject.SetActive(false);
             Game.Controller.Instance.gameController.SetUp();
         });
     }
@@ -400,12 +401,8 @@ public class ResultPanel : UI.Panel
                 Sound.Controller.Instance.PlayOneShot(finishSFX);
             });
             await UniTask.Delay(1800, cancellationToken: cancellation.Token);
-            LevelLoading.Instance.Active("HomeScene",
-             async () =>
-             {
-                 Game.Controller.Instance.gameController.Destroy();
-             },
-             async () =>
+            LevelLoading.Instance.Active("HomeScene", null
+             ,async () =>
              {
                  await Game.Controller.Instance.gameController.SetUp();
 

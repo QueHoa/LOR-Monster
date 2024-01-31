@@ -1399,25 +1399,7 @@ AnimationClip:
     path: Content/ScreenshotImg/Text (TMP)
     classID: 114
     script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_PPtrCurves:
-  - curve:
-    - time: 0
-      value: {fileID: 0}
-    - time: 0.51666665
-      value: {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
-    attribute: card1
-    path: 
-    classID: 114
-    script: {fileID: 11500000, guid: 1c4406b380e443545b46ffbd6804f58d, type: 3}
-  - curve:
-    - time: 0
-      value: {fileID: 0}
-    - time: 0.51666665
-      value: {fileID: 8300000, guid: 1be5b8ded41c0834c8c49ac9717ccce5, type: 3}
-    attribute: card2
-    path: 
-    classID: 114
-    script: {fileID: 11500000, guid: 1c4406b380e443545b46ffbd6804f58d, type: 3}
+  m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -1628,25 +1610,7 @@ AnimationClip:
       typeID: 114
       customType: 0
       isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 2618325057
-      script: {fileID: 11500000, guid: 1c4406b380e443545b46ffbd6804f58d, type: 3}
-      typeID: 114
-      customType: 0
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 0
-      attribute: 85535227
-      script: {fileID: 11500000, guid: 1c4406b380e443545b46ffbd6804f58d, type: 3}
-      typeID: 114
-      customType: 0
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
-    - {fileID: 0}
-    - {fileID: 8300000, guid: 1be5b8ded41c0834c8c49ac9717ccce5, type: 3}
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

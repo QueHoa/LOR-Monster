@@ -385,7 +385,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1450, y: 0}
+  m_SizeDelta: {x: 2400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168444850
 MonoBehaviour:
@@ -409,7 +409,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 4b63f1108e819a14a8c5725f1ffad3c9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -576,6 +576,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4056928393643040968, guid: ed50b36d62bbae7498828295699b3b17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056928394398567907, guid: ed50b36d62bbae7498828295699b3b17, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1497,8 +1501,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1.3
+      time: -0.0004300177
+      value: 1.3127118
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1506,8 +1510,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.102662474
-      value: 1.2417326
+      time: 0.09763193
+      value: 1.3051342
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1515,8 +1519,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.23461574
-      value: 1.2526174
+      time: 0.18609002
+      value: 1.3084506
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1524,8 +1528,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.4509778
-      value: 1.1803508
+      time: 0.4479843
+      value: 1.2936313
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1533,8 +1537,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6490849
-      value: 1.2163365
+      time: 0.6476784
+      value: 1.303084
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1542,8 +1546,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.0048151
-      value: 1.189462
+      time: 0.9995023
+      value: 1.2966563
       inSlope: 0
       outSlope: 0
       tangentMode: 136

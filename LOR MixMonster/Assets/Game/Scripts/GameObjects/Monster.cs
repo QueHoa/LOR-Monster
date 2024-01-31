@@ -3,6 +3,7 @@ using DataManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Monster : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Monster : MonoBehaviour
     [SerializeField]
     private Transform[] heads;
     public Transform cashEffectPlace, bottom;
+    public SortingGroup layer;
 
     public StageCollectionData stageCollectionData;
     Vector3 defaultMonsterHeadScale;

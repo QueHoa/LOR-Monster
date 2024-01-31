@@ -193,6 +193,7 @@ public class MakeOverGameController : GameController
         //lưu dữ liệu con mới mix lại ở cardData
         DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, selectedItems);
         DataManagement.DataManager.Instance.userData.inventory.AddCollection(cardData);
+        Game.Controller.Instance.gameController.Destroy();
         ResultPanel resultPanel = (ResultPanel)await UI.PanelManager.CreateAsync(typeof(ResultPanel));
         resultPanel.SetUp(totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
 
@@ -210,7 +211,7 @@ public class MakeOverGameController : GameController
     {
         float t = 0;
         Transform _transform = monster.transform;
-        Vector3 scale = Vector3.one *1.3f;
+        Vector3 scale = Vector3.one * 1.3f;
         Vector3 pos = Vector3.zero;
 
         while (t < monsterZoomCurve.keys[monsterZoomCurve.length - 1].time)

@@ -33,7 +33,7 @@ public class HomePanel : UI.Panel
     [SerializeField]
     private BoosterButton[] boosterButtons;
     [SerializeField]
-    private ParticleSystem unlockPS, newMonsterPS, moneyPS;
+    private ParticleSystem unlockPS, newMonsterPS;
     StageData stageData;
     public override void PostInit()
     {
@@ -49,7 +49,7 @@ public class HomePanel : UI.Panel
         OnCollectionUpdated(DataManager.Instance.userData.inventory);
         OnEarningUpdated(((StageGameController)Game.Controller.Instance.gameController).GetTotalEarning());
         StageData currentStageData = ((StageGameController)Game.Controller.Instance.gameController).GetStageHandler().stageData;
-        OnModelSlotUpdated(currentStageData.stageCollections.Count, currentStageData.totalMonsterSlot);
+        OnMonsterSlotUpdated(currentStageData.stageCollections.Count, currentStageData.totalMonsterSlot);
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
         for (int i = 0; i < boosterButtons.Length; i++)
         {
@@ -92,7 +92,7 @@ public class HomePanel : UI.Panel
         handTut.SetActive(false);
     }
 
-    public void OnModelSlotUpdated(int current, int max)
+    public void OnMonsterSlotUpdated(int current, int max)
     {
         slotText.text = $"{current}/{max}";
         maxSlotNotice.SetActive(current >= max);
@@ -123,11 +123,6 @@ public class HomePanel : UI.Panel
         {
             handTut.SetActive(false);
             monsterCard.gameObject.SetActive(false);
-        }
-        if (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count > 0)
-        {
-            moneyPS.gameObject.SetActive(true);
-            moneyPS.Play();
         }
     }
 
@@ -252,7 +247,7 @@ public class HomePanel : UI.Panel
         UI.PanelManager.Create(typeof(SlotExpandPanel), (panel, op) =>
         {
             StageGameController ctr = ((StageGameController)Game.Controller.Instance.gameController);
-            ((SlotExpandPanel)panel).SetUp(ctr.GetStageHandler().stageData, isExpanded => { OnModelSlotUpdated(ctr.GetStageHandler().stageData.stageCollections.Count, ctr.GetStageHandler().stageData.totalMonsterSlot); });
+            ((SlotExpandPanel)panel).SetUp(ctr.GetStageHandler().stageData, isExpanded => { OnMonsterSlotUpdated(ctr.GetStageHandler().stageData.stageCollections.Count, ctr.GetStageHandler().stageData.totalMonsterSlot); });
 
             panel.onClose = () => { AD.Controller.Instance.ShowInterstitial(); };
         });

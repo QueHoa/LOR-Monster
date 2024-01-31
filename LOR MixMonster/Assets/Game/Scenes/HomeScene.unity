@@ -5800,7 +5800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85e0c066a143134cba8d0a0091b7071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraLockWidth: 100
 --- !u!1 &918577780
 GameObject:
   m_ObjectHideFlags: 3
@@ -11014,7 +11013,7 @@ GameObject:
   - component: {fileID: 1546297778}
   m_Layer: 7
   m_Name: RemoveZone
-  m_TagString: Untagged
+  m_TagString: RemoveZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11027,7 +11026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546297776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11045,8 +11044,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 45, y: 12.563161, z: 1}
-  m_Center: {x: 0, y: -16.610044, z: 0}
+  m_Size: {x: 45, y: 11.094193, z: 1}
+  m_Center: {x: 0, y: -17.344528, z: 0}
 --- !u!1001 &1692697177
 PrefabInstance:
   m_ObjectHideFlags: 0
