@@ -6,8 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/StageConfig")]
 public class StageConfigSO : ScriptableObject
 {
-    public int cashEarningForNormalItem = 10;
-    public int cashEarningForAdItem = 30;
     public int expandPrice = 300;
     public List<SlotConfig> slotConfigs = new List<SlotConfig>();
     public int boosterRecoverTime;
@@ -71,12 +69,9 @@ public class StageConfigSO : ScriptableObject
 #if UNITY_EDITOR
         UnityEditor.EditorUtility.SetDirty(this);
 #endif
-        List<RowData> rowDatas = GameUtility.GameUtility.ConvertSheetToList(sheets[0].GoogleSheetData);
-        cashEarningForAdItem = int.Parse(rowDatas[2].list[1]);
-        cashEarningForNormalItem = int.Parse(rowDatas[1].list[1]);
-
-        ApplySlotConfig(sheets[1].GoogleSheetData);
-        ApplyBoosterConfig(sheets[2].GoogleSheetData);
+        
+        ApplySlotConfig(sheets[0].GoogleSheetData);
+        ApplyBoosterConfig(sheets[1].GoogleSheetData);
 
     }
     void ApplySlotConfig(object[,] googleSheetData)

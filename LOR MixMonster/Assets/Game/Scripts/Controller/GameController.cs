@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public delegate void OnStageEnd();
     public static OnStageEnd onStageEnd;
     public bool isReady = false;
+    public bool hideMonster;
 
     protected void Start()
     {

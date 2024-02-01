@@ -46,7 +46,7 @@ public class DailyRewards : UI.Panel
         {
             if (isProcessing) return;
             isProcessing = true;
-            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
+            (Game.Controller.Instance.gameController).hideMonster = false;
             Close();
         }
 

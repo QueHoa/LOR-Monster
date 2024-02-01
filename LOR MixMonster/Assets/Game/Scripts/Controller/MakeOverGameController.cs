@@ -16,6 +16,7 @@ public class MakeOverGameController : GameController
     CancellationTokenSource cancellation;
     [SerializeField]
     private Transform[] petSpawnPlaces;
+    private int changeGold;
     private void OnEnable()
     {
     }
@@ -47,7 +48,7 @@ public class MakeOverGameController : GameController
     public override async UniTask SetUp()
     {
         cancellation = new CancellationTokenSource();
-
+        hideMonster = false;
         Sound.Controller.Instance.PlayMusic(Sound.Controller.Instance.soundData.menuTheme[UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.menuTheme.Length)]);
 
 
@@ -189,13 +190,20 @@ public class MakeOverGameController : GameController
 
         await UniTask.Delay(1000, cancellationToken: cancellation.Token);
         await UniTask.WaitUntil(() => capturedScreenShot != null, cancellationToken: cancellation.Token);
-
+        changeGold = 0;
+        for (int i = 0; i < Sheet.SheetDataManager.Instance.gameData.rewardGold.item.Count; i++)
+        {
+            if (totalLikePoint + bonusLike >= Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i].like && totalLikePoint + bonusLike < Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i + 1].like)
+            {
+                changeGold = (int)(Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i].gold.GetRandomInt() * UnityEngine.Random.Range(1.7f, 2f));
+            }
+        }
         //lưu dữ liệu con mới mix lại ở cardData
-        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, selectedItems);
+        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, changeGold, selectedItems);
         DataManagement.DataManager.Instance.userData.inventory.AddCollection(cardData);
         Game.Controller.Instance.gameController.Destroy();
         ResultPanel resultPanel = (ResultPanel)await UI.PanelManager.CreateAsync(typeof(ResultPanel));
-        resultPanel.SetUp(totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
+        resultPanel.SetUp(changeGold, totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
 
         Debug.Log($"BEST VIEW {DataManagement.DataManager.Instance.userData.BestView}+ {totalViewPoint + bonusView}");
         DataManagement.DataManager.Instance.userData.BestView = totalViewPoint + bonusView;

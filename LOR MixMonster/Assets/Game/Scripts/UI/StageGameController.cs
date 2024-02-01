@@ -6,18 +6,17 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using static PetTouchHandler;
 
 public partial class StageGameController : GameController
 {
     public static bool FIRST_SECTION;
     public HomePanel homePanel;
     public Monster monster;
+    [SerializeField]
     StageEarningHandler stageHandlers;
     public List<IBooster> boosters = new List<IBooster>();
     public int currentStageId;
     public float earnSpeed = 1;
-    public bool hideMonster;
     int clickCount = 0;
     [SerializeField]
     private AudioClip selectCardSFX, removeModelSFX, createModelSFX, moveStageSFX, clickScreenSFX, stageItemSelectSFX, instantCashBoostSFX;
@@ -57,10 +56,10 @@ public partial class StageGameController : GameController
         hideMonster = false;
         Clear();
         await PrepareStage();
-        await PrepareCollection();
-
+        await PrepareCollection();   
+        Debug.Log("done");
         MonsterCard.onMonsterSelected += OnMonsterSelected;
-
+        
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
         ObjectTouchHandler.onMonsterReleased += OnMonsterReleased;
 
@@ -193,7 +192,8 @@ public partial class StageGameController : GameController
 
     async UniTask PrepareCollection()
     {
-        Debug.Log("************ ----------- ************** 1");
+        Debug.Log("************ ----------- ************** 1" );
+
         await stageHandlers.PrepareCollection();
     }
 

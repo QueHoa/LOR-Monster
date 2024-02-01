@@ -60,10 +60,9 @@ public class ResultPanel : UI.Panel
     {
     }
 
-    public void SetUp(int totalViewPoint, int totalLikePoint,Sprite screenShot, List<ItemData.Item> mySets)
+    public void SetUp(int changeGold,int totalViewPoint, int totalLikePoint, Sprite screenShot, List<ItemData.Item> mySets)
     {
         isDone = true;
-        Debug.Log(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1);
         xLucky = 5;
         screenShotImg.sprite = screenShot;
         Texture2D rawImageTexture = screenShot.texture;
@@ -76,7 +75,7 @@ public class ResultPanel : UI.Panel
         panelCard.interactable = true;
         claim.interactable = false;
         thanks.interactable = false;
-        changeGold = 0;
+        this.changeGold = changeGold;
         if (totalViewPoint > DataManagement.DataManager.Instance.userData.progressData.bestViewPoint)
         {
             bestObj.SetActive(true);
@@ -105,13 +104,13 @@ public class ResultPanel : UI.Panel
     {
         await UniTask.Delay(660, cancellationToken: cancellation.Token);
         Sound.Controller.Instance.PlayOneShot(barMove);
-        for (int i = 0; i < Sheet.SheetDataManager.Instance.gameData.rewardGold.item.Count; i++)
+        /*for (int i = 0; i < Sheet.SheetDataManager.Instance.gameData.rewardGold.item.Count; i++)
         {
             if (totalLikePoint >= Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i].like && totalLikePoint < Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i + 1].like)
             {
                 changeGold = (int)(Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i].gold.GetRandomInt() * UnityEngine.Random.Range(1.7f, 2f));
             }
-        }
+        }*/
         int a = 0;
         goldReceivedText.transform.DOScale(Vector3.one * 1.3f, 1f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
         DOTween.To(() => a, x => a = x, changeGold, 2f).SetEase(Ease.OutQuad)

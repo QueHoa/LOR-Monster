@@ -83,6 +83,8 @@
     <type fullname="RangeValue" preserve="nothing" serialized="true" />
     <type fullname="Vector" preserve="nothing" serialized="true" />
     <type fullname="Localization.LocalizationTextID" preserve="nothing" serialized="true" />
+    <type fullname="DataManagement.StageData" preserve="nothing" serialized="true" />
+    <type fullname="StageGameController/StageEarningHandler" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Cinemachine.CinemachineBrain" preserve="all" />
@@ -222,6 +224,11 @@
     <type fullname="UnityEngine.Canvas" preserve="all" />
     <type fullname="UnityEngine.CanvasGroup" preserve="all" />
     <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="ACTk.Runtime">
+    <type fullname="CodeStage.AntiCheat.Common.ACTkByte4" preserve="nothing" serialized="true" />
+    <type fullname="CodeStage.AntiCheat.ObscuredTypes.ObscuredFloat" preserve="nothing" serialized="true" />
+    <type fullname="CodeStage.AntiCheat.ObscuredTypes.ObscuredInt" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.TextCoreFontEngineModule">
     <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
