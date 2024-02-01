@@ -12,8 +12,7 @@ public class GameLoader : MonoBehaviour
     }
     async UniTaskVoid SetUp()
     {
-        await UniTask.WaitUntil(() => DataManagement.DataManager.Instance.IsReady());
-        await UniTask.WaitUntil(() => Sound.Controller.Instance.IsReady() && Sheet.SheetDataManager.Instance.isReady );
+        await UniTask.WaitUntil(() => DataManagement.DataManager.Instance.IsReady() && Sound.Controller.Instance.IsReady() && Sheet.SheetDataManager.Instance.isReady );
        
         await UniTask.Delay(150);
         LoadMainScene();
@@ -27,7 +26,7 @@ public class GameLoader : MonoBehaviour
                 ? "MainScene"
                 : "HomeScene";
         LevelLoading.Instance.Active(sceneKey, null,
-            async () =>
+            UniTask.Action(async () =>
             {
                 Game.Controller.Instance.gameController.SetUp();
                 AD.Controller.Instance.ShowBanner();
@@ -37,8 +36,8 @@ public class GameLoader : MonoBehaviour
                 }
                 await UniTask.Delay(150);
                 ShowOpenAd();
-            }
-        , closeOverride: true);
+            })
+            , closeOverride: true);
     }
 
     async UniTask ShowOpenAd()

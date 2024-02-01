@@ -259,16 +259,18 @@ namespace DataManagement
         public string eventId;
         public string[] items;
         public List<int> numberCard = new List<int>();
+        public int money;
         //public CollectionData collectionDatas;
 
         public CardData()
         {
         }
 
-        public CardData(int numberCard, List<ItemData.Item> currentItems)
+        public CardData(int numberCard, int money, List<ItemData.Item> currentItems)
         {
             this.id = Guid.NewGuid().ToString();
             this.numberCard.Add(numberCard);
+            this.money = money;
             items = new string[currentItems.Count];
             for (int i = 0; i < items.Length; i++)
             {

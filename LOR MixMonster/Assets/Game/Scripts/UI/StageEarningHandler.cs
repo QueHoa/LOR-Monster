@@ -13,7 +13,7 @@ public partial class StageGameController
         public StageData stageData;
         public ObscuredInt totalEarning;
         public ObscuredFloat totalEarningBonus;
-        public Dictionary<Monster, (ItemData.ItemPack, int)> monsterItemDict = new Dictionary<Monster, (ItemData.ItemPack, int)>();
+        public Dictionary<Monster, int> monsterItemDict = new Dictionary<Monster, int>();
         int musicThemeIndex = 0;
 
         public StageEarningHandler(StageData stageData)
@@ -25,16 +25,15 @@ public partial class StageGameController
         {
             ItemData.ItemPack itemPack = new ItemData.ItemPack();
             List<ItemData.Item> items = new List<ItemData.Item>();
-            ObscuredInt totalEarning = 0;
-            foreach (string itemId in cardData.items)
+            ObscuredInt totalEarning = cardData.money;
+            /*foreach (string itemId in cardData.items)
             {
                 ItemData.Item item = Sheet.SheetDataManager.Instance.gameData.itemData.GetItem(itemId);
                 itemPack.items.Add(item);
 
                 totalEarning += (item.unlockType == ItemData.UnlockType.None) ? Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForNormalItem : Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForAdItem;
 
-            }
-            musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
+            }*/
             Monster monster = (await ObjectSpawner.Instance.GetAsync(2)).GetComponent<Monster>();
             foreach (string id in cardData.items)
             {
@@ -43,18 +42,20 @@ public partial class StageGameController
                     items.Add(Game.Controller.Instance.itemData.GetItem(id));
                 }
             }
+            
             monster.SetUp(items);
             foreach (ItemData.Item item in items)
             {
-                monster.SetItem(item);
+                await monster.SetItem(item);
             }
-            
+            musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.transform.position = position;
             monster.stageCollectionData = stageCollection;
             monster.transform.localScale = Vector3.one * 0.25f;
             monster.GetComponent<ObjectTouchHandler>().enabled = true;
-            monsterItemDict.Add(monster, (itemPack, totalEarning));
+
+            monsterItemDict.Add(monster, totalEarning);
             return monster;
         }
 
@@ -82,9 +83,9 @@ public partial class StageGameController
         private ObscuredInt CaculateEarning()
         {
             ObscuredInt totalEarning = 0;
-            foreach ((ItemData.ItemPack, int) pack in monsterItemDict.Values)
+            foreach (int pack in monsterItemDict.Values)
             {
-                totalEarning += pack.Item2;
+                totalEarning += pack;
             }
 
             return totalEarning;
@@ -180,7 +181,7 @@ public partial class StageGameController
             if (isMonsterHidden) return;
             foreach (var monster in monsterItemDict.Keys)
             {
-                Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(monster.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 0.3f, monsterItemDict[monster].Item2).SetColor(manual ? Color.yellow : Color.white).SetParent(monster.cashEffectPlace); }).Forget();
+                Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(monster.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 0.3f, monsterItemDict[monster]).SetColor(manual ? Color.yellow : Color.white).SetParent(monster.cashEffectPlace); }).Forget();
             }
         }
     }

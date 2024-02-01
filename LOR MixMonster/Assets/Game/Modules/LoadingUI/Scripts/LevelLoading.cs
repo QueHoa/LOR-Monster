@@ -47,9 +47,12 @@ public class LevelLoading : UnityEngine.MonoBehaviour
         this.sceneId = sceneId;
         this.onLoad = onLoad;
         this.onDone = onDone;
-        gameObject.SetActive(true);
+        
         sceneLoader = Addressables.LoadSceneAsync(sceneId, LoadSceneMode.Single, false);
+        gameObject.SetActive(true);
         isLevelLoaded = false;
+
+        CancelInvoke();
         Invoke(nameof(OnLoad), 0.4f);
 
     }

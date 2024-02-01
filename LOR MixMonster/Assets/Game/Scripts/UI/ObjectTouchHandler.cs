@@ -17,12 +17,14 @@ public class ObjectTouchHandler : MonoBehaviour
     [SerializeField]
     protected HapticTypes hapticTypes = HapticTypes.Warning;
     private bool hapticsAllowed = true;
+    private float scale;
     private void OnEnable()
     {
         monster = GetComponent<Monster>();
         /*var bc = gameObject.AddComponent<BoxCollider2D>();
         bc.offset = new Vector2(0, 4.9f);
         bc.size = new Vector2(10.9f, 21.5f);*/
+        scale = 0.25f;
         MMVibrationManager.SetHapticsActive(hapticsAllowed);
     }
     private void OnDisable()
@@ -39,7 +41,7 @@ public class ObjectTouchHandler : MonoBehaviour
 
         isDown = true;
         touchTime = Time.time;
-        transform.Shake(0.1f, 1, 0.05f, defaultScale: transform.localScale.x);
+        transform.Shake(0.1f, 1, 0.05f, defaultScale: scale);
 
     }
     private void Update()
@@ -50,7 +52,7 @@ public class ObjectTouchHandler : MonoBehaviour
             currentPosition = transform.position;
             offset = CameraController.Instance.GetTouchPosition() - transform.position;
             Sound.Controller.Instance.PlayOneShot(pickSFX);
-            transform.Shake(0.15f, 1, 0.1f, defaultScale: transform.localScale.x);
+            transform.Shake(0.15f, 1, 0.1f, defaultScale: scale);
         }
     }
     private void OnMouseUp()
@@ -65,7 +67,7 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!IsMonsterOnStage())
         {
             transform.position = currentPosition;
-            transform.Shake(0.15f, 1, 0.2f, defaultScale: transform.localScale.x);
+            transform.Shake(0.15f, 1, 0.2f, defaultScale: scale);
         }
         onMonsterReleased?.Invoke(monster);
         monster.stageCollectionData.position.Set(transform.position);

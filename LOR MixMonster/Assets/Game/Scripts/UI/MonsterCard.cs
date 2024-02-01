@@ -125,7 +125,7 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
 
     private void Update()
     {
-        if (((StageGameController)Game.Controller.Instance.gameController).hideMonster)
+        if ((Game.Controller.Instance.gameController).hideMonster)
         {
             monster.gameObject.SetActive(false);
         }
