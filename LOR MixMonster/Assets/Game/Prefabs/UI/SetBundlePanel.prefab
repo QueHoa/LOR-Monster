@@ -15506,6 +15506,7 @@ MonoBehaviour:
   adCountText: {fileID: 3340251042208623366}
   productId: leftrightmonster_premium_bundle
   openSFX: {fileID: 8300000, guid: 2c3389b8048027b449eeed83ab56e0e1, type: 3}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!114 &3340251042889264971
 MonoBehaviour:
   m_ObjectHideFlags: 0

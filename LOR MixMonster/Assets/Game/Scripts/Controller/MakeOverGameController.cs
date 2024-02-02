@@ -157,13 +157,12 @@ public class MakeOverGameController : GameController
         PreparePet(selectedItems);
 
         monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
-
+        await ZoomMonster(cancellation.Token);
         Sound.Controller.Instance.PlayMusic(Sound.Controller.Instance.soundData.finalThemes[musicThemeIndex++ % Sound.Controller.Instance.soundData.finalThemes.Length]);
         Effect.EffectSpawner.Instance.Get(3, effect =>
         {
             effect.Active(Vector3.zero);
         }).Forget();
-        await ZoomMonster(cancellation.Token);
 
         LiveStreamPanel liveStreamPanel = (LiveStreamPanel)await UI.PanelManager.CreateAsync(typeof(LiveStreamPanel));
         await liveStreamPanel.SetUp(totalViewPoint, totalLikePoint);
@@ -203,7 +202,7 @@ public class MakeOverGameController : GameController
         DataManagement.DataManager.Instance.userData.inventory.AddCollection(cardData);
         Game.Controller.Instance.gameController.Destroy();
         ResultPanel resultPanel = (ResultPanel)await UI.PanelManager.CreateAsync(typeof(ResultPanel));
-        resultPanel.SetUp(changeGold, totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
+        resultPanel.SetUp(changeGold / 10, totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
 
         Debug.Log($"BEST VIEW {DataManagement.DataManager.Instance.userData.BestView}+ {totalViewPoint + bonusView}");
         DataManagement.DataManager.Instance.userData.BestView = totalViewPoint + bonusView;

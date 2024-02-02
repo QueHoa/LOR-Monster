@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LeaderBoardPanel : Panel
 {
+    public AudioClip sfx;
     bool isProcessing;
     public override void PostInit()
     {
@@ -34,6 +35,7 @@ public class LeaderBoardPanel : Panel
         {
             if (isProcessing) return;
             isProcessing = true;
+            Sound.Controller.Instance.PlayOneShot(sfx);
             LevelLoading.Instance.Active(() =>
             {
                 Close();

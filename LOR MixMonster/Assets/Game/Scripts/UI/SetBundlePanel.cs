@@ -15,7 +15,7 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
     private string bundleId;
     System.Action onUnlock;
     [SerializeField]
-    private AudioClip openSFX;
+    private AudioClip openSFX, sfx;
     public void OnPurchaseCompleted(Product product)
     {
         if (product.definition.id.Contains(productId))
@@ -109,6 +109,7 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
     }
     public override void Close()
     {
+        Sound.Controller.Instance.PlayOneShot(sfx);
         base.Close();
         ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
     }

@@ -10,6 +10,7 @@ public class PhotoButton : GameUtility.Pooling.PoolComponent
 {
     public Image bg;
     public GameObject collecting;
+    public AudioClip sfx;
 
     CollectionPanel collectionPanel;
     string filePath;
@@ -55,6 +56,7 @@ public class PhotoButton : GameUtility.Pooling.PoolComponent
     }
     public async void Choose()
     {
+        Sound.Controller.Instance.PlayOneShot(sfx);
         StartCoroutine(collectionPanel.Effect());
         collectionPanel.viewText.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.progressData.collectionDatas[value].view);
         collectionPanel.likeText.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.progressData.collectionDatas[value].like);

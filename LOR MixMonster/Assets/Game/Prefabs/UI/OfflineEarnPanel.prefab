@@ -53748,6 +53748,7 @@ MonoBehaviour:
   totalCashText: {fileID: 9047787616851768637}
   cashPS: {fileID: 4320714973450445806}
   rewardSFX: {fileID: 8300000, guid: 75bc7b0172557854cafd80816c5b8fd6, type: 3}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!1 &9047787614984470667
 GameObject:
   m_ObjectHideFlags: 0

@@ -499,8 +499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 373.77, y: 0}
-  m_SizeDelta: {x: 362.47, y: 97.06}
+  m_AnchoredPosition: {x: 384.82, y: 0}
+  m_SizeDelta: {x: 373.53, y: 97.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4970480900947722038
 CanvasRenderer:
@@ -11192,6 +11192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!114 &1376208149500044840
 MonoBehaviour:
   m_ObjectHideFlags: 0

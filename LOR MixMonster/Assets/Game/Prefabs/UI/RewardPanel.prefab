@@ -358,6 +358,7 @@ MonoBehaviour:
   overrideBack: 0
   isPersistant: 0
   rewardSFX: {fileID: 8300000, guid: 2c3389b8048027b449eeed83ab56e0e1, type: 3}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!114 &1681910958002216412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,7 +1189,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8222065476580880458}
-        m_TargetAssemblyTypeName: UI.Panel, Assembly-CSharp
+        m_TargetAssemblyTypeName: RewardPanel, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:
