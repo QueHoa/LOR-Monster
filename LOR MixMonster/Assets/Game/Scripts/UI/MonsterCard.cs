@@ -23,7 +23,9 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
     [SerializeField] private AudioClip selectSFX, removeSFX;
     [SerializeField] private TextMeshProUGUI collectionTotalText;
     [SerializeField] private ParticleSystem newMonsterPS;
+    [SerializeField] private GameObject hand;
 
+    private bool hideHand;
     CardData _cardData;
     
 
@@ -51,7 +53,7 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
 
             AddPart(item.skin);
         }
-
+        hideHand = monster.gameObject.activeInHierarchy;
         UpdateSkin(cardData);
         gameObject.SetActive(true);
         newMonsterPS.Play();
@@ -128,10 +130,12 @@ public class MonsterCard : MonoBehaviour, ISelectableButton
         if ((Game.Controller.Instance.gameController).hideMonster)
         {
             monster.gameObject.SetActive(false);
+            hand.gameObject.SetActive(false);
         }
         else
         {
             monster.gameObject.SetActive(true);
+            hand.gameObject.SetActive(hideHand);
         }
         if (!isDown) return;
 

@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 2268940303028905380}
   - component: {fileID: 5263383963281764931}
   - component: {fileID: 3321124781273168671}
-  - component: {fileID: 8582779426031551630}
+  - component: {fileID: 7674972441495716885}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!223 &8582779426031551630
+--- !u!223 &7674972441495716885
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11418,7 +11418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520173399031687003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -38.9, z: 0}
+  m_LocalPosition: {x: 0, y: -36.4, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53030,6 +53030,7 @@ MonoBehaviour:
   removeSFX: {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
   collectionTotalText: {fileID: 3137024189962946212}
   newMonsterPS: {fileID: 6626701006010422240}
+  hand: {fileID: 1489255785701379271}
   holdCurve:
     serializedVersion: 2
     m_Curve:
@@ -90761,8 +90762,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 285.08}
-  m_SizeDelta: {x: 0, y: 268.84}
+  m_AnchoredPosition: {x: 0, y: 278.44}
+  m_SizeDelta: {x: 0, y: 255.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8287693513639349014
 CanvasRenderer:
