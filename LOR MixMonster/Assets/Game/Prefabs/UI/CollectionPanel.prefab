@@ -69385,6 +69385,7 @@ MonoBehaviour:
   isPersistant: 0
   viewText: {fileID: 5243034841237818233}
   likeText: {fileID: 5091729240562571190}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
   iconItem:
   - {fileID: 3883267317764079925}
   - {fileID: 3399784842765447568}

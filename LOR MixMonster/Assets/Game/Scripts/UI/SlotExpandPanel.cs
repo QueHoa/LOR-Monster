@@ -10,7 +10,7 @@ public class SlotExpandPanel : UI.Panel
     [SerializeField]
     private TMPro.TextMeshProUGUI slotPresent, slotUpgrade;
     [SerializeField]
-    private AudioClip unlockSFX;
+    private AudioClip unlockSFX, sfx;
 
     System.Action<bool> onResult;
 
@@ -77,6 +77,7 @@ public class SlotExpandPanel : UI.Panel
     }
     public override void Close()
     {
+        Sound.Controller.Instance.PlayOneShot(sfx);
         base.Close();
         ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
         onResult?.Invoke(false);

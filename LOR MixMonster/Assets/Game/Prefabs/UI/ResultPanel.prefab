@@ -68947,6 +68947,7 @@ MonoBehaviour:
   panelCard: {fileID: 878105764637837407}
   claim: {fileID: 3206997981039448561}
   thanks: {fileID: 5001213558979234118}
+  card: {fileID: 4913931600514436749}
   finishSFX: {fileID: 8300000, guid: 2c3389b8048027b449eeed83ab56e0e1, type: 3}
   barMove: {fileID: 8300000, guid: 4364d99ca5cd83345b92d228b7f10a69, type: 3}
   coinSFX1: {fileID: 8300000, guid: 900e9439408fa43439f5aec7ea683cf6, type: 3}

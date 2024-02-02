@@ -13,7 +13,7 @@ namespace OneHit.Leaderboard
     {
         DatabaseReference dbRef;
         internal string nameOfLeaderboard = "HighScore";
-        private bool allowNameDuplicate = false;
+        private bool allowNameDuplicate = true;
 
         internal int maxCompetitor = 1000;
 

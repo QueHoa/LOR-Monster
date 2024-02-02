@@ -30,7 +30,7 @@ public class ResultPanel : UI.Panel
     [SerializeField]
     private CanvasGroup panelCard;
     [SerializeField]
-    private Button claim, thanks;
+    private Button claim, thanks, card;
     [SerializeField]
     private AudioClip finishSFX, barMove, coinSFX1, coinSFX2, selectCard, removeCard;
     [SerializeField]
@@ -75,6 +75,7 @@ public class ResultPanel : UI.Panel
         panelCard.interactable = true;
         claim.interactable = false;
         thanks.interactable = false;
+        card.interactable = false;
         this.changeGold = changeGold;
         if (totalViewPoint > DataManagement.DataManager.Instance.userData.progressData.bestViewPoint)
         {
@@ -124,6 +125,7 @@ public class ResultPanel : UI.Panel
         isDone = false;
         claim.interactable = true;
         thanks.interactable = true;
+        card.interactable = true;
     }
     private void OnCollectionUpdated(Inventory inventory)
     {

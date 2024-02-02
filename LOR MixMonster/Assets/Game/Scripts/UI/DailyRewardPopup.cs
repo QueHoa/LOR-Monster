@@ -12,12 +12,14 @@ public class DailyRewardPopup : UI.Panel
     public GameObject day7, bgIcon;
     public GameObject effect1, effect2;
     [SerializeField]
-    private AudioClip rewardSFX;
+    private AudioClip rewardSFX, sfx;
+    bool isProcessing = false;
     public override void PostInit()
     {
     }
     public void SetUp(int day)
     {
+        isProcessing = false;
         Sound.Controller.Instance.PlayOneShot(rewardSFX);
         day7.SetActive(false);
         effect1.SetActive(false);
@@ -131,5 +133,12 @@ public class DailyRewardPopup : UI.Panel
                 }
             }
         }
+    }
+    public override void Close()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        Sound.Controller.Instance.PlayOneShot(sfx);
+        base.Close();
     }
 }

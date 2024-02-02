@@ -1610,6 +1610,7 @@ MonoBehaviour:
   slotPresent: {fileID: 3967531042852054371}
   slotUpgrade: {fileID: 6164481802172043875}
   unlockSFX: {fileID: 8300000, guid: 8bdaf195a23a7074a9eb35835a73ce96, type: 3}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
   lockObj: {fileID: 5777797983745058324}
   normalObj: {fileID: 7200689133583277451}
 --- !u!1 &6838374082830125075

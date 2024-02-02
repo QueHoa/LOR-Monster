@@ -33,7 +33,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     [SerializeField]
     protected AudioClip[] leftRightClips;
     [SerializeField]
-    protected AudioClip dailyShow;
+    protected AudioClip dailyShow, sfx;
     [SerializeField]
     protected HapticTypes hapticTypes = HapticTypes.Warning;
     [SerializeField]
@@ -275,6 +275,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
+        Sound.Controller.Instance.PlayOneShot(sfx);
         UI.PanelManager.Create(typeof(SetBundlePanel), (panel, op) =>
         {
             isProcessing = false;
@@ -549,8 +550,11 @@ public abstract class MakeOverPanelAbstract : UI.Panel
 
     public void Home()
     {
+        if (isProcessing) return;
+        isProcessing = true;
         AD.Controller.Instance.ShowInterstitial(() =>
         {
+            Sound.Controller.Instance.PlayOneShot(sfx);
             LevelLoading.Instance.Active("HomeScene",
                  () =>
                  {

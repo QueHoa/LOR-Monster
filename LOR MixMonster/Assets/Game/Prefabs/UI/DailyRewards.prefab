@@ -479,6 +479,7 @@ MonoBehaviour:
   overrideBack: 0
   isPersistant: 0
   close: {fileID: 2594742353032705510}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!114 &6848634501943435702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47957,6 +47958,7 @@ MonoBehaviour:
   effect1: {fileID: 2038602138091415328}
   effect2: {fileID: 6221650919714472894}
   rewardSFX: {fileID: 8300000, guid: 2c3389b8048027b449eeed83ab56e0e1, type: 3}
+  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!1001 &695713653197256135
 PrefabInstance:
   m_ObjectHideFlags: 0

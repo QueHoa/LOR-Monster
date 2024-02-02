@@ -39,7 +39,7 @@ namespace OneHit.Leaderboard
         {
             if (!UserProfile.IsExist())
             {
-                input.SetActive(true);
+                UserProfile.SetUserName("playerxxxx");
             }
             else
             {
