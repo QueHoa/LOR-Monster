@@ -39,7 +39,7 @@ namespace OneHit.Leaderboard
         {
             if (!UserProfile.IsExist())
             {
-                UserProfile.SetUserName("playerxxxx");
+                UserProfile.SetUserName("player" + Random.Range(1000, 9999));
             }
             else
             {
@@ -90,7 +90,7 @@ namespace OneHit.Leaderboard
             bool res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
             if (res)
             {
-                input.SetActive(false);
+                //input.SetActive(false);
                 UserProfile.SetUserName(input.GetInput());
                 RefreshLeaderboard();
             }
