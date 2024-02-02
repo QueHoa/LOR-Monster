@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using DailyReward;
 using DataManagement;
 using GameUtility;
+using Spine.Unity.Examples;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ public class HomePanel : UI.Panel
     private BoosterButton[] boosterButtons;
     [SerializeField]
     private ParticleSystem unlockPS, newMonsterPS;
+    private bool hideHand;
     StageData stageData;
     public override void PostInit()
     {
@@ -73,7 +75,7 @@ public class HomePanel : UI.Panel
                 boxBanner.SetActive(true);
             }
         }
-        
+        hideHand = DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0);
         handTut.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0));
         goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         Show();
@@ -224,8 +226,8 @@ public class HomePanel : UI.Panel
         UI.PanelManager.Create(typeof(SettingPopup), (panel, op) =>
         {
             ((SettingPopup)panel).SetUp();
-            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
             isProcessing = false;
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
         });
     }
     public void ShowBundle()

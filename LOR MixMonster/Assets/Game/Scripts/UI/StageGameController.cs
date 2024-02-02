@@ -316,8 +316,11 @@ public partial class StageGameController : GameController
 
     public void ClickScreen(bool auto)
     {
-        Sound.Controller.Instance.PlayOneShot(clickScreenSFX);
-        clickPS.Play();
+        if (stageHandlers.stageData.stageCollections.Count > 0)
+        {
+            Sound.Controller.Instance.PlayOneShot(clickScreenSFX);
+            clickPS.Play();
+        }
         RewardEarning(true);
         if (!auto)
         {

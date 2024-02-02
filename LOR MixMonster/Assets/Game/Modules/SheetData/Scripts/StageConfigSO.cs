@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/StageConfig")]
 public class StageConfigSO : ScriptableObject
 {
-    public int expandPrice = 300;
     public List<SlotConfig> slotConfigs = new List<SlotConfig>();
     public int boosterRecoverTime;
 

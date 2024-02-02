@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e5f050ae6940c4a8aa2a847db645fb, type: 3}
   m_Name: New Stage Config SO
   m_EditorClassIdentifier: 
-  cashEarningForNormalItem: 10
-  cashEarningForAdItem: 30
   expandPrice: 300
   slotConfigs:
   - maxSlot: 5
