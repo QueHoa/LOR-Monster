@@ -166,6 +166,7 @@ public class MakeOverGameController : GameController
 
         LiveStreamPanel liveStreamPanel = (LiveStreamPanel)await UI.PanelManager.CreateAsync(typeof(LiveStreamPanel));
         await liveStreamPanel.SetUp(totalViewPoint, totalLikePoint);
+        monster.transform.GetChild(0).Shake(0.15f, 0.8f, 0.1f, cancellationToken: cancellation.Token);
         await UniTask.Delay(3000);
         liveStreamPanel.DeactiveUI();
 
@@ -198,7 +199,7 @@ public class MakeOverGameController : GameController
             }
         }
         //lưu dữ liệu con mới mix lại ở cardData
-        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, changeGold, selectedItems);
+        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, changeGold / 10, selectedItems);
         DataManagement.DataManager.Instance.userData.inventory.AddCollection(cardData);
         Game.Controller.Instance.gameController.Destroy();
         ResultPanel resultPanel = (ResultPanel)await UI.PanelManager.CreateAsync(typeof(ResultPanel));

@@ -11428,7 +11428,7 @@ MonoBehaviour:
   removeModelSFX: {fileID: 8300000, guid: ff7cb20d161e4d54d99ca380eb6df87a, type: 3}
   createModelSFX: {fileID: 8300000, guid: fd503fd79b76fb84b8333087fdab8405, type: 3}
   moveStageSFX: {fileID: 8300000, guid: 4984e1206aca6b1408d8cfc88f9397e2, type: 3}
-  clickScreenSFX: {fileID: 8300000, guid: 900e9439408fa43439f5aec7ea683cf6, type: 3}
+  clickScreenSFX: {fileID: 8300000, guid: ebc479a34a067974b89d36ab5f5e58d0, type: 3}
   stageItemSelectSFX: {fileID: 8300000, guid: 75bc7b0172557854cafd80816c5b8fd6, type: 3}
   instantCashBoostSFX: {fileID: 8300000, guid: 41a470c54ab09064c98fed08ee96fdb7, type: 3}
   clickPS: {fileID: 1059078924}

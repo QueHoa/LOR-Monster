@@ -9,8 +9,9 @@ namespace OneHit.Leaderboard
     public class CompetitorPresenter : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI rank;
-        [SerializeField] private new TextMeshProUGUI username, changename;
+        [SerializeField] private new TextMeshProUGUI username;
         [SerializeField] private TextMeshProUGUI score;
+        [SerializeField] private TMP_InputField changename;
         [SerializeField] private Image holder;
 
         public void SetProperties(int rank, string name, int score, Sprite sprite)
