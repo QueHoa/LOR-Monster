@@ -224,7 +224,8 @@ namespace IAP
                 Debug.LogWarning("purchase thanh cong, ban event len firebase");
                 FirebaseAnalysticController.Instance.LogIAP(product, productPrices[product.definition.id]);
             }
-            return (consumePurchase) ? PurchaseProcessingResult.Complete : PurchaseProcessingResult.Pending;
+            return PurchaseProcessingResult.Complete;
+            //return (consumePurchase) ? PurchaseProcessingResult.Complete : PurchaseProcessingResult.Pending;
         }
 
 

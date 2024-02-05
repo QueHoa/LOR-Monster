@@ -19,7 +19,7 @@ public partial class StageGameController : GameController
     public float earnSpeed = 1;
     int clickCount = 0;
     [SerializeField]
-    private AudioClip selectCardSFX, removeModelSFX, createModelSFX, moveStageSFX, clickScreenSFX, stageItemSelectSFX, instantCashBoostSFX;
+    private AudioClip selectCardSFX, removeMonsterSFX, createMonsterSFX, clickScreenSFX, stageItemSelectSFX, instantCashBoostSFX;
     public ParticleSystem clickPS, instantCashBoostPS;
 
     int musicThemeIndex = 0;
@@ -217,7 +217,7 @@ public partial class StageGameController : GameController
         currentCardData = cardData;
         homePanel.OnMonsterSelected();
 
-        ObjectSpawner.Instance.Get(2, obj =>
+        ObjectSpawner.Instance.Get(2, async obj =>
         {
             // Debug.Break();
             Debug.Log("touch count : " + Input.touchCount.ToString().Color("lime"));
@@ -227,11 +227,11 @@ public partial class StageGameController : GameController
                 Debug.Log("drag....");
                 isDrag = true;
                 dragMonster = obj.GetComponent<Monster>();
-                dragMonster.SetUp(tempMonsterItems);
-                foreach (ItemData.Item item in tempMonsterItems)
+                await dragMonster.SetUp(tempMonsterItems);
+                /*foreach (ItemData.Item item in tempMonsterItems)
                 {
                     dragMonster.SetItem(item);
-                }
+                }*/
 
                 dragMonster.transform.localScale = Vector3.one * 0.25f;
                 musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
@@ -302,13 +302,13 @@ public partial class StageGameController : GameController
                 isDrag = false;
                 dragMonster.gameObject.SetActive(false);
                 homePanel.OnMonsterRelease();
-                if (Vector3.Distance(startPos, dragMonster.transform.position) < 3 || !IsModelOnStage())
+                if (Vector3.Distance(startPos, dragMonster.transform.position) < 3 || !IsMonsterOnStage())
                 {
                     homePanel.monsterCard.transform.Shake(0.15f, 1, 0.2f);
                 }
                 else
                 {
-                    SetModelToStage(dragMonster.transform.position);
+                    SetMonsterToStage(dragMonster.transform.position);
                 }
             }
         }
@@ -333,7 +333,7 @@ public partial class StageGameController : GameController
         }
     }
 
-    private bool IsModelOnStage()
+    private bool IsMonsterOnStage()
     {
         if (Physics.Raycast(dragMonster.bottom.position, Vector3.forward, int.MaxValue, layerMask: LayerMask.GetMask("Ground")))
         {
@@ -343,7 +343,7 @@ public partial class StageGameController : GameController
         return false;
     }
 
-    async UniTask SetModelToStage(Vector2 position)
+    async UniTask SetMonsterToStage(Vector2 position)
     {
         isDrag = false;
         Debug.Log(" PrepareModel: " + currentCardData.id);
@@ -351,7 +351,7 @@ public partial class StageGameController : GameController
         if (result)
         {
             Effect.EffectSpawner.Instance.Get(1, effect => { effect.Active(position); }).Forget();
-            Sound.Controller.Instance.PlayOneShot(createModelSFX);
+            Sound.Controller.Instance.PlayOneShot(createMonsterSFX);
             homePanel.OnMonsterSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
             homePanel.OnEarningUpdated(stageHandlers.GetTotalEarning());
             homePanel.OnNewModelAdded();
@@ -368,7 +368,7 @@ public partial class StageGameController : GameController
                     if (isExpanded)
                     {
                         homePanel.OnMonsterSlotUpdated(stageHandlers.stageData.stageCollections.Count, stageHandlers.stageData.totalMonsterSlot);
-                        SetModelToStage(position);
+                        SetMonsterToStage(position);
                     }
                     else
                     {

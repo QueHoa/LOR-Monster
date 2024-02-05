@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class SettingPopup : UI.Panel
 {
-    public AudioClip exit;
-
     bool isProcessing = false;
     public override void PostInit()
     {
@@ -18,7 +16,6 @@ public class SettingPopup : UI.Panel
     }
     public void BackHome()
     {
-        Sound.Controller.Instance.PlayOneShot(exit);
         if (DataManagement.DataManager.Instance.userData.progressData.playCount >= Game.Controller.Instance.gameConfig.adConfig.adStart)
         {
             AD.Controller.Instance.ShowInterstitial(() =>

@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 8402295677204323531}
   collecting: {fileID: 6301201112389323946}
-  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
+  sfx: {fileID: 8300000, guid: dd99c187093fd2e48b52d5596a969d61, type: 3}
 --- !u!114 &7102079212138727689
 MonoBehaviour:
   m_ObjectHideFlags: 0

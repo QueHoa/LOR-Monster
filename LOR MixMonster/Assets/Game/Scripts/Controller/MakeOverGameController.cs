@@ -166,7 +166,6 @@ public class MakeOverGameController : GameController
 
         LiveStreamPanel liveStreamPanel = (LiveStreamPanel)await UI.PanelManager.CreateAsync(typeof(LiveStreamPanel));
         await liveStreamPanel.SetUp(totalViewPoint, totalLikePoint);
-        monster.transform.GetChild(0).Shake(0.15f, 0.8f, 0.1f, cancellationToken: cancellation.Token);
         await UniTask.Delay(3000);
         liveStreamPanel.DeactiveUI();
 
@@ -199,11 +198,11 @@ public class MakeOverGameController : GameController
             }
         }
         //lưu dữ liệu con mới mix lại ở cardData
-        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, changeGold / 10, selectedItems);
+        DataManagement.CardData cardData = new DataManagement.CardData(DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1, changeGold, selectedItems);
         DataManagement.DataManager.Instance.userData.inventory.AddCollection(cardData);
         Game.Controller.Instance.gameController.Destroy();
         ResultPanel resultPanel = (ResultPanel)await UI.PanelManager.CreateAsync(typeof(ResultPanel));
-        resultPanel.SetUp(changeGold / 10, totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
+        resultPanel.SetUp(changeGold, totalViewPoint + bonusView, totalLikePoint + bonusLike, Sprite.Create(capturedScreenShot, new Rect(0, capturedScreenShot.height / 20, capturedScreenShot.width, capturedScreenShot.height - capturedScreenShot.height * 2 / 20), Vector2.zero), mySets);
 
         Debug.Log($"BEST VIEW {DataManagement.DataManager.Instance.userData.BestView}+ {totalViewPoint + bonusView}");
         DataManagement.DataManager.Instance.userData.BestView = totalViewPoint + bonusView;
@@ -219,7 +218,7 @@ public class MakeOverGameController : GameController
     {
         float t = 0;
         Transform _transform = monster.transform;
-        Vector3 scale = Vector3.one * 1.3f;
+        Vector3 scale = Vector3.one;
         Vector3 pos = Vector3.zero;
 
         while (t < monsterZoomCurve.keys[monsterZoomCurve.length - 1].time)

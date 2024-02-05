@@ -43,11 +43,11 @@ public partial class StageGameController
                 }
             }
             
-            monster.SetUp(items);
-            foreach (ItemData.Item item in items)
+            await monster.SetUp(items);
+            /*foreach (ItemData.Item item in items)
             {
                 await monster.SetItem(item);
-            }
+            }*/
             musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.transform.position = position;
