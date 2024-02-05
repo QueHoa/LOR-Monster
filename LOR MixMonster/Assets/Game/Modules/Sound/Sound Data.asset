@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 825913ae40b3f124aa76190d63ce6a29, type: 3}
   - {fileID: 8300000, guid: 020a4fb73a7416a439d37a5d543617e9, type: 3}
   purchaseSFX: {fileID: 0}
+  booster: {fileID: 8300000, guid: f543b1502fd69624b9c4bf84a810d67b, type: 3}
   coinSfxs: []
   clickSFXs:
   - {fileID: 8300000, guid: 3b0808d23da192b4aad6efc78a258ee4, type: 3}

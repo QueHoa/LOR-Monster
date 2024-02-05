@@ -17,7 +17,6 @@ public class CollectionPanel : UI.Panel
     GameUtility.Pooling.PoolHandler poolImage;
 
     public TextMeshProUGUI viewText, likeText;
-    public AudioClip sfx;
     public Image[] iconItem;
     public Image mainImage;
     public CanvasGroup boxView, boxLike;
@@ -145,7 +144,6 @@ public class CollectionPanel : UI.Panel
         {
             if (isProcessing) return;
             isProcessing = true;
-            Sound.Controller.Instance.PlayOneShot(sfx);
             LevelLoading.Instance.Active(() =>
             {
                 if (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count > 0)

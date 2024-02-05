@@ -70232,9 +70232,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2968856104629191881}
         m_TargetAssemblyTypeName: HomePanel, Assembly-CSharp
-        m_MethodName: Upgrade
+        m_MethodName: ShowStageUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -71729,7 +71729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
-  playSFX: {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
+  playSFX: {fileID: 8300000, guid: 6fc680c82e9040e41be05b2111e98337, type: 3}
   goldText: {fileID: 6265560194101729810}
   cashText: {fileID: 6265560194673067148}
   totalEarningText: {fileID: 6265560194760881225}

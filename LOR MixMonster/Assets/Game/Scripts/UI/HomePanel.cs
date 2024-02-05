@@ -17,7 +17,7 @@ public class HomePanel : UI.Panel
 {
     bool isProcessing = false;
     [SerializeField]
-    private AudioClip playSFX, sfx;
+    private AudioClip playSFX;
     [SerializeField]
     private TextMeshProUGUI goldText, cashText, totalEarningText, slotText;
     [SerializeField]
@@ -161,7 +161,6 @@ public class HomePanel : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        Sound.Controller.Instance.PlayOneShot(playSFX);
         LevelLoading.Instance.Active(() =>
         {
             ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
@@ -173,7 +172,6 @@ public class HomePanel : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        Sound.Controller.Instance.PlayOneShot(playSFX);
         LevelLoading.Instance.Active(() =>
         {
             ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
@@ -187,7 +185,6 @@ public class HomePanel : UI.Panel
     }
     public void View()
     {
-        Sound.Controller.Instance.PlayOneShot(sfx);
         if (DataManagement.DataManager.Instance.userData.progressData.uiHome)
         {
             view.sprite = uiOn;
@@ -213,7 +210,6 @@ public class HomePanel : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        Sound.Controller.Instance.PlayOneShot(sfx);
         UI.PanelManager.Create(typeof(DailyRewards), (panel, op) =>
         {
             ((DailyRewards)panel).SetUp();
@@ -225,7 +221,6 @@ public class HomePanel : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        Sound.Controller.Instance.PlayOneShot(sfx);
         UI.PanelManager.Create(typeof(SettingPopup), (panel, op) =>
         {
             ((SettingPopup)panel).SetUp();
@@ -237,7 +232,6 @@ public class HomePanel : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        Sound.Controller.Instance.PlayOneShot(sfx);
         UI.PanelManager.Create(typeof(SetBundlePanel), (panel, op) =>
         {
             isProcessing = false;
@@ -417,6 +411,7 @@ public class SpeedBooster : IBooster
     {
         if (isActivated) return false;
         isActivated = true;
+        Sound.Controller.Instance.PlayBoosterSfx();
         startTime = Time.time;
         float speed = Sheet.SheetDataManager.Instance.gameData.stageConfig.GetBooster(type).GetStat(BoosterStatKey.EARNSPEED).value;
 
@@ -507,6 +502,7 @@ public class AutoClickBooster : IBooster
     {
         if (isActivated) return false;
         isActivated = true;
+        Sound.Controller.Instance.PlayBoosterSfx();
         startTime = Time.time;
         clickRate = Sheet.SheetDataManager.Instance.gameData.stageConfig.GetBooster(type).GetStat(BoosterStatKey.AUTOCLICKRATE).value;
         duration = Sheet.SheetDataManager.Instance.gameData.stageConfig.GetBooster(type).GetStat(BoosterStatKey.DURATION).value;

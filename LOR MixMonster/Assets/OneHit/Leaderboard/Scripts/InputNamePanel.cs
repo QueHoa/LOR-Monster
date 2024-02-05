@@ -19,7 +19,7 @@ namespace OneHit.Leaderboard
         public async void ShowNameExisted()
         {
             //nameExisted.SetActive(true);
-            await UniTask.Delay(1000);
+            await UniTask.Delay(500);
             //nameExisted.SetActive(false);
         }
 

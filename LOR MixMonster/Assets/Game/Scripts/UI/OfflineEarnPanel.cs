@@ -9,7 +9,7 @@ public class OfflineEarnPanel : UI.Panel
     [SerializeField]
     private ParticleSystem cashPS;
     [SerializeField]
-    private AudioClip rewardSFX, sfx;
+    private AudioClip rewardSFX;
     public override void PostInit()
     {
     }
@@ -22,7 +22,6 @@ public class OfflineEarnPanel : UI.Panel
     }
     public override void Close()
     {
-        Sound.Controller.Instance.PlayOneShot(sfx);
         base.Close();
         ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
     }

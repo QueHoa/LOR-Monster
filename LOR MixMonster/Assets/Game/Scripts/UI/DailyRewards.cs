@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class DailyRewards : UI.Panel
 {
     public CanvasGroup close;
-    public AudioClip sfx;
     bool isProcessing = false;
     public override void PostInit()
     {
@@ -47,7 +46,6 @@ public class DailyRewards : UI.Panel
         {
             if (isProcessing) return;
             isProcessing = true;
-            Sound.Controller.Instance.PlayOneShot(sfx);
             (Game.Controller.Instance.gameController).hideMonster = false;
             Close();
         }

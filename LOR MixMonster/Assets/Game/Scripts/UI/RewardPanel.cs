@@ -6,7 +6,7 @@ public class RewardPanel : UI.Panel
 {
     GameUtility.Pooling.PoolHandler pool;
     [SerializeField]
-    private AudioClip rewardSFX, sfx;
+    private AudioClip rewardSFX;
     public override void PostInit()
     {
     }
@@ -25,7 +25,6 @@ public class RewardPanel : UI.Panel
     }
     public override void Close()
     {
-        Sound.Controller.Instance.PlayOneShot(sfx);
         base.Close();
     }
 }

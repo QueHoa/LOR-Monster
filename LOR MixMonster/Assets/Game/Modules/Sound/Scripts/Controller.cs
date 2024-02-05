@@ -133,6 +133,9 @@ namespace Sound {
         {
             PlayOneShot(soundData.popupSfxs[open ? 1 : 0], vol);
         }
-
+        public void PlayBoosterSfx()
+        {
+            PlayOneShot(soundData.booster);
+        }
     }
 }

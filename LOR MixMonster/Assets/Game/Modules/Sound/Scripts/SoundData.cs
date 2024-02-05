@@ -6,7 +6,7 @@ namespace Sound
     public class SoundData : ScriptableObject
     {
         public AudioClip []menuTheme,finalThemes;
-        public AudioClip purchaseSFX;
+        public AudioClip purchaseSFX, booster;
         public AudioClip [] coinSfxs, clickSFXs,playerWinSFX,playerLoseSFX,collectSFXs;
 
         [Space] public AudioClip[] settingSfxs;

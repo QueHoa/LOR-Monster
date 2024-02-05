@@ -67,6 +67,8 @@ public class LiveStreamPanel : Panel
         tasks.Add(FillView(viewPointRect,viewPointText, totalViewPoint));
         tasks.Add(FillLike(likePointRect,likePointText, totalLikePoint));
 
+        ((MakeOverGameController)Game.Controller.Instance.gameController).monster.transform.GetChild(0).Shake(0.15f, 0.8f, 0.1f, cancellationToken: cancellation.Token);
+        
         await UniTask.WhenAll(tasks);
         await UniTask.Delay(1000, cancellationToken: cancellation.Token);
     }
