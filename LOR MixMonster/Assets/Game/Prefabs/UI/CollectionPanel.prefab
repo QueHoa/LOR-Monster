@@ -69385,7 +69385,6 @@ MonoBehaviour:
   isPersistant: 0
   viewText: {fileID: 5243034841237818233}
   likeText: {fileID: 5091729240562571190}
-  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
   iconItem:
   - {fileID: 3883267317764079925}
   - {fileID: 3399784842765447568}
@@ -69404,7 +69403,7 @@ MonoBehaviour:
   star:
   - {fileID: 3256369576304601657}
   - {fileID: 4096099095339843661}
-  MonsterPos: {fileID: 7033270109850856298}
+  monsterPos: {fileID: 7033270109850856298}
 --- !u!114 &1805256148878475240
 MonoBehaviour:
   m_ObjectHideFlags: 0

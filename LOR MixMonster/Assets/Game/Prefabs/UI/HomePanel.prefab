@@ -80606,7 +80606,7 @@ MonoBehaviour:
   timeScale: 1
   freeze: 0
   layoutScaleMode: 0
-  referenceSize: {x: 934, y: 1920}
+  referenceSize: {x: 934, y: 1919.9999}
   referenceScale: 1
   rectTransformSize: {x: 2016.9998, y: 1968.9202}
   editReferenceRect: 0
