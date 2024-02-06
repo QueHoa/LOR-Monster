@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 using GameUtility;
-using MoreMountains.NiceVibrations;
+using CandyCoded.HapticFeedback;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -98,7 +98,7 @@ public partial class NewMakeOverPanel : MakeOverPanelAbstract
 
         if (Sound.Controller.VibrationEnable)
         {
-            MMVibrationManager.Haptic(hapticTypes, true, true, this);
+            HapticFeedback.MediumFeedback();
         }
         if (selectedItems.Count == Game.Controller.Instance.gameConfig.adConfig.adBetweenMakeOver)
         {

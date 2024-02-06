@@ -1,5 +1,5 @@
 using UnityEngine;
-using MoreMountains.NiceVibrations;
+using CandyCoded.HapticFeedback;
 
 namespace Settings
 {

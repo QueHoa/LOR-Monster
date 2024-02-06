@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using MoreMountains.NiceVibrations;
+using CandyCoded.HapticFeedback;
 using UnityEngine.Networking.Types;
 using UnityEngine.UI;
 using static DataManagement.MergeSlotData;
@@ -34,8 +34,6 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     protected AudioClip[] leftRightClips;
     [SerializeField]
     protected AudioClip dailyShow, sfx;
-    [SerializeField]
-    protected HapticTypes hapticTypes = HapticTypes.Warning;
     [SerializeField]
     protected GameObject handTut, chooseTut, homeBtn, bundleBtn, petOfferBtn, petOfferAdObj,newOptionBtn;
     [SerializeField]
@@ -137,7 +135,6 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         excludeItems.Clear();
         excludeItems.AddRange(previousFirstSpawnItems);
         previousFirstSpawnItems.Clear();
-        MMVibrationManager.SetHapticsActive(hapticsAllowed);
 
 #if UNITY_EDITOR
         excludeItems2 = excludeItems;
