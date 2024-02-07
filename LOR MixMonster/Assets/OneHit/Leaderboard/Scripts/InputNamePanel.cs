@@ -8,9 +8,9 @@ namespace OneHit.Leaderboard
 {
     public class InputNamePanel : MonoBehaviour
     {
-        public InputField nameInput;
-        public GameObject nameExisted;
-        public Button cancelBtn;
+        public TMP_InputField nameInput;
+        //public GameObject nameExisted;
+        //public Button cancelBtn;
         public string GetInput()
         {
             return nameInput.text.Trim();
@@ -18,9 +18,9 @@ namespace OneHit.Leaderboard
 
         public async void ShowNameExisted()
         {
-            nameExisted.SetActive(true);
+            //nameExisted.SetActive(true);
             await UniTask.Delay(500);
-            nameExisted.SetActive(false);
+            //nameExisted.SetActive(false);
         }
 
         public void ValidateInput(String newstring)
@@ -38,7 +38,7 @@ namespace OneHit.Leaderboard
                 nameInput.text = nameInput.text.Substring(0, 10).Trim();
         }
 
-        public void SetActive(bool active)
+        /*public void SetActive(bool active)
         {
             gameObject.SetActive(active);
             cancelBtn.onClick.RemoveAllListeners();
@@ -53,9 +53,9 @@ namespace OneHit.Leaderboard
             {
                 cancelBtn.onClick.AddListener(() =>
                 {
-                    transform.parent.GetComponent<LeaderboardPresenter>().gameObject.SetActive(false);
+                transform.parent.GetComponent<LeaderboardPresenter>().gameObject.SetActive(false);
                 });
             }
-        }
+        }*/
     }
 }

@@ -78,7 +78,7 @@ namespace OneHit.Leaderboard
             }
             else if (playerRank > top)
             {
-                competitors[^2].SetAsBuffer();
+                //competitors[^2].SetAsBuffer();
                 competitors[^1].SetAsThisPlayer(playerRank, playerHolder);
             }
 
@@ -90,7 +90,7 @@ namespace OneHit.Leaderboard
             bool res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
             if (res)
             {
-                input.SetActive(false);
+                //input.SetActive(false);
                 UserProfile.SetUserName(input.GetInput());
                 RefreshLeaderboard();
             }
@@ -112,11 +112,11 @@ namespace OneHit.Leaderboard
             await _system.UpdateThisPlayer(score);
             RefreshLeaderboard();
         }
-    
+    }
+}
 
 
-
-#if UNITY_EDITOR
+/*#if UNITY_EDITOR
         public static readonly string[] Names =
         {
             "Michael", "James", "John", "Robert", "William",
@@ -152,4 +152,4 @@ namespace OneHit.Leaderboard
         }
     }
 #endif
-}
+}*/
