@@ -46,8 +46,8 @@ public class HomePanel : UI.Panel
         Sound.Controller.Instance.PlayMusic(Sound.Controller.Instance.soundData.menuTheme[UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.menuTheme.Length)]);
 
         isProcessing = false;
-        DataManagement.DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
-        DataManagement.DataManager.Instance.userData.inventory.onCashUpdated += OnCashUpdated;
+        DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
+        DataManager.Instance.userData.inventory.onCashUpdated += OnCashUpdated;
         OnCollectionUpdated(DataManager.Instance.userData.inventory);
         OnEarningUpdated(((StageGameController)Game.Controller.Instance.gameController).GetTotalEarning());
         StageData currentStageData = ((StageGameController)Game.Controller.Instance.gameController).GetStageHandler().stageData;
@@ -75,9 +75,9 @@ public class HomePanel : UI.Panel
                 boxBanner.SetActive(true);
             }
         }
-        hideHand = DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0);
-        handTut.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0));
-        goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
+        hideHand = DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0);
+        handTut.SetActive(DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0));
+        goldText.text = DataManager.Instance.userData.YourGold.ToString();
         Show();
         DataManager.Instance.Save();
     }
@@ -109,13 +109,13 @@ public class HomePanel : UI.Panel
     }
     private void OnDisable()
     {
-        DataManagement.DataManager.Instance.userData.inventory.onUpdate -= OnCollectionUpdated;
-        DataManagement.DataManager.Instance.userData.inventory.onCashUpdated -= OnCashUpdated;
+        DataManager.Instance.userData.inventory.onUpdate -= OnCollectionUpdated;
+        DataManager.Instance.userData.inventory.onCashUpdated -= OnCashUpdated;
     }
     private void OnCollectionUpdated(Inventory inventory)
     {
         Debug.Log("SET COLLECTION");
-        DataManagement.CardData cardData = DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection();
+        CardData cardData = DataManager.Instance.userData.inventory.GetFirstCollection();
         if (cardData != null)
         {
             Debug.Log("SET COLLECTION " + cardData.id);

@@ -99,6 +99,7 @@ public class ResultPanel : UI.Panel
         likeText.text = GameUtility.GameUtility.ShortenNumber(totalLikePoint);
         monsterCard.gameObject.SetActive(true);
         DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
+        OnCollectionUpdated(DataManager.Instance.userData.inventory);
         Show();
     }
     public async UniTaskVoid Effect(int totalLikePoint)

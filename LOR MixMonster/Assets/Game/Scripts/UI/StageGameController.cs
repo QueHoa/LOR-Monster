@@ -87,7 +87,7 @@ public partial class StageGameController : GameController
         LevelLoading.Instance.Close();
 
         monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
-        await ZoomMonsterCollection(cancellation.Token, monster.transform);
+        await ZoomMonsterCollection(cancellation.Token, CollectionPanel.monsterPos);
 
         FirebaseAnalysticController.Instance.LogEvent("CollectionStart");
         DataManagement.DataManager.Instance.userData.progressData.playCount++;
