@@ -533,9 +533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1da8d08c054d04ead373b376d990a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayMilliseconds: 500
+  testMode: 0
   testDevices:
   - TEST-DEVICE-HASHED-ID
-  testMode: 0
 --- !u!4 &917232699
 Transform:
   m_ObjectHideFlags: 0
@@ -560,9 +561,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 917232697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bd9efcd98c89a4b8978ec9caf853b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c21480853f01e04f9ac89a359ecb039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayMilliseconds: 500
+  testMode: 0
+  testDevices:
+  - TEST-DEVICE-HASHED-ID
 --- !u!1 &1019076890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,7 +1882,7 @@ RectTransform:
   m_Pivot: {x: 0, y: 0}
 --- !u!95 &2138685617
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1894,7 +1899,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5486311004060448977
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11174,7 +11174,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &7998301809026556297
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11191,7 +11191,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1493785705677786604
 GameObject:
   m_ObjectHideFlags: 0
@@ -37330,7 +37331,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!95 &1799680417029946198
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -37347,7 +37348,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3280379053085836453
 GameObject:
   m_ObjectHideFlags: 0
@@ -71750,6 +71752,7 @@ MonoBehaviour:
   - {fileID: 7157552450986377896}
   - {fileID: 6265560194398298640}
   - {fileID: 6265560192907369816}
+  - {fileID: 7168145188168872777}
   view: {fileID: 6265560194275414849}
   uiOff: {fileID: 21300000, guid: 1a0a4d998acb8ff499269158434b4f20, type: 3}
   uiOn: {fileID: 21300000, guid: 5a377150d0d7076408b51bb11421744d, type: 3}
@@ -80790,7 +80793,7 @@ MonoBehaviour:
   timeScale: 1
   freeze: 0
   layoutScaleMode: 0
-  referenceSize: {x: 934, y: 1919.9999}
+  referenceSize: {x: 934, y: 1920}
   referenceScale: 1
   rectTransformSize: {x: 2016.9998, y: 1968.9202}
   editReferenceRect: 0
@@ -126215,8 +126218,16 @@ PrefabInstance:
       value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 2813046217961712834, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 187.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813046217961712834, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 73.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813046217961712834, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 208
+      value: 91.774994
       objectReference: {fileID: 0}
     - target: {fileID: 2813046217961712834, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -126360,7 +126371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813046219652766056, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 59.23
+      value: 43.77
       objectReference: {fileID: 0}
     - target: {fileID: 2813046219652766056, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -126368,7 +126379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813046219652766056, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 113.85
+      value: 106.11997
       objectReference: {fileID: 0}
     - target: {fileID: 2813046219689697931, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_Color.b
@@ -126421,6 +126432,10 @@ PrefabInstance:
     - target: {fileID: 3014238804026602629, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984638962158811984, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
+      propertyPath: m_Text
+      value: Toilet Man Survival
       objectReference: {fileID: 0}
     - target: {fileID: 5984638962158811984, guid: 889cf9d1db8c71f4cba2ebd342ea206b, type: 3}
       propertyPath: m_FontData.m_BestFit
