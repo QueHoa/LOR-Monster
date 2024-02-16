@@ -258,7 +258,7 @@ public class ResultPanel : UI.Panel
                 DataManagement.DataManager.Instance.Save();
                 Sound.Controller.Instance.PlayOneShot(finishSFX);
             });
-            await UniTask.Delay(1800, cancellationToken: cancellation.Token);
+            await UniTask.Delay(1300, cancellationToken: cancellation.Token);
             LoadLevel();
         }
     }
@@ -322,7 +322,7 @@ public class ResultPanel : UI.Panel
                 DataManagement.DataManager.Instance.Save();
                 Sound.Controller.Instance.PlayOneShot(finishSFX);
             });
-            await UniTask.Delay(1800, cancellationToken: cancellation.Token);
+            await UniTask.Delay(1300, cancellationToken: cancellation.Token);
             LoadLevel();
         }
     }
@@ -401,7 +401,7 @@ public class ResultPanel : UI.Panel
                 DataManagement.DataManager.Instance.Save();
                 Sound.Controller.Instance.PlayOneShot(finishSFX);
             });
-            await UniTask.Delay(1800, cancellationToken: cancellation.Token);
+            await UniTask.Delay(1300, cancellationToken: cancellation.Token);
             LevelLoading.Instance.Active("HomeScene", null
              ,async () =>
              {

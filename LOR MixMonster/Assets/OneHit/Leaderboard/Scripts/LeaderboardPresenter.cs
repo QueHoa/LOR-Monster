@@ -20,7 +20,7 @@ namespace OneHit.Leaderboard
         public int maxCompetitor = 1000;
 
         [FoldoutGroup("LeaderboardProperties")]
-        private int top = 20;
+        private int top = 21;
 
         void Awake()
         {

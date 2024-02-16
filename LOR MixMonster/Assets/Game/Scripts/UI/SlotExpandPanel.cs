@@ -48,7 +48,7 @@ public class SlotExpandPanel : UI.Panel
             normalObj.SetActive(false);
             lockObj.SetActive(true);
         }
-
+        (Game.Controller.Instance.gameController).hideMonster = true;
         Show();
     }
     public void WatchAd()
