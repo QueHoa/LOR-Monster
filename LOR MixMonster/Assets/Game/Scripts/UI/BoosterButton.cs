@@ -12,7 +12,7 @@ public class BoosterButton : MonoBehaviour
     [SerializeField]
     private Image coolDownImg;
     [SerializeField]
-    private GameObject adIcon, iconFree;
+    private GameObject adIcon, iconFree, effect;
 
     [SerializeField]
     private AudioClip readySFX;
@@ -48,6 +48,10 @@ public class BoosterButton : MonoBehaviour
     {
         //GetComponent<Button>().interactable = false;
         coolDownImg.enabled = true;
+        if(effect != null)
+        {
+            effect.SetActive(true);
+        }
         StartCoroutine(DoCoolDown(time, onDone));
     }
     IEnumerator DoCoolDown(float time, System.Action onDone)
@@ -60,6 +64,10 @@ public class BoosterButton : MonoBehaviour
             yield return null;
         }
         coolDownImg.enabled = false;
+        if (effect != null)
+        {
+            effect.SetActive(false);
+        }
         GetComponent<Button>().interactable = true;
 
         Sound.Controller.Instance.PlayOneShot(readySFX);
@@ -82,6 +90,10 @@ public class BoosterButton : MonoBehaviour
         else
         {
             coolDownImg.enabled = false;
+            if (effect != null)
+            {
+                effect.SetActive(false);
+            }
         }
     }
 
