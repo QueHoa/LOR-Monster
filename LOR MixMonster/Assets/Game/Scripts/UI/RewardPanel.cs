@@ -20,11 +20,12 @@ public class RewardPanel : UI.Panel
             RewardSlot rewardSlot = pool.Get().GetComponent<RewardSlot>();
             rewardSlot.SetUp(item);
         }
-
+        (Game.Controller.Instance.gameController).hideMonster = true;
         Show();
     }
     public override void Close()
     {
         base.Close();
+        (Game.Controller.Instance.gameController).hideMonster = false;
     }
 }

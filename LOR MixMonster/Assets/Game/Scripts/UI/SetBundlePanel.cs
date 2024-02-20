@@ -110,6 +110,6 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
     public override void Close()
     {
         base.Close();
-        ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
+        (Game.Controller.Instance.gameController).hideMonster = false;
     }
 }

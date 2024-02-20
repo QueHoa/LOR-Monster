@@ -19,6 +19,10 @@ namespace OneHit.Leaderboard
             if (this.rank != null)
                 this.rank.text = rank.ToString();
             this.username.text = name;
+            if(name.Length > 10)
+            {
+                username.text = name.Substring(0, 10).Trim();
+            }
             this.score.text = GameUtility.GameUtility.ShortenNumber(score);
             if (this.holder != null)
                 holder.sprite = sprite;
@@ -43,7 +47,7 @@ namespace OneHit.Leaderboard
                 this.changename.text = UserProfile.GetUsername();
             } 
 
-            if (rank > 15)
+            if (rank > 20)
                 this.score.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
 
 

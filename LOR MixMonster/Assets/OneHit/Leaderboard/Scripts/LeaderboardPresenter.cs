@@ -39,14 +39,15 @@ namespace OneHit.Leaderboard
         {
             if (!UserProfile.IsExist())
             {
-                UserProfile.SetUserName("player" + Random.Range(1000, 9999));
+                string name = "player" + Random.Range(1000, 9999);
+                UserProfile.SetUserName(name);
+                input.nameInput.text = name;
+                SubmitPlayerToLeaderboard();
             }
             else
             {
                 RefreshLeaderboard();
             }
-
-            RefreshLeaderboard();
         }
 
         private async void RefreshLeaderboard()
@@ -88,6 +89,7 @@ namespace OneHit.Leaderboard
         public async void SubmitPlayerToLeaderboard()
         {
             bool res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+            Debug.Log(res);
             if (res)
             {
                 //input.SetActive(false);

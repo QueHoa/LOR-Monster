@@ -13,6 +13,8 @@ namespace OneHit.Leaderboard
         //public Button cancelBtn;
         public string GetInput()
         {
+            if (nameInput.text.Length > 10)
+                nameInput.text = nameInput.text.Substring(0, 10).Trim();
             return nameInput.text.Trim();
         }
 

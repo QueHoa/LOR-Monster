@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SdkConfig
   m_EditorClassIdentifier: 
   sdkIdConfig:
-    admobOpenAdID_Android: ca-app-pub-1370756799605534/4492602447
+    admobOpenAdID_Android: ca-app-pub-1370756799605534/8096370412
     admobOpenAdID_Ios: ca-app-pub-1370756799605534/2278168921
-    admobNativeAdID_Android: ca-app-pub-1370756799605534/3179520778
+    admobNativeAdID_Android: ca-app-pub-1370756799605534/3788819116
     admobNativeAdID_Ios: ca-app-pub-1370756799605534/7338923918
     adjustID_Android: vrycyvc522gw
     adjustID_Ios: 7vxn6km0gxhc
