@@ -205,7 +205,7 @@ namespace DataManagement
       
         public ObscuredInt  collectionCollectAdCount = 0, comboRewardTrack=0,totalSessionOfToday=0;
         public System.DateTime lastLoggedIn;
-        public int bestViewPoint,playCount;
+        public int bestViewPoint, playCount;
         public bool firstSelect = true;
         public bool firstPet = true;
         public bool uiHome = true;

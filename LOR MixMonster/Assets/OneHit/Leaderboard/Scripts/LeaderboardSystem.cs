@@ -50,6 +50,10 @@ namespace OneHit.Leaderboard
             UserProfile.SetScore(score);
             await dbRef.Child(nameOfLeaderboard).Child(UserProfile.GetId()).Child("score").SetValueAsync(score);            
         }
+        public async UniTask UpdatePlayerName()
+        {
+            await dbRef.Child(nameOfLeaderboard).Child(UserProfile.GetId()).Child("name").SetValueAsync(UserProfile.GetUsername());
+        }
         protected virtual void ActionIfNameExist()
         {
             Debug.LogWarning("Name is exist");

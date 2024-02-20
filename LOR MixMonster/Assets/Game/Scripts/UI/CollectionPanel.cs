@@ -149,14 +149,10 @@ public class CollectionPanel : UI.Panel
                 if (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count > 0)
                 {
                     Game.Controller.Instance.gameController.Destroy();
-                }  
-                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
-                {
-                    ((HomePanel)panel).SetUp();
-                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
-                });
+                }
+                ((StageGameController)Game.Controller.Instance.gameController).SetUp();
                 Close();
-                LevelLoading.Instance.Close();
+                //LevelLoading.Instance.Close();
             });
         }
     }

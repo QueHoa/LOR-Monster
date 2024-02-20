@@ -78,7 +78,7 @@ public class SlotExpandPanel : UI.Panel
     public override void Close()
     {
         base.Close();
-        ((StageGameController)Game.Controller.Instance.gameController).hideMonster = false;
+        (Game.Controller.Instance.gameController).hideMonster = false;
         onResult?.Invoke(false);
     }
 }
