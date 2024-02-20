@@ -121,6 +121,7 @@ public class ResultPanel : UI.Panel
                 goldReceivedText.text = a.ToString();
             });
         await UniTask.Delay(2000, cancellationToken: cancellation.Token);
+        
         DataManager.Instance.userData.inventory.onUpdate += OnCollectionUpdated;
         coin = CoinPooler.instance.GetPoolCoin();
         isDone = false;
