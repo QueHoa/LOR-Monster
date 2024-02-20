@@ -358,7 +358,6 @@ MonoBehaviour:
   overrideBack: 0
   isPersistant: 0
   rewardSFX: {fileID: 8300000, guid: 2c3389b8048027b449eeed83ab56e0e1, type: 3}
-  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!114 &1681910958002216412
 MonoBehaviour:
   m_ObjectHideFlags: 0

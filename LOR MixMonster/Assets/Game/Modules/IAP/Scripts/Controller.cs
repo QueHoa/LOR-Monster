@@ -1,5 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.Core;
+using Unity.Services.Core.Environments;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using UnityEngine.Purchasing.Extension;
@@ -45,7 +49,7 @@ namespace IAP
         public Controller()
         {
         }
-        public void InitProduct()
+        public async void InitProductAsync()
         {
             GameUtility.GameUtility.Log("INIT PRODUCT IAP");
             if (isInit) return;
@@ -63,6 +67,18 @@ namespace IAP
             {
                 builder.AddProduct(product.id, product.type);
                 productPrices.Add(product.id, product.price);
+            }
+
+            try
+            {
+                var options = new InitializationOptions()
+                    .SetEnvironmentName("production");
+
+                await UnityServices.InitializeAsync(options);
+            }
+            catch (Exception exception)
+            {
+                // An error occurred during services initialization.
             }
 
             UnityPurchasing.Initialize(this, builder);

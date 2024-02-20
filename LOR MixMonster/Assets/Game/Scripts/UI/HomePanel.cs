@@ -65,6 +65,10 @@ public class HomePanel : UI.Panel
                 uiHome[i].SetActive(true);
                 boxBanner.SetActive(false);
             }
+            if (DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0)
+            {
+                bundleBtn.SetActive(true);
+            }
         }
         else
         {
@@ -73,6 +77,10 @@ public class HomePanel : UI.Panel
             {
                 uiHome[i].SetActive(false);
                 boxBanner.SetActive(true);
+            }
+            if (DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0)
+            {
+                bundleBtn.SetActive(false);
             }
         }
         hideHand = DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0);

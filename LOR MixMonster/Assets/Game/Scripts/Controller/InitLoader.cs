@@ -25,7 +25,7 @@ public class InitLoader : UnityEngine.MonoBehaviour
         AD.Controller.Instance.LoadBanner();
         AD.Controller.Instance.LoadInterstitial();
 
-        IAP.Controller.Instance.InitProduct();
+        IAP.Controller.Instance.InitProductAsync();
         Localization.LocalizationHandler.Init();
 
         await UniTask.Delay(2500);
