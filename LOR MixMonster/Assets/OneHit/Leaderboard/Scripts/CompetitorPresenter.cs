@@ -11,7 +11,6 @@ namespace OneHit.Leaderboard
         [SerializeField] private TextMeshProUGUI rank;
         [SerializeField] private new TextMeshProUGUI username;
         [SerializeField] private TextMeshProUGUI score;
-        [SerializeField] private TMP_InputField changename;
         [SerializeField] private Image holder;
 
         public void SetProperties(int rank, string name, int score, Sprite sprite)
@@ -42,10 +41,6 @@ namespace OneHit.Leaderboard
             if (this.rank != null)
                 this.rank.text = rank.ToString();
             this.username.text = UserProfile.GetUsername();
-            if (changename != null)
-            {
-                this.changename.text = UserProfile.GetUsername();
-            } 
 
             if (rank > 20)
                 this.score.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);

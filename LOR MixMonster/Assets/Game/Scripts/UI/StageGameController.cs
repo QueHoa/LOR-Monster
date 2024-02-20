@@ -57,7 +57,7 @@ public partial class StageGameController : GameController
         Clear();
         await PrepareStage();
         await PrepareCollection();   
-        Debug.Log("done");
+        
         MonsterCard.onMonsterSelected += OnMonsterSelected;
         
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;

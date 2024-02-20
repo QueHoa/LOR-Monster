@@ -32,6 +32,7 @@ namespace OneHit.Leaderboard
 
         public GameObject loadingPanel;
         public InputNamePanel input;
+        public TMP_InputField changename;
         [Header("Other define")] public Sprite defaultHolder, playerHolder;
         [Header("Other define")] public List<CompetitorPresenter> competitors;
 
@@ -43,11 +44,13 @@ namespace OneHit.Leaderboard
                 UserProfile.SetUserName(name);
                 input.nameInput.text = name;
                 SubmitPlayerToLeaderboard();
+                
             }
             else
             {
-                RefreshLeaderboard();
+                CheatScore(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
             }
+            changename.text = UserProfile.GetUsername();
         }
 
         private async void RefreshLeaderboard()
@@ -85,7 +88,6 @@ namespace OneHit.Leaderboard
 
             loadingPanel.SetActive(false);
         }
-
         public async void SubmitPlayerToLeaderboard()
         {
             bool res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
@@ -100,6 +102,13 @@ namespace OneHit.Leaderboard
             {
                 input.ShowNameExisted();
             }
+        }
+
+        public async void ChangeNamePlayerToLeaderboard()
+        {
+            UserProfile.SetUserName(input.GetInput());
+            await _system.UpdatePlayerName();
+            RefreshLeaderboard();
         }
 
 
