@@ -1,4 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
+﻿    using Cysharp.Threading.Tasks;
 using GameUtility;
 using System;
 using System.Collections;
@@ -190,11 +190,15 @@ public class MakeOverGameController : GameController
         await UniTask.Delay(1000, cancellationToken: cancellation.Token);
         await UniTask.WaitUntil(() => capturedScreenShot != null, cancellationToken: cancellation.Token);
         changeGold = 0;
-        for (int i = 0; i < Sheet.SheetDataManager.Instance.gameData.rewardGold.item.Count; i++)
+        for (int i = 0; i < Sheet.SheetDataManager.Instance.gameData.rewardGold.item.Count - 1; i++)
         {
             if (totalLikePoint + bonusLike >= Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i].like && totalLikePoint + bonusLike < Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i + 1].like)
             {
                 changeGold = (int)(Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i].gold.GetRandomInt() * UnityEngine.Random.Range(1.7f, 2f));
+            }
+            if(totalLikePoint + bonusLike >= Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i + 1].like)
+            {
+                changeGold = (int)(Sheet.SheetDataManager.Instance.gameData.rewardGold.item[i + 1].gold.GetRandomInt() * UnityEngine.Random.Range(1.7f, 2f));
             }
         }
         //lưu dữ liệu con mới mix lại ở cardData
