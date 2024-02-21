@@ -216,6 +216,9 @@ namespace IAP
             UI.PanelManager.Create(typeof(MessagePanel), (panel, op) =>
             {
                 ((MessagePanel)panel).SetUp(success?"Restore successful":"Restore failed");
+                DataManagement.DataManager.Instance.userData.IsAd = false;
+                DataManagement.DataManager.Instance.Save();
+                AD.Controller.Instance.RemoveAd();
             });
         }
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using CandyCoded.HapticFeedback;
+using MoreMountains.NiceVibrations;
 using UnityEngine.Networking.Types;
 using UnityEngine.UI;
 using static DataManagement.MergeSlotData;
@@ -35,7 +35,10 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     [SerializeField]
     protected AudioClip dailyShow, sfx;
     [SerializeField]
-    protected GameObject handTut, chooseTut, homeBtn, bundleBtn, petOfferBtn, petOfferAdObj,newOptionBtn;
+    protected HapticTypes hapticTypes = HapticTypes.Warning;
+    [SerializeField]
+    protected GameObject handTut, chooseTut, homeBtn, bundleBtn, petOfferBtn, petOfferAdObj, newOptionBtn;
+    public GameObject removeAds;
     [SerializeField]
     protected Image tryPetIcon, petIcon, optionIcon;
     [SerializeField]
@@ -132,9 +135,11 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         backGroundImg.sprite = backGroundSprites[DataManagement.DataManager.Instance.userData.progressData.playCount % backGroundSprites.Length];
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
         homeBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.cards.Count != 0);
+        removeAds.SetActive(DataManagement.DataManager.Instance.userData.IsAd);
         excludeItems.Clear();
         excludeItems.AddRange(previousFirstSpawnItems);
         previousFirstSpawnItems.Clear();
+        MMVibrationManager.SetHapticsActive(hapticsAllowed);
 
 #if UNITY_EDITOR
         excludeItems2 = excludeItems;
@@ -184,6 +189,17 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             });
         }
 
+    }
+    private void Update()
+    {
+        if (DataManagement.DataManager.Instance.userData.IsAd)
+        {
+            removeAds.SetActive(true);
+        }
+        else
+        {
+            removeAds.SetActive(false);
+        }
     }
     async UniTaskVoid Introduce(int count)
     {

@@ -24,6 +24,7 @@ public class HomePanel : UI.Panel
     private RectTransform slotTotalRect;
     [SerializeField]
     private GameObject maxSlotNotice, controlPanel, deletePanel, bundleBtn, handTut, boxBanner;
+    public GameObject removeAds;
     [SerializeField]
     private GameObject[] uiHome;
     [SerializeField]
@@ -53,6 +54,7 @@ public class HomePanel : UI.Panel
         StageData currentStageData = ((StageGameController)Game.Controller.Instance.gameController).GetStageHandler().stageData;
         OnMonsterSlotUpdated(currentStageData.stageCollections.Count, currentStageData.totalMonsterSlot);
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
+        removeAds.SetActive(DataManagement.DataManager.Instance.userData.IsAd);
         for (int i = 0; i < boosterButtons.Length; i++)
         {
             boosterButtons[i].SetUp(((StageGameController)Game.Controller.Instance.gameController).boosters[i]);

@@ -20,6 +20,7 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
     {
         if (product.definition.id.Contains(productId))
         {
+            Debug.LogError("Removeads");
             RemoveAd();
             Unlock();
         }
@@ -29,6 +30,8 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
     {
         if (product.definition.id.Contains(productId) && reason==PurchaseFailureReason.DuplicateTransaction)
         {
+            Debug.LogError("NoRemoveads");
+            RemoveAd();
             Unlock();
         }
     }
