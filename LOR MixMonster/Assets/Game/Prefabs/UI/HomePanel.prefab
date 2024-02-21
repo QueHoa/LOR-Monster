@@ -72052,6 +72052,7 @@ MonoBehaviour:
   bundleBtn: {fileID: 6265560194489411579}
   handTut: {fileID: 1489255785701379271}
   boxBanner: {fileID: 6626985132901191598}
+  removeAds: {fileID: 2961860573175139674}
   uiHome:
   - {fileID: 6265560194764698896}
   - {fileID: 6265560194344907376}

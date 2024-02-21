@@ -22713,7 +22713,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 99f6bd37889967149825b8215de24234, type: 3}
   - {fileID: 8300000, guid: 8842b1e6bc9c23f49b391e19b859a6b7, type: 3}
   dailyShow: {fileID: 8300000, guid: b72234c11295c4346b9d1220faafb219, type: 3}
-  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
+  sfx: {fileID: 8300000, guid: 36fe2fe53b23a514fb9e5e71477060f8, type: 3}
   hapticTypes: 2
   handTut: {fileID: 0}
   chooseTut: {fileID: 3698628091972000250}
@@ -22722,6 +22722,7 @@ MonoBehaviour:
   petOfferBtn: {fileID: 6442253220249797797}
   petOfferAdObj: {fileID: 2067060361831240482}
   newOptionBtn: {fileID: 4604115323394767191}
+  removeAds: {fileID: 8896981814979325196}
   tryPetIcon: {fileID: 3753085792444804177}
   petIcon: {fileID: 6917094173251258132}
   optionIcon: {fileID: 7485263927553511238}

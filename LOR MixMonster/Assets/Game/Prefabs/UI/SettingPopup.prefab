@@ -981,7 +981,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideBack: 0
   isPersistant: 0
-  exit: {fileID: 8300000, guid: 1be5b8ded41c0834c8c49ac9717ccce5, type: 3}
 --- !u!1 &4077788807958506619
 GameObject:
   m_ObjectHideFlags: 0
