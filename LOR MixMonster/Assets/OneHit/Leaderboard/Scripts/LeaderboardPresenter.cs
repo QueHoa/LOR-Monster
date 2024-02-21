@@ -76,6 +76,11 @@ namespace OneHit.Leaderboard
             competitors[^2].Deactive();
             competitors[^1].Deactive();
             int playerRank = await _system.GetPlayerRank();
+            Debug.Log(playerRank);
+            if(playerRank <= 3)
+            {
+                competitors[playerRank - 1].SetColorPlayer(Color.green);
+            }
             if (playerRank > 3 && playerRank <= top)
             {
                 competitors[playerRank - 1].SetAsThisPlayer(playerRank, playerHolder);

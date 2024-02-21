@@ -50,7 +50,11 @@ namespace OneHit.Leaderboard
                 holder.sprite = sprite;
             Active();
         }
-
+        public void SetColorPlayer(Color color)
+        {
+            username.color = color;
+            score.color = color;
+        }
         public void Active()
         {
             gameObject.SetActive(true);
