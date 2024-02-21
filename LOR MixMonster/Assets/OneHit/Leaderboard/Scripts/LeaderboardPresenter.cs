@@ -84,6 +84,7 @@ namespace OneHit.Leaderboard
             if (playerRank > 3 && playerRank <= top)
             {
                 competitors[playerRank - 1].SetAsThisPlayer(playerRank, playerHolder);
+                competitors[playerRank - 1].SetColorPlayer(Color.white);
             }
             else if (playerRank > top)
             {

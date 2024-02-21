@@ -13,7 +13,7 @@ public class RewardGold : ScriptableObject
         UnityEditor.EditorUtility.SetDirty(this);
 #endif
         item.Clear();
-        for (int i = 1; i < rowDatas.Count - 1; i++)
+        for (int i = 1; i < rowDatas.Count; i++)
         {
             Debug.Log(i);
             Point point = new Point()

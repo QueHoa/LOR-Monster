@@ -52,6 +52,8 @@ namespace OneHit.Leaderboard
         }
         public void SetColorPlayer(Color color)
         {
+            if(rank != null)
+                rank.color = color;
             username.color = color;
             score.color = color;
         }
