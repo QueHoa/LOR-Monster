@@ -201,6 +201,10 @@ public class HomePanel : UI.Panel
                 uiHome[i].SetActive(false);
                 boxBanner.SetActive(true);
             }
+            if (DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0)
+            {
+                bundleBtn.SetActive(false);
+            }
             DataManagement.DataManager.Instance.userData.progressData.uiHome = false;
         }
         else
@@ -210,6 +214,10 @@ public class HomePanel : UI.Panel
             {
                 uiHome[i].SetActive(true);
                 boxBanner.SetActive(false);
+            }
+            if (DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0)
+            {
+                bundleBtn.SetActive(true);
             }
             DataManagement.DataManager.Instance.userData.progressData.uiHome = true;
         }
