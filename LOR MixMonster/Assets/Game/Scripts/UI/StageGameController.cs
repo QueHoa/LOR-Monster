@@ -289,7 +289,14 @@ public partial class StageGameController : GameController
         {
             if (DataManagement.DataManager.Instance.userData.IsAd)
             {
-                homePanel.removeAds.SetActive(true);
+                if (DataManager.Instance.userData.progressData.uiHome)
+                {
+                    homePanel.removeAds.SetActive(true);
+                }
+                else
+                {
+                    homePanel.removeAds.SetActive(false);
+                }
             }
             else
             {
