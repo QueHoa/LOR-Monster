@@ -479,7 +479,6 @@ MonoBehaviour:
   overrideBack: 0
   isPersistant: 0
   close: {fileID: 2594742353032705510}
-  sfx: {fileID: 8300000, guid: 2508026d17e79f144b3359e131ba54b5, type: 3}
 --- !u!114 &6848634501943435702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16519,6 +16518,7 @@ GameObject:
   - component: {fileID: 205927756351342647}
   - component: {fileID: 6006086225003434495}
   - component: {fileID: 5036839159346900156}
+  - component: {fileID: 455111185893194147}
   m_Layer: 0
   m_Name: Button Claim
   m_TagString: Untagged
@@ -16641,6 +16641,87 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &455111185893194147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980670060465074746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11ce516f6ac8b244951d8a9a6de5aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 0}
+  xRatio: 1
+  yRatio: 1
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartClick:
+    m_PersistentCalls:
+      m_Calls: []
+  onClickFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  onEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  highLightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0006714
+      inSlope: 0.51684546
+      outSlope: 0.51684546
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.12141054
+    - serializedVersion: 3
+      time: 0.2780795
+      value: 1.0690618
+      inSlope: 0.16031548
+      outSlope: 0.16031548
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12786658
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50060105
+      value: 1.1103255
+      inSlope: 0.0046233777
+      outSlope: 0.0046233777
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.723189
+      value: 1.0691793
+      inSlope: -0.16604136
+      outSlope: -0.16604136
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11548245
+    - serializedVersion: 3
+      time: 0.99997413
+      value: 1.0000308
+      inSlope: -0.558021
+      outSlope: -0.558021
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0711883
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5001316992897847267
 GameObject:
   m_ObjectHideFlags: 0
