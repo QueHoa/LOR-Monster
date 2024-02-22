@@ -21,6 +21,7 @@ public class CollectionPanel : UI.Panel
     public Image mainImage;
     public CanvasGroup boxView, boxLike;
     public CanvasGroup[] boxItem;
+    public ParticleSystem[] boxItemPS;
     public GameObject[] star;
     public Transform MonsterPos;
 
@@ -29,7 +30,7 @@ public class CollectionPanel : UI.Panel
     public override void PostInit()
     {
     }
-    public async void SetUp()
+    public async void SetUp(int numberAnim)
     {
         isProcessing = false;
         numberStar = 0;
@@ -45,7 +46,7 @@ public class CollectionPanel : UI.Panel
                 await SetItem(item);
                 ((StageGameController)Game.Controller.Instance.gameController).monster.SetItem(item);
             }
-
+            ((StageGameController)Game.Controller.Instance.gameController).monster.Dance(numberAnim);
             poolImage = GetComponentInChildren<GameUtility.Pooling.PoolHandler>();
 
             foreach (DataManagement.CollectionData collectionData in DataManagement.DataManager.Instance.userData.progressData.collectionDatas)
@@ -111,6 +112,7 @@ public class CollectionPanel : UI.Panel
             int index = i;
             DOTween.To(() => boxItem[index].alpha, x => boxItem[index].alpha = x, 1, 0.3f).SetEase(Ease.Linear);
             boxItem[index].transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
+            boxItemPS[index].Play();
             yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(1.2f);

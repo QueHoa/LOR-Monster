@@ -67,7 +67,7 @@ public class MakeOverGameController : GameController
         DataManagement.DataManager.Instance.userData.progressData.playCount++;
         DataManagement.DataManager.Instance.Save();
     }
-    public override async UniTask SetUpCollection()
+    /*public override async UniTask SetUpCollection()
     {
         cancellation = new CancellationTokenSource();
 
@@ -92,7 +92,7 @@ public class MakeOverGameController : GameController
         FirebaseAnalysticController.Instance.LogEvent("CollectionStart");
         DataManagement.DataManager.Instance.userData.progressData.playCount++;
         DataManagement.DataManager.Instance.Save();
-    }
+    }*/
 
     public override void Destroy()
     {

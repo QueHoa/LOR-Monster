@@ -21,7 +21,10 @@ public partial class StageGameController : GameController
     [SerializeField]
     private AudioClip selectCardSFX, removeMonsterSFX, createMonsterSFX, clickScreenSFX, stageItemSelectSFX, instantCashBoostSFX;
     public ParticleSystem clickPS, instantCashBoostPS;
-
+    private void Start()
+    {
+        Game.Controller.Instance.OnGameLoaded(this);
+    }
     int musicThemeIndex = 0;
     bool isReady = false, isMonsterSelected = false;
     public override async UniTask InitializeAsync()
@@ -74,21 +77,19 @@ public partial class StageGameController : GameController
         cancellation = new CancellationTokenSource();
 
         Sound.Controller.Instance.PlayMusic(Sound.Controller.Instance.soundData.menuTheme[UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.menuTheme.Length)]);
-
+        
         if (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count > 0)
         {
             monster = (await Addressables.InstantiateAsync("Monster", transform)).GetComponent<Monster>();
         }
 
         CollectionPanel CollectionPanel = (CollectionPanel)await UI.PanelManager.CreateAsync(typeof(CollectionPanel));
-        CollectionPanel.SetUp();
+        CollectionPanel.SetUp(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
 
         await UniTask.Delay(300);
         LevelLoading.Instance.Close();
 
-        //
-
-        monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
+        //monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
         await ZoomMonsterCollection(cancellation.Token, CollectionPanel.MonsterPos);
 
         FirebaseAnalysticController.Instance.LogEvent("CollectionStart");
@@ -291,7 +292,14 @@ public partial class StageGameController : GameController
         {
             if (DataManagement.DataManager.Instance.userData.IsAd)
             {
-                homePanel.removeAds.SetActive(true);
+                if (DataManager.Instance.userData.progressData.uiHome)
+                {
+                    homePanel.removeAds.SetActive(true);
+                }
+                else
+                {
+                    homePanel.removeAds.SetActive(false);
+                }
             }
             else
             {
