@@ -84787,14 +84787,14 @@ MonoBehaviour:
   m_text: collection
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20876417182f7a04c8657fbe425eaf00, type: 2}
-  m_sharedMaterial: {fileID: -394468266704005680, guid: 20876417182f7a04c8657fbe425eaf00, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 58fc514c1684fbe48b058c959379b350, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281019179
-  m_fontColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

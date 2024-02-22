@@ -285,7 +285,7 @@ public partial class StageGameController : GameController
 
             checkTime = Time.time;
         }
-        if(homePanel != null)
+        if (homePanel != null)
         {
             if (DataManagement.DataManager.Instance.userData.IsAd)
             {
