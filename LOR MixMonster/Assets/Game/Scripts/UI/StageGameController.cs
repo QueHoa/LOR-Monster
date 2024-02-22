@@ -287,14 +287,16 @@ public partial class StageGameController : GameController
 
             checkTime = Time.time;
         }
-
-        if (DataManagement.DataManager.Instance.userData.IsAd)
+        if(homePanel != null)
         {
-            homePanel.removeAds.SetActive(true);
-        }
-        else
-        {
-            homePanel.removeAds.SetActive(false);
+            if (DataManagement.DataManager.Instance.userData.IsAd)
+            {
+                homePanel.removeAds.SetActive(true);
+            }
+            else
+            {
+                homePanel.removeAds.SetActive(false);
+            }
         }
 
         if (isDrag && Input.touchCount > 0 && currentCardData != null && dragMonster != null)
