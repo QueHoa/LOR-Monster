@@ -200,6 +200,11 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         {
             removeAds.SetActive(false);
         }
+        if ((Game.Controller.Instance.gameController).updateGold)
+        {
+            goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
+            (Game.Controller.Instance.gameController).updateGold = false;
+        }
     }
     async UniTaskVoid Introduce(int count)
     {

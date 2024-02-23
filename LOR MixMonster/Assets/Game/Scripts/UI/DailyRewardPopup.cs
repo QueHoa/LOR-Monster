@@ -12,7 +12,7 @@ public class DailyRewardPopup : UI.Panel
     public GameObject day7, bgIcon;
     public GameObject effect1, effect2;
     [SerializeField]
-    private AudioClip rewardSFX, sfx;
+    private AudioClip rewardSFX;
     bool isProcessing = false;
     public override void PostInit()
     {
@@ -20,6 +20,7 @@ public class DailyRewardPopup : UI.Panel
     public void SetUp(int day)
     {
         isProcessing = false;
+        (Game.Controller.Instance.gameController).updateGold = true;
         Sound.Controller.Instance.PlayOneShot(rewardSFX);
         day7.SetActive(false);
         effect1.SetActive(false);
@@ -138,7 +139,6 @@ public class DailyRewardPopup : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        Sound.Controller.Instance.PlayOneShot(sfx);
         base.Close();
     }
 }

@@ -19,7 +19,8 @@ public class HomePanel : UI.Panel
     [SerializeField]
     private AudioClip playSFX;
     [SerializeField]
-    private TextMeshProUGUI goldText, cashText, totalEarningText, slotText;
+    private TextMeshProUGUI cashText, totalEarningText, slotText;
+    public TextMeshProUGUI goldText;
     [SerializeField]
     private RectTransform slotTotalRect;
     [SerializeField]

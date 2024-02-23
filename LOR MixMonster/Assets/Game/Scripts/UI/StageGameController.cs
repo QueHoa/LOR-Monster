@@ -305,6 +305,11 @@ public partial class StageGameController : GameController
             {
                 homePanel.removeAds.SetActive(false);
             }
+            if ((Game.Controller.Instance.gameController).updateGold)
+            {
+                homePanel.goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
+                (Game.Controller.Instance.gameController).updateGold = false;
+            }
         }
 
         if (isDrag && Input.touchCount > 0 && currentCardData != null && dragMonster != null)
@@ -404,6 +409,16 @@ public partial class StageGameController : GameController
     {
         GameUtility.RewardHandler.ApplyCash(GetTotalEarning());
         stageHandlers.ShowEarnEffect(manual);
+        if (Time.time - lastSaveTime > 5)
+        {
+            DataManagement.DataManager.Instance.Save();
+            lastSaveTime = Time.time;
+        }
+    }
+    public void RewardEarningSelect(Monster monster)
+    {
+        GameUtility.RewardHandler.ApplyCash(GetTotalEarning());
+        stageHandlers.ShowEarnEffectSelect(monster);
         if (Time.time - lastSaveTime > 5)
         {
             DataManagement.DataManager.Instance.Save();
