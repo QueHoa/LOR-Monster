@@ -16,7 +16,7 @@ namespace OneHit.Leaderboard
         public void SetProperties(int rank, string name, int score, Sprite sprite)
         {
             if (this.rank != null)
-                this.rank.text = rank.ToString();
+                this.rank.text = "#" + rank.ToString();
             this.username.text = name;
             if(name.Length > 10)
             {
@@ -39,7 +39,7 @@ namespace OneHit.Leaderboard
         public void SetAsThisPlayer(int rank, Sprite sprite)
         {
             if (this.rank != null)
-                this.rank.text = rank.ToString();
+                this.rank.text = "#" + rank.ToString();
             this.username.text = UserProfile.GetUsername();
 
             if (rank > 20)
