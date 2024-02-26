@@ -144,7 +144,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: GET A PET
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 20876417182f7a04c8657fbe425eaf00, type: 2}
   m_sharedMaterial: {fileID: -394468266704005680, guid: 20876417182f7a04c8657fbe425eaf00, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -358,7 +358,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Unlock Now
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 20876417182f7a04c8657fbe425eaf00, type: 2}
   m_sharedMaterial: {fileID: -394468266704005680, guid: 20876417182f7a04c8657fbe425eaf00, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

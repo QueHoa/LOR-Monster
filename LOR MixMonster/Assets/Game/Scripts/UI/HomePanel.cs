@@ -152,7 +152,10 @@ public class HomePanel : UI.Panel
     }
     public void ClickScreen()
     {
-        ((StageGameController)Game.Controller.Instance.gameController).ClickScreen(false);
+        if (!(Game.Controller.Instance.gameController).isSelected)
+        {
+            ((StageGameController)Game.Controller.Instance.gameController).ClickScreen(false);
+        }
     }
     public void Play()
     {

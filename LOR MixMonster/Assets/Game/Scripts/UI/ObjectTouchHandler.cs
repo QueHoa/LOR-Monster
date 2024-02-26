@@ -40,13 +40,14 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!enabled) return;
 
         isDown = true;
+        (Game.Controller.Instance.gameController).isSelected = true;
         touchTime = Time.time;
         transform.Shake(0.1f, 1, 0.01f, defaultScale: scale);
 
     }
     private void Update()
     {
-        if (!isSelected && isDown && Time.time - touchTime > 0.25f)
+        if (!isSelected && isDown && Time.time - touchTime > 0.3f)
         {
             isSelected = true;
             currentPosition = transform.position;
@@ -54,11 +55,21 @@ public class ObjectTouchHandler : MonoBehaviour
             Sound.Controller.Instance.PlayOneShot(pickSFX);
             transform.Shake(0.15f, 1, 0.02f, defaultScale: scale);
         }
+        if (Input.touchCount > 0 & isDown)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                ((StageGameController)Game.Controller.Instance.gameController).RewardEarningSelect(monster);
+                isDown = false;
+            }
+        }
     }
     private void OnMouseUp()
     {
         if (!isSelected) return;
-        isDown = false;
+        //isDown = false;
         isSelected = false;
         if (Sound.Controller.VibrationEnable)
         {
