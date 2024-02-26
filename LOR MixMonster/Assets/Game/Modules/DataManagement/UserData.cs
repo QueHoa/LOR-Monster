@@ -37,6 +37,8 @@ namespace DataManagement
         private int bestView;
         public int YourGold { get => yourGold; set => yourGold = value; }
         private int yourGold;
+        public double YourMoney { get => yourMoney; set => yourMoney = value; }
+        private double yourMoney;
         public UserData()
         {
 

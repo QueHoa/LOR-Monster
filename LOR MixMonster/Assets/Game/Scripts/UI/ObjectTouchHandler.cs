@@ -31,7 +31,7 @@ public class ObjectTouchHandler : MonoBehaviour
     {
 
     }
-    bool isDown = false, isSelected;
+    bool isDown = false, isSelected, posNow;
     Vector3 offset;
     Vector3 currentPosition;
     float touchTime;
@@ -39,6 +39,7 @@ public class ObjectTouchHandler : MonoBehaviour
     {
         if (!enabled) return;
 
+        posNow = true;
         isDown = true;
         (Game.Controller.Instance.gameController).isSelected = true;
         touchTime = Time.time;
@@ -51,6 +52,11 @@ public class ObjectTouchHandler : MonoBehaviour
         {
             isSelected = true;
             currentPosition = transform.position;
+            if (posNow)
+            {
+                transform.position = CameraController.Instance.GetTouchPosition();
+                posNow = false;
+            }
             offset = CameraController.Instance.GetTouchPosition() - transform.position;
             Sound.Controller.Instance.PlayOneShot(pickSFX);
             transform.Shake(0.15f, 1, 0.02f, defaultScale: scale);
