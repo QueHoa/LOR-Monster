@@ -25,7 +25,7 @@ public class ItemSelectButton : MonoBehaviour
     Vector2 defaultPos;
     MakeOverPanelAbstract makeOverPanel;
     public int index;
-    int priceGold, gold;
+    int priceGold;
 
     bool isProcessing = false;
     private void OnEnable()
@@ -44,7 +44,6 @@ public class ItemSelectButton : MonoBehaviour
             itemIconImg.sprite = sprite;
         });*/
         itemIconImg.sprite = await Addressables.LoadAssetAsync<Sprite>(item.icon);
-        gold = DataManagement.DataManager.Instance.userData.YourGold;
 
         adIcon.SetActive(item.unlockType ==ItemData.UnlockType.Ad);
         viewBonusIcon.SetActive(item.unlockType == ItemData.UnlockType.Ad || !string.IsNullOrEmpty(item.bundleId));
@@ -116,7 +115,7 @@ public class ItemSelectButton : MonoBehaviour
         {
             priceGoldText.text = priceGold.ToString();
 
-            if (gold >= priceGold)
+            if (DataManagement.DataManager.Instance.userData.YourGold >= priceGold)
             {
                 btnBuy.interactable = true;
             }
@@ -158,14 +157,14 @@ public class ItemSelectButton : MonoBehaviour
         }*/
         Sound.Controller.Instance.PlayOneShot(selectSFX);
         makeOverPanel.OnSelect(this);
-        int changeGold = gold - priceGold;
+        int changeGold = DataManagement.DataManager.Instance.userData.YourGold - priceGold;
         goldText.transform.DOScale(Vector3.one * 1.3f, 0.3f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
-        DOTween.To(() => gold, x => gold = x, changeGold, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
+        DOTween.To(() => DataManagement.DataManager.Instance.userData.YourGold, x => DataManagement.DataManager.Instance.userData.YourGold = x, changeGold, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
         {
-            goldText.text = gold.ToString();
+            goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         }).OnComplete(() =>
         {
-            DataManagement.DataManager.Instance.userData.YourGold = gold;
+            DataManagement.DataManager.Instance.userData.YourGold = DataManagement.DataManager.Instance.userData.YourGold;
             DataManagement.DataManager.Instance.Save();
         });
         animTry.SetTrigger("close");
