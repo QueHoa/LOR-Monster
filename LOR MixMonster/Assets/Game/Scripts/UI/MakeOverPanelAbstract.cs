@@ -46,7 +46,6 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     protected Animator animTryPet, animTryOption;
     [SerializeField]
     protected TextMeshProUGUI goldText, tryPetText;
-    protected int gold;
     protected CancellationTokenSource cancellation;
 
     private bool hapticsAllowed = true;
@@ -337,7 +336,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         else
         {
             tryPetIcon.sprite = petIcon.sprite;
-            if (gold >= 1500)
+            if (DataManagement.DataManager.Instance.userData.YourGold >= 1500)
             {
                 buyPet.interactable = true;
             }
@@ -415,12 +414,12 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             });
         }).Forget();
         goldText.transform.DOScale(Vector3.one * 1.3f, 0.3f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
-        DOTween.To(() => gold, x => gold = x, DataManagement.DataManager.Instance.userData.YourGold - 1500, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
+        DOTween.To(() => DataManagement.DataManager.Instance.userData.YourGold, x => DataManagement.DataManager.Instance.userData.YourGold = x, DataManagement.DataManager.Instance.userData.YourGold - 1500, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
         {
-            goldText.text = gold.ToString();
+            goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         }).OnComplete(() =>
         {
-            DataManagement.DataManager.Instance.userData.YourGold = gold;
+            DataManagement.DataManager.Instance.userData.YourGold = DataManagement.DataManager.Instance.userData.YourGold;
             DataManagement.DataManager.Instance.Save();
         });
         animTryPet.SetTrigger("close");
@@ -433,7 +432,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     {
         if (isProcessing) return;
         isProcessing = true;
-        if (gold >= 500)
+        if (DataManagement.DataManager.Instance.userData.YourGold >= 500)
         {
             buyOption.interactable = true;
         }
@@ -473,12 +472,12 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         }
         SetItem();
         goldText.transform.DOScale(Vector3.one * 1.3f, 0.3f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
-        DOTween.To(() => gold, x => gold = x, DataManagement.DataManager.Instance.userData.YourGold - 500, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
+        DOTween.To(() => DataManagement.DataManager.Instance.userData.YourGold, x => DataManagement.DataManager.Instance.userData.YourGold = x, DataManagement.DataManager.Instance.userData.YourGold - 500, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
         {
-            goldText.text = gold.ToString();
+            goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         }).OnComplete(() =>
         {
-            DataManagement.DataManager.Instance.userData.YourGold = gold;
+            DataManagement.DataManager.Instance.userData.YourGold = DataManagement.DataManager.Instance.userData.YourGold;
             DataManagement.DataManager.Instance.Save();
         });
         animTryOption.SetTrigger("close");

@@ -23,8 +23,7 @@ public partial class NewMakeOverPanel : MakeOverPanelAbstract
         monster.transform.localPosition = new Vector3(0, -12.5f);
         monster.transform.localScale = new Vector3(1f, 1, 1);
         monster.SetIdle();
-        gold = DataManagement.DataManager.Instance.userData.YourGold;
-        goldText.text = gold.ToString();
+        goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         defaultItems.Clear();
 
         for (int i=0;i<4;i++)

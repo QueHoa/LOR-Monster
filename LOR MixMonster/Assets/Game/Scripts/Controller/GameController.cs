@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public static OnStageEnd onStageEnd;
     public bool isReady = false;
     public bool hideMonster, updateGold = false;
-    public bool isDown = false, isSelected = false;
+    public bool isSelected = false;
 
     protected void Start()
     {
