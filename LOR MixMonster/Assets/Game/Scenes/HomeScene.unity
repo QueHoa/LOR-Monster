@@ -10960,8 +10960,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 45, y: 9.283327, z: 1}
-  m_Center: {x: 0, y: -18.249962, z: 0}
+  m_Size: {x: 45, y: 10.484716, z: 1}
+  m_Center: {x: 0, y: -17.649265, z: 0}
 --- !u!1001 &1692697177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11182,8 +11182,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 45, y: 17.453033, z: 0.19999981}
-  m_Center: {x: 0, y: -4.126511, z: 2}
+  m_Size: {x: 45, y: 16.852337, z: 0.19999981}
+  m_Center: {x: 0, y: -3.826162, z: 2}
 --- !u!1 &1889427373
 GameObject:
   m_ObjectHideFlags: 0
@@ -11311,6 +11311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReady: 0
   hideMonster: 0
+  updateGold: 0
+  isDown: 0
+  isSelected: 0
   homePanel: {fileID: 0}
   monster: {fileID: 0}
   stageHandlers:

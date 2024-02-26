@@ -159,7 +159,7 @@ PlayerSettings:
     iPhone: com.left.right.mixmonster
   buildNumber:
     Standalone: 1
-    iPhone: 34
+    iPhone: 35
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 36

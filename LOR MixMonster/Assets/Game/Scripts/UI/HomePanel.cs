@@ -89,7 +89,7 @@ public class HomePanel : UI.Panel
         hideHand = DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0);
         handTut.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0));
         goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
-        cashText.text = "$" + GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.YourMoney);
+        cashText.text = "$" + GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.inventory.cash);
         Show();
         DataManager.Instance.Save();
     }

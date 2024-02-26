@@ -23,7 +23,7 @@ public class CollectionPanel : UI.Panel
     public CanvasGroup[] boxItem;
     public ParticleSystem[] boxItemPS;
     public GameObject[] star;
-    public Transform monsterPos;
+    public Transform MonsterPos;
 
     private bool isProcessing;
     private int numberStar;
