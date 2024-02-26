@@ -418,6 +418,8 @@ public partial class StageGameController : GameController
     public void RewardEarningSelect(Monster monster)
     {
         GameUtility.RewardHandler.ApplyCash(GetTotalEarning());
+        Sound.Controller.Instance.PlayOneShot(clickScreenSFX);
+        clickPS.Play();
         stageHandlers.ShowEarnEffectSelect(monster);
         if (Time.time - lastSaveTime > 5)
         {

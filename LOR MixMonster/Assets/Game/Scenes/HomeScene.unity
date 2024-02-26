@@ -654,7 +654,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1114172355
   m_SortingLayer: 2
-  m_SortingOrder: 201
+  m_SortingOrder: -50
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5972,7 +5972,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1114172355
   m_SortingLayer: 2
-  m_SortingOrder: 201
+  m_SortingOrder: -50
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -11312,7 +11312,6 @@ MonoBehaviour:
   isReady: 0
   hideMonster: 0
   updateGold: 0
-  isDown: 0
   isSelected: 0
   homePanel: {fileID: 0}
   monster: {fileID: 0}
