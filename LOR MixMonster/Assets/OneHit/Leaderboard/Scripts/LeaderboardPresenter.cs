@@ -44,11 +44,19 @@ namespace OneHit.Leaderboard
                 UserProfile.SetUserName(name);
                 input.nameInput.text = name;
                 SubmitPlayerToLeaderboard();
-                
+
             }
             else
             {
-                CheatScore(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+                if ((Game.Controller.Instance.gameController).isView)
+                {
+                    CheatScore((int)DataManagement.DataManager.Instance.userData.YourMoney);
+                }
+                else
+                {
+                    CheatScore(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+                }
+                    
             }
             changename.text = UserProfile.GetUsername();
         }
@@ -77,7 +85,7 @@ namespace OneHit.Leaderboard
             competitors[^1].Deactive();
             int playerRank = await _system.GetPlayerRank();
             Debug.Log(playerRank);
-            if(playerRank <= 3)
+            if (playerRank <= 3)
             {
                 competitors[playerRank - 1].SetColorPlayer(Color.green);
             }
@@ -96,8 +104,16 @@ namespace OneHit.Leaderboard
         }
         public async void SubmitPlayerToLeaderboard()
         {
-            bool res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
-            Debug.Log(res);
+            bool res;
+            if ((Game.Controller.Instance.gameController).isView)
+            {
+                res = await _system.AddCompetitor(input.GetInput(), (int)DataManagement.DataManager.Instance.userData.YourMoney);
+            }
+            else
+            {
+                res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+            }
+            
             if (res)
             {
                 //input.SetActive(false);
@@ -132,8 +148,8 @@ namespace OneHit.Leaderboard
     }
 }
 /*#if UNITY_EDITOR
-        public static readonly string[] Names =
-        {
+public static readonly string[] Names =
+{
             "Michael", "James", "John", "Robert", "William",
             "David", "Richard", "Charles", "George", "Joseph",
             "Thomas", "Christopher", "Daniel", "Matthew", "Anthony",
@@ -155,16 +171,16 @@ namespace OneHit.Leaderboard
             "中島", "村上", "吉田", "山口", "田村"
         };
 
-        [Button]
-        public async void GenerateFakeUser()
-        {
-            int cnt = 0;
-            while (cnt++ < 200)
-            {
-                string newName = Names[UnityEngine.Random.Range(0, Names.Length)] + Random.Range(100000000, 999999999);
-                _system.AddCompetitor(newName.Substring(0, 10), 100 * Random.Range(10000, 800000));
-            }
-        }
+[Button]
+public async void GenerateFakeUser()
+{
+    int cnt = 0;
+    while (cnt++ < 200)
+    {
+        string newName = Names[UnityEngine.Random.Range(0, Names.Length)] + Random.Range(100000000, 999999999);
+        _system.AddCompetitor(newName.Substring(0, 10), 100 * Random.Range(10000, 800000));
+    }
+}
     }
 #endif
 }*/

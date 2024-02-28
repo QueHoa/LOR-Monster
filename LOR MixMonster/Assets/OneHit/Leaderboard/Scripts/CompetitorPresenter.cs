@@ -43,7 +43,15 @@ namespace OneHit.Leaderboard
             this.username.text = UserProfile.GetUsername();
 
             if (rank > 20)
-                this.score.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+                if ((Game.Controller.Instance.gameController).isView)
+                {
+                    this.score.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.YourMoney);
+                }
+                else
+                {
+                    this.score.text = GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+                }
+                    
 
 
             if (this.holder != null)

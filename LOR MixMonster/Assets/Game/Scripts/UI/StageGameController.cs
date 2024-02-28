@@ -69,6 +69,7 @@ public partial class StageGameController : GameController
         CaculateOfflineEarning();
         homePanel.SetUp();
         isReady = true;
+        isView = true;
 
         LevelLoading.Instance.Close();
     }
@@ -442,7 +443,7 @@ public partial class StageGameController : GameController
     {
         if (DataManagement.DataManager.Instance.userData.stageListData.lastEarningDate == 0) return;
 
-        ObscuredInt totalOfflineEarning = 0;
+        /*ObscuredInt totalOfflineEarning = 0;
         int totalOfflineSeconds = (int)System.DateTime.Now.Subtract(new System.DateTime(DataManagement.DataManager.Instance.userData.stageListData.lastEarningDate)).TotalSeconds;
         if (totalOfflineSeconds >= Game.Controller.Instance.gameConfig.maxOfflineEarningSeconds)
         {
@@ -466,6 +467,33 @@ public partial class StageGameController : GameController
             FIRST_SECTION = true;
             hideMonster = true;
             UI.PanelManager.Create(typeof(OfflineEarnPanel), (panel, op) => { ((OfflineEarnPanel)panel).SetUp(totalOfflineEarning); });
+        }*/
+        ObscuredInt totalOfflineCash = 0, totalOfflineGold = 0;
+        int totalOfflineSeconds = (int)System.DateTime.Now.Subtract(new System.DateTime(DataManagement.DataManager.Instance.userData.stageListData.lastEarningDate)).TotalSeconds;
+        if (totalOfflineSeconds >= Game.Controller.Instance.gameConfig.maxOfflineEarningSeconds)
+        {
+            Debug.Log("EXCEEDED OFFLINE EARNING TIME");
+            totalOfflineCash = Game.Controller.Instance.gameConfig.maxOfflineEarningSeconds * (ObscuredInt)(Game.Controller.Instance.gameConfig.cashEarn) / 10800;
+            totalOfflineGold = Game.Controller.Instance.gameConfig.maxOfflineEarningSeconds * (ObscuredInt)(Game.Controller.Instance.gameConfig.goldEarn) / 10800;
+        }
+        else
+        {
+            totalOfflineCash = totalOfflineSeconds * (ObscuredInt)(Game.Controller.Instance.gameConfig.cashEarn) / 10800;
+            totalOfflineGold = totalOfflineSeconds * (ObscuredInt)(Game.Controller.Instance.gameConfig.goldEarn) / 10800;
+        }
+
+        Debug.Log("TOTAL EARNING: " + totalOfflineCash + " in " + totalOfflineSeconds);
+        /*DataManagement.DataManager.Instance.userData.stageListData.lastEarningDate = System.DateTime.Now.Ticks;
+
+        GameUtility.RewardHandler.ApplyCash(totalOfflineCash);
+        Debug.Log("TOTAL OFFLINE EARNING " + totalOfflineCash);
+        DataManagement.DataManager.Instance.Save();*/
+
+        if (totalOfflineCash > 0 && !FIRST_SECTION)
+        {
+            FIRST_SECTION = true;
+            hideMonster = true;
+            UI.PanelManager.Create(typeof(OfflineRewardPanel), (panel, op) => { ((OfflineRewardPanel)panel).SetUp(totalOfflineSeconds, totalOfflineCash, totalOfflineGold); });
         }
     }
 
