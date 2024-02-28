@@ -167,6 +167,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 472c91c53cd771641a62dafb70efe13c
+    m_Address: OfflineRewardPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 841cf6df6e84bae43934ac51dfd54521, type: 2}
   m_SchemaSet:

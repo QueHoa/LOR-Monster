@@ -17,7 +17,8 @@ public partial class GameConfig:ScriptableObject
     public int askReviewFreq;
     public int maxRefreshItem = 1;
     public int bundleAdRequire=2;
-    public ObscuredInt maxOfflineEarningSeconds = 60;
+    public ObscuredInt maxOfflineEarningSeconds = 10800;
+    public int goldEarn = 600, cashEarn = 30000;
 
     //
     public int gameType = 0;

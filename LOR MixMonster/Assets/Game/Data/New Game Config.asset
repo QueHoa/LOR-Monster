@@ -14,12 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editMode: 0
   debugMode: 0
+  cheatOutfit: 0
+  mktBuild: 0
   skipAd: 0
   adConfig:
     adStart: 5
     interAdCoolDown: 2
     openAd: 1
+    openAdAfterInterAd: 0
+    openAdAfterRewardAd: 0
     adBetweenMakeOver: -1
+    clickCountShowInter: 30
+  askReviewFreq: 0
+  maxRefreshItem: 1
   bundleAdRequire: 2
+  maxOfflineEarningSeconds:
+    currentCryptoKey: 1353864121
+    hiddenValue: 1353873801
+    inited: 1
+    fakeValue: 10800
+    fakeValueActive: 1
   gameType: 1
+  rewardCashAmount:
+    currentCryptoKey: 1627635443
+    hiddenValue: 1627625955
+    inited: 1
+    fakeValue: 10000
+    fakeValueActive: 1
   newItemMax: 1
+  specialGift: 0
+  eventId: 0
+  endDate: 638351712000000000
+  eventEndDate: 638342208000000000
+  eventSetPrice: 20
+  totalAdCategory: 2
