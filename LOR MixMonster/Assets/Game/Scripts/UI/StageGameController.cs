@@ -69,7 +69,6 @@ public partial class StageGameController : GameController
         CaculateOfflineEarning();
         homePanel.SetUp();
         isReady = true;
-        isView = true;
 
         LevelLoading.Instance.Close();
     }

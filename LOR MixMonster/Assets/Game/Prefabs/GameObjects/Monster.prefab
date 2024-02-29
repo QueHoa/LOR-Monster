@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 53bc88dc3c61f4f44988d8e9e64c0c35, type: 2}
-  initialSkinName: 17
+  initialSkinName: 11
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -7329,16 +7329,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.x
-      value: 4.83
+      value: 5.525
       objectReference: {fileID: 0}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.y
-      value: 4.53
+      value: 4.35
       objectReference: {fileID: 0}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: acd6ca82d49a7a545912a518d16aa8fd, type: 3}
+      objectReference: {fileID: 21300000, guid: a1572b56d2879da48ba43181953fd275, type: 3}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_SortingOrder
       value: 55
@@ -7357,11 +7357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5069403981692681018, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.x
-      value: 4.1
+      value: 2.45
       objectReference: {fileID: 0}
     - target: {fileID: 5069403981692681018, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.y
-      value: 2.29
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 5069403981692681018, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Sprite
@@ -7397,16 +7397,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.x
-      value: 1.83
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.y
-      value: 1.49
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7bb0f62ca626c6f4da82947bc8513eb6, type: 3}
+      objectReference: {fileID: 21300000, guid: 0605c099bae1ab6438125830c00f12a4, type: 3}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
