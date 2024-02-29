@@ -56,7 +56,7 @@ namespace OneHit.Leaderboard
                 {
                     CheatScore(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
                 }
-                    
+
             }
             changename.text = UserProfile.GetUsername();
         }
@@ -113,7 +113,7 @@ namespace OneHit.Leaderboard
             {
                 res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
             }
-            
+
             if (res)
             {
                 //input.SetActive(false);
@@ -147,7 +147,7 @@ namespace OneHit.Leaderboard
         }
     }
 }
-
+    
 
 /*#if UNITY_EDITOR
 public static readonly string[] Names =

@@ -11311,6 +11311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReady: 0
   hideMonster: 0
+  isView: 0
   updateGold: 0
   isSelected: 0
   homePanel: {fileID: 0}

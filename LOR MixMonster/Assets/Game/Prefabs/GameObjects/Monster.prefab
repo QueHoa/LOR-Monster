@@ -624,7 +624,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickSFX: {fileID: 8300000, guid: 1be5b8ded41c0834c8c49ac9717ccce5, type: 3}
   releaseSFX: {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
-  hapticTypes: 2
 --- !u!61 &3405242785586856904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7338,14 +7337,14 @@ PrefabInstance:
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a1572b56d2879da48ba43181953fd275, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_SortingOrder
       value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3419522344704982814, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Name
@@ -7397,19 +7396,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.x
-      value: 3.44
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Size.y
-      value: 1.86
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0605c099bae1ab6438125830c00f12a4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8954113943885894065, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
