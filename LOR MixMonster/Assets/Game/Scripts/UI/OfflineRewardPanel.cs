@@ -20,13 +20,10 @@ public class OfflineRewardPanel : UI.Panel
     {
         Sound.Controller.Instance.PlayOneShot(rewardSFX);
         isProcessing = false;
-        Debug.LogError(time);
         totalOfflineTimeText.text = $"{time/3600}H{(time%3600)/60}M{time%60}S";
         this.totalCash = totalCash;
-        Debug.LogError(totalCash);
         totalCashText.text = $"{GameUtility.GameUtility.ShortenNumber(totalCash)}";
         this.totalGold = totalGold;
-        Debug.LogError(totalGold);
         totalGoldText.text = $"{GameUtility.GameUtility.ShortenNumber(totalGold)}";
         Show();
         cashPS.Play();

@@ -40,7 +40,6 @@ public class ObjectTouchHandler : MonoBehaviour
         isDown = true;
         (Game.Controller.Instance.gameController).isSelected = true;
         touchTime = Time.time;
-        transform.Shake(0.1f, 1, 0.01f, defaultScale: scale);
 
     }
     private void Update()
@@ -56,7 +55,7 @@ public class ObjectTouchHandler : MonoBehaviour
             }
             offset = CameraController.Instance.GetTouchPosition() - transform.position;
             Sound.Controller.Instance.PlayOneShot(pickSFX);
-            transform.Shake(0.15f, 1, 0.02f, defaultScale: scale);
+            transform.Shake(0.15f, 1, 0.01f, defaultScale: scale);
         }
         if (Input.touchCount > 0 & isDown)
         {
@@ -81,7 +80,7 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!IsMonsterOnStage())
         {
             transform.position = currentPosition;
-            transform.Shake(0.15f, 1, 0.025f, defaultScale: scale);
+            transform.Shake(0.15f, 1, 0.01f, defaultScale: scale);
         }
         onMonsterReleased?.Invoke(monster);
         monster.stageCollectionData.position.Set(transform.position);
@@ -104,6 +103,7 @@ public class ObjectTouchHandler : MonoBehaviour
         {
             transform.position = CameraController.Instance.GetTouchPosition() - offset;
             onMonsterSelected?.Invoke(monster);
+            transform.Shake(0.7f, 1f, 0.01f, defaultScale: scale);
         }
     }
 }

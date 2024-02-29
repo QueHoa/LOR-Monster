@@ -20,22 +20,20 @@ public class LeaderBoardPanel : Panel
     public void SetUp()
     {
         isProcessing = false;
-        if ((Game.Controller.Instance.gameController).isView)
+        if (DataManagement.DataManager.Instance.userData.progressData.isView)
         {
-            (Game.Controller.Instance.gameController).isView = false;
-            board[1].SetActive(false);
-            board[0].SetActive(true);
-            btn[1].interactable = true;
-            btn[0].interactable = false;
-            
-        }
-        else
-        {
-            (Game.Controller.Instance.gameController).isView = true;
             board[0].SetActive(false);
             board[1].SetActive(true);
             btn[0].interactable = true;
             btn[1].interactable = false;
+            
+        }
+        else
+        {
+            board[1].SetActive(false);
+            board[0].SetActive(true);
+            btn[1].interactable = true;
+            btn[0].interactable = false;
             
         }
         Show();
@@ -45,7 +43,7 @@ public class LeaderBoardPanel : Panel
         loadingPanel.SetActive(true);
         if (isView)
         {
-            (Game.Controller.Instance.gameController).isView = false;
+            DataManagement.DataManager.Instance.userData.progressData.isView = false;
             board[1].SetActive(false);
             board[0].SetActive(true);
             btn[1].interactable = true;
@@ -53,7 +51,7 @@ public class LeaderBoardPanel : Panel
         }
         else
         {
-            (Game.Controller.Instance.gameController).isView = true;
+            DataManagement.DataManager.Instance.userData.progressData.isView = true;
             board[0].SetActive(false);
             board[1].SetActive(true);
             btn[0].interactable = true;

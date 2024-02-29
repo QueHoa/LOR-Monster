@@ -48,7 +48,7 @@ namespace OneHit.Leaderboard
             }
             else
             {
-                if ((Game.Controller.Instance.gameController).isView)
+                if (DataManagement.DataManager.Instance.userData.progressData.isView)
                 {
                     CheatScore((int)DataManagement.DataManager.Instance.userData.YourMoney);
                 }
@@ -105,7 +105,7 @@ namespace OneHit.Leaderboard
         public async void SubmitPlayerToLeaderboard()
         {
             bool res;
-            if ((Game.Controller.Instance.gameController).isView)
+            if (DataManagement.DataManager.Instance.userData.progressData.isView)
             {
                 res = await _system.AddCompetitor(input.GetInput(), (int)DataManagement.DataManager.Instance.userData.YourMoney);
             }
