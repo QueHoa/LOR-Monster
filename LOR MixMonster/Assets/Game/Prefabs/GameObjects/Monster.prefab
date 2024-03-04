@@ -624,6 +624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickSFX: {fileID: 8300000, guid: 1be5b8ded41c0834c8c49ac9717ccce5, type: 3}
   releaseSFX: {fileID: 8300000, guid: b6fba0200fba4a6459635d47df29fe6e, type: 3}
+  hapticTypes: 2
 --- !u!61 &3405242785586856904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7337,18 +7338,14 @@ PrefabInstance:
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Sprite
       value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 0}
-=======
       objectReference: {fileID: 21300000, guid: 2c0a19467b92fc5489fff9c09c51abf6, type: 3}
->>>>>>> f87fd94 (04.03 update stage)
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_SortingOrder
       value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3402383580097323750, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3419522344704982814, guid: 4e203bfbc2f2a41489fc10793f78fa34, type: 3}
       propertyPath: m_Name
