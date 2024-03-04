@@ -144,6 +144,11 @@ public class ItemSelectButton : MonoBehaviour
             else
             {
                 isProcessing = false;
+#if UNITY_EDITOR
+                Sound.Controller.Instance.PlayOneShot(selectSFX);
+                makeOverPanel.OnSelect(this);
+                animTry.SetTrigger("close");
+#endif
             }
         });
     } 

@@ -25,7 +25,7 @@ public class HomePanel : UI.Panel
     private RectTransform slotTotalRect;
     [SerializeField]
     private GameObject maxSlotNotice, controlPanel, deletePanel, bundleBtn, handTut, boxBanner;
-    public GameObject removeAds;
+    public GameObject removeAds, notifyOffline;
     [SerializeField]
     private GameObject[] uiHome;
     [SerializeField]
@@ -109,7 +109,6 @@ public class HomePanel : UI.Panel
     public void OnMonsterSlotUpdated(int current, int max)
     {
         slotText.text = $"{current}/{max}";
-        maxSlotNotice.SetActive(current >= max);
         slotText.transform.Shake(0.1f, 1, 0.15f);
         maxSlotNotice.transform.Shake(0.2f, 2, 0.2f);
     }
@@ -197,6 +196,16 @@ public class HomePanel : UI.Panel
                 ((LeaderBoardPanel)panel).SetUp();
             });
             LevelLoading.Instance.Close();
+        });
+    }
+    public void OfflineReward()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        UI.PanelManager.Create(typeof(OfflineRewardPanel), (panel, op) =>
+        {
+            ((OfflineRewardPanel)panel).SetUp(DataManagement.DataManager.Instance.userData.stageListData.totalOfflineSeconds, DataManagement.DataManager.Instance.userData.stageListData.totalOfflineCash, DataManagement.DataManager.Instance.userData.stageListData.totalOfflineGold);
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
         });
     }
     public void View()

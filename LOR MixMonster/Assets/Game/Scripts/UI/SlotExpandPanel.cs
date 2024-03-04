@@ -26,7 +26,7 @@ public class SlotExpandPanel : UI.Panel
     {
         this.stageData = stageData;
         this.onResult = onResult;
-        if (stageData.totalMonsterSlot < 22)
+        if (stageData.totalMonsterSlot < Sheet.SheetDataManager.Instance.gameData.stageConfig.slotConfigs[Sheet.SheetDataManager.Instance.gameData.stageConfig.slotConfigs.Count - 1].maxSlot)
         {
             normalObj.SetActive(true);
             lockObj.SetActive(false);
@@ -59,6 +59,13 @@ public class SlotExpandPanel : UI.Panel
             {
                 Unlock();
                 base.Close();
+            }
+            else
+            {
+#if UNITY_EDITOR
+                Unlock();
+                base.Close();
+#endif
             }
         });
     }

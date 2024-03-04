@@ -67,6 +67,23 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
                 }
 
             }
+            else
+            {
+#if UNITY_EDITOR
+                FirebaseAnalysticController.Instance.LogEvent($"ADS_REWARD_START_SETBUNDLE");
+                int adCount = DataManagement.DataManager.Instance.userData.progressData.GetAdProgress("SetBundle_" + bundleId);
+                DataManagement.DataManager.Instance.userData.progressData.SetAdProgress("SetBundle_" + bundleId, adCount + 1);
+                DataManagement.DataManager.Instance.Save();
+
+                adCountText.text = $"{adCount + 1}/{Game.Controller.Instance.gameConfig.bundleAdRequire} AD";
+
+                //unlock set
+                if (adCount + 1 >= Game.Controller.Instance.gameConfig.bundleAdRequire)
+                {
+                    Unlock();
+                }
+#endif
+            }
         });
     }
     void RemoveAd()

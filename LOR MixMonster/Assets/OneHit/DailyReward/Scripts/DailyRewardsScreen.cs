@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace DailyReward
 {
@@ -12,7 +13,7 @@ namespace DailyReward
         [Title("Daily Rewards Panel")]
         public Button buttonClaim;
         // public ScrollRect scrollRect;
-        public TextMeshProUGUI textTimeDue;
+        public TextMeshProUGUI textTimeDue, txtClaim;
         public string color = "red";
         public DailyRewardPopup dailyRewardPopup;
 
@@ -71,7 +72,14 @@ namespace DailyReward
             }
 
             buttonClaim.interactable = isRewardAvailableNow;
-
+            if (buttonClaim.interactable)
+            {
+                txtClaim.text = "claim";
+            }
+            else
+            {
+                txtClaim.text = "claimed";
+            }
             if (isRewardAvailableNow)
             {
                 SnapToReward();

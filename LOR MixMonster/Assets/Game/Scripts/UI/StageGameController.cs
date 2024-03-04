@@ -336,13 +336,24 @@ public partial class StageGameController : GameController
                 }
             }
         }
+        if (DataManagement.DataManager.Instance.userData.stageListData.isRewardOffline)
+        {
+            homePanel.notifyOffline.SetActive(true);
+        }
+        else
+        {
+            homePanel.notifyOffline.SetActive(false);
+        }
     }
 
     public void ClickScreen(bool auto)
     {
         if (stageHandlers.stageData.stageCollections.Count > 0)
         {
-            Sound.Controller.Instance.PlayOneShot(clickScreenSFX);
+            if (homePanel != null)
+            {
+                Sound.Controller.Instance.PlayOneShot(clickScreenSFX);
+            }
             clickPS.Play();
         }
         RewardEarning(true);
@@ -491,6 +502,11 @@ public partial class StageGameController : GameController
         if (totalOfflineCash > 0 && !FIRST_SECTION)
         {
             FIRST_SECTION = true;
+            DataManagement.DataManager.Instance.userData.stageListData.isRewardOffline = true;
+            DataManagement.DataManager.Instance.userData.stageListData.totalOfflineSeconds = totalOfflineSeconds;
+            DataManagement.DataManager.Instance.userData.stageListData.totalOfflineCash = totalOfflineCash;
+            DataManagement.DataManager.Instance.userData.stageListData.totalOfflineGold = totalOfflineGold;
+            DataManagement.DataManager.Instance.Save();
             hideMonster = true;
             UI.PanelManager.Create(typeof(OfflineRewardPanel), (panel, op) => { ((OfflineRewardPanel)panel).SetUp(totalOfflineSeconds, totalOfflineCash, totalOfflineGold); });
         }
