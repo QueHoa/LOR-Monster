@@ -56,6 +56,7 @@ namespace Sheet
 
             Debug.Log("INIT DATA: item");
             gameData.itemData.ApplyData(sheetData[1]);
+            gameData.itemData.ApplyStageItemData(sheetData[2]);
             gameData.rewardBarConfig.ApplyData(ConvertSheetToList(sheetData[1][7].GoogleSheetData));
             gameData.rewardGold.ApplyData(ConvertSheetToList(sheetData[1][9].GoogleSheetData));
             gameData.stageConfig.ApplyData(sheetData[2]);

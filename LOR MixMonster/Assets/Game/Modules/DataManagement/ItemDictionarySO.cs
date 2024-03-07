@@ -1,6 +1,7 @@
 using CodeStage.AntiCheat.ObscuredTypes;
 using Cysharp.Threading.Tasks;
 using Sheet;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,20 @@ namespace ItemData {
     [CreateAssetMenu(menuName = "Item/ItemList")]
     public class ItemDictionarySO : ScriptableObject
     {
+        [GUIColor(1, 0, 0)]
+        public int totalModel = 3;
+
         public ItemPack[] packs;
-        [HideInInspector]
-        public Dictionary<ObscuredString, Item> itemDicts = new Dictionary<ObscuredString, Item>();
+        public readonly Dictionary<ObscuredString, Item> itemDicts = new Dictionary<ObscuredString, Item>();
         public List<BundleSet> bundleSets = new List<BundleSet>();
+
+        private Dictionary<ObscuredString, StageItem> stageItemDicts = new Dictionary<ObscuredString, StageItem>();
+
+        public List<StageItemSet> stageItemSets = new List<StageItemSet>();
+        public StageItemSet GetStageSet(int set)
+        {
+            return stageItemSets[set];
+        }
         public Item GetItem(string id)
         {
             if(itemDicts==null || itemDicts.Count == 0)
@@ -30,6 +41,24 @@ namespace ItemData {
             return itemDicts[id];
 
             return new Item();
+        }
+        public StageItem GetStageItem(string id)
+        {
+            if (stageItemDicts == null || stageItemDicts.Count == 0)
+            {
+                foreach (var pack in stageItemSets)
+                {
+                    foreach (var item in pack.items)
+                    {
+                        if (!stageItemDicts.ContainsKey(item.id))
+                            stageItemDicts.Add(item.id, item);
+                    }
+                }
+            }
+            if (stageItemDicts.ContainsKey(id))
+                return stageItemDicts[id];
+
+            return new StageItem();
         }
         //public void Populate()
         //{
@@ -187,6 +216,38 @@ namespace ItemData {
 
 
         }
+        public void ApplyStageItemData(GSheetData[] sheets)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(this);
+#endif
+            //prepare item
+            stageItemSets.Clear();
+            Dictionary<int, StageItemSet> packs = new Dictionary<int, StageItemSet>();
+            List<RowData> rowDatas = GameUtility.GameUtility.ConvertSheetToList(sheets[2].GoogleSheetData);
+            int row = 1;
+            while (row < rowDatas.Count)
+            {
+                if (string.IsNullOrEmpty(rowDatas[row].list[0])) continue;
+                StageItem stageItem = new StageItem()
+                {
+                    id = (EStageItemCategory)(int.Parse(rowDatas[row].list[2])) + "_" + rowDatas[row].list[0],
+                    set = int.Parse(rowDatas[row].list[1]),
+                    title = ((EStageItemCategory)(int.Parse(rowDatas[row].list[2]))).ToString(),
+                    category = (EStageItemCategory)(int.Parse(rowDatas[row].list[2])),
+                    cashRequire = int.Parse(rowDatas[row].list[3]),
+                    adRequire = int.Parse(rowDatas[row].list[4]),
+                    bonusEarning = float.Parse(rowDatas[row].list[5]) * 100,
+                    icon = rowDatas[row].list[6],
+                    mainTexture = rowDatas[row].list[7],
+                };
+                if (!packs.ContainsKey(stageItem.set)) packs.Add(stageItem.set, new StageItemSet());
+                packs[stageItem.set].items.Add(stageItem);
+                row++;
+            }
+
+            stageItemSets.AddRange(packs.Values);
+        }
         public static List<RowData> ConvertSheetToList(object[,] data)
         {
             List<RowData> list = new List<RowData>();
@@ -241,15 +302,6 @@ namespace ItemData {
         public ModelSet(List<string> itemIds)
         {
             this.itemIds = itemIds;
-        }
-        public List<ItemData.Item> GetItems()
-        {
-            List<Item> items = new List<Item>();
-            foreach (string id in itemIds)
-            {
-                items.Add(Game.Controller.Instance.itemData.GetItem(id));
-            }
-            return items;
         }
         public override string ToString()
         {
@@ -480,6 +532,60 @@ namespace ItemData {
             return sprite;
         }
     }
+    [System.Serializable]
+    public class StageItemSet
+    {
+        public List<StageItem> items = new List<StageItem>();
+    }
+    [System.Serializable]
+    public class StageItem
+    {
+        public string id;
+        public string icon;
+        public string title;
+        public UnlockType unlockType;
+
+        public string mainTexture;
+        public int set;
+        public EStageItemCategory category;
+        public ObscuredFloat bonusEarning;
+        public ObscuredInt adRequire;
+        public ObscuredInt cashRequire;
+
+        public void GetIcon(System.Action<Sprite> onLoad)
+        {
+            Addressables.LoadAsset<Sprite>(icon).Completed += op =>
+            {
+                Sprite sprite = op.Result;
+                onLoad?.Invoke(sprite);
+
+                Addressables.Release(op);
+            };
+        }
+
+        public async UniTask<Sprite> GetIconAsync()
+        {
+            Sprite sprite = await Addressables.LoadAssetAsync<Sprite>(icon);
+            return sprite;
+        }
+        public void GetTexture(System.Action<Sprite> onLoad)
+        {
+            Addressables.LoadAsset<Sprite>(mainTexture).Completed += op =>
+            {
+                Sprite sprite = op.Result;
+
+                onLoad?.Invoke(sprite);
+
+                Addressables.Release(op);
+            };
+        }
+
+        public async UniTask<Sprite> GetTextureAsync()
+        {
+            Sprite sprite = await Addressables.LoadAssetAsync<Sprite>(mainTexture);
+            return sprite;
+        }
+    }
     public enum Category
     {
         Head,Eye,Mouth,Accessory,Body,Pet
@@ -490,10 +596,17 @@ namespace ItemData {
     }
     public enum EStageItemCategory
     {
-        Curtain,
+        Camera,
+        Drum,
         Light,
-        Wall,
-        Decoration,
-        Stage
+        Mic,
+        Neon,
+        Piano,
+        ServeTable,
+        Speaker,
+        Table1,
+        Table2,
+        Table3,
+        Tree
     }
 }

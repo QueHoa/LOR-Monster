@@ -28,7 +28,7 @@ public class ObjectTouchHandler : MonoBehaviour
     {
 
     }
-    bool isDown = false, isSelected, posNow;
+    bool isDown = false, isSelected;
     Vector3 offset;
     Vector3 currentPosition;
     float touchTime;
@@ -36,11 +36,9 @@ public class ObjectTouchHandler : MonoBehaviour
     {
         if (!enabled) return;
 
-        posNow = true;
         isDown = true;
         (Game.Controller.Instance.gameController).isSelected = true;
-        currentPosition = transform.position;
-        Debug.LogError(currentPosition);
+        
         touchTime = Time.time;
 
     }
@@ -48,24 +46,22 @@ public class ObjectTouchHandler : MonoBehaviour
     {
         if (Input.touchCount > 0 & isDown)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Ended)
+            if(Input.touchCount == 1)
             {
-                ((StageGameController)Game.Controller.Instance.gameController).RewardEarningSelect(monster);
-                isDown = false;
-                posNow = false;
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    ((StageGameController)Game.Controller.Instance.gameController).RewardEarningSelect(monster);
+                    isDown = false;
+                }
             }
         }
         if (!isSelected && isDown && Time.time - touchTime > 0.3f)
         {
             isSelected = true;
-            
-            if (posNow)
-            {
-                transform.position = CameraController.Instance.GetTouchPosition();
-                posNow = false;
-            }
+            currentPosition = transform.position;
+            transform.position = CameraController.Instance.GetTouchPosition();
             offset = CameraController.Instance.GetTouchPosition() - transform.position;
             Sound.Controller.Instance.PlayOneShot(pickSFX);
         }
@@ -83,13 +79,9 @@ public class ObjectTouchHandler : MonoBehaviour
         {
             transform.Shake(0.15f, 1, 0.01f, defaultScale: scale);
             transform.position = currentPosition;
-            Debug.LogError(transform.position);
         }
-        Debug.LogError(transform.position);
         onMonsterReleased?.Invoke(monster);
-        Debug.LogError(transform.position);
         monster.stageCollectionData.position.Set(transform.position);
-        Debug.LogError(transform.position);
         DataManagement.DataManager.Instance.Save();
 
         Sound.Controller.Instance.PlayOneShot(releaseSFX);

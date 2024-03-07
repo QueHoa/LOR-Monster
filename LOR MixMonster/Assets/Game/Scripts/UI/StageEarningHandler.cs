@@ -10,30 +10,42 @@ public partial class StageGameController
     [System.Serializable]
     public class StageEarningHandler
     {
+        public StageViewHandler stageView;
         public StageData stageData;
         public ObscuredInt totalEarning;
         public ObscuredFloat totalEarningBonus;
         public Dictionary<Monster, int> monsterItemDict = new Dictionary<Monster, int>();
+        public List<ItemData.StageItem> stageItems = new List<ItemData.StageItem>();
         int musicThemeIndex = 0;
 
         public StageEarningHandler(StageData stageData)
         {
             this.stageData = stageData;
         }
+        public async UniTask PrepareStageView()
+        {
+            stageView = (await GameObjectSpawner.Instance.GetAsync("StagePlatform")).GetComponent<StageViewHandler>();
+            stageItems.Clear();
+            for (int i = 0; i < stageData.stageItems.Length; i++)
+            {
+                string itemId = stageData.stageItems[i];
+                if (string.IsNullOrEmpty(itemId))
+                {
+                    stageItems.Add(new ItemData.StageItem() { category = (ItemData.EStageItemCategory)i });
+                    continue;
+                }
 
+                ItemData.StageItem item = (ItemData.StageItem)Sheet.SheetDataManager.Instance.gameData.itemData.GetStageItem(itemId);
+                stageItems.Add(item);
+            }
+
+            stageView.SetUp(stageData, stageItems);
+        }
         public async UniTask<Monster> PrepareMonster(CardData cardData, StageCollectionData stageCollection, Vector2 position)
         {
             ItemData.ItemPack itemPack = new ItemData.ItemPack();
             List<ItemData.Item> items = new List<ItemData.Item>();
             ObscuredInt totalEarning = cardData.money;
-            /*foreach (string itemId in cardData.items)
-            {
-                ItemData.Item item = Sheet.SheetDataManager.Instance.gameData.itemData.GetItem(itemId);
-                itemPack.items.Add(item);
-
-                totalEarning += (item.unlockType == ItemData.UnlockType.None) ? Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForNormalItem : Sheet.SheetDataManager.Instance.gameData.stageConfig.cashEarningForAdItem;
-
-            }*/
             Monster monster = (await ObjectSpawner.Instance.GetAsync(2)).GetComponent<Monster>();
             foreach (string id in cardData.items)
             {
@@ -44,10 +56,6 @@ public partial class StageGameController
             }
             
             await monster.SetUp(items);
-            /*foreach (ItemData.Item item in items)
-            {
-                await monster.SetItem(item);
-            }*/
             musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.Dance(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
             monster.transform.position = position;
@@ -67,7 +75,6 @@ public partial class StageGameController
                 CardData cardData = DataManager.Instance.userData.inventory.GetCollection(stageCollection.collectionId);
                 if (cardData != null)
                 {
-                    //Debug.Log("= >>>>>>>  COLLECTION: " + collectionData.id);
                     await PrepareMonster(cardData, stageCollection, stageCollection.position.Vector3());
                 }
             }
@@ -94,6 +101,11 @@ public partial class StageGameController
         private ObscuredFloat CaculateEarningBonus()
         {
             ObscuredFloat totalBonus = 0;
+            foreach (ItemData.StageItem item in stageItems)
+            {
+                if (item != null)
+                    totalBonus += item.bonusEarning;
+            }
 
             return totalBonus;
         }
@@ -147,7 +159,51 @@ public partial class StageGameController
             await PrepareMonster(cardData, stageCollection, position);
             return true;
         }
+        public void OnStageItemSelected(ItemData.StageItem stageItem)
+        {
+            string currentEquipedItem = stageData.stageItems[(int)stageItem.category];
+            if (!string.IsNullOrEmpty(currentEquipedItem))
+            {
+                DataManagement.DataManager.Instance.userData.inventory.SetItemState($"{stageData.index}_{currentEquipedItem}", 1);
+            }
 
+            stageData.stageItems[(int)stageItem.category] = stageItem.id;
+            stageItems[(int)stageItem.category] = stageItem;
+
+            DataManagement.DataManager.Instance.userData.inventory.SetItemState($"{stageData.index}_{stageItem.id}", 2);
+            DataManagement.DataManager.Instance.Save();
+            if (lastEquipedItems.ContainsKey(stageItem.category))
+            {
+                lastEquipedItems[stageItem.category] = stageItem;
+            }
+
+            stageView.SetItem(stageItem, stageData.index);
+        }
+
+        Dictionary<ItemData.EStageItemCategory, ItemData.StageItem> lastEquipedItems = new Dictionary<ItemData.EStageItemCategory, ItemData.StageItem>();
+
+        public void OnStageItemPreview(ItemData.StageItem stageItem)
+        {
+            if (!lastEquipedItems.ContainsKey(stageItem.category))
+            {
+                Debug.Log("SET EQUIP " + stageItem.category + " " + (stageItems[(int)stageItem.category] == null));
+
+                lastEquipedItems.Add(stageItem.category, stageItems[(int)stageItem.category]);
+            }
+
+            stageView.SetItem(stageItem, stageData.index);
+        }
+        public void RestorePreview()
+        {
+            if (lastEquipedItems.Count == 0) return;
+            foreach (var item in lastEquipedItems)
+            {
+                Debug.Log("REMOVE" + item.Key + " " + (item.Value == null));
+                stageView.SetItem(item.Value, stageIndex: stageData.index);
+            }
+
+            lastEquipedItems.Clear();
+        }
         public void RemoveMonster(Monster monster)
         {
             stageData.RemoveCollection(monster.stageCollectionData);

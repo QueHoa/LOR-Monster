@@ -172,6 +172,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c19c8f41ab9bb9428b0559d4bd704e9
+    m_Address: StagePlatform
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b031f2ea78086014a8bd3adae2ed8d9a
+    m_Address: stageitemicon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b62fe3c01243514aa9b51ea90bf8f51
+    m_Address: DecorPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 841cf6df6e84bae43934ac51dfd54521, type: 2}
   m_SchemaSet:

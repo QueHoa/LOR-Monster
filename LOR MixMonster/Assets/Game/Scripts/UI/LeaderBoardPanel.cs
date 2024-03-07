@@ -8,11 +8,11 @@ using UnityEngine.UI;
 public class LeaderBoardPanel : Panel
 {
     [SerializeField]
-    private GameObject loadingPanel; 
-    [SerializeField]
+    private GameObject loadingPanel;
+    /*[SerializeField]
     private GameObject[] board;
     [SerializeField]
-    private Button[] btn;
+    private Button[] btn;*/
     bool isProcessing;
     public override void PostInit()
     {
@@ -20,7 +20,7 @@ public class LeaderBoardPanel : Panel
     public void SetUp()
     {
         isProcessing = false;
-        if (DataManagement.DataManager.Instance.userData.progressData.isView)
+        /*if (DataManagement.DataManager.Instance.userData.progressData.isView)
         {
             board[0].SetActive(false);
             board[1].SetActive(true);
@@ -35,10 +35,10 @@ public class LeaderBoardPanel : Panel
             btn[1].interactable = true;
             btn[0].interactable = false;
             
-        }
+        }*/
         Show();
     }
-    public void chooseBoard(bool isView)
+    /*public void chooseBoard(bool isView)
     {
         loadingPanel.SetActive(true);
         if (isView)
@@ -58,7 +58,7 @@ public class LeaderBoardPanel : Panel
             btn[1].interactable = false;
         }
         loadingPanel.SetActive(false);
-    }
+    }*/
     public void Back()
     {
         if (DataManagement.DataManager.Instance.userData.progressData.playCount >= Game.Controller.Instance.gameConfig.adConfig.adStart)
