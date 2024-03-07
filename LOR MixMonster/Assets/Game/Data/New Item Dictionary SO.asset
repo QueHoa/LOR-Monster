@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f193e3c721fe744a0474e6ecf00d0d, type: 3}
   m_Name: New Item Dictionary SO
   m_EditorClassIdentifier: 
+  totalModel: 3
   packs:
   - items:
     - id: Head_1
@@ -3210,3 +3211,377 @@ MonoBehaviour:
       - Pet_7
     - itemIds:
       - Pet_8
+  stageItemSets:
+  - items:
+    - id: Camera_1
+      icon: stageitemicon/item_camera.png
+      title: Camera
+      unlockType: 0
+      mainTexture: StageItem/Camera.prefab
+      set: 1
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1937265591
+        hiddenValue: 861092023
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 3
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1058428739
+        hiddenValue: 1058428738
+        inited: 1
+        fakeValue: 1
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1744871539
+        hiddenValue: 1745105811
+        inited: 1
+        fakeValue: 300000
+        fakeValueActive: 1
+    - id: Drum_2
+      icon: stageitemicon/item_drum.png
+      title: Drum
+      unlockType: 0
+      mainTexture: StageItem/Drum.prefab
+      set: 1
+      category: 1
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1556652190
+        hiddenValue: 480282782
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 3
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1434534305
+        hiddenValue: 1434534304
+        inited: 1
+        fakeValue: 1
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1815949944
+        hiddenValue: 1815716248
+        inited: 1
+        fakeValue: 300000
+        fakeValueActive: 1
+    - id: Light_3
+      icon: stageitemicon/item_light.png
+      title: Light
+      unlockType: 0
+      mainTexture: StageItem/Light.prefab
+      set: 1
+      category: 2
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1347545845
+        hiddenValue: 283832821
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 5
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 2095368850
+        hiddenValue: 2095368851
+        inited: 1
+        fakeValue: 1
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1456899295
+        hiddenValue: 1456609087
+        inited: 1
+        fakeValue: 300000
+        fakeValueActive: 1
+    - id: Mic_4
+      icon: stageitemicon/item_mic.png
+      title: Mic
+      unlockType: 0
+      mainTexture: StageItem/Mic.prefab
+      set: 1
+      category: 3
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1713537475
+        hiddenValue: 646021827
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 5
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1511784493
+        hiddenValue: 1511784492
+        inited: 1
+        fakeValue: 1
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1407094180
+        hiddenValue: 1406741636
+        inited: 1
+        fakeValue: 500000
+        fakeValueActive: 1
+    - id: Neon_5
+      icon: stageitemicon/item_neon.png
+      title: Neon
+      unlockType: 0
+      mainTexture: StageItem/Neon.prefab
+      set: 1
+      category: 4
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1569711050
+        hiddenValue: 501428170
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 5
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1230823345
+        hiddenValue: 1230823344
+        inited: 1
+        fakeValue: 1
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1731773186
+        hiddenValue: 1732207138
+        inited: 1
+        fakeValue: 500000
+        fakeValueActive: 1
+    - id: Piano_6
+      icon: stageitemicon/item_piano.png
+      title: Piano
+      unlockType: 0
+      mainTexture: StageItem/Piano.prefab
+      set: 1
+      category: 5
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1153393048
+        hiddenValue: 90283928
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 2010703933
+        hiddenValue: 2010703935
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1338629197
+        hiddenValue: 1338416653
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1
+    - id: ServeTable_7
+      icon: stageitemicon/item_serve table.png
+      title: ServeTable
+      unlockType: 0
+      mainTexture: StageItem/ServeTable.prefab
+      set: 1
+      category: 6
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1798914559
+        hiddenValue: 708909567
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1327021136
+        hiddenValue: 1327021138
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1870647828
+        hiddenValue: 1869647956
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1
+    - id: Speaker_8
+      icon: stageitemicon/item_speaker.png
+      title: Speaker
+      unlockType: 0
+      mainTexture: StageItem/Speaker.prefab
+      set: 1
+      category: 7
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1573730540
+        hiddenValue: 473492972
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1097211054
+        hiddenValue: 1097211052
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1533177134
+        hiddenValue: 1533882222
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1
+    - id: Table1_9
+      icon: stageitemicon/item_table 1.png
+      title: Table1
+      unlockType: 0
+      mainTexture: StageItem/Table1.prefab
+      set: 1
+      category: 8
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1828295829
+        hiddenValue: 764729749
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1532825716
+        hiddenValue: 1532825718
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1186511016
+        hiddenValue: 1186462440
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1
+    - id: Table2_10
+      icon: stageitemicon/item_table 2.png
+      title: Table2
+      unlockType: 0
+      mainTexture: StageItem/Table2.prefab
+      set: 1
+      category: 9
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1079305006
+        hiddenValue: 31683630
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1551997514
+        hiddenValue: 1551997512
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1139298399
+        hiddenValue: 1139216927
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1
+    - id: Table3_11
+      icon: stageitemicon/item_table 3.png
+      title: Table3
+      unlockType: 0
+      mainTexture: StageItem/Table3.prefab
+      set: 1
+      category: 10
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1992838846
+        hiddenValue: 927918270
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 2000240443
+        hiddenValue: 2000240441
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1546786251
+        hiddenValue: 1547523979
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1
+    - id: Tree_12
+      icon: stageitemicon/item_tree pot 1.png
+      title: Tree
+      unlockType: 0
+      mainTexture: StageItem/Tree.prefab
+      set: 1
+      category: 11
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1927187399
+        hiddenValue: 864812743
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 10
+        fakeValueActive: 1
+      adRequire:
+        currentCryptoKey: 1144386502
+        hiddenValue: 1144386500
+        inited: 1
+        fakeValue: 2
+        fakeValueActive: 1
+      cashRequire:
+        currentCryptoKey: 1702139722
+        hiddenValue: 1702614282
+        inited: 1
+        fakeValue: 1000000
+        fakeValueActive: 1

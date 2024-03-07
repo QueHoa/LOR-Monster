@@ -250,6 +250,32 @@ public class HomePanel : UI.Panel
             isProcessing = false;
         });
     }
+    public void Decoration()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        UI.PanelManager.Create(typeof(DecorPanel), (panel, op) =>
+        {
+            Close();
+            ((DecorPanel)panel).SetUp();
+            CameraController.Instance.LerpOffset(new Vector3(0, -30, -25));
+            panel.onClose = () =>
+            {
+                AD.Controller.Instance.ShowInterstitial();
+                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
+                {
+                    CameraController.Instance.LerpOffset(new Vector3(0, 0, -25));
+                    ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
+                    ((HomePanel)panel).SetUp();
+                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
+                    ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
+                });
+            };
+
+
+            ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
+        });
+    }
     public void Setting()
     {
         if (isProcessing) return;

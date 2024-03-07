@@ -48,15 +48,15 @@ namespace OneHit.Leaderboard
             }
             else
             {
-                if (DataManagement.DataManager.Instance.userData.progressData.isView)
+                /*if (DataManagement.DataManager.Instance.userData.progressData.isView)
                 {
                     CheatScore((int)DataManagement.DataManager.Instance.userData.YourMoney);
                 }
                 else
                 {
                     CheatScore(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
-                }
-                    
+                }*/
+                CheatScore(DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
             }
             changename.text = UserProfile.GetUsername();
         }
@@ -105,15 +105,16 @@ namespace OneHit.Leaderboard
         public async void SubmitPlayerToLeaderboard()
         {
             bool res;
-            if (DataManagement.DataManager.Instance.userData.progressData.isView)
+            /*if (DataManagement.DataManager.Instance.userData.progressData.isView)
             {
                 res = await _system.AddCompetitor(input.GetInput(), (int)DataManagement.DataManager.Instance.userData.YourMoney);
             }
             else
             {
                 res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
-            }
-            
+            }*/
+            res = await _system.AddCompetitor(input.GetInput(), DataManagement.DataManager.Instance.userData.progressData.bestViewPoint);
+
             if (res)
             {
                 //input.SetActive(false);

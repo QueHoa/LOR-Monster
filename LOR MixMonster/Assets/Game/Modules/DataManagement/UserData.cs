@@ -147,6 +147,7 @@ namespace DataManagement
     {
         public int index = 0;
         public List<StageCollectionData> stageCollections;
+        public string[] stageItems;
 
         public int totalMonsterSlot = 5;
         public bool isLocked = true;
@@ -154,6 +155,7 @@ namespace DataManagement
         public StageData()
         {
             stageCollections = new List<StageCollectionData>();
+            stageItems = new string[System.Enum.GetNames(typeof(ItemData.EStageItemCategory)).Length];
         }
 
         public void RemoveCollection(StageCollectionData stageCollectionData)
@@ -210,7 +212,7 @@ namespace DataManagement
         public ObscuredInt  collectionCollectAdCount = 0, comboRewardTrack=0,totalSessionOfToday=0;
         public System.DateTime lastLoggedIn;
         public int bestViewPoint, playCount;
-        public bool firstSelect = true, firstPet = true, uiHome = true, isView = true;
+        public bool firstSelect = true, firstPet = true, uiHome = true; //isView = true;
         public int firstDaily = 0;
         public List<CollectionData> collectionDatas = new List<CollectionData>();
 

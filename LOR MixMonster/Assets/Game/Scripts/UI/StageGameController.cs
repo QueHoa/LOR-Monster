@@ -54,13 +54,11 @@ public partial class StageGameController : GameController
     public override async UniTask SetUp()
     {
         cancellation = new CancellationTokenSource();
-
         homePanel = (HomePanel)await UI.PanelManager.CreateAsync(typeof(HomePanel));
         hideMonster = false;
         Clear();
         await PrepareStage();
-        await PrepareCollection();   
-        
+        await PrepareCollection();
         MonsterCard.onMonsterSelected += OnMonsterSelected;
         
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
@@ -229,10 +227,6 @@ public partial class StageGameController : GameController
                 isDrag = true;
                 dragMonster = obj.GetComponent<Monster>();
                 await dragMonster.SetUp(tempMonsterItems);
-                /*foreach (ItemData.Item item in tempMonsterItems)
-                {
-                    dragMonster.SetItem(item);
-                }*/
 
                 dragMonster.transform.localScale = Vector3.one * 0.25f;
                 musicThemeIndex = DataManagement.DataManager.Instance.userData.progressData.playCount == 0 ? 4 : UnityEngine.Random.Range(0, Sound.Controller.Instance.soundData.finalThemes.Length);
@@ -336,13 +330,16 @@ public partial class StageGameController : GameController
                 }
             }
         }
-        if (DataManagement.DataManager.Instance.userData.stageListData.isRewardOffline)
+        if(homePanel != null)
         {
-            homePanel.notifyOffline.SetActive(true);
-        }
-        else
-        {
-            homePanel.notifyOffline.SetActive(false);
+            if (DataManagement.DataManager.Instance.userData.stageListData.isRewardOffline)
+            {
+                homePanel.notifyOffline.SetActive(true);
+            }
+            else
+            {
+                homePanel.notifyOffline.SetActive(false);
+            }
         }
     }
 
@@ -413,6 +410,30 @@ public partial class StageGameController : GameController
             });
         }
     }
+    public void OnStageItemSelected(ItemData.StageItem stageItem)
+    {
+        Sound.Controller.Instance.PlayOneShot(stageItemSelectSFX);
+
+
+        stageHandlers.OnStageItemSelected(stageItem);
+
+        if (homePanel != null)
+            homePanel.OnEarningUpdated(stageHandlers.GetTotalEarning());
+    }
+
+    public void OnStageItemPreview(ItemData.StageItem stageItem)
+    {
+        Sound.Controller.Instance.PlayOneShot(stageItemSelectSFX);
+
+
+        stageHandlers.OnStageItemPreview(stageItem);
+    }
+
+    public void RestoreStageView()
+    {
+        stageHandlers.RestorePreview();
+    }
+
     //call every second
     float lastSaveTime = 0;
 
