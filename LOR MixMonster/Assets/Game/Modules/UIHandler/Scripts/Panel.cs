@@ -62,7 +62,7 @@ namespace UI
 
 
             Destroy();
-
+            onClose?.Invoke();
         }
         public virtual void Active()
         {
