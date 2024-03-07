@@ -60,7 +60,9 @@ public partial class StageGameController : GameController
         await PrepareStage();
         await PrepareCollection();
         MonsterCard.onMonsterSelected += OnMonsterSelected;
-        
+        StageItemButton.onStageItemSelected += OnStageItemSelected;
+        StageItemButton.onStageItemPreview += OnStageItemPreview;
+
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
         ObjectTouchHandler.onMonsterReleased += OnMonsterReleased;
 
@@ -175,15 +177,17 @@ public partial class StageGameController : GameController
     {
         base.Clear();
         MonsterCard.onMonsterSelected -= OnMonsterSelected;
+        StageItemButton.onStageItemSelected += OnStageItemSelected;
+        StageItemButton.onStageItemPreview += OnStageItemPreview;
         ObjectTouchHandler.onMonsterSelected -= OnMonsterSelected;
         ObjectTouchHandler.onMonsterReleased -= OnMonsterReleased;
     }
-
     async UniTask PrepareStage()
     {
         foreach (DataManagement.StageData stageData in DataManagement.DataManager.Instance.userData.stageListData.stageDatas)
         {
             StageEarningHandler stageEarningHandler = new StageEarningHandler(stageData);
+            await stageEarningHandler.PrepareStageView();
 
             stageHandlers = stageEarningHandler;
         }

@@ -86,6 +86,23 @@ public class StageItemButton : PoolComponent
                 DataManagement.DataManager.Instance.userData.progressData.SetAdProgress($"{stageIndex}_{stageItem.id}", adCount);
                 DataManagement.DataManager.Instance.Save();
             }
+            else
+            {
+#if UNITY_EDITOR
+                int adCount = DataManagement.DataManager.Instance.userData.progressData.GetAdProgress($"{stageIndex}_{stageItem.id}") + 1;
+                Debug.Log("ADCOUNT: " + adCount);
+                if (adCount >= stageItem.adRequire)
+                {
+                    Unlock();
+                }
+                else
+                {
+                    adText.text = $"{adCount}/{stageItem.adRequire}";
+                }
+                DataManagement.DataManager.Instance.userData.progressData.SetAdProgress($"{stageIndex}_{stageItem.id}", adCount);
+                DataManagement.DataManager.Instance.Save();
+#endif
+            }
         });
     }
     void Unlock()

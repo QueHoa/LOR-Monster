@@ -258,9 +258,10 @@ public class HomePanel : UI.Panel
         {
             Close();
             ((DecorPanel)panel).SetUp();
-            CameraController.Instance.LerpOffset(new Vector3(0, -30, -25));
+            CameraController.Instance.LerpOffset(new Vector3(0, 0, -25));
             panel.onClose = () =>
             {
+                Debug.LogError("12");
                 AD.Controller.Instance.ShowInterstitial();
                 UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
                 {

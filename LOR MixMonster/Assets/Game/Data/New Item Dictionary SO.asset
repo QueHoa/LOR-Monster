@@ -3222,8 +3222,8 @@ MonoBehaviour:
       category: 0
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1937265591
-        hiddenValue: 861092023
+        currentCryptoKey: 1232980801
+        hiddenValue: 164314433
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3233,14 +3233,14 @@ MonoBehaviour:
         fakeValue: 3
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1058428739
-        hiddenValue: 1058428738
+        currentCryptoKey: 2096504843
+        hiddenValue: 2096504842
         inited: 1
         fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1744871539
-        hiddenValue: 1745105811
+        currentCryptoKey: 1591144470
+        hiddenValue: 1590846454
         inited: 1
         fakeValue: 300000
         fakeValueActive: 1
@@ -3253,8 +3253,8 @@ MonoBehaviour:
       category: 1
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1556652190
-        hiddenValue: 480282782
+        currentCryptoKey: 2144047067
+        hiddenValue: 1066372059
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3264,14 +3264,14 @@ MonoBehaviour:
         fakeValue: 3
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1434534305
-        hiddenValue: 1434534304
+        currentCryptoKey: 2076800779
+        hiddenValue: 2076800778
         inited: 1
         fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1815949944
-        hiddenValue: 1815716248
+        currentCryptoKey: 2020836899
+        hiddenValue: 2021070275
         inited: 1
         fakeValue: 300000
         fakeValueActive: 1
@@ -3284,8 +3284,8 @@ MonoBehaviour:
       category: 2
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1347545845
-        hiddenValue: 283832821
+        currentCryptoKey: 1500663449
+        hiddenValue: 424596121
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3295,14 +3295,14 @@ MonoBehaviour:
         fakeValue: 5
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 2095368850
-        hiddenValue: 2095368851
+        currentCryptoKey: 1861874853
+        hiddenValue: 1861874852
         inited: 1
         fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1456899295
-        hiddenValue: 1456609087
+        currentCryptoKey: 1495836218
+        hiddenValue: 1496069594
         inited: 1
         fakeValue: 300000
         fakeValueActive: 1
@@ -3315,8 +3315,8 @@ MonoBehaviour:
       category: 3
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1713537475
-        hiddenValue: 646021827
+        currentCryptoKey: 1571490505
+        hiddenValue: 487197641
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3326,14 +3326,14 @@ MonoBehaviour:
         fakeValue: 5
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1511784493
-        hiddenValue: 1511784492
+        currentCryptoKey: 1771001912
+        hiddenValue: 1771001913
         inited: 1
         fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1407094180
-        hiddenValue: 1406741636
+        currentCryptoKey: 1705335373
+        hiddenValue: 1705180013
         inited: 1
         fakeValue: 500000
         fakeValueActive: 1
@@ -3346,8 +3346,8 @@ MonoBehaviour:
       category: 4
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1569711050
-        hiddenValue: 501428170
+        currentCryptoKey: 1870887904
+        hiddenValue: 796599264
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3357,14 +3357,14 @@ MonoBehaviour:
         fakeValue: 5
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1230823345
-        hiddenValue: 1230823344
+        currentCryptoKey: 1950210785
+        hiddenValue: 1950210784
         inited: 1
         fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1731773186
-        hiddenValue: 1732207138
+        currentCryptoKey: 1468821404
+        hiddenValue: 1468780220
         inited: 1
         fakeValue: 500000
         fakeValueActive: 1
@@ -3377,8 +3377,8 @@ MonoBehaviour:
       category: 5
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1153393048
-        hiddenValue: 90283928
+        currentCryptoKey: 1624558855
+        hiddenValue: 567145479
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3388,14 +3388,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 2010703933
-        hiddenValue: 2010703935
+        currentCryptoKey: 1829323325
+        hiddenValue: 1829323327
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1338629197
-        hiddenValue: 1338416653
+        currentCryptoKey: 1079980269
+        hiddenValue: 1079014061
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3408,8 +3408,8 @@ MonoBehaviour:
       category: 6
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1798914559
-        hiddenValue: 708909567
+        currentCryptoKey: 1961010260
+        hiddenValue: 899990100
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3419,14 +3419,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1327021136
-        hiddenValue: 1327021138
+        currentCryptoKey: 1826337110
+        hiddenValue: 1826337108
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1870647828
-        hiddenValue: 1869647956
+        currentCryptoKey: 1516874340
+        hiddenValue: 1516693540
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3439,8 +3439,8 @@ MonoBehaviour:
       category: 7
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1573730540
-        hiddenValue: 473492972
+        currentCryptoKey: 1419998109
+        hiddenValue: 359891869
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3450,14 +3450,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1097211054
-        hiddenValue: 1097211052
+        currentCryptoKey: 1452602353
+        hiddenValue: 1452602355
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1533177134
-        hiddenValue: 1533882222
+        currentCryptoKey: 1706095894
+        hiddenValue: 1707063126
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3470,8 +3470,8 @@ MonoBehaviour:
       category: 8
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1828295829
-        hiddenValue: 764729749
+        currentCryptoKey: 1457589022
+        hiddenValue: 386646302
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3481,14 +3481,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1532825716
-        hiddenValue: 1532825718
+        currentCryptoKey: 2004713435
+        hiddenValue: 2004713433
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1186511016
-        hiddenValue: 1186462440
+        currentCryptoKey: 1863000313
+        hiddenValue: 1862558393
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3501,8 +3501,8 @@ MonoBehaviour:
       category: 9
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1079305006
-        hiddenValue: 31683630
+        currentCryptoKey: 1938957462
+        hiddenValue: 841265814
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3512,14 +3512,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1551997514
-        hiddenValue: 1551997512
+        currentCryptoKey: 1430411560
+        hiddenValue: 1430411562
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1139298399
-        hiddenValue: 1139216927
+        currentCryptoKey: 1946360294
+        hiddenValue: 1946966950
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3532,8 +3532,8 @@ MonoBehaviour:
       category: 10
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1992838846
-        hiddenValue: 927918270
+        currentCryptoKey: 1662616495
+        hiddenValue: 579025327
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3543,14 +3543,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 2000240443
-        hiddenValue: 2000240441
+        currentCryptoKey: 1536732664
+        hiddenValue: 1536732666
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1546786251
-        hiddenValue: 1547523979
+        currentCryptoKey: 1392818678
+        hiddenValue: 1393294262
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3563,8 +3563,8 @@ MonoBehaviour:
       category: 11
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1927187399
-        hiddenValue: 864812743
+        currentCryptoKey: 1501558323
+        hiddenValue: 418799411
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3574,14 +3574,14 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1144386502
-        hiddenValue: 1144386500
+        currentCryptoKey: 1301259924
+        hiddenValue: 1301259926
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1702139722
-        hiddenValue: 1702614282
+        currentCryptoKey: 1268791494
+        hiddenValue: 1269791366
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
