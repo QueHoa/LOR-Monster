@@ -3222,27 +3222,27 @@ MonoBehaviour:
       category: 0
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1232980801
-        hiddenValue: 164314433
+        currentCryptoKey: 1860042924
+        hiddenValue: 788573869
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 3
+        fakeValue: 15.000001
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 2096504843
-        hiddenValue: 2096504842
+        currentCryptoKey: 1534480348
+        hiddenValue: 1534480350
         inited: 1
-        fakeValue: 1
+        fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1591144470
-        hiddenValue: 1590846454
+        currentCryptoKey: 1834665765
+        hiddenValue: 1834321253
         inited: 1
-        fakeValue: 300000
+        fakeValue: 1000000
         fakeValueActive: 1
     - id: Drum_2
       icon: stageitemicon/item_drum.png
@@ -3253,27 +3253,27 @@ MonoBehaviour:
       category: 1
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 2144047067
-        hiddenValue: 1066372059
+        currentCryptoKey: 1194525692
+        hiddenValue: 100924412
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 3
+        fakeValue: 25
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 2076800779
-        hiddenValue: 2076800778
+        currentCryptoKey: 1494113058
+        hiddenValue: 1494113057
         inited: 1
-        fakeValue: 1
+        fakeValue: 3
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 2020836899
-        hiddenValue: 2021070275
+        currentCryptoKey: 1172390929
+        hiddenValue: 1173227089
         inited: 1
-        fakeValue: 300000
+        fakeValue: 1000000
         fakeValueActive: 1
     - id: Light_3
       icon: stageitemicon/item_light.png
@@ -3284,27 +3284,27 @@ MonoBehaviour:
       category: 2
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1500663449
-        hiddenValue: 424596121
+        currentCryptoKey: 1887888480
+        hiddenValue: 837056097
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 5
+        fakeValue: 30.000002
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1861874853
-        hiddenValue: 1861874852
+        currentCryptoKey: 1219636877
+        hiddenValue: 1219636878
         inited: 1
-        fakeValue: 1
+        fakeValue: 3
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1495836218
-        hiddenValue: 1496069594
+        currentCryptoKey: 1085428641
+        hiddenValue: 1084327297
         inited: 1
-        fakeValue: 300000
+        fakeValue: 1300000
         fakeValueActive: 1
     - id: Mic_4
       icon: stageitemicon/item_mic.png
@@ -3315,27 +3315,27 @@ MonoBehaviour:
       category: 3
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1571490505
-        hiddenValue: 487197641
+        currentCryptoKey: 1096415510
+        hiddenValue: 16328983
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 5
+        fakeValue: 15.000001
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1771001912
-        hiddenValue: 1771001913
+        currentCryptoKey: 1554088608
+        hiddenValue: 1554088610
         inited: 1
-        fakeValue: 1
+        fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1705335373
-        hiddenValue: 1705180013
+        currentCryptoKey: 1839598867
+        hiddenValue: 1839812435
         inited: 1
-        fakeValue: 500000
+        fakeValue: 1000000
         fakeValueActive: 1
     - id: Neon_5
       icon: stageitemicon/item_neon.png
@@ -3346,27 +3346,27 @@ MonoBehaviour:
       category: 4
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1870887904
-        hiddenValue: 796599264
+        currentCryptoKey: 1820793668
+        hiddenValue: 756787012
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 5
+        fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1950210785
-        hiddenValue: 1950210784
+        currentCryptoKey: 1050026242
+        hiddenValue: 1050026243
         inited: 1
         fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1468821404
-        hiddenValue: 1468780220
+        currentCryptoKey: 1069691463
+        hiddenValue: 1069820103
         inited: 1
-        fakeValue: 500000
+        fakeValue: 400000
         fakeValueActive: 1
     - id: Piano_6
       icon: stageitemicon/item_piano.png
@@ -3377,25 +3377,25 @@ MonoBehaviour:
       category: 5
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1624558855
-        hiddenValue: 567145479
+        currentCryptoKey: 1952933799
+        hiddenValue: 895993767
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 10
+        fakeValue: 20
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1829323325
-        hiddenValue: 1829323327
+        currentCryptoKey: 1768571192
+        hiddenValue: 1768571194
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1079980269
-        hiddenValue: 1079014061
+        currentCryptoKey: 1660389536
+        hiddenValue: 1660472032
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3408,27 +3408,27 @@ MonoBehaviour:
       category: 6
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1961010260
-        hiddenValue: 899990100
+        currentCryptoKey: 1222946479
+        hiddenValue: 162415791
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 10
+        fakeValue: 20
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1826337110
-        hiddenValue: 1826337108
+        currentCryptoKey: 1887241539
+        hiddenValue: 1887241537
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1516874340
-        hiddenValue: 1516693540
+        currentCryptoKey: 1839663008
+        hiddenValue: 1839936160
         inited: 1
-        fakeValue: 1000000
+        fakeValue: 800000
         fakeValueActive: 1
     - id: Speaker_8
       icon: stageitemicon/item_speaker.png
@@ -3439,25 +3439,25 @@ MonoBehaviour:
       category: 7
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1419998109
-        hiddenValue: 359891869
+        currentCryptoKey: 1971423970
+        hiddenValue: 881478114
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 10
+        fakeValue: 25
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1452602353
-        hiddenValue: 1452602355
+        currentCryptoKey: 1406494365
+        hiddenValue: 1406494366
         inited: 1
-        fakeValue: 2
+        fakeValue: 3
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1706095894
-        hiddenValue: 1707063126
+        currentCryptoKey: 1018778795
+        hiddenValue: 1018566379
         inited: 1
         fakeValue: 1000000
         fakeValueActive: 1
@@ -3470,8 +3470,8 @@ MonoBehaviour:
       category: 8
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1457589022
-        hiddenValue: 386646302
+        currentCryptoKey: 1864908623
+        hiddenValue: 775882831
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3481,16 +3481,16 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 2004713435
-        hiddenValue: 2004713433
+        currentCryptoKey: 1670778236
+        hiddenValue: 1670778238
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1863000313
-        hiddenValue: 1862558393
+        currentCryptoKey: 1231877626
+        hiddenValue: 1231770842
         inited: 1
-        fakeValue: 1000000
+        fakeValue: 500000
         fakeValueActive: 1
     - id: Table2_10
       icon: stageitemicon/item_table 2.png
@@ -3501,8 +3501,8 @@ MonoBehaviour:
       category: 9
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1938957462
-        hiddenValue: 841265814
+        currentCryptoKey: 2001701344
+        hiddenValue: 914976736
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3512,16 +3512,16 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1430411560
-        hiddenValue: 1430411562
+        currentCryptoKey: 1442682352
+        hiddenValue: 1442682354
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1946360294
-        hiddenValue: 1946966950
+        currentCryptoKey: 1231661593
+        hiddenValue: 1231948601
         inited: 1
-        fakeValue: 1000000
+        fakeValue: 500000
         fakeValueActive: 1
     - id: Table3_11
       icon: stageitemicon/item_table 3.png
@@ -3532,8 +3532,8 @@ MonoBehaviour:
       category: 10
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1662616495
-        hiddenValue: 579025327
+        currentCryptoKey: 1915806637
+        hiddenValue: 870518957
         hiddenValueOldByte4:
           b1: 0
           b2: 0
@@ -3543,16 +3543,16 @@ MonoBehaviour:
         fakeValue: 10
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1536732664
-        hiddenValue: 1536732666
+        currentCryptoKey: 1337671555
+        hiddenValue: 1337671553
         inited: 1
         fakeValue: 2
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1392818678
-        hiddenValue: 1393294262
+        currentCryptoKey: 1781245797
+        hiddenValue: 1781270085
         inited: 1
-        fakeValue: 1000000
+        fakeValue: 500000
         fakeValueActive: 1
     - id: Tree_12
       icon: stageitemicon/item_tree pot 1.png
@@ -3563,25 +3563,25 @@ MonoBehaviour:
       category: 11
       bonusEarning:
         migratedVersion: 
-        currentCryptoKey: 1501558323
-        hiddenValue: 418799411
+        currentCryptoKey: 2001429265
+        hiddenValue: 929295121
         hiddenValueOldByte4:
           b1: 0
           b2: 0
           b3: 0
           b4: 0
         inited: 1
-        fakeValue: 10
+        fakeValue: 5
         fakeValueActive: 1
       adRequire:
-        currentCryptoKey: 1301259924
-        hiddenValue: 1301259926
+        currentCryptoKey: 1123715102
+        hiddenValue: 1123715103
         inited: 1
-        fakeValue: 2
+        fakeValue: 1
         fakeValueActive: 1
       cashRequire:
-        currentCryptoKey: 1268791494
-        hiddenValue: 1269791366
+        currentCryptoKey: 1223864001
+        hiddenValue: 1224097057
         inited: 1
-        fakeValue: 1000000
+        fakeValue: 300000
         fakeValueActive: 1

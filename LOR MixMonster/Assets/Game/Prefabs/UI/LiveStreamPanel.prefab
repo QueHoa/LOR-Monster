@@ -6975,7 +6975,7 @@ PrefabInstance:
     - target: {fileID: 7683891937060778830, guid: 3ee0056c7ae919c45b08c44fa2ec8371, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -5956487144245360258, guid: 6cc2b632feb48b240a7342acd44eff55, type: 2}
+      objectReference: {fileID: 2100000, guid: 37b8dd947573091458247ecc83f507b0, type: 2}
     - target: {fileID: 7888818024640221937, guid: 3ee0056c7ae919c45b08c44fa2ec8371, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0

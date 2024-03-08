@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &168444849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -523,6 +523,130 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 574b9f3aa6e3e0842a79226b2ce19297, type: 3}
+--- !u!1 &286106847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286106848}
+  - component: {fileID: 286106851}
+  - component: {fileID: 286106850}
+  - component: {fileID: 286106849}
+  m_Layer: 0
+  m_Name: Spine GameObject (BG)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286106848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286106847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalScale: {x: 0.021, y: 0.021, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2027146405}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &286106849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286106847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 9f54e780dabacee44bb3530acdd5fb6a, type: 2}
+  initialSkinName: 
+  fixPrefabOverrideViaMeshFilter: 2
+  initialFlipX: 0
+  initialFlipY: 0
+  updateWhenInvisible: 3
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  fixDrawOrder: 0
+  addNormals: 0
+  calculateTangents: 0
+  maskInteraction: 0
+  maskMaterials:
+    materialsMaskDisabled: []
+    materialsInsideMask: []
+    materialsOutsideMask: []
+  disableRenderingOnOverride: 1
+  updateTiming: 1
+  unscaledTime: 0
+  _animationName: animation
+  loop: 1
+  timeScale: 1
+--- !u!23 &286106850
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286106847}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f41577f5979ee544193979dbed755dfb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1114172355
+  m_SortingLayer: 2
+  m_SortingOrder: -90
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &286106851
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286106847}
+  m_Mesh: {fileID: 0}
 --- !u!1001 &345277100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5462,7 +5586,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5478,40 +5601,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5563,7 +5652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11137,7 +11226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736412888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11164,9 +11253,9 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 2025368285}
+  m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 100
     OrthographicSize: 20
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -11338,6 +11427,7 @@ Transform:
   - {fileID: 1546297777}
   - {fileID: 1059078922}
   - {fileID: 489529235}
+  - {fileID: 2027146405}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11356,7 +11446,6 @@ MonoBehaviour:
   isReady: 0
   hideMonster: 0
   updateGold: 0
-  isSelected: 0
   homePanel: {fileID: 0}
   monster: {fileID: 0}
   stageHandlers:
@@ -11365,6 +11454,13 @@ MonoBehaviour:
       index: 0
       stageCollections: []
       stageItems:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       - 
       - 
       - 
@@ -11390,9 +11486,383 @@ MonoBehaviour:
       inited: 1
       fakeValue: 0
       fakeValueActive: 0
-    stageItems: []
+    stageItems:
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1630100070
+        hiddenValue: 1633298790
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1982680242
+        hiddenValue: 1982680242
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1744012266
+        hiddenValue: 1744012266
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 2001733502
+        hiddenValue: 1996968062
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1223830807
+        hiddenValue: 1223830807
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1041140982
+        hiddenValue: 1041140982
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1044561814
+        hiddenValue: 1052721814
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1352927059
+        hiddenValue: 1352927059
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1516353496
+        hiddenValue: 1516353496
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 2068734677
+        hiddenValue: 2070040277
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1109380686
+        hiddenValue: 1109380686
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1392240734
+        hiddenValue: 1392240734
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1185009247
+        hiddenValue: 1187946847
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1403508324
+        hiddenValue: 1403508324
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 2125425162
+        hiddenValue: 2125425162
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1697275142
+        hiddenValue: 1700604422
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 2092536406
+        hiddenValue: 2092536406
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1157295109
+        hiddenValue: 1157295109
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1310860407
+        hiddenValue: 1310990967
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1056500571
+        hiddenValue: 1056500571
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1951269906
+        hiddenValue: 1951269906
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1393403336
+        hiddenValue: 1403325896
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1843544245
+        hiddenValue: 1843544245
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1690904157
+        hiddenValue: 1690904157
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1665154660
+        hiddenValue: 1665024100
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1885423921
+        hiddenValue: 1885423921
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1161450375
+        hiddenValue: 1161450375
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1076884991
+        hiddenValue: 1089810431
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1740273301
+        hiddenValue: 1740273301
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1542622275
+        hiddenValue: 1542622275
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1171130160
+        hiddenValue: 1158139440
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1006962086
+        hiddenValue: 1006962086
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 1538260186
+        hiddenValue: 1538260186
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+    - id: 
+      icon: 
+      title: 
+      unlockType: 0
+      mainTexture: 
+      set: 0
+      category: 0
+      bonusEarning:
+        migratedVersion: 
+        currentCryptoKey: 1768833828
+        hiddenValue: 1766026788
+        hiddenValueOldByte4:
+          b1: 0
+          b2: 0
+          b3: 0
+          b4: 0
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      adRequire:
+        currentCryptoKey: 1474072000
+        hiddenValue: 1474072000
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
+      cashRequire:
+        currentCryptoKey: 2072997167
+        hiddenValue: 2072997167
+        inited: 1
+        fakeValue: 0
+        fakeValueActive: 0
   currentStageId: 0
   earnSpeed: 1
+  isSelected: 0
+  isMoveStage: 0
   selectCardSFX: {fileID: 8300000, guid: 1be5b8ded41c0834c8c49ac9717ccce5, type: 3}
   removeMonsterSFX: {fileID: 8300000, guid: ff7cb20d161e4d54d99ca380eb6df87a, type: 3}
   createMonsterSFX: {fileID: 8300000, guid: a82c5bbc78b2c4240b2f46138d8dedd7, type: 3}
@@ -11401,6 +11871,91 @@ MonoBehaviour:
   instantCashBoostSFX: {fileID: 8300000, guid: 41a470c54ab09064c98fed08ee96fdb7, type: 3}
   clickPS: {fileID: 1059078924}
   instantCashBoostPS: {fileID: 489529237}
+--- !u!1 &2027146404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027146405}
+  - component: {fileID: 2027146406}
+  m_Layer: 0
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027146405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027146404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 286106848}
+  m_Father: {fileID: 2025368285}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2027146406
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027146404}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1114172355
+  m_SortingLayer: 2
+  m_SortingOrder: -100
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.4433962, g: 0.19032574, b: 0.19032574, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2141873651
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,28 +38,14 @@ public class ObjectTouchHandler : MonoBehaviour
     private void OnMouseDown()
     {
         if (!enabled) return;
-
         isDown = true;
-        (Game.Controller.Instance.gameController).isSelected = true;
+        ((StageGameController)Game.Controller.Instance.gameController).isSelected = true;
         
         touchTime = Time.time;
 
     }
     private void Update()
     {
-        if (Input.touchCount > 0 & isDown)
-        {
-            if(Input.touchCount == 1)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Ended)
-                {
-                    ((StageGameController)Game.Controller.Instance.gameController).RewardEarningSelect(monster);
-                    isDown = false;
-                }
-            }
-        }
         if (!isSelected && isDown && Time.time - touchTime > 0.3f)
         {
             isSelected = true;
@@ -71,8 +57,9 @@ public class ObjectTouchHandler : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        ((StageGameController)Game.Controller.Instance.gameController).RewardEarningSelect(monster);
         if (!isSelected) return;
-        //isDown = false;
+        isDown = false;
         isSelected = false;
         if (Sound.Controller.VibrationEnable)
         {
@@ -85,6 +72,7 @@ public class ObjectTouchHandler : MonoBehaviour
         }
         onMonsterReleased?.Invoke(monster);
         monster.stageCollectionData.position.Set(transform.position);
+        //((StageGameController)Game.Controller.Instance.gameController).isSelected = false;
         DataManagement.DataManager.Instance.Save();
 
         Sound.Controller.Instance.PlayOneShot(releaseSFX);

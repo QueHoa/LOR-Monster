@@ -128,34 +128,13 @@ public class CollectionPanel : UI.Panel
     }
     public void Back()
     {
-        if (DataManagement.DataManager.Instance.userData.progressData.playCount >= Game.Controller.Instance.gameConfig.adConfig.adStart)
+        if (isProcessing) return;
+        isProcessing = true;
+        LevelLoading.Instance.Active(() =>
         {
-            AD.Controller.Instance.ShowInterstitial(() =>
-            {
-                BackHome();
-
-            });
-        }
-        else
-        {
-            BackHome();
-        }
-
-
-        void BackHome()
-        {
-            if (isProcessing) return;
-            isProcessing = true;
-            LevelLoading.Instance.Active(() =>
-            {
-                if (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count > 0)
-                {
-                    Game.Controller.Instance.gameController.Destroy();
-                }
-                ((StageGameController)Game.Controller.Instance.gameController).SetUp();
-                Close();
-                //LevelLoading.Instance.Close();
-            });
-        }
+            ((StageGameController)Game.Controller.Instance.gameController).CloseCollection();
+            Close();
+            LevelLoading.Instance.Close();
+        });
     }
 }

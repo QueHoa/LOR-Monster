@@ -14,7 +14,6 @@ public class GameController : MonoBehaviour
     public static OnStageEnd onStageEnd;
     public bool isReady = false;
     public bool hideMonster, updateGold = false;
-    public bool isSelected = false;
 
     protected void Start()
     {
@@ -25,5 +24,4 @@ public class GameController : MonoBehaviour
     public virtual void Clear() { }
     public virtual async UniTask InitializeAsync() { }
     public virtual async UniTask SetUp() { }
-    public virtual async UniTask SetUpCollection() { }
 }
