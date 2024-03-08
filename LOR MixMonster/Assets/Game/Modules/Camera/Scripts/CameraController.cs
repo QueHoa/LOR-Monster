@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour
     public static CameraController Instance;
 
     Camera camera;
-    Cinemachine.CinemachineVirtualCamera cam;
-    Cinemachine.CinemachineBasicMultiChannelPerlin noise;
+    public Cinemachine.CinemachineVirtualCamera cam;
+    public Cinemachine.CinemachineBasicMultiChannelPerlin noise;
     Transform _transform;
 
     float defaultLenSize;

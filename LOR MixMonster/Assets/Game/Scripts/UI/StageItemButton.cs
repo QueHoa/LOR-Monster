@@ -13,7 +13,7 @@ public class StageItemButton : PoolComponent
     public static OnStageItemPreview onStageItemPreview;
 
     [SerializeField]
-    private Image iconImg;
+    private Image iconImg, bg;
 
     [SerializeField]
     private TMPro.TextMeshProUGUI bonusText, cashText, adText, titleText;
@@ -34,6 +34,10 @@ public class StageItemButton : PoolComponent
         int state = DataManagement.DataManager.Instance.userData.inventory.GetItemState($"{stageIndex}_{stageItem.id}");
         usingObj.SetActive(state == 1);
         usingObj.SetActive(state == 2);
+        if (usingObj.activeInHierarchy)
+        {
+            bg.color = Color.yellow;
+        }
         adBtn.SetActive(state == 0);
         purchaseBtn.SetActive(state == 0);
         orObj.SetActive(state == 0);

@@ -17,6 +17,7 @@ public partial class StageGameController : GameController
     public List<IBooster> boosters = new List<IBooster>();
     public int currentStageId;
     public float earnSpeed = 1;
+    public bool isSelected = false, isMoveStage = false;
     int clickCount = 0;
     [SerializeField]
     private AudioClip selectCardSFX, removeMonsterSFX, createMonsterSFX, clickScreenSFX, stageItemSelectSFX, instantCashBoostSFX;
@@ -72,7 +73,7 @@ public partial class StageGameController : GameController
 
         LevelLoading.Instance.Close();
     }
-    public override async UniTask SetUpCollection()
+    public async UniTask SetUpCollection()
     {
         cancellation = new CancellationTokenSource();
 
@@ -85,6 +86,22 @@ public partial class StageGameController : GameController
 
         CollectionPanel CollectionPanel = (CollectionPanel)await UI.PanelManager.CreateAsync(typeof(CollectionPanel));
         CollectionPanel.SetUp(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
+        /*CollectionPanel CollectionPanel = (CollectionPanel)await UI.PanelManager.CreateAsync(typeof(CollectionPanel), (panel, op) =>
+        {
+            ((CollectionPanel)panel).SetUp(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
+            panel.onClose = () =>
+            {
+                AD.Controller.Instance.ShowInterstitial();
+                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
+                {
+                    CameraController.Instance.LerpOffset(new Vector3(0, 0, -25));
+                    ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
+                    ((HomePanel)panel).SetUp();
+                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
+                    ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
+                });
+            };
+        });*/
 
         await UniTask.Delay(300);
         LevelLoading.Instance.Close();
@@ -95,6 +112,18 @@ public partial class StageGameController : GameController
         FirebaseAnalysticController.Instance.LogEvent("CollectionStart");
         DataManagement.DataManager.Instance.userData.progressData.playCount++;
         DataManagement.DataManager.Instance.Save();
+    }
+    public async UniTask CloseCollection()
+    {
+        AD.Controller.Instance.ShowInterstitial();
+        Destroy();
+        UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
+        {
+            ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
+            ((HomePanel)panel).SetUp();
+            ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
+            ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
+        });
     }
     public override void Destroy()
     {
@@ -177,8 +206,8 @@ public partial class StageGameController : GameController
     {
         base.Clear();
         MonsterCard.onMonsterSelected -= OnMonsterSelected;
-        StageItemButton.onStageItemSelected += OnStageItemSelected;
-        StageItemButton.onStageItemPreview += OnStageItemPreview;
+        StageItemButton.onStageItemSelected -= OnStageItemSelected;
+        StageItemButton.onStageItemPreview -= OnStageItemPreview;
         ObjectTouchHandler.onMonsterSelected -= OnMonsterSelected;
         ObjectTouchHandler.onMonsterReleased -= OnMonsterReleased;
     }

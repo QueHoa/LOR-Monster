@@ -153,9 +153,14 @@ public class HomePanel : UI.Panel
     }
     public void ClickScreen()
     {
-        if (!(Game.Controller.Instance.gameController).isSelected)
+        if (!((StageGameController)Game.Controller.Instance.gameController).isSelected && !((StageGameController)Game.Controller.Instance.gameController).isMoveStage)
         {
             ((StageGameController)Game.Controller.Instance.gameController).ClickScreen(false);
+        }
+        else
+        {
+            ((StageGameController)Game.Controller.Instance.gameController).isSelected = false;
+            ((StageGameController)Game.Controller.Instance.gameController).isMoveStage = false;
         }
     }
     public void Play()
@@ -180,7 +185,7 @@ public class HomePanel : UI.Panel
         {
             ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
             Close();
-            Game.Controller.Instance.gameController.SetUpCollection();
+            ((StageGameController)Game.Controller.Instance.gameController).SetUpCollection();
         });
     }
     public void LeaderBoard()
@@ -258,14 +263,13 @@ public class HomePanel : UI.Panel
         {
             Close();
             ((DecorPanel)panel).SetUp();
-            CameraController.Instance.LerpOffset(new Vector3(0, 0, -25));
+            CameraController.Instance.SetOffset(Vector3.Lerp(CameraController.Instance.cam.transform.position, new Vector3(0, -10, -10), 0.05f));
             panel.onClose = () =>
             {
-                Debug.LogError("12");
                 AD.Controller.Instance.ShowInterstitial();
                 UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
                 {
-                    CameraController.Instance.LerpOffset(new Vector3(0, 0, -25));
+                    CameraController.Instance.SetOffset(Vector3.Lerp(CameraController.Instance.cam.transform.position, new Vector3(0, 0, -10), 0.05f));
                     ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
                     ((HomePanel)panel).SetUp();
                     ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();

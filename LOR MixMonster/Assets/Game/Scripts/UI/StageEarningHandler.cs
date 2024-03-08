@@ -244,7 +244,7 @@ public partial class StageGameController
         {
             if (isMonsterHidden) return;
             Effect.EffectSpawner.Instance.Get(7, result => { (result).Active(monster.cashEffectPlace.position + (Vector3)UnityEngine.Random.insideUnitCircle * 0.3f, monsterItemDict[monster]).SetColor(Color.green).SetParent(monster.cashEffectPlace); }).Forget();
-            (Game.Controller.Instance.gameController).isSelected = false;
+            
         }
     }
 }

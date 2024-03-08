@@ -19,8 +19,8 @@ public class IdleBGController : MonoBehaviour
     //private readonly float mapMinX = -29.5f;
     //private readonly float mapMaxX = 29.5f;
 
-    private readonly float mapMinX = -30.72f;
-    private readonly float mapMaxX = 30.72f;
+    private readonly float mapMinX = -25f;
+    private readonly float mapMaxX = 25f;
 
     private readonly float mapMinY = -22f;
     private readonly float mapMaxY = 22f;
@@ -72,7 +72,6 @@ public class IdleBGController : MonoBehaviour
             if (Input.touchCount == 2)
             {
                 isPinch = true;
-                //do zooming
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
 
@@ -94,32 +93,48 @@ public class IdleBGController : MonoBehaviour
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
-                        if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                        if (!((StageGameController)Game.Controller.Instance.gameController).isSelected)
                         {
-                            moveAllowed = false;
+                            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                            {
+                                moveAllowed = false;
+                            }
+                            else
+                            {
+                                moveAllowed = true;
+                            }
+                            touchPos = cam.ScreenToWorldPoint(touch.position);
                         }
-                        else
-                        {
-                            moveAllowed = true;
-                            //isClickToRaiseMoney = true;
-                        }
-                        touchPos = cam.ScreenToWorldPoint(touch.position);
                         break;
                     case TouchPhase.Moved:
-                        if (moveAllowed && !isPinch)
+                        if (!((StageGameController)Game.Controller.Instance.gameController).isSelected)
                         {
-                            endPos = cam.ScreenToWorldPoint(touch.position);
-                            if (Vector3.Distance(touchPos, endPos) > distanceForSwipe)
+                            if (moveAllowed && !isPinch)
                             {
-                                //isClickToRaiseMoney = false;
-                                Vector3 direction = touchPos - endPos;
-                                cam.transform.position += direction;
-                                cam.transform.position = ClampCamera(cam.transform.position);
+                                ((StageGameController)Game.Controller.Instance.gameController).isMoveStage = true;
+                                endPos = cam.ScreenToWorldPoint(touch.position);
+                                if (Vector3.Distance(touchPos, endPos) > distanceForSwipe)
+                                {
+                                    Vector3 direction = touchPos - endPos;
+                                    cam.transform.position += direction;
+                                    cam.transform.position = ClampCamera(cam.transform.position);
+                                }
                             }
                         }
                         break;
                     case TouchPhase.Ended:
-                        
+                        if (!((StageGameController)Game.Controller.Instance.gameController).isSelected && !((StageGameController)Game.Controller.Instance.gameController).isMoveStage)
+                        {
+                            if (moveAllowed)
+                            {
+                                ((StageGameController)Game.Controller.Instance.gameController).ClickScreen(false);
+                            }
+                        }
+                        else
+                        {
+                            ((StageGameController)Game.Controller.Instance.gameController).isSelected = false;
+                            ((StageGameController)Game.Controller.Instance.gameController).isMoveStage = false;
+                        }
                         break;
                     default:
                         break;

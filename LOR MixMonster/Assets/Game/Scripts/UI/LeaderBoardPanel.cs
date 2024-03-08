@@ -61,30 +61,20 @@ public class LeaderBoardPanel : Panel
     }*/
     public void Back()
     {
-        if (DataManagement.DataManager.Instance.userData.progressData.playCount >= Game.Controller.Instance.gameConfig.adConfig.adStart)
+        if (isProcessing) return;
+        isProcessing = true;
+        LevelLoading.Instance.Active(() =>
         {
-            AD.Controller.Instance.ShowInterstitial(() =>
+            Close();
+            AD.Controller.Instance.ShowInterstitial();
+            UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
             {
-                BackHome();
-
+                ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
+                ((HomePanel)panel).SetUp();
+                ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
+                ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
             });
-        }
-        else
-        {
-            BackHome();
-        }
-
-
-        void BackHome()
-        {
-            if (isProcessing) return;
-            isProcessing = true;
-            LevelLoading.Instance.Active(() =>
-            {
-                Close();
-                ((StageGameController)Game.Controller.Instance.gameController).SetUp();
-                //LevelLoading.Instance.Close();
-            });
-        }
+            LevelLoading.Instance.Close();
+        });
     }
 }
