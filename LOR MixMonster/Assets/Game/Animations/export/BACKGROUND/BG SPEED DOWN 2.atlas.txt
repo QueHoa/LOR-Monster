@@ -1,0 +1,35 @@
+BG SPEED DOWN 2.png
+size:2535,2268
+filter:Linear,Linear
+pma:true
+2
+bounds:1019,572,517,1178
+offsets:0,0,517,1182
+rotate:90
+2 1
+bounds:1655,1179,625,1087
+offsets:0,88,625,1179
+2 2
+bounds:2,58,517,1182
+2 3
+bounds:1028,1091,625,1175
+offsets:0,0,625,1179
+bulb_l
+bounds:521,2,165,154
+bulb_r
+bounds:688,2,165,154
+home_bg
+bounds:2,1242,1024,1024
+light_l
+bounds:1553,51,532,519
+offsets:0,0,532,532
+light_r
+bounds:1019,39,532,531
+mid
+bounds:521,158,1082,496
+offsets:0,1,1082,497
+rotate:90
+up
+bounds:2199,41,1136,334
+offsets:1,1,1138,336
+rotate:90

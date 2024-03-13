@@ -13,12 +13,17 @@ public class StageItemButton : PoolComponent
     public static OnStageItemPreview onStageItemPreview;
 
     [SerializeField]
-    private Image iconImg, bg;
+    private Image iconImg, iconBg, bg;
+    [SerializeField]
+    private Sprite disableIconBg, disableBg;
+    [SerializeField]
+    private Button preview;
 
     [SerializeField]
     private TMPro.TextMeshProUGUI bonusText, cashText, adText, titleText;
     [SerializeField]
-    private GameObject purchaseBtn, adBtn, usingObj, orObj;
+    private GameObject purchaseBtn, adBtn, usingObj, orObj, iconUsing;
+    public int state;
     public ItemData.StageItem stageItem;
     int stageIndex = 0;
     public void SetUp(ItemData.StageItem stageItem, int stageIndex)
@@ -31,12 +36,16 @@ public class StageItemButton : PoolComponent
         });
 
         titleText.text = stageItem.title;
-        int state = DataManagement.DataManager.Instance.userData.inventory.GetItemState($"{stageIndex}_{stageItem.id}");
+        state = DataManagement.DataManager.Instance.userData.inventory.GetItemState($"{stageIndex}_{stageItem.id}");
         usingObj.SetActive(state == 1);
         usingObj.SetActive(state == 2);
-        if (usingObj.activeInHierarchy)
+        iconUsing.SetActive(state == 1);
+        iconUsing.SetActive(state == 2);
+        if (state == 2)
         {
-            bg.color = Color.yellow;
+            iconBg.sprite = disableIconBg;
+            bg.sprite = disableBg;
+            preview.interactable = false;
         }
         adBtn.SetActive(state == 0);
         purchaseBtn.SetActive(state == 0);
@@ -111,10 +120,12 @@ public class StageItemButton : PoolComponent
     }
     void Unlock()
     {
+        ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
         Equip();
     }
     public void Preview()
     {
+        ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
         onStageItemPreview?.Invoke(stageItem);
     }
 }

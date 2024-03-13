@@ -211,6 +211,7 @@ public class HomePanel : UI.Panel
         {
             ((OfflineRewardPanel)panel).SetUp(DataManagement.DataManager.Instance.userData.stageListData.totalOfflineSeconds, DataManagement.DataManager.Instance.userData.stageListData.totalOfflineCash, DataManagement.DataManager.Instance.userData.stageListData.totalOfflineGold);
             ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
+            isProcessing = false;
         });
     }
     public void View()
@@ -263,20 +264,6 @@ public class HomePanel : UI.Panel
         {
             Close();
             ((DecorPanel)panel).SetUp();
-            CameraController.Instance.SetOffset(Vector3.Lerp(CameraController.Instance.cam.transform.position, new Vector3(0, -10, -10), 0.05f));
-            panel.onClose = () =>
-            {
-                AD.Controller.Instance.ShowInterstitial();
-                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
-                {
-                    CameraController.Instance.SetOffset(Vector3.Lerp(CameraController.Instance.cam.transform.position, new Vector3(0, 0, -10), 0.05f));
-                    ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
-                    ((HomePanel)panel).SetUp();
-                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
-                    ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
-                });
-            };
-
 
             ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
         });

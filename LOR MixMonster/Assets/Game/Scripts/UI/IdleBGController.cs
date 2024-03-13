@@ -8,7 +8,7 @@ public class IdleBGController : MonoBehaviour
 {
     public static IdleBGController Instance;
     [SerializeField] private float minZoom = 7;
-    [SerializeField] private float maxZoom = 22;
+    [SerializeField] private float maxZoom = 30;
 
 
     private Camera cam;
@@ -19,11 +19,11 @@ public class IdleBGController : MonoBehaviour
     //private readonly float mapMinX = -29.5f;
     //private readonly float mapMaxX = 29.5f;
 
-    private readonly float mapMinX = -25f;
-    private readonly float mapMaxX = 25f;
+    private readonly float mapMinX = -31f;
+    private readonly float mapMaxX = 31f;
 
-    private readonly float mapMinY = -22f;
-    private readonly float mapMaxY = 22f;
+    private readonly float mapMinY = -36f;
+    private readonly float mapMaxY = 31f;
     public bool canInteract = true;
     private bool isPinch;
 
@@ -41,7 +41,6 @@ public class IdleBGController : MonoBehaviour
     {
         Instance = this;
         cam = Camera.main;
-
 
     }
 

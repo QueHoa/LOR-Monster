@@ -29,10 +29,12 @@ public class GameLoader : MonoBehaviour
             UniTask.Action(async () =>
             {
                 Game.Controller.Instance.gameController.SetUp();
-                AD.Controller.Instance.ShowBanner();
+                //AD.Controller.Instance.ShowBanner();
+                CollapsibleBanner.ShowBanner();
                 if(Game.Controller.Instance.gameConfig.skipAd)
                 {
-                    AD.Controller.Instance.HideBanner();
+                    //AD.Controller.Instance.HideBanner();
+                    CollapsibleBanner.HideBanner();
                 }
                 await UniTask.Delay(150);
                 ShowOpenAd();

@@ -191,7 +191,7 @@ public partial class StageGameController
                 lastEquipedItems.Add(stageItem.category, stageItems[(int)stageItem.category]);
             }
 
-            stageView.SetItem(stageItem, stageData.index);
+            stageView.PreviewItem(stageItem, stageData.index);
         }
         public void RestorePreview()
         {
@@ -199,7 +199,7 @@ public partial class StageGameController
             foreach (var item in lastEquipedItems)
             {
                 Debug.Log("REMOVE" + item.Key + " " + (item.Value == null));
-                stageView.SetItem(item.Value, stageIndex: stageData.index);
+                stageView.PreviewItem(item.Value, stageIndex: stageData.index);
             }
 
             lastEquipedItems.Clear();

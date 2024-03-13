@@ -86,23 +86,7 @@ public partial class StageGameController : GameController
 
         CollectionPanel CollectionPanel = (CollectionPanel)await UI.PanelManager.CreateAsync(typeof(CollectionPanel));
         CollectionPanel.SetUp(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
-        /*CollectionPanel CollectionPanel = (CollectionPanel)await UI.PanelManager.CreateAsync(typeof(CollectionPanel), (panel, op) =>
-        {
-            ((CollectionPanel)panel).SetUp(musicThemeIndex % Sound.Controller.Instance.soundData.finalThemes.Length);
-            panel.onClose = () =>
-            {
-                AD.Controller.Instance.ShowInterstitial();
-                UI.PanelManager.Create(typeof(HomePanel), (panel, op) =>
-                {
-                    CameraController.Instance.LerpOffset(new Vector3(0, 0, -25));
-                    ((StageGameController)Game.Controller.Instance.gameController).homePanel = panel as HomePanel;
-                    ((HomePanel)panel).SetUp();
-                    ((StageGameController)Game.Controller.Instance.gameController).ShowCurrentStageMonster();
-                    ((StageGameController)Game.Controller.Instance.gameController).RestoreStageView();
-                });
-            };
-        });*/
-
+        
         await UniTask.Delay(300);
         LevelLoading.Instance.Close();
 
@@ -457,7 +441,6 @@ public partial class StageGameController : GameController
     public void OnStageItemPreview(ItemData.StageItem stageItem)
     {
         Sound.Controller.Instance.PlayOneShot(stageItemSelectSFX);
-
 
         stageHandlers.OnStageItemPreview(stageItem);
     }

@@ -336,7 +336,8 @@ namespace AD
         public void RemoveAd()
         {
             isAd = false;
-            HideBanner();
+            //HideBanner();
+            CollapsibleBanner.HideBanner();
             ReloadAllNativeAdBanner();
         }
 

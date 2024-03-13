@@ -22025,7 +22025,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.8
+  m_fontSize: 60.9
   m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -23638,6 +23638,22 @@ PrefabInstance:
     - target: {fileID: 3820499363518163636, guid: e537e7ffa14d20543a7d8c81f1485037, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727265784359441335, guid: e537e7ffa14d20543a7d8c81f1485037, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4efcd235831ed14fabfab04dded8ba0, type: 3}
+    - target: {fileID: 6727265784359441335, guid: e537e7ffa14d20543a7d8c81f1485037, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727265784359441335, guid: e537e7ffa14d20543a7d8c81f1485037, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727265784359441335, guid: e537e7ffa14d20543a7d8c81f1485037, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304496648997391513, guid: e537e7ffa14d20543a7d8c81f1485037, type: 3}
       propertyPath: m_Pivot.x

@@ -37,7 +37,7 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!enabled) return;
         isDown = true;
         ((StageGameController)Game.Controller.Instance.gameController).isSelected = true;
-        
+        currentPosition = transform.position;
         touchTime = Time.time;
 
     }
@@ -46,7 +46,7 @@ public class ObjectTouchHandler : MonoBehaviour
         if (!isSelected && isDown && Time.time - touchTime > 0.3f)
         {
             isSelected = true;
-            currentPosition = transform.position;
+            //transform.Shake(0.15f, 0.7f, 0.2f, defaultScale: scale);
             transform.position = CameraController.Instance.GetTouchPosition();
             offset = CameraController.Instance.GetTouchPosition() - transform.position;
             Sound.Controller.Instance.PlayOneShot(pickSFX);
@@ -64,12 +64,11 @@ public class ObjectTouchHandler : MonoBehaviour
         }
         if (!IsMonsterOnStage())
         {
-            transform.Shake(0.15f, 1, 0.01f, defaultScale: scale);
             transform.position = currentPosition;
+            transform.Shake(0.15f, 1, 0.2f, defaultScale: scale);
         }
         onMonsterReleased?.Invoke(monster);
         monster.stageCollectionData.position.Set(transform.position);
-        //((StageGameController)Game.Controller.Instance.gameController).isSelected = false;
         DataManagement.DataManager.Instance.Save();
 
         Sound.Controller.Instance.PlayOneShot(releaseSFX);
@@ -89,7 +88,7 @@ public class ObjectTouchHandler : MonoBehaviour
         {
             transform.position = CameraController.Instance.GetTouchPosition() - offset;
             onMonsterSelected?.Invoke(monster);
-            transform.Shake(2f, 0.7f, 0.01f, defaultScale: scale);
+            transform.Shake(0.1f, 0.7f, 0.01f, defaultScale: scale);
         }
     }
 }
