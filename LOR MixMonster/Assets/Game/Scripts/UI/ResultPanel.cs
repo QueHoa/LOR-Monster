@@ -214,6 +214,10 @@ public class ResultPanel : UI.Panel
             else
             {
                 isProcessing = false;
+#if UNITY_EDITOR
+                isDone = true;
+                ClaimGold();
+#endif
             }
         });
 

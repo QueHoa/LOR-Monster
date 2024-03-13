@@ -350,6 +350,9 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     }
     public void AdsPet()
     {
+        if (isProcessing || Time.time - adTime < 2) return;
+        isProcessing = true;
+        adTime = Time.time;
         AD.Controller.Instance.ShowRewardedAd("Pet", res =>
         {
             if (res)
@@ -381,12 +384,48 @@ public abstract class MakeOverPanelAbstract : UI.Panel
                 }).Forget();
 
                 animTryPet.SetTrigger("close");
+                isProcessing = false;
+            }
+            else
+            {
+#if UNITY_EDITOR
+                ItemData.Item offererPet = petReadyPool[0];
+                if (!DataManagement.DataManager.Instance.userData.progressData.firstPet)
+                {
+                    FirebaseAnalysticController.Instance.LogEvent($"CollectPet_{offererPet.id}");
+                    FirebaseAnalysticController.Instance.LogEvent($"ADS_REWARD_START_COLLECTPET");
 
+                }
+
+                petOfferBtn.SetActive(false);
+
+                selectedItems.Add(offererPet);
+                petReadyPool.RemoveAt(0);
+                ObjectSpawner.Instance.Get(0, obj =>
+                {
+                    ItemOrb itemOrb = obj.GetComponent<ItemOrb>();
+                    itemOrb.SetUp(petIcon.sprite, petIcon.transform, petSlotPools.transform, 8, res =>
+                    {
+                        petSlotPools.Get().GetComponent<PetSlot>().SetUp(offererPet);
+                        //
+                        Effect.EffectSpawner.Instance.Get(2, effect =>
+                        {
+                            effect.Active(petSlotPools.transform.position);
+                        }).Forget();
+                    });
+                }).Forget();
+
+                animTryPet.SetTrigger("close");
+                isProcessing = false;
+#endif
             }
         }, canSkip: DataManagement.DataManager.Instance.userData.progressData.firstPet);
     }
     public void BuyPet()
     {
+        if (Time.time - adTime < 2) return;
+        isProcessing = true;
+        adTime = Time.time;
         ItemData.Item offererPet = petReadyPool[0];
         if (!DataManagement.DataManager.Instance.userData.progressData.firstPet)
         {
@@ -423,6 +462,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             DataManagement.DataManager.Instance.Save();
         });
         animTryPet.SetTrigger("close");
+        isProcessing = false;
     }
 
     //watch ad and set a new pair of item
@@ -447,6 +487,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     public void OptionGold()
     {
         if (Time.time - adTime < 2) return;
+        isProcessing = true;
         adTime = Time.time;
         getNewPairCount++;
         if (getNewPairCount >= Game.Controller.Instance.gameConfig.newItemMax)
@@ -481,6 +522,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             DataManagement.DataManager.Instance.Save();
         });
         animTryOption.SetTrigger("close");
+        isProcessing = false;
     }
 
     public void OptionAds()
@@ -519,6 +561,32 @@ public abstract class MakeOverPanelAbstract : UI.Panel
             }
             else
             {
+#if UNITY_EDITOR
+                getNewPairCount++;
+                if (getNewPairCount >= Game.Controller.Instance.gameConfig.newItemMax)
+                {
+                    newOptionBtn.SetActive(false);
+                }
+                readyPool.RemoveRange(0, 2);
+
+                if (readyPool.Count == 0)
+                {
+                    if (ads.Contains((int)currentCategory))
+                    {
+                        Game.Controller.Instance.itemData.GetPack((ItemData.Category)currentCategory).PrepareItemPool_MixedAd(readyPool, excludeItems, null);
+                    }
+                    else
+                    {
+                        Game.Controller.Instance.itemData.GetPack((ItemData.Category)currentCategory).PrepareItemPool(readyPool, excludeItems, null);
+                    }
+                }
+                if (readyPool.Count % 2 != 0)
+                {
+                    readyPool.RemoveAt(readyPool.Count - 1);
+                }
+                SetItem();
+                animTryOption.SetTrigger("close");
+#endif
                 isProcessing = false;
             }
         });

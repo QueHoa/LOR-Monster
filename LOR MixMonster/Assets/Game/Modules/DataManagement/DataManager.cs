@@ -32,7 +32,7 @@ namespace DataManagement
 
         public DataManager()
         {
-            GameUtility.GameUtility.Log("NEWE DATA MANAGER ");
+            GameUtility.GameUtility.Log("NEW DATA MANAGER ");
             userData = SaveUtility.Instance.LoadFile<UserData>();
             if (userData == null)
             {

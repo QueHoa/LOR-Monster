@@ -120,6 +120,8 @@ namespace DataManagement
         public List<StageData> stageDatas;
         public long lastEarningDate;
         public int offlineEarningLevel = 0;
+        public bool isRewardOffline;
+        public int totalOfflineSeconds, totalOfflineCash, totalOfflineGold;
 
         public List<BoosterData> boosters;
 

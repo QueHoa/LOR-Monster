@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 268631d0360fee842bc7f97a432fba27, type: 3}
   - {fileID: 8300000, guid: 825913ae40b3f124aa76190d63ce6a29, type: 3}
   - {fileID: 8300000, guid: 020a4fb73a7416a439d37a5d543617e9, type: 3}
-  purchaseSFX: {fileID: 0}
+  purchaseSFX: {fileID: 8300000, guid: 75bc7b0172557854cafd80816c5b8fd6, type: 3}
   booster: {fileID: 8300000, guid: f543b1502fd69624b9c4bf84a810d67b, type: 3}
   coinSfxs: []
   clickSFXs:

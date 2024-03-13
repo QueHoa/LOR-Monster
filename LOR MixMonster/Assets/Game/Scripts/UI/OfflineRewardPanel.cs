@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OfflineRewardPanel : UI.Panel
 {
@@ -10,6 +11,10 @@ public class OfflineRewardPanel : UI.Panel
     private int totalCash, totalGold;
     [SerializeField]
     private ParticleSystem cashPS;
+    [SerializeField]
+    private Button[] claim;
+    [SerializeField] 
+    private GameObject notify;
     [SerializeField]
     private AudioClip rewardSFX;
     private bool isProcessing;
@@ -20,6 +25,20 @@ public class OfflineRewardPanel : UI.Panel
     {
         Sound.Controller.Instance.PlayOneShot(rewardSFX);
         isProcessing = false;
+        if (DataManagement.DataManager.Instance.userData.stageListData.isRewardOffline)
+        {
+            foreach (var button in claim)
+            {
+                button.interactable = true;
+            }
+        }
+        else
+        {
+            foreach (var button in claim)
+            {
+                button.interactable = false;
+            }
+        }
         totalOfflineTimeText.text = $"{time/3600}H{(time%3600)/60}M{time%60}S";
         this.totalCash = totalCash;
         totalCashText.text = $"{GameUtility.GameUtility.ShortenNumber(totalCash)}";
@@ -31,7 +50,7 @@ public class OfflineRewardPanel : UI.Panel
     public void Claim(bool ads)
     {
         if (isProcessing) return;
-
+        isProcessing = true;
         if (ads)
         {
             AD.Controller.Instance.ShowRewardedAd("ClaimGold", res =>
@@ -52,6 +71,7 @@ public class OfflineRewardPanel : UI.Panel
         }
         void ClaimReward(int x)
         {
+            DataManagement.DataManager.Instance.userData.stageListData.isRewardOffline = false;
             DataManagement.DataManager.Instance.userData.stageListData.lastEarningDate = System.DateTime.Now.Ticks;
 
             GameUtility.RewardHandler.ApplyCash(totalCash * x);
