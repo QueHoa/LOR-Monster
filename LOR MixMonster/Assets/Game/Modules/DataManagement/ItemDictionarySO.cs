@@ -598,7 +598,6 @@ namespace ItemData {
     {
         Camera,
         Drum,
-        Light,
         Mic,
         Neon,
         Piano,

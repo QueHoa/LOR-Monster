@@ -1,7 +1,7 @@
 using Cinemachine;
 using Cysharp.Threading.Tasks;
 using System;
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour
     public static CameraController Instance;
 
     Camera camera;
-    public Cinemachine.CinemachineVirtualCamera cam;
-    public Cinemachine.CinemachineBasicMultiChannelPerlin noise;
+    Cinemachine.CinemachineVirtualCamera cam;
+    Cinemachine.CinemachineBasicMultiChannelPerlin noise;
     Transform _transform;
 
     float defaultLenSize;
@@ -63,15 +63,6 @@ public class CameraController : MonoBehaviour
             cancellation.Dispose();
             cancellation = null;
         }
-    }
-    IEnumerator DoMoveCamera(Vector3 newOffset,float speed=0.05f)
-    {
-        while (Vector3.Distance(CameraController.Instance.GetOffset(), newOffset) > 0.1f)
-        {
-            CameraController.Instance.SetOffset(Vector3.Lerp(CameraController.Instance.GetOffset(), newOffset, speed));
-            yield return null;
-        }
-        c = null;
     }
     CancellationTokenSource disableCancellation;
 
@@ -150,13 +141,11 @@ public class CameraController : MonoBehaviour
     }
     public Vector3 GetOffset()
     {
-        var transposer = cam.GetCinemachineComponent<CinemachineTransposer>();
-        return transposer.m_FollowOffset;
+        return camera.transform.position;
     }
     public void SetOffset(Vector3 offset)
     {
-        var transposer = cam.GetCinemachineComponent<CinemachineTransposer>();
-         transposer.m_FollowOffset=offset;
+        camera.transform.position = offset;
     }
     public float GetSize()
     {
