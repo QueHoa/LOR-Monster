@@ -38,6 +38,7 @@ public class ResultPanel : UI.Panel
 
     private int gold, changeGold, max, xLucky;
     bool isDone;
+    string filePath;
     private RectTransform[] coin;
     CancellationTokenSource cancellation;
     DataManagement.CollectionData data;
@@ -67,7 +68,7 @@ public class ResultPanel : UI.Panel
         screenShotImg.sprite = screenShot;
         Texture2D rawImageTexture = screenShot.texture;
         byte[] bytes = rawImageTexture.EncodeToJPG(50); // Chuyển texture thành dãy byte JPG
-        string filePath = Application.persistentDataPath + "/" + (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1).ToString() + ".jpg";
+        filePath = Application.persistentDataPath + "/" + (DataManagement.DataManager.Instance.userData.progressData.collectionDatas.Count + 1).ToString() + ".jpg";
         File.WriteAllBytes(filePath, bytes);
         //screenShotImg.SetNativeSize();
         //DOTween.To(() => panelCard.alpha, x => panelCard.alpha = x, 1, 0.3f);
@@ -197,6 +198,36 @@ public class ResultPanel : UI.Panel
 
         goldReceivedText.text = (changeGold * xLucky).ToString();
         claimWithAdsText.text = "CLAIM X" + xLucky.ToString();
+    }
+    public void Share()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+
+        Sprite sprite = screenShotImg.sprite;
+
+        if (sprite == null)
+        {
+            Debug.LogError("Không thể chuyển đổi hình ảnh thành Texture2D: Sprite không tồn tại.");
+            return;
+        }
+        Texture2D text = GetTextureFromSprite(sprite);
+        if (UnityEngine.Application.isMobilePlatform)
+        {
+            NativeShare nativeShare = new NativeShare();
+            nativeShare.AddFile(text, filePath);
+            nativeShare.Share();
+        }
+        isProcessing = false;
+    }
+    private Texture2D GetTextureFromSprite(Sprite sprite)
+    {
+        Texture2D texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGBA32, false);
+
+        texture.SetPixels(sprite.texture.GetPixels((int)sprite.rect.x, (int)sprite.rect.y, (int)sprite.rect.width, (int)sprite.rect.height));
+        texture.Apply();
+
+        return texture;
     }
     public async void Claim()
     {

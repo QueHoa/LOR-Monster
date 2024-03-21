@@ -22,7 +22,7 @@ public class StageItemButton : PoolComponent
     [SerializeField]
     private TMPro.TextMeshProUGUI bonusText, cashText, adText, titleText;
     [SerializeField]
-    private GameObject purchaseBtn, adBtn, usingObj, orObj, iconUsing;
+    private GameObject purchaseBtn, adBtn, usingObj, orObj;
     public int state;
     public ItemData.StageItem stageItem;
     int stageIndex = 0;
@@ -39,8 +39,6 @@ public class StageItemButton : PoolComponent
         state = DataManagement.DataManager.Instance.userData.inventory.GetItemState($"{stageIndex}_{stageItem.id}");
         usingObj.SetActive(state == 1);
         usingObj.SetActive(state == 2);
-        iconUsing.SetActive(state == 1);
-        iconUsing.SetActive(state == 2);
         if (state == 2)
         {
             iconBg.sprite = disableIconBg;

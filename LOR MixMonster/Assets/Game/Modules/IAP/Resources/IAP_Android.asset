@@ -14,9 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAvailable: 1
   products:
-  - id: leftrightmonster_remove_ads
+  - id: leftrightmonster_special_offer
     price: 0
     type: 1
   - id: leftrightmonster_premium_bundle
     price: 0
     type: 1
+  - id: leftrightmonster_remove_ads
+    price: 0
+    type: 1
+  - id: leftrightmonster_coin_10000
+    price: 0
+    type: 0
+  - id: leftrightmonster_coin_25000
+    price: 0
+    type: 0
+  - id: leftrightmonster_coin_50000
+    price: 0
+    type: 0
+  - id: leftrightmonster_coin_100000
+    price: 0
+    type: 0

@@ -17,15 +17,16 @@ public class HomePanel : UI.Panel
 {
     bool isProcessing = false;
     [SerializeField]
-    private AudioClip playSFX;
+    private AudioClip playSFX, cameraClip;
     [SerializeField]
     private TextMeshProUGUI cashText, totalEarningText, slotText;
-    public TextMeshProUGUI goldText;
+    public TextMeshProUGUI goldText, timeNoAds;
     [SerializeField]
     private RectTransform slotTotalRect;
     [SerializeField]
-    private GameObject maxSlotNotice, controlPanel, deletePanel, bundleBtn, handTut, boxBanner;
+    private GameObject maxSlotNotice, controlPanel, deletePanel, bundleBtn, viewBtn, handTut, boxBanner;
     public GameObject removeAds, notifyOffline;
+    public Button blockAds;
     [SerializeField]
     private GameObject[] uiHome;
     [SerializeField]
@@ -38,6 +39,7 @@ public class HomePanel : UI.Panel
     [SerializeField]
     private ParticleSystem unlockPS, newMonsterPS;
     private bool hideHand;
+    float time = 0;
     StageData stageData;
     public override void PostInit()
     {
@@ -55,7 +57,8 @@ public class HomePanel : UI.Panel
         StageData currentStageData = ((StageGameController)Game.Controller.Instance.gameController).GetStageHandler().stageData;
         OnMonsterSlotUpdated(currentStageData.stageCollections.Count, currentStageData.totalMonsterSlot);
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
-        removeAds.SetActive(DataManagement.DataManager.Instance.userData.IsAd);
+        removeAds.SetActive(DataManagement.DataManager.Instance.userData.IsAd || DataManagement.DataManager.Instance.userData.stageListData.isNoAds);
+        blockAds.gameObject.SetActive(DataManagement.DataManager.Instance.userData.IsAd || DataManagement.DataManager.Instance.userData.stageListData.isNoAds);
         for (int i = 0; i < boosterButtons.Length; i++)
         {
             boosterButtons[i].SetUp(((StageGameController)Game.Controller.Instance.gameController).boosters[i]);
@@ -86,12 +89,80 @@ public class HomePanel : UI.Panel
                 bundleBtn.SetActive(false);
             }
         }
+        if (((StageGameController)Game.Controller.Instance.gameController).FIRST_NOADS == 1 && DataManagement.DataManager.Instance.userData.IsAd)
+        {
+            UI.PanelManager.Create(typeof(NoAdsPanel), (panel, op) =>
+            {
+                ((NoAdsPanel)panel).SetUp(onUnlock: () =>
+                {
+                    blockAds.interactable = false;
+                    timeNoAds.gameObject.SetActive(true);
+                });
+                ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
+            });
+        }
+        if (((StageGameController)Game.Controller.Instance.gameController).FIRST_NOADS < 2)
+        {
+            ((StageGameController)Game.Controller.Instance.gameController).FIRST_NOADS++;
+        }
+        if (DataManagement.DataManager.Instance.userData.stageListData.isNoAds)
+        {
+            SetCoolDown(() => { ReloadAds(); });
+        }
+        else
+        {
+            blockAds.interactable = true;
+            timeNoAds.gameObject.SetActive(false);
+        }
         hideHand = DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0);
         handTut.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetFirstCollection() != null && (DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0 || DataManagement.DataManager.Instance.userData.stageListData.stageDatas[0].stageCollections.Count == 0));
         goldText.text = DataManagement.DataManager.Instance.userData.YourGold.ToString();
         cashText.text = "$" + GameUtility.GameUtility.ShortenNumber(DataManagement.DataManager.Instance.userData.inventory.cash);
         Show();
         DataManager.Instance.Save();
+    }
+    void Update()
+    {
+        if (Time.time - time > 1 && DataManagement.DataManager.Instance.userData.stageListData.isNoAds && System.DateTime.Now.Subtract(new System.DateTime(DataManagement.DataManager.Instance.userData.progressData.timeNoAds)).TotalSeconds < DataManagement.DataManager.Instance.userData.stageListData.noAdsTime)
+        {
+            var span = System.DateTime.Now.Subtract(new System.DateTime(DataManagement.DataManager.Instance.userData.progressData.timeNoAds));
+            span = TimeSpan.FromSeconds(DataManagement.DataManager.Instance.userData.stageListData.noAdsTime).Subtract(span);
+            timeNoAds.text = $"{span.Minutes}:{span.Seconds}";
+            RemoveAd();
+            time = Time.time;
+        }
+    }
+    public void SetCoolDown(System.Action onDone)
+    {
+        blockAds.interactable = false;
+        timeNoAds.gameObject.SetActive(true);
+        StartCoroutine(DoCoolDown(onDone));
+    }
+    IEnumerator DoCoolDown(System.Action onDone)
+    {
+        double time = DataManagement.DataManager.Instance.userData.stageListData.noAdsTime - System.DateTime.Now.Subtract(new System.DateTime(DataManagement.DataManager.Instance.userData.progressData.timeNoAds)).TotalSeconds;
+        double t = 0;
+        while (t <= time)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        blockAds.interactable = true;
+        timeNoAds.gameObject.SetActive(false);
+        onDone?.Invoke();
+    }
+    void RemoveAd()
+    {
+        DataManagement.DataManager.Instance.userData.IsAd = false;
+        DataManagement.DataManager.Instance.Save();
+        AD.Controller.Instance.RemoveAd();
+    }
+    void ReloadAds()
+    {
+        DataManagement.DataManager.Instance.userData.stageListData.isNoAds = false;
+        DataManagement.DataManager.Instance.userData.IsAd = true;
+        DataManagement.DataManager.Instance.Save();
+        AD.Controller.Instance.ReloadAd();
     }
     public void OnEarningUpdated(int totalEarning)
     {
@@ -188,6 +259,18 @@ public class HomePanel : UI.Panel
             ((StageGameController)Game.Controller.Instance.gameController).SetUpCollection();
         });
     }
+    public void Decoration()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        UI.PanelManager.Create(typeof(DecorPanel), (panel, op) =>
+        {
+            Close();
+            ((DecorPanel)panel).SetUp();
+
+            ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
+        });
+    }
     public void LeaderBoard()
     {
         if (isProcessing) return;
@@ -195,11 +278,26 @@ public class HomePanel : UI.Panel
         LevelLoading.Instance.Active(() =>
         {
             ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
-            Close();
             UI.PanelManager.Create(typeof(LeaderBoardPanel), (panel, op) =>
             {
                 ((LeaderBoardPanel)panel).SetUp();
             });
+            Close();
+            LevelLoading.Instance.Close();
+        });
+    }
+    public void Shop()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        LevelLoading.Instance.Active(() =>
+        {
+            ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
+            UI.PanelManager.Create(typeof(ShopPanel), (panel, op) =>
+            {
+                ((ShopPanel)panel).SetUp();
+            });
+            Close();
             LevelLoading.Instance.Close();
         });
     }
@@ -256,18 +354,6 @@ public class HomePanel : UI.Panel
             isProcessing = false;
         });
     }
-    public void Decoration()
-    {
-        if (isProcessing) return;
-        isProcessing = true;
-        UI.PanelManager.Create(typeof(DecorPanel), (panel, op) =>
-        {
-            Close();
-            ((DecorPanel)panel).SetUp();
-
-            ((StageGameController)Game.Controller.Instance.gameController).HideCurrentStageMonster();
-        });
-    }
     public void Setting()
     {
         if (isProcessing) return;
@@ -277,6 +363,21 @@ public class HomePanel : UI.Panel
             ((SettingPopup)panel).SetUp();
             isProcessing = false;
             ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
+        });
+    }
+    public void NoAds()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        UI.PanelManager.Create(typeof(NoAdsPanel), (panel, op) =>
+        {
+            ((NoAdsPanel)panel).SetUp(onUnlock: () =>
+            {
+                blockAds.interactable = false;
+                timeNoAds.gameObject.SetActive(true);
+            });
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
+            isProcessing = false;
         });
     }
     public void ShowBundle()
@@ -303,6 +404,39 @@ public class HomePanel : UI.Panel
             ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
             panel.onClose = () => { AD.Controller.Instance.ShowInterstitial(); };
         });
+    }
+    public void Share()
+    {
+        if (isProcessing) return;
+        isProcessing = true;
+        boxBanner.SetActive(false);
+        viewBtn.SetActive(false);
+        Texture2D capturedScreenShot = null;
+        StartCoroutine(DoCapture(res =>
+        {
+            capturedScreenShot = res;
+
+            Effect.EffectSpawner.Instance.Get(0, effect =>
+            {
+                effect.Active(Vector3.zero);
+            }).Forget();
+
+        }));
+        UI.PanelManager.Create(typeof(SharePanel), (panel, op) =>
+        {
+            isProcessing = false;
+            ((SharePanel)panel).SetUp(Sprite.Create(capturedScreenShot, new Rect(capturedScreenShot.width / 16, capturedScreenShot.height / 6, capturedScreenShot.width * 7 / 8, capturedScreenShot.height - capturedScreenShot.height * 2 / 6), Vector2.zero));
+            ((StageGameController)Game.Controller.Instance.gameController).hideMonster = true;
+            boxBanner.SetActive(true);
+            viewBtn.SetActive(true);
+        });
+    }
+    IEnumerator DoCapture(System.Action<Texture2D> result)
+    {
+        Sound.Controller.Instance.PlayOneShot(cameraClip);
+        yield return new WaitForEndOfFrame();
+        Texture2D capturedScreenShot = GameUtility.ScreenCapture.Capture();
+        result.Invoke(capturedScreenShot);
     }
     public void OnMonsterSelected()
     {

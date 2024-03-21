@@ -89,6 +89,7 @@ public class SetBundlePanel : UI.Panel,IOnPurchased
     void RemoveAd()
     {
         DataManagement.DataManager.Instance.userData.IsAd = false;
+        DataManagement.DataManager.Instance.userData.stageListData.isNoAds = false;
         DataManagement.DataManager.Instance.Save();
         AD.Controller.Instance.RemoveAd();
     }

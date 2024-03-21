@@ -135,8 +135,8 @@ namespace AD
             onAdCompleted?.Invoke();
             isBusy = false;
             Debug.Log("REWARD CLOSE");
-       
-
+            if (Game.Controller.Instance.gameConfig.adConfig.openAdAfterRewardAd)
+                ShowOpenAd();
 
         }
         public bool IsInterstitialReady()
@@ -175,6 +175,7 @@ namespace AD
                         if (res)
                         {
                             FirebaseAnalysticController.Instance.LogInterstitialFinish();
+                            ShowOpenAd();
                         }
 
                     }, async () => {
@@ -191,7 +192,8 @@ namespace AD
                         isBusy = false;
                         Debug.Log("INTER FINISH");
 
-                        
+                        if (Game.Controller.Instance.gameConfig.adConfig.openAdAfterInterAd)
+                            ShowOpenAd();
 
                     });
                 }
@@ -340,7 +342,13 @@ namespace AD
             CollapsibleBanner.HideBanner();
             ReloadAllNativeAdBanner();
         }
-
+        public void ReloadAd()
+        {
+            isAd = true;
+            //HideBanner();
+            CollapsibleBanner.ShowBanner();
+            ReloadAllNativeAdBanner();
+        }
 
     }
 }

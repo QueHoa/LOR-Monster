@@ -61,6 +61,7 @@ public partial class StageGameController
             monster.transform.position = position;
             monster.stageCollectionData = stageCollection;
             monster.transform.localScale = Vector3.one * 0.25f;
+            monster.GetComponent<BoxCollider2D>().enabled = true;
             monster.GetComponent<ObjectTouchHandler>().enabled = true;
 
             monsterItemDict.Add(monster, totalEarning);

@@ -15504,7 +15504,7 @@ MonoBehaviour:
   overrideBack: 0
   isPersistant: 0
   adCountText: {fileID: 3340251042208623366}
-  productId: leftrightmonster_premium_bundle
+  productId: leftrightmonster_special_offer
   openSFX: {fileID: 8300000, guid: 2c3389b8048027b449eeed83ab56e0e1, type: 3}
 --- !u!114 &3340251042889264971
 MonoBehaviour:
@@ -21673,7 +21673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PREMIUM BUNDLE
+  m_text: Special offer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6cc2b632feb48b240a7342acd44eff55, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 37b8dd947573091458247ecc83f507b0, type: 2}

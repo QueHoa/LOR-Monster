@@ -20,6 +20,7 @@ public class RemoveAdPurchaseListenner : MonoBehaviour,IOnPurchased
     private static void OnPurchased()
     {
         DataManagement.DataManager.Instance.userData.IsAd = false;
+        DataManagement.DataManager.Instance.userData.stageListData.isNoAds = false;
         DataManagement.DataManager.Instance.Save();
         AD.Controller.Instance.RemoveAd();
 

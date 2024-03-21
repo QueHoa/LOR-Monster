@@ -10,6 +10,7 @@ using UnityEngine.AddressableAssets;
 public partial class StageGameController : GameController
 {
     public static bool FIRST_SECTION;
+    public int FIRST_NOADS;
     public HomePanel homePanel;
     public Monster monster;
     [SerializeField]
@@ -66,11 +67,11 @@ public partial class StageGameController : GameController
 
         ObjectTouchHandler.onMonsterSelected += OnMonsterSelected;
         ObjectTouchHandler.onMonsterReleased += OnMonsterReleased;
-
+        
         CaculateOfflineEarning();
         homePanel.SetUp();
         isReady = true;
-
+        
         LevelLoading.Instance.Close();
     }
     public async UniTask SetUpCollection()
@@ -301,20 +302,23 @@ public partial class StageGameController : GameController
         }
         if(homePanel != null)
         {
-            if (DataManagement.DataManager.Instance.userData.IsAd)
+            if (DataManagement.DataManager.Instance.userData.IsAd || DataManagement.DataManager.Instance.userData.stageListData.isNoAds)
             {
                 if (DataManager.Instance.userData.progressData.uiHome)
                 {
                     homePanel.removeAds.SetActive(true);
+                    homePanel.blockAds.gameObject.SetActive(true);
                 }
                 else
                 {
                     homePanel.removeAds.SetActive(false);
+                    homePanel.blockAds.gameObject.SetActive(false);
                 }
             }
             else
             {
                 homePanel.removeAds.SetActive(false);
+                homePanel.blockAds.gameObject.SetActive(false);
             }
             if ((Game.Controller.Instance.gameController).updateGold)
             {
@@ -548,7 +552,6 @@ public partial class StageGameController : GameController
             UI.PanelManager.Create(typeof(OfflineRewardPanel), (panel, op) => { ((OfflineRewardPanel)panel).SetUp(totalOfflineSeconds, totalOfflineCash, totalOfflineGold); });
         }
     }
-
     public void HideCurrentStageMonster()
     {
         stageHandlers.HideMonster();

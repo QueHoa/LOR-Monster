@@ -13,8 +13,6 @@ public class OfflineRewardPanel : UI.Panel
     private ParticleSystem cashPS;
     [SerializeField]
     private Button[] claim;
-    [SerializeField] 
-    private GameObject notify;
     [SerializeField]
     private AudioClip rewardSFX;
     private bool isProcessing;

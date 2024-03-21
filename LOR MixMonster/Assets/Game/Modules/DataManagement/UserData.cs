@@ -120,7 +120,8 @@ namespace DataManagement
         public List<StageData> stageDatas;
         public long lastEarningDate;
         public int offlineEarningLevel = 0;
-        public bool isRewardOffline;
+        public bool isRewardOffline, isNoAds;
+        public double noAdsTime;
         public int totalOfflineSeconds, totalOfflineCash, totalOfflineGold;
 
         public List<BoosterData> boosters;
@@ -211,9 +212,10 @@ namespace DataManagement
       
         public ObscuredInt  collectionCollectAdCount = 0, comboRewardTrack=0,totalSessionOfToday=0;
         public System.DateTime lastLoggedIn;
-        public int bestViewPoint, playCount;
-        public bool firstSelect = true, firstPet = true, uiHome = true; //isView = true;
+        public int bestViewPoint, playCount, adsCount;
+        public bool firstSelect = true, firstPet = true, uiHome = true;
         public int firstDaily = 0;
+        public long timeNoAds;
         public List<CollectionData> collectionDatas = new List<CollectionData>();
 
         public int GetAdProgress(string id)

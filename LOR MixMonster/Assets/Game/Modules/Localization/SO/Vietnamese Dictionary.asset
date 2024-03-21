@@ -586,4 +586,4 @@ MonoBehaviour:
     - 
     - 
   tempFontDatas:
-  - font: {fileID: 0}
+  - font: {fileID: 11400000, guid: 6cc2b632feb48b240a7342acd44eff55, type: 2}

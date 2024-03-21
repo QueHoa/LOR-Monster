@@ -134,7 +134,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
         backGroundImg.sprite = backGroundSprites[DataManagement.DataManager.Instance.userData.progressData.playCount % backGroundSprites.Length];
         bundleBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.GetItemState("SetBundle_1") == 0);
         homeBtn.SetActive(DataManagement.DataManager.Instance.userData.inventory.cards.Count != 0);
-        removeAds.SetActive(DataManagement.DataManager.Instance.userData.IsAd);
+        removeAds.SetActive(DataManagement.DataManager.Instance.userData.IsAd || DataManagement.DataManager.Instance.userData.stageListData.isNoAds);
         excludeItems.Clear();
         excludeItems.AddRange(previousFirstSpawnItems);
         previousFirstSpawnItems.Clear();
@@ -191,7 +191,7 @@ public abstract class MakeOverPanelAbstract : UI.Panel
     }
     private void Update()
     {
-        if (DataManagement.DataManager.Instance.userData.IsAd)
+        if (DataManagement.DataManager.Instance.userData.IsAd || DataManagement.DataManager.Instance.userData.stageListData.isNoAds)
         {
             removeAds.SetActive(true);
         }

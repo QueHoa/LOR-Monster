@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
-using System.Security.Claims;
 
 namespace DailyReward
 {
@@ -13,7 +12,7 @@ namespace DailyReward
         [Title("Daily Rewards Panel")]
         public Button buttonClaim;
         // public ScrollRect scrollRect;
-        public TextMeshProUGUI textTimeDue, txtClaim;
+        public TextMeshProUGUI textTimeDue, btnClaim;
         public string color = "red";
         public DailyRewardPopup dailyRewardPopup;
 
@@ -72,13 +71,13 @@ namespace DailyReward
             }
 
             buttonClaim.interactable = isRewardAvailableNow;
-            if (buttonClaim.interactable)
+            if(buttonClaim.interactable)
             {
-                txtClaim.text = "claim";
+                btnClaim.text = "claim";
             }
             else
             {
-                txtClaim.text = "claimed";
+                btnClaim.text = "claimed";
             }
             if (isRewardAvailableNow)
             {

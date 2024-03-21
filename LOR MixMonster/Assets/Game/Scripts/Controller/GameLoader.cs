@@ -8,12 +8,14 @@ public class GameLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // TODO: show consent
+        GDPRHandler.Instance.RequestConsent();
         SetUp().Forget();
     }
     async UniTaskVoid SetUp()
     {
         await UniTask.WaitUntil(() => DataManagement.DataManager.Instance.IsReady() && Sound.Controller.Instance.IsReady() && Sheet.SheetDataManager.Instance.isReady );
-       
+        
         await UniTask.Delay(150);
         LoadMainScene();
 
@@ -25,6 +27,7 @@ public class GameLoader : MonoBehaviour
                             && DataManagement.DataManager.Instance.userData.stageListData.stageDatas.Count == 0)
                 ? "MainScene"
                 : "HomeScene";
+
         LevelLoading.Instance.Active(sceneKey, null,
             UniTask.Action(async () =>
             {

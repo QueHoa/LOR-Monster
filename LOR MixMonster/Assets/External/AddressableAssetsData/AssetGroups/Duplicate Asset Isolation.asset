@@ -212,6 +212,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9314dc7c734e6254e961c48afc9f6141
+    m_Address: Assets/Game/Fonts/KreepTown.otf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 841cf6df6e84bae43934ac51dfd54521, type: 2}
   m_SchemaSet:

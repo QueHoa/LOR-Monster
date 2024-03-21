@@ -18,9 +18,11 @@ MonoBehaviour:
   skeletonJSON: {fileID: 4900000, guid: 067127e5e9040ef4981e1eab3d845ca9, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
-    requiresBlendModeMaterials: 0
+    requiresBlendModeMaterials: 1
     applyAdditiveMaterial: 1
-    additiveMaterials: []
+    additiveMaterials:
+    - pageName: BG SPEED DOWN.png
+      material: {fileID: 2100000, guid: 97ac864a5d0efed4e9baa48d753931de, type: 2}
     multiplyMaterials: []
     screenMaterials: []
   skeletonDataModifiers: []

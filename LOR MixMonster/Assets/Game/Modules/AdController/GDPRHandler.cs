@@ -4,15 +4,17 @@ using UnityEngine;
 using GoogleMobileAds.Ump;
 using GoogleMobileAds.Ump.Api;
 
-public class GDPRHandler : MonoBehaviour
+public class GDPRHandler : SingletonPersistent<GDPRHandler>
 {
     [SerializeField]
     private List<string> testDevices = new List<string>();
     [SerializeField]
     private bool testMode = true;
     ConsentForm _consentForm;
+
+
     // Start is called before the first frame update
-    void Start()
+    public void RequestConsent()
     {
         var debugSettings = new ConsentDebugSettings
         {
@@ -28,7 +30,7 @@ public class GDPRHandler : MonoBehaviour
             request = new ConsentRequestParameters
             {
                 TagForUnderAgeOfConsent = false,
-                ConsentDebugSettings =  debugSettings ,
+                ConsentDebugSettings = debugSettings,
             };
         }
         else
@@ -39,7 +41,7 @@ public class GDPRHandler : MonoBehaviour
                 TagForUnderAgeOfConsent = false
             };
         }
-      
+
 
         // Check the current consent information status.
         ConsentInformation.Update(request, OnConsentInfoUpdated);
