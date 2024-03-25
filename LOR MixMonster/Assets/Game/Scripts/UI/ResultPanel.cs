@@ -211,14 +211,47 @@ public class ResultPanel : UI.Panel
             Debug.LogError("Không thể chuyển đổi hình ảnh thành Texture2D: Sprite không tồn tại.");
             return;
         }
-        Texture2D text = GetTextureFromSprite(sprite);
-        if (UnityEngine.Application.isMobilePlatform)
+        Texture2D texture = GetTextureFromSprite(sprite);
+
+    if (UnityEngine.Application.isMobilePlatform)
+    {
+        NativeShare nativeShare = new NativeShare();
+        nativeShare.AddFile(texture, filePath);
+
+        // Đặt callback để xử lý khi hoạt động chia sẻ hoàn tất
+        nativeShare.SetCompletedCallback(async (success, shareTarget) =>
         {
-            NativeShare nativeShare = new NativeShare();
-            nativeShare.AddFile(text, filePath);
-            nativeShare.Share();
-        }
+            isProcessing = false; // Đặt trạng thái xử lý về false sau khi chia sẻ hoàn tất
+            if ((bool)success)
+            {
+                Debug.Log("Chia sẻ ảnh thành công cho: " + shareTarget);
+                // Thực hiện các hành động bạn muốn sau khi chia sẻ thành công ở đây
+                goldText.transform.DOScale(Vector3.one * 1.3f, 0.5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
+                DOTween.To(() => gold, x => gold = x, DataManagement.DataManager.Instance.userData.YourGold + 300, 1f).SetEase(Ease.OutQuad).OnUpdate(() =>
+                {
+                    goldText.text = gold.ToString();
+                }).OnComplete(() =>
+                {
+                    DataManagement.DataManager.Instance.userData.YourGold = gold;
+                    DataManagement.DataManager.Instance.Save();
+                    Sound.Controller.Instance.PlayOneShot(finishSFX);
+                });
+                await UniTask.Delay(1300, cancellationToken: cancellation.Token);
+            }
+            else
+            {
+                Debug.Log("Chia sẻ ảnh không thành công.");
+                // Thực hiện các hành động bạn muốn khi chia sẻ không thành công ở đây
+            }
+        });
+
+        nativeShare.Share();
+    }
+    else
+    {
+        Debug.LogError("Không thể chia sẻ ảnh: Ứng dụng không chạy trên thiết bị di động.");
         isProcessing = false;
+    }
     }
     private Texture2D GetTextureFromSprite(Sprite sprite)
     {

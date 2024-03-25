@@ -348,6 +348,11 @@ public class NativeShare
 			Object.DestroyImmediate( sourceTexReadable );
 		}
 	}
-	#endregion
+
+    public void SetCompletedCallback(System.Action<object, object> value)
+    {
+        throw new System.NotImplementedException();
+    }
+    #endregion
 }
 #pragma warning restore 0414

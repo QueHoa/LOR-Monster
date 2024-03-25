@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b203f119ac4f10419809cec6f1faf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: leftrightmonster_special_offer
+  productId: leftrightmonster_premium_bundle
   buttonType: 0
   consumePurchase: 1
   onPurchaseComplete:

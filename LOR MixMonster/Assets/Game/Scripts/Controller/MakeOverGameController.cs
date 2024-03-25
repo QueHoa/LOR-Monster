@@ -285,6 +285,7 @@ public class MakeOverGameController : GameController
 
             }
         }
+        DataManagement.DataManager.Instance.Save();
         if (rewardItems.Count > 0)
         {
             UI.PanelManager.Create(typeof(RewardPanel), (panel, op) =>
